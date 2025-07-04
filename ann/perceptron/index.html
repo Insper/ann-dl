@@ -1,0 +1,606 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Artificial Neural Networks and Deep Learning course at Insper"><meta name=author content="Sandmann, H."><link href=https://insper.github.io/ann-dl/ann/perceptron/ rel=canonical><link href=../intro/ rel=prev><link href=../mlp/ rel=next><link rel=icon href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.6.15"><title>Perceptron - Artificial Neural Networks and Deep Learning</title><link rel=stylesheet href=../../assets/stylesheets/main.342714a4.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.06af60db.min.css><style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%2032C28.7%2032%200%2060.7%200%2096v320c0%2035.3%2028.7%2064%2064%2064h224V368c0-26.5%2021.5-48%2048-48h112V96c0-35.3-28.7-64-64-64zm384%20320H336c-8.8%200-16%207.2-16%2016v112l32-32%2064-64z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M96%200C43%200%200%2043%200%2096v320c0%2053%2043%2096%2096%2096h320c17.7%200%2032-14.3%2032-32s-14.3-32-32-32v-64c17.7%200%2032-14.3%2032-32V32c0-17.7-14.3-32-32-32H96m0%20384h256v64H96c-17.7%200-32-14.3-32-32s14.3-32%2032-32m32-240c0-8.8%207.2-16%2016-16h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16m16%2048h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16s7.2-16%2016-16%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-40-176h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24m40-208a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M480%2032c0-12.9-7.8-24.6-19.8-29.6S434.5.2%20425.3%209.3L381.7%2053c-48%2048-113.1%2075-181%2075H64c-35.3%200-64%2028.7-64%2064v96c0%2035.3%2028.7%2064%2064%2064v128c0%2017.7%2014.3%2032%2032%2032h64c17.7%200%2032-14.3%2032-32V352h8.7c67.9%200%20133%2027%20181%2075l43.6%2043.6c9.2%209.2%2022.9%2011.9%2034.9%206.9s19.8-16.6%2019.8-29.6V300.3c18.6-8.8%2032-32.5%2032-60.4s-13.4-51.6-32-60.4zm-64%2076.7v262.6C357.2%20317.8%20280.5%20288%20200.7%20288H192v-96h8.7c79.8%200%20156.5-29.8%20215.3-83.3%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M438.6%20105.4c12.5%2012.5%2012.5%2032.8%200%2045.3l-256%20256c-12.5%2012.5-32.8%2012.5-45.3%200l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200L160%20338.7l233.4-233.3c12.5-12.5%2032.8-12.5%2045.3%200z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-86.2-346.7c7.9-22.3%2029.1-37.3%2052.8-37.3h58.3c34.9%200%2063.1%2028.3%2063.1%2063.1%200%2022.6-12.1%2043.5-31.7%2054.8L280%20264.4c-.2%2013-10.9%2023.6-24%2023.6-13.3%200-24-10.7-24-24v-13.5c0-8.6%204.6-16.5%2012.1-20.8l44.3-25.4c4.7-2.7%207.6-7.7%207.6-13.1%200-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4%200-6.4%202.1-7.5%205.3l-.4%201.2c-4.4%2012.5-18.2%2019-30.6%2014.6s-19-18.2-14.6-30.6l.4-1.2zM224%20352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%2032c14.2%200%2027.3%207.5%2034.5%2019.8l216%20368c7.3%2012.4%207.3%2027.7.2%2040.1S486.3%20480%20472%20480H40c-14.3%200-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7%2039.5%20241.8%2032%20256%2032m0%20128c-13.3%200-24%2010.7-24%2024v112c0%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24V184c0-13.3-10.7-24-24-24m32%20224a32%2032%200%201%200-64%200%2032%2032%200%201%200%2064%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M459.1%2052.4%20442.6%206.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5%202.6-10.4%206.5l-16.5%2045.9-46%2016.8c-4.3%201.6-7.3%205.9-7.2%2010.4%200%204.5%203%208.7%207.2%2010.2l45.7%2016.8%2016.8%2045.8c1.5%204.4%205.8%207.5%2010.4%207.5s8.9-3.1%2010.4-7.5l16.5-45.8%2045.7-16.8c4.2-1.5%207.2-5.7%207.2-10.2%200-4.6-3-8.9-7.2-10.4zm-132.4%2053c-12.5-12.5-32.8-12.5-45.3%200l-2.9%202.9c-22-8-45.8-12.3-70.5-12.3C93.1%2096%200%20189.1%200%20304s93.1%20208%20208%20208%20208-93.1%20208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5%2012.5-32.8%200-45.3l-80-80zM200%20192c-57.4%200-104%2046.6-104%20104v8c0%208.8-7.2%2016-16%2016s-16-7.2-16-16v-8c0-75.1%2060.9-136%20136-136h8c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M416%20398.9c58.5-41.1%2096-104.1%2096-174.9C512%20100.3%20397.4%200%20256%200S0%20100.3%200%20224c0%2070.7%2037.5%20133.8%2096%20174.9V464c0%2026.5%2021.5%2048%2048%2048h48v-48c0-8.8%207.2-16%2016-16s16%207.2%2016%2016v48h64v-48c0-8.8%207.2-16%2016-16s16%207.2%2016%2016v48h48c26.5%200%2048-21.5%2048-48v-65.1M96%20256a64%2064%200%201%201%20128%200%2064%2064%200%201%201-128%200m256-64a64%2064%200%201%201%200%20128%2064%2064%200%201%201%200-128%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20640%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M320%200c17.7%200%2032%2014.3%2032%2032v64h120c39.8%200%2072%2032.2%2072%2072v272c0%2039.8-32.2%2072-72%2072H168c-39.8%200-72-32.2-72-72V168c0-39.8%2032.2-72%2072-72h120V32c0-17.7%2014.3-32%2032-32M208%20384c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zm96%200c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zm96%200c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zM264%20256a40%2040%200%201%200-80%200%2040%2040%200%201%200%2080%200m152%2040a40%2040%200%201%200%200-80%2040%2040%200%201%200%200%2080M48%20224h16v192H48c-26.5%200-48-21.5-48-48v-96c0-26.5%2021.5-48%2048-48m544%200c26.5%200%2048%2021.5%2048%2048v96c0%2026.5-21.5%2048-48%2048h-16V224z%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v132.8c0%2011.8-3.3%2023.5-9.5%2033.5L10.3%20406.2C3.6%20417.2%200%20429.7%200%20442.6%200%20480.9%2031.1%20512%2069.4%20512h309.2c38.3%200%2069.4-31.1%2069.4-69.4%200-12.8-3.6-25.4-10.3-36.4L329.5%20230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20196.8V64h64v132.8c0%2023.7%206.6%2046.9%2019%2067.1l34.5%2056.1h-171l34.5-56.1c12.4-20.2%2019-43.4%2019-67.1%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64V216m256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64V216%22/%3E%3C/svg%3E');}</style><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../../assets/_markdown_exec_pyodide.css><link rel=stylesheet href=../../assets/stylesheets/neoteroi-mkdocs.min.css><link rel=stylesheet href=../../assets/stylesheets/neoteroi-timeline.css><link rel=stylesheet href=../../assets/stylesheets/extra.css><link rel=stylesheet href=../../assets/stylesheets/badge.css><link rel=stylesheet href=../../termynal.css><script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><link href=../../assets/stylesheets/glightbox.min.css rel=stylesheet><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style><script src=../../assets/javascripts/glightbox.min.js></script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#biological-inspiration class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class="md-header md-header--shadow" data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../.. title="Artificial Neural Networks and Deep Learning" class="md-header__button md-logo" aria-label="Artificial Neural Networks and Deep Learning" data-md-component=logo> <img src=../../assets/images/ann-dl.png alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Artificial Neural Networks and Deep Learning </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Perceptron </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to dark mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg> </label> <input class=md-option data-md-color-media=(prefers-color-scheme) data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to light mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_2 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to dark mode" type=radio name=__palette id=__palette_2> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_3 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to system preference" type=radio name=__palette id=__palette_3> <label class="md-header__button md-icon" title="Switch to system preference" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg> </label> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> </button> </nav> </form> <div class=md-search__output> <div class=md-search__scrollwrap tabindex=0 data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/insper/ann-dl title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg> </div> <div class=md-source__repository> insper/ann-dl </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../.. title="Artificial Neural Networks and Deep Learning" class="md-nav__button md-logo" aria-label="Artificial Neural Networks and Deep Learning" data-md-component=logo> <img src=../../assets/images/ann-dl.png alt=logo> </a> Artificial Neural Networks and Deep Learning </label> <div class=md-nav__source> <a href=https://github.com/insper/ann-dl title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg> </div> <div class=md-source__repository> insper/ann-dl </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. class=md-nav__link> <span class=md-ellipsis> Ementa </span> </a> </li> <li class=md-nav__item> <a href=../../versions/2025.2/presentation/ class=md-nav__link> <span class=md-ellipsis> 2025.2 </span> </a> </li> <li class=md-nav__item> <a href=../../ai/ai/ class=md-nav__link> <span class=md-ellipsis> Artificial Intelligence </span> </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4 checked> <label class=md-nav__link for=__nav_4 id=__nav_4_label tabindex=0> <span class=md-ellipsis> Neural Networks </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_4_label aria-expanded=true> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> Neural Networks </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../intro/ class=md-nav__link> <span class=md-ellipsis> Introduction </span> </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> <span class=md-ellipsis> Perceptron </span> <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> Perceptron </span> </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#biological-inspiration class=md-nav__link> <span class=md-ellipsis> Biological Inspiration </span> </a> </li> <li class=md-nav__item> <a href=#mathematical-foundations class=md-nav__link> <span class=md-ellipsis> Mathematical Foundations </span> </a> <nav class=md-nav aria-label="Mathematical Foundations"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#training-and-optimization class=md-nav__link> <span class=md-ellipsis> Training and Optimization </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../mlp/ class=md-nav__link> <span class=md-ellipsis> Multi-Layer Perceptron </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_5> <label class=md-nav__link for=__nav_5 id=__nav_5_label tabindex=0> <span class=md-ellipsis> Deep Learning </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_5_label aria-expanded=false> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> Deep Learning </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../dl/intro/ class=md-nav__link> <span class=md-ellipsis> Introduction </span> </a> </li> <li class=md-nav__item> <a href=../../dl/cnn/ class=md-nav__link> <span class=md-ellipsis> Convolutional Neural Networks </span> </a> </li> <li class=md-nav__item> <a href=../../dl/rnn/ class=md-nav__link> <span class=md-ellipsis> Recurrent Neural Networks </span> </a> </li> <li class=md-nav__item> <a href=../../dl/transformers/ class=md-nav__link> <span class=md-ellipsis> Transformers (LLM) </span> </a> </li> <li class=md-nav__item> <a href=../../dl/generative-models/ class=md-nav__link> <span class=md-ellipsis> Generative Models </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_6> <label class=md-nav__link for=__nav_6 id=__nav_6_label tabindex=0> <span class=md-ellipsis> Metrics and Evaluation </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_6_label aria-expanded=false> <label class=md-nav__title for=__nav_6> <span class="md-nav__icon md-icon"></span> Metrics and Evaluation </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../metrics/classification-metrics.md class=md-nav__link> <span class=md-ellipsis> Classification Metrics </span> </a> </li> <li class=md-nav__item> <a href=../../metrics/regression-metrics.md class=md-nav__link> <span class=md-ellipsis> Regression Metrics </span> </a> </li> <li class=md-nav__item> <a href=../../metrics/model-evaluation.md class=md-nav__link> <span class=md-ellipsis> Model Evaluation </span> </a> </li> <li class=md-nav__item> <a href=../../metrics/cross-validation/ class=md-nav__link> <span class=md-ellipsis> Cross-Validation </span> </a> </li> <li class=md-nav__item> <a href=../../metrics/hyperparameter-tuning.md class=md-nav__link> <span class=md-ellipsis> Hyperparameter Tuning </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../references/ class=md-nav__link> <span class=md-ellipsis> References </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_8> <label class=md-nav__link for=__nav_8 id=__nav_8_label tabindex=0> <span class=md-ellipsis> Versions </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_8_label aria-expanded=false> <label class=md-nav__title for=__nav_8> <span class="md-nav__icon md-icon"></span> Versions </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_8_1> <label class=md-nav__link for=__nav_8_1 id=__nav_8_1_label tabindex=0> <span class=md-ellipsis> 2025.2 </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_8_1_label aria-expanded=false> <label class=md-nav__title for=__nav_8_1> <span class="md-nav__icon md-icon"></span> 2025.2 </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../versions/2025.2/presentation/ class=md-nav__link> <span class=md-ellipsis> 2025.2 </span> </a> </li> <li class=md-nav__item> <a href=../../versions/2025.2/exercises/ class=md-nav__link> <span class=md-ellipsis> exercises </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#biological-inspiration class=md-nav__link> <span class=md-ellipsis> Biological Inspiration </span> </a> </li> <li class=md-nav__item> <a href=#mathematical-foundations class=md-nav__link> <span class=md-ellipsis> Mathematical Foundations </span> </a> <nav class=md-nav aria-label="Mathematical Foundations"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#training-and-optimization class=md-nav__link> <span class=md-ellipsis> Training and Optimization </span> </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <h1>Perceptron</h1> <h2 id=biological-inspiration>Biological Inspiration</h2> <p>Since the inception of artificial neural networks (ANNs), their design has been heavily influenced by the structure and function of biological neural networks. The human brain, with its complex network of neurons, serves as a foundational model for understanding how ANNs can process information. The base of an ANN is a neuron, which mimics the behavior of biological neurons. Each neuron receives inputs, processes them, and produces an output, similar to how biological neurons communicate through synapses.</p> <figure> <p><a class=glightbox href=https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Neuron.svg/1024px-Neuron.svg.png data-type=image data-width=auto data-height=auto data-desc-position=bottom><img alt src=https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Neuron.svg/1024px-Neuron.svg.png width=100%></a></p> <figcaption> <p><em>Diagram of Neuron.</em> <br><small>Source: <a href=https://en.wikipedia.org/wiki/Neuron target=_blank>Wikipedia - Neuron</a></small></p> </figcaption> </figure> <p>The biological neuron consists of a cell body (soma), dendrites, and an axon. Dendrites receive signals from other neurons, the soma processes these signals, and the axon transmits the output to other neurons. This structure allows for complex interactions and information processing, which is essential for learning and decision-making in biological systems. The signal produced by a neuron is known as an <strong>action potential</strong>, which is an electrical impulse that travels along the axon to communicate with other neurons. The action potential is generated when the neuron receives sufficient input from its dendrites, leading to a change in the electrical potential across its membrane. This process is known as <strong>neural activation</strong> and is crucial for the functioning of both biological and artificial neurons.</p> <figure> <p><a class=glightbox href=https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Action_potential.svg/1920px-Action_potential.svg.png data-type=image data-width=auto data-height=auto data-desc-position=bottom><img alt src=https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Action_potential.svg/1920px-Action_potential.svg.png width=100%></a></p> <figcaption> <p><em>Action potential.</em> <br><small>Source: <a href=https://en.wikipedia.org/wiki/Action_potential target=_blank>Wikipedia - Action potential</a></small></p> </figcaption> </figure> <p>Basead on this biological inspiration, McCulloch and Pitts<sup id=fnref:1><a class=footnote-ref href=#fn:1>1</a></sup> proposed the first mathematical model of a neuron in 1943. This model laid the groundwork for the development of artificial neurons, which are the building blocks of ANNs. The McCulloch-Pitts neuron is a simple binary model that outputs a signal based on whether the weighted sum of its inputs exceeds a certain threshold.</p> <div class=arithmatex>\[ \begin{align*} N_i(t+1) = H \left( \sum_{j=1}^n w_{ij}(t) N_j(t) - \theta_ i (t) \right), &amp; \\ &amp; H(x) := \begin{cases} 1, &amp; x \geq 0 \\ 0, &amp; x &lt; 0 \end{cases} \end{align*} \]</div> <p>This equation describes how the output of neuron <span class=arithmatex>\(N_i\)</span> at time <span class=arithmatex>\(t+1\)</span> is determined by the weighted sum of its inputs <span class=arithmatex>\(N_j\)</span> at time <span class=arithmatex>\(t\)</span>, adjusted by a threshold <span class=arithmatex>\(\theta_i(t)\)</span>. The function <span class=arithmatex>\(H\)</span> is a step function that activates the neuron if the input exceeds the threshold. Note, the results of the McCulloch-Pitts model are binary, meaning the output is either 0 or 1, which corresponds to the neuron being inactive or active, respectively - see a connection to symbolic logic.</p> <p>This model, while simplistic, captures the essence of how neurons process information and has been foundational in the development of more complex neural network architectures.</p> <h2 id=mathematical-foundations>Mathematical Foundations</h2> <p>The mathematical foundations of artificial neural networks are built upon linear algebra, calculus, and probability theory. These areas provide the tools necessary to understand how ANNs operate, how they learn from data, and how they can be optimized for various tasks. The Perceptron, introduced by Rosenblatt<sup id=fnref:2><a class=footnote-ref href=#fn:2>2</a></sup> in 1958, is one of the earliest and simplest forms of an ANN. It consists of a single layer of neurons that can classify linearly separable data. The Perceptron algorithm adjusts the weights of the inputs based on the error in the output, allowing it to learn from examples.</p> <center> <pre class=mermaid><code>flowchart LR
+    subgraph input
+        direction TB
+        x1(["x&lt;sub&gt;1&lt;/sub&gt;"])
+        x2(["x&lt;sub&gt;2&lt;/sub&gt;"])
+        x3(["x&lt;sub&gt;3&lt;/sub&gt;"])
+    end
+    x1 --&gt;|"w&lt;sub&gt;1&lt;/sub&gt;"| N
+    x2 --&gt;|"w&lt;sub&gt;2&lt;/sub&gt;"| N
+    x3 --&gt;|"w&lt;sub&gt;3&lt;/sub&gt;"| N
+    N(["N"])
+    N --&gt; out1@{ shape: dbl-circ, label: " " }</code></pre> </center> <p>TODO: improve Perceptron description, add more math, and explain the learning rule. Herbian learning rule, etc.</p> <p>The Perceptron learning rule can be expressed mathematically as follows:</p> <div class=arithmatex>\[ w_i(t+1) = w_i(t) + \eta (y - \hat{y}) x_i \]</div> <p>where: - <span class=arithmatex>\(w_i(t)\)</span> is the weight of the <span class=arithmatex>\(i\)</span>-th input at time <span class=arithmatex>\(t\)</span>, - <span class=arithmatex>\(\eta\)</span> is the learning rate, - <span class=arithmatex>\(y\)</span> is the true label, - <span class=arithmatex>\(\hat{y}\)</span> is the predicted output, - <span class=arithmatex>\(x_i\)</span> is the <span class=arithmatex>\(i\)</span>-th input feature.</p> <p>This equation updates the weights based on the difference between the true label and the predicted output, scaled by the learning rate and the input feature. The learning rate <span class=arithmatex>\(\eta\)</span> controls how much the weights are adjusted during each iteration, balancing the speed of learning and stability of convergence.</p> <p>This simple model can operate as a linear classifier, but it is limited to linearly separable data. </p> <p>Minsky and Papert's work in the 1960s highlighted the limitations of the Perceptron, particularly its inability to solve problems like the XOR problem, which are not linearly separable. This led to a temporary decline in interest in neural networks, often referred to as the "AI winter." However, the development of multi-layer networks and backpropagation in the 1980s revived interest in ANNs, leading to the powerful deep learning models we see today.</p> <p>TODO: draw the XOR problem, explain it, and how the Perceptron cannot solve it. <?xml version="1.0" encoding="utf-8" standalone="no"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns:xlink=http://www.w3.org/1999/xlink width=1080pt height=360pt viewbox="0 0 1080 360" xmlns=http://www.w3.org/2000/svg version=1.1> <metadata> <rdf:rdf xmlns:dc=http://purl.org/dc/elements/1.1/ xmlns:cc=http://creativecommons.org/ns# xmlns:rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#> <cc:work> <dc:type rdf:resource=http://purl.org/dc/dcmitype/StillImage /> <dc:date>2025-07-04T18:49:58.700642</dc:date> <dc:format>image/svg+xml</dc:format> <dc:creator> <cc:agent> <dc:title>Matplotlib v3.10.3, https://matplotlib.org/</dc:title> </cc:agent> </dc:creator> </cc:work> </rdf:rdf> </metadata> <defs> <style type=text/css>*{stroke-linejoin: round; stroke-linecap: butt}</style> </defs> <g id=figure_1> <g id=patch_1> <path d="M 0 360 
+L 1080 360 
+L 1080 0 
+L 0 0 
+L 0 360 
+z
+" style="fill: none"/> </g> <g id=axes_1> <g id=patch_2> <path d="M 36.64335 343.49049 
+L 363.995127 343.49049 
+L 363.995127 26.88 
+L 36.64335 26.88 
+L 36.64335 343.49049 
+z
+" style="fill: none"/> </g> <g id=matplotlib.axis_1 /> <g id=matplotlib.axis_2 /> <g id=line2d_1> <path d="M 36.64335 329.099104 
+L 363.995127 329.099104 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"/> </g> <g id=line2d_2> <path d="M 65.108722 343.49049 
+L 65.108722 26.88 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"/> </g> <g id=line2d_3> <path d="M 36.64335 300.24183 
+L 43.323999 298.855012 
+L 50.004647 297.401546 
+L 56.685296 295.87823 
+L 63.365944 294.281706 
+L 70.046593 292.608457 
+L 76.727241 290.854796 
+L 83.40789 289.016857 
+L 90.088538 287.09059 
+L 96.769187 285.071752 
+L 103.449835 282.955893 
+L 110.130484 280.738349 
+L 116.811132 278.414236 
+L 123.491781 275.978431 
+L 130.172429 273.425566 
+L 136.853078 270.750016 
+L 143.533726 267.945885 
+L 150.214375 265.006993 
+L 156.895023 261.926865 
+L 163.575672 258.698712 
+L 170.25632 255.315421 
+L 176.936969 251.769537 
+L 183.617617 248.053245 
+L 190.298266 244.158356 
+L 196.978914 240.076287 
+L 203.659563 235.798042 
+L 210.340211 231.314195 
+L 217.02086 226.614863 
+L 223.701508 221.689692 
+L 230.382157 216.527828 
+L 237.062805 211.117895 
+L 243.743454 205.447973 
+L 250.424102 199.505567 
+L 257.104751 193.277581 
+L 263.785399 186.750292 
+L 270.466048 179.909316 
+L 277.146696 172.739577 
+L 283.827345 165.225275 
+L 290.507993 157.349853 
+L 297.188642 149.095955 
+L 303.86929 140.445392 
+L 310.549939 131.379103 
+L 317.230587 121.877106 
+L 323.911236 111.918465 
+L 330.591884 101.481232 
+L 337.272533 90.542409 
+L 343.953181 79.077889 
+L 350.63383 67.06241 
+L 357.314478 54.469492 
+L 363.995127 41.271386 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke: #ff0000; stroke-width: 4; stroke-linecap: square"/> </g> <g id=line2d_4> <path d="M 235.900954 329.099104 
+L 235.900954 212.077087 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_5> <path d="M 65.108722 212.077087 
+L 235.900954 212.077087 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_6> <path d="M 321.297069 329.099104 
+L 321.297069 115.871086 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_7> <path d="M 65.108722 115.871086 
+L 321.297069 115.871086 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_8> <path d="M 278.599011 329.099104 
+L 278.599011 171.135903 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"/> </g> <g id=line2d_9> <path d="M 65.108722 171.135903 
+L 278.599011 171.135903 
+" clip-path=url(#pb519de4e43) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"/> </g> <g id=line2d_10> <defs> <path id=mc66006eda8 d="M 0 7.5 
+C 1.989023 7.5 3.896849 6.709753 5.303301 5.303301 
+C 6.709753 3.896849 7.5 1.989023 7.5 0 
+C 7.5 -1.989023 6.709753 -3.896849 5.303301 -5.303301 
+C 3.896849 -6.709753 1.989023 -7.5 0 -7.5 
+C -1.989023 -7.5 -3.896849 -6.709753 -5.303301 -5.303301 
+C -6.709753 -3.896849 -7.5 -1.989023 -7.5 0 
+C -7.5 1.989023 -6.709753 3.896849 -5.303301 5.303301 
+C -3.896849 6.709753 -1.989023 7.5 0 7.5 
+z
+" style="stroke: #ff0000"/> </defs> <g clip-path=url(#pb519de4e43)> <use xlink:href=#mc66006eda8 x=278.599011 y=171.135903 style="fill: #ff0000; stroke: #ff0000"/> </g> </g> <g id=text_1> <!-- a --> <g transform="translate(274.002918 346.722281) scale(0.15 -0.15)"> <defs> <path id=DejaVuSans-61 transform=scale(0.015625) d="M 2194 1759 
+Q 1497 1759 1228 1600 
+Q 959 1441 959 1056 
+Q 959 750 1161 570 
+Q 1363 391 1709 391 
+Q 2188 391 2477 730 
+Q 2766 1069 2766 1631 
+L 2766 1759 
+L 2194 1759 
+z
+M 3341 1997 
+L 3341 0 
+L 2766 0 
+L 2766 531 
+Q 2569 213 2275 61 
+Q 1981 -91 1556 -91 
+Q 1019 -91 701 211 
+Q 384 513 384 1019 
+Q 384 1609 779 1909 
+Q 1175 2209 1959 2209 
+L 2766 2209 
+L 2766 2266 
+Q 2766 2663 2505 2880 
+Q 2244 3097 1772 3097 
+Q 1472 3097 1187 3025 
+Q 903 2953 641 2809 
+L 641 3341 
+Q 956 3463 1253 3523 
+Q 1550 3584 1831 3584 
+Q 2591 3584 2966 3190 
+Q 3341 2797 3341 1997 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-61 /> </g> </g> <g id=text_2> <!-- $a-\delta$ --> <g transform="translate(217.450954 346.722281) scale(0.15 -0.15)"> <defs> <path id=DejaVuSans-Oblique-61 transform=scale(0.015625) d="M 3438 1997 
+L 3047 0 
+L 2472 0 
+L 2578 531 
+Q 2325 219 2001 64 
+Q 1678 -91 1281 -91 
+Q 834 -91 548 182 
+Q 263 456 263 884 
+Q 263 1497 752 1853 
+Q 1241 2209 2100 2209 
+L 2900 2209 
+L 2931 2363 
+Q 2938 2388 2941 2417 
+Q 2944 2447 2944 2509 
+Q 2944 2788 2717 2942 
+Q 2491 3097 2081 3097 
+Q 1800 3097 1504 3025 
+Q 1209 2953 897 2809 
+L 997 3341 
+Q 1322 3463 1633 3523 
+Q 1944 3584 2234 3584 
+Q 2853 3584 3176 3315 
+Q 3500 3047 3500 2534 
+Q 3500 2431 3484 2292 
+Q 3469 2153 3438 1997 
+z
+M 2816 1759 
+L 2241 1759 
+Q 1534 1759 1195 1570 
+Q 856 1381 856 984 
+Q 856 709 1029 553 
+Q 1203 397 1509 397 
+Q 1978 397 2328 733 
+Q 2678 1069 2791 1631 
+L 2816 1759 
+z
+"/> <path id=DejaVuSans-2212 transform=scale(0.015625) d="M 678 2272 
+L 4684 2272 
+L 4684 1741 
+L 678 1741 
+L 678 2272 
+z
+"/> <path id=DejaVuSans-Oblique-3b4 transform=scale(0.015625) d="M 3472 4053 
+Q 3197 4272 2450 4272 
+Q 1659 4272 1588 3906 
+Q 1531 3619 2328 3469 
+Q 2953 3353 3253 3003 
+Q 3616 2581 3447 1716 
+Q 3284 888 2763 400 
+Q 2238 -91 1488 -91 
+Q 741 -91 406 400 
+Q 72 888 241 1747 
+Q 363 2384 891 2900 
+Q 1097 3100 1353 3213 
+Q 913 3459 1000 3900 
+Q 1166 4750 2544 4750 
+Q 3234 4750 3566 4531 
+L 3472 4053 
+z
+M 1753 3056 
+Q 1525 2966 1306 2738 
+Q 969 2384 847 1747 
+Q 722 1113 919 756 
+Q 1119 397 1584 397 
+Q 2044 397 2381 759 
+Q 2722 1122 2838 1716 
+Q 2956 2338 2731 2638 
+Q 2491 2959 2103 2994 
+Q 1906 3013 1753 3056 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-Oblique-61 transform="translate(0 0.78125)"/> <use xlink:href=#DejaVuSans-2212 transform="translate(80.761719 0.78125)"/> <use xlink:href=#DejaVuSans-Oblique-3b4 transform="translate(184.033203 0.78125)"/> </g> </g> <g id=text_3> <!-- $a+\delta$ --> <g transform="translate(302.847069 346.722281) scale(0.15 -0.15)"> <defs> <path id=DejaVuSans-2b transform=scale(0.015625) d="M 2944 4013 
+L 2944 2272 
+L 4684 2272 
+L 4684 1741 
+L 2944 1741 
+L 2944 0 
+L 2419 0 
+L 2419 1741 
+L 678 1741 
+L 678 2272 
+L 2419 2272 
+L 2419 4013 
+L 2944 4013 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-Oblique-61 transform="translate(0 0.78125)"/> <use xlink:href=#DejaVuSans-2b transform="translate(80.761719 0.78125)"/> <use xlink:href=#DejaVuSans-Oblique-3b4 transform="translate(184.033203 0.78125)"/> </g> </g> <g id=text_4> <!-- $L-\epsilon$ --> <g transform="translate(30.158722 216.216149) scale(0.15 -0.15)"> <defs> <path id=DejaVuSans-Oblique-4c transform=scale(0.015625) d="M 1075 4666 
+L 1709 4666 
+L 909 525 
+L 3181 525 
+L 3078 0 
+L 172 0 
+L 1075 4666 
+z
+"/> <path id=DejaVuSans-Oblique-3b5 transform=scale(0.015625) d="M 1263 1888 
+Q 925 1963 778 2166 
+Q 669 2309 669 2503 
+Q 669 3034 1175 3344 
+Q 1575 3588 2188 3588 
+Q 2425 3588 2684 3550 
+Q 2944 3513 3234 3438 
+L 3134 2916 
+Q 2847 3006 2606 3047 
+Q 2359 3088 2138 3088 
+Q 1766 3088 1522 2944 
+Q 1228 2772 1228 2522 
+Q 1228 2356 1381 2241 
+Q 1563 2103 1925 2103 
+L 2409 2103 
+L 2319 1628 
+L 1856 1628 
+Q 1425 1628 1172 1469 
+Q 828 1253 828 916 
+Q 828 703 1013 563 
+Q 1244 388 1716 388 
+Q 2006 388 2284 444 
+Q 2563 503 2806 619 
+L 2700 84 
+Q 2403 -3 2131 -47 
+Q 1859 -91 1609 -91 
+Q 866 -91 516 194 
+Q 250 413 250 781 
+Q 250 1278 600 1584 
+Q 859 1813 1263 1888 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-Oblique-4c transform="translate(0 0.09375)"/> <use xlink:href=#DejaVuSans-2212 transform="translate(75.195312 0.09375)"/> <use xlink:href=#DejaVuSans-Oblique-3b5 transform="translate(178.466797 0.09375)"/> </g> </g> <g id=text_5> <!-- $L+\epsilon$ --> <g transform="translate(30.158722 120.010149) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-4c transform="translate(0 0.09375)"/> <use xlink:href=#DejaVuSans-2b transform="translate(75.195312 0.09375)"/> <use xlink:href=#DejaVuSans-Oblique-3b5 transform="translate(178.466797 0.09375)"/> </g> </g> <g id=text_6> <!-- L=f(a) --> <g transform="translate(18.004035 175.274966) scale(0.15 -0.15)"> <defs> <path id=DejaVuSans-4c transform=scale(0.015625) d="M 628 4666 
+L 1259 4666 
+L 1259 531 
+L 3531 531 
+L 3531 0 
+L 628 0 
+L 628 4666 
+z
+"/> <path id=DejaVuSans-3d transform=scale(0.015625) d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+"/> <path id=DejaVuSans-66 transform=scale(0.015625) d="M 2375 4863 
+L 2375 4384 
+L 1825 4384 
+Q 1516 4384 1395 4259 
+Q 1275 4134 1275 3809 
+L 1275 3500 
+L 2222 3500 
+L 2222 3053 
+L 1275 3053 
+L 1275 0 
+L 697 0 
+L 697 3053 
+L 147 3053 
+L 147 3500 
+L 697 3500 
+L 697 3744 
+Q 697 4328 969 4595 
+Q 1241 4863 1831 4863 
+L 2375 4863 
+z
+"/> <path id=DejaVuSans-28 transform=scale(0.015625) d="M 1984 4856 
+Q 1566 4138 1362 3434 
+Q 1159 2731 1159 2009 
+Q 1159 1288 1364 580 
+Q 1569 -128 1984 -844 
+L 1484 -844 
+Q 1016 -109 783 600 
+Q 550 1309 550 2009 
+Q 550 2706 781 3412 
+Q 1013 4119 1484 4856 
+L 1984 4856 
+z
+"/> <path id=DejaVuSans-29 transform=scale(0.015625) d="M 513 4856 
+L 1013 4856 
+Q 1481 4119 1714 3412 
+Q 1947 2706 1947 2009 
+Q 1947 1309 1714 600 
+Q 1481 -109 1013 -844 
+L 513 -844 
+Q 928 -128 1133 580 
+Q 1338 1288 1338 2009 
+Q 1338 2731 1133 3434 
+Q 928 4138 513 4856 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-4c /> <use xlink:href=#DejaVuSans-3d transform="translate(55.712891 0)"/> <use xlink:href=#DejaVuSans-66 transform="translate(139.501953 0)"/> <use xlink:href=#DejaVuSans-28 transform="translate(174.707031 0)"/> <use xlink:href=#DejaVuSans-61 transform="translate(213.720703 0)"/> <use xlink:href=#DejaVuSans-29 transform="translate(275 0)"/> </g> </g> <g id=text_7> <!-- AND --> <g transform="translate(187.106114 20.88) scale(0.12 -0.12)"> <defs> <path id=DejaVuSans-41 transform=scale(0.015625) d="M 2188 4044 
+L 1331 1722 
+L 3047 1722 
+L 2188 4044 
+z
+M 1831 4666 
+L 2547 4666 
+L 4325 0 
+L 3669 0 
+L 3244 1197 
+L 1141 1197 
+L 716 0 
+L 50 0 
+L 1831 4666 
+z
+"/> <path id=DejaVuSans-4e transform=scale(0.015625) d="M 628 4666 
+L 1478 4666 
+L 3547 763 
+L 3547 4666 
+L 4159 4666 
+L 4159 0 
+L 3309 0 
+L 1241 3903 
+L 1241 0 
+L 628 0 
+L 628 4666 
+z
+"/> <path id=DejaVuSans-44 transform=scale(0.015625) d="M 1259 4147 
+L 1259 519 
+L 2022 519 
+Q 2988 519 3436 956 
+Q 3884 1394 3884 2338 
+Q 3884 3275 3436 3711 
+Q 2988 4147 2022 4147 
+L 1259 4147 
+z
+M 628 4666 
+L 1925 4666 
+Q 3281 4666 3915 4102 
+Q 4550 3538 4550 2338 
+Q 4550 1131 3912 565 
+Q 3275 0 1925 0 
+L 628 0 
+L 628 4666 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-41 /> <use xlink:href=#DejaVuSans-4e transform="translate(68.408203 0)"/> <use xlink:href=#DejaVuSans-44 transform="translate(143.212891 0)"/> </g> </g> </g> <g id=axes_2> <g id=patch_3> <path d="M 389.245787 343.49049 
+L 716.597563 343.49049 
+L 716.597563 26.88 
+L 389.245787 26.88 
+L 389.245787 343.49049 
+z
+" style="fill: none"/> </g> <g id=matplotlib.axis_3 /> <g id=matplotlib.axis_4 /> <g id=line2d_11> <path d="M 389.245787 329.099104 
+L 716.597563 329.099104 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"/> </g> <g id=line2d_12> <path d="M 417.711159 343.49049 
+L 417.711159 26.88 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"/> </g> <g id=line2d_13> <path d="M 389.245787 300.24183 
+L 395.926435 298.855012 
+L 402.607084 297.401546 
+L 409.287732 295.87823 
+L 415.968381 294.281706 
+L 422.649029 292.608457 
+L 429.329678 290.854796 
+L 436.010326 289.016857 
+L 442.690975 287.09059 
+L 449.371623 285.071752 
+L 456.052272 282.955893 
+L 462.73292 280.738349 
+L 469.413569 278.414236 
+L 476.094217 275.978431 
+L 482.774866 273.425566 
+L 489.455514 270.750016 
+L 496.136163 267.945885 
+L 502.816811 265.006993 
+L 509.49746 261.926865 
+L 516.178108 258.698712 
+L 522.858757 255.315421 
+L 529.539405 251.769537 
+L 536.220054 248.053245 
+L 542.900702 244.158356 
+L 549.581351 240.076287 
+L 556.261999 235.798042 
+L 562.942648 231.314195 
+L 569.623296 226.614863 
+L 576.303945 221.689692 
+L 582.984593 216.527828 
+L 589.665242 211.117895 
+L 596.34589 205.447973 
+L 603.026539 199.505567 
+L 609.707187 193.277581 
+L 616.387836 186.750292 
+L 623.068484 179.909316 
+L 629.749133 172.739577 
+L 636.429781 165.225275 
+L 643.11043 157.349853 
+L 649.791078 149.095955 
+L 656.471727 140.445392 
+L 663.152375 131.379103 
+L 669.833024 121.877106 
+L 676.513672 111.918465 
+L 683.194321 101.481232 
+L 689.874969 90.542409 
+L 696.555618 79.077889 
+L 703.236266 67.06241 
+L 709.916915 54.469492 
+L 716.597563 41.271386 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke: #ff0000; stroke-width: 4; stroke-linecap: square"/> </g> <g id=line2d_14> <path d="M 588.50339 329.099104 
+L 588.50339 212.077087 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_15> <path d="M 417.711159 212.077087 
+L 588.50339 212.077087 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_16> <path d="M 673.899506 329.099104 
+L 673.899506 115.871086 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_17> <path d="M 417.711159 115.871086 
+L 673.899506 115.871086 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_18> <path d="M 631.201448 329.099104 
+L 631.201448 171.135903 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"/> </g> <g id=line2d_19> <path d="M 417.711159 171.135903 
+L 631.201448 171.135903 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #bf00bf; stroke-width: 1.5"/> </g> <g id=line2d_20> <path d="M 631.201448 171.135903 
+" clip-path=url(#pc638bf4f7b) style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/> <defs> <path id=m593292a1d7 d="M 0 7.5 
+C 1.989023 7.5 3.896849 6.709753 5.303301 5.303301 
+C 6.709753 3.896849 7.5 1.989023 7.5 0 
+C 7.5 -1.989023 6.709753 -3.896849 5.303301 -5.303301 
+C 3.896849 -6.709753 1.989023 -7.5 0 -7.5 
+C -1.989023 -7.5 -3.896849 -6.709753 -5.303301 -5.303301 
+C -6.709753 -3.896849 -7.5 -1.989023 -7.5 0 
+C -7.5 1.989023 -6.709753 3.896849 -5.303301 5.303301 
+C -3.896849 6.709753 -1.989023 7.5 0 7.5 
+z
+" style="stroke: #ff0000"/> </defs> <g clip-path=url(#pc638bf4f7b)> <use xlink:href=#m593292a1d7 x=631.201448 y=171.135903 style="fill: #ffffff; stroke: #ff0000"/> </g> </g> <g id=text_8> <!-- a --> <g transform="translate(626.605354 346.722281) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-61 /> </g> </g> <g id=text_9> <!-- $a-\delta$ --> <g transform="translate(570.05339 346.722281) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-61 transform="translate(0 0.78125)"/> <use xlink:href=#DejaVuSans-2212 transform="translate(80.761719 0.78125)"/> <use xlink:href=#DejaVuSans-Oblique-3b4 transform="translate(184.033203 0.78125)"/> </g> </g> <g id=text_10> <!-- $a+\delta$ --> <g transform="translate(655.449506 346.722281) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-61 transform="translate(0 0.78125)"/> <use xlink:href=#DejaVuSans-2b transform="translate(80.761719 0.78125)"/> <use xlink:href=#DejaVuSans-Oblique-3b4 transform="translate(184.033203 0.78125)"/> </g> </g> <g id=text_11> <!-- $L-\epsilon$ --> <g transform="translate(382.761159 216.216149) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-4c transform="translate(0 0.09375)"/> <use xlink:href=#DejaVuSans-2212 transform="translate(75.195312 0.09375)"/> <use xlink:href=#DejaVuSans-Oblique-3b5 transform="translate(178.466797 0.09375)"/> </g> </g> <g id=text_12> <!-- $L+\epsilon$ --> <g transform="translate(382.761159 120.010149) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-4c transform="translate(0 0.09375)"/> <use xlink:href=#DejaVuSans-2b transform="translate(75.195312 0.09375)"/> <use xlink:href=#DejaVuSans-Oblique-3b5 transform="translate(178.466797 0.09375)"/> </g> </g> <g id=text_13> <!-- L --> <g transform="translate(409.353346 175.274966) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-4c /> </g> </g> <g id=text_14> <!-- OR --> <g transform="translate(544.029488 20.88) scale(0.12 -0.12)"> <defs> <path id=DejaVuSans-4f transform=scale(0.015625) d="M 2522 4238 
+Q 1834 4238 1429 3725 
+Q 1025 3213 1025 2328 
+Q 1025 1447 1429 934 
+Q 1834 422 2522 422 
+Q 3209 422 3611 934 
+Q 4013 1447 4013 2328 
+Q 4013 3213 3611 3725 
+Q 3209 4238 2522 4238 
+z
+M 2522 4750 
+Q 3503 4750 4090 4092 
+Q 4678 3434 4678 2328 
+Q 4678 1225 4090 567 
+Q 3503 -91 2522 -91 
+Q 1538 -91 948 565 
+Q 359 1222 359 2328 
+Q 359 3434 948 4092 
+Q 1538 4750 2522 4750 
+z
+"/> <path id=DejaVuSans-52 transform=scale(0.015625) d="M 2841 2188 
+Q 3044 2119 3236 1894 
+Q 3428 1669 3622 1275 
+L 4263 0 
+L 3584 0 
+L 2988 1197 
+Q 2756 1666 2539 1819 
+Q 2322 1972 1947 1972 
+L 1259 1972 
+L 1259 0 
+L 628 0 
+L 628 4666 
+L 2053 4666 
+Q 2853 4666 3247 4331 
+Q 3641 3997 3641 3322 
+Q 3641 2881 3436 2590 
+Q 3231 2300 2841 2188 
+z
+M 1259 4147 
+L 1259 2491 
+L 2053 2491 
+Q 2509 2491 2742 2702 
+Q 2975 2913 2975 3322 
+Q 2975 3731 2742 3939 
+Q 2509 4147 2053 4147 
+L 1259 4147 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-4f /> <use xlink:href=#DejaVuSans-52 transform="translate(78.710938 0)"/> </g> </g> </g> <g id=axes_3> <g id=patch_4> <path d="M 741.848223 343.49049 
+L 1069.2 343.49049 
+L 1069.2 26.88 
+L 741.848223 26.88 
+L 741.848223 343.49049 
+z
+" style="fill: none"/> </g> <g id=matplotlib.axis_5 /> <g id=matplotlib.axis_6 /> <g id=line2d_21> <path d="M 741.848223 329.099104 
+L 1069.2 329.099104 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"/> </g> <g id=line2d_22> <path d="M 770.313595 343.49049 
+L 770.313595 26.88 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke: #808080; stroke-width: 1.5; stroke-linecap: square"/> </g> <g id=line2d_23> <path d="M 741.848223 300.24183 
+L 748.528872 298.855012 
+L 755.20952 297.401546 
+L 761.890169 295.87823 
+L 768.570817 294.281706 
+L 775.251466 292.608457 
+L 781.932114 290.854796 
+L 788.612763 289.016857 
+L 795.293411 287.09059 
+L 801.97406 285.071752 
+L 808.654708 282.955893 
+L 815.335357 280.738349 
+L 822.016005 278.414236 
+L 828.696654 275.978431 
+L 835.377302 273.425566 
+L 842.057951 270.750016 
+L 848.738599 267.945885 
+L 855.419248 265.006993 
+L 862.099896 261.926865 
+L 868.780545 258.698712 
+L 875.461193 255.315421 
+L 882.141842 251.769537 
+L 888.82249 248.053245 
+L 895.503139 244.158356 
+L 902.183787 240.076287 
+L 908.864436 235.798042 
+L 915.545084 231.314195 
+L 922.225733 226.614863 
+L 928.906381 221.689692 
+L 935.58703 216.527828 
+L 942.267678 211.117895 
+L 948.948327 205.447973 
+L 955.628975 199.505567 
+L 962.309624 193.277581 
+L 968.990272 186.750292 
+L 975.670921 179.909316 
+L 982.351569 172.739577 
+L 989.032218 165.225275 
+L 995.712866 157.349853 
+L 1002.393515 149.095955 
+L 1009.074163 140.445392 
+L 1015.754812 131.379103 
+L 1022.43546 121.877106 
+L 1029.116109 111.918465 
+L 1035.796757 101.481232 
+L 1042.477406 90.542409 
+L 1049.158054 79.077889 
+L 1055.838703 67.06241 
+L 1062.519351 54.469492 
+L 1069.2 41.271386 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke: #ff0000; stroke-width: 4; stroke-linecap: square"/> </g> <g id=line2d_24> <path d="M 941.105827 329.099104 
+L 941.105827 212.077087 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_25> <path d="M 770.313595 212.077087 
+L 941.105827 212.077087 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_26> <path d="M 1026.501942 329.099104 
+L 1026.501942 115.871086 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_27> <path d="M 770.313595 115.871086 
+L 1026.501942 115.871086 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #008000; stroke-width: 1.5"/> </g> <g id=line2d_28> <path d="M 983.803884 171.135903 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/> <defs> <path id=me325a4300f d="M 0 7.5 
+C 1.989023 7.5 3.896849 6.709753 5.303301 5.303301 
+C 6.709753 3.896849 7.5 1.989023 7.5 0 
+C 7.5 -1.989023 6.709753 -3.896849 5.303301 -5.303301 
+C 3.896849 -6.709753 1.989023 -7.5 0 -7.5 
+C -1.989023 -7.5 -3.896849 -6.709753 -5.303301 -5.303301 
+C -6.709753 -3.896849 -7.5 -1.989023 -7.5 0 
+C -7.5 1.989023 -6.709753 3.896849 -5.303301 5.303301 
+C -3.896849 6.709753 -1.989023 7.5 0 7.5 
+z
+" style="stroke: #ffffff"/> </defs> <g clip-path=url(#p670bd8f85e)> <use xlink:href=#me325a4300f x=983.803884 y=171.135903 style="fill: #ffffff; stroke: #ffffff"/> </g> </g> <g id=line2d_29> <path d="M 983.803884 329.099104 
+L 983.803884 82.374624 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"/> </g> <g id=line2d_30> <path d="M 770.313595 82.374624 
+L 983.803884 82.374624 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"/> </g> <g id=line2d_31> <path d="M 770.313595 171.135903 
+L 983.803884 171.135903 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #bf00bf; stroke-width: 1.5"/> </g> <g id=line2d_32> <path d="M 983.803884 171.135903 
+" clip-path=url(#p670bd8f85e) style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/> <g clip-path=url(#p670bd8f85e)> <use xlink:href=#m593292a1d7 x=983.803884 y=171.135903 style="fill: #ffffff; stroke: #ff0000"/> </g> </g> <g id=line2d_33> <g clip-path=url(#p670bd8f85e)> <use xlink:href=#mc66006eda8 x=983.803884 y=82.374624 style="fill: #ff0000; stroke: #ff0000"/> </g> </g> <g id=text_15> <!-- a --> <g transform="translate(979.207791 346.722281) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-61 /> </g> </g> <g id=text_16> <!-- $a-\delta$ --> <g transform="translate(922.655827 346.722281) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-61 transform="translate(0 0.78125)"/> <use xlink:href=#DejaVuSans-2212 transform="translate(80.761719 0.78125)"/> <use xlink:href=#DejaVuSans-Oblique-3b4 transform="translate(184.033203 0.78125)"/> </g> </g> <g id=text_17> <!-- $a+\delta$ --> <g transform="translate(1008.051942 346.722281) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-61 transform="translate(0 0.78125)"/> <use xlink:href=#DejaVuSans-2b transform="translate(80.761719 0.78125)"/> <use xlink:href=#DejaVuSans-Oblique-3b4 transform="translate(184.033203 0.78125)"/> </g> </g> <g id=text_18> <!-- $L-\epsilon$ --> <g transform="translate(735.363595 216.216149) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-4c transform="translate(0 0.09375)"/> <use xlink:href=#DejaVuSans-2212 transform="translate(75.195312 0.09375)"/> <use xlink:href=#DejaVuSans-Oblique-3b5 transform="translate(178.466797 0.09375)"/> </g> </g> <g id=text_19> <!-- $L+\epsilon$ --> <g transform="translate(735.363595 120.010149) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-Oblique-4c transform="translate(0 0.09375)"/> <use xlink:href=#DejaVuSans-2b transform="translate(75.195312 0.09375)"/> <use xlink:href=#DejaVuSans-Oblique-3b5 transform="translate(178.466797 0.09375)"/> </g> </g> <g id=text_20> <!-- f(a) --> <g transform="translate(744.136252 86.513686) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-66 /> <use xlink:href=#DejaVuSans-28 transform="translate(35.205078 0)"/> <use xlink:href=#DejaVuSans-61 transform="translate(74.21875 0)"/> <use xlink:href=#DejaVuSans-29 transform="translate(135.498047 0)"/> </g> </g> <g id=text_21> <!-- L --> <g transform="translate(761.955783 175.274966) scale(0.15 -0.15)"> <use xlink:href=#DejaVuSans-4c /> </g> </g> <g id=text_22> <!-- XOR --> <g transform="translate(892.904424 20.88) scale(0.12 -0.12)"> <defs> <path id=DejaVuSans-58 transform=scale(0.015625) d="M 403 4666 
+L 1081 4666 
+L 2241 2931 
+L 3406 4666 
+L 4084 4666 
+L 2584 2425 
+L 4184 0 
+L 3506 0 
+L 2194 1984 
+L 872 0 
+L 191 0 
+L 1856 2491 
+L 403 4666 
+z
+"/> </defs> <use xlink:href=#DejaVuSans-58 /> <use xlink:href=#DejaVuSans-4f transform="translate(62.130859 0)"/> <use xlink:href=#DejaVuSans-52 transform="translate(140.841797 0)"/> </g> </g> </g> </g> <defs> <clippath id=pb519de4e43> <rect x=36.64335 y=26.88 width=327.351777 height=316.61049 /> </clippath> <clippath id=pc638bf4f7b> <rect x=389.245787 y=26.88 width=327.351777 height=316.61049 /> </clippath> <clippath id=p670bd8f85e> <rect x=741.848223 y=26.88 width=327.351777 height=316.61049 /> </clippath> </defs> </svg> </p> <ul> <li>Activation Functions: ./ann/activation-functions.md</li> </ul> <p>The input domain of ANNs is typically represented as a vector of features, where each feature corresponds to a specific aspect of the input data. The output domain can vary depending on the task, such as classification (discrete labels) or regression (continuous values). The architecture of an ANN consists of layers of neurons, where each layer transforms the input data through weighted connections and activation functions. The connections between neurons are represented by weights, which are adjusted during the training process to minimize the error in predictions.</p> <h3 id=training-and-optimization>Training and Optimization</h3> <p>Algorithms for training ANNs involve adjusting the weights of the connections between neurons to minimize a loss function, which quantifies the difference between the predicted output and the true output. The most common optimization algorithm used in training ANNs is stochastic gradient descent (SGD), which iteratively updates the weights based on the gradient of the loss function with respect to the weights.</p> <div class=footnote> <hr> <ol> <li id=fn:1> <p>McCulloch, W. S., &amp; Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. <em>The Bulletin of Mathematical Biophysics</em>, 5(4), 115-133. <a href=https://doi.org/10.1007/BF02478259 target=_blank>doi:10.1007/BF02478259</a>&#160;<a class=footnote-backref href=#fnref:1 title="Jump back to footnote 1 in the text">&#8617;</a></p> </li> <li id=fn:2> <p>Rosenblatt, F. (1958). The Perceptron: A probabilistic model for information storage and organization in the brain. <em>Psychological Review</em>, 65(6), 386-408. <a href=https://doi.org/10.1037/h0042519 target=_blank>doi:10.1037/h0042519</a>&#160;<a class=footnote-backref href=#fnref:2 title="Jump back to footnote 2 in the text">&#8617;</a></p> </li> <li id=fn:3> <p>Jurafsky, D., &amp; Martin, J. H. (2025). Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models. <a href=https://web.stanford.edu/~jurafsky/slp3/ed3book_Jan25.pdf target=_blank><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464h48v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V304h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16m112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16m32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16m32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368"/></svg></span></a>&#160;<a class=footnote-backref href=#fnref:3 title="Jump back to footnote 3 in the text">&#8617;</a></p> </li> </ol> </div> <aside class=md-source-file> <span class=md-source-file__fact> <span class=md-icon title="Last update"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 4, 2025 18:49:04 UTC">July 4, 2025</span> </span> <span class=md-source-file__fact> <span class=md-icon title=Created> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 4, 2025 18:49:04 UTC">July 4, 2025</span> </span> <span class=md-source-file__fact> <span class=md-icon title=Contributors> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg> </span> <nav> <a href=mailto:hsandmann@ieee.org>Humberto Sandmann</a> </nav> </span> <span class=md-source-file__fact> <span class=md-icon title=Contributors> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg> </span> <span>GitHub</span> <nav> <a href=https://github.com/hsandmann class=md-author title=@hsandmann> <img src="https://avatars.githubusercontent.com/u/20843348?v=4&size=72" alt=hsandmann> </a> </nav> </span> </aside> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <div class=md-progress data-md-component=progress role=progressbar></div> <script id=__config type=application/json>{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.path", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script> <script src=../../assets/javascripts/bundle.56ea9cef.min.js></script> <script src=../../assets/_markdown_exec_pyodide.js></script> <script src=../../assets/javascripts/mathjax.js></script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script> <script src=../../assets/javascripts/badge.js async></script> <script src=../../termynal.js></script> <script id=init-glightbox>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body> </html>
