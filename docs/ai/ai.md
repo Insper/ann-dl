@@ -60,5 +60,5 @@ Deep learning is a subset of machine learning that focuses on using deep neural 
 
 [^1]: [Wiki - Neuro-Symbolic AI](https://en.wikipedia.org/wiki/Neuro-symbolic_AI){target='_blank'}
 [^2]: 2020, Forbes - [Symbolism Versus Connectionism In AI: Is There A Third Way?](https://www.forbes.com/councils/forbestechcouncil/2020/09/01/symbolism-versus-connectionism-in-ai-is-there-a-third-way/){target='_blank'}
-[^3]: Garcez, A.d., Lamb, L.C. Neurosymbolic AI: the 3rd wave. Artif Intell Rev 56, 12387–12406 (2023). [doi.org/10.1007/s10462-023-10448-w](https://doi.org/10.1007/s10462-023-10448-w){target='_blank'}
+[^3]: Garcez, A.d., Lamb, L.C. Neurosymbolic AI: the 3rd wave. Artif Intell Rev 56, 12387–12406 (2023). [doi.org/10.1007/s10462-023-10448-w](https://doi.org/10.1007/s10462-023-10448-w){target='_blank'} [:octicons-download-24:](https://arxiv.org/abs/2012.05876){target='_blank'}
 
