@@ -1,4 +1,5 @@
 
+
 <center>
 ``` mermaid
 flowchart LR
@@ -31,6 +32,7 @@ flowchart LR
     style hidden fill:#fff,stroke:#666,stroke-width:1px
     style output fill:#fff,stroke:#666,stroke-width:1px
 ```
+<i>Multi-Layer Perceptron (MLP) Architecture.</i>
 </center>
 
 - Limitations of Perceptrons, such as their inability to solve non-linearly separable problems.
@@ -53,3 +55,5 @@ flowchart LR
 - Regularization: ./ann/regularization.md
 - Optimization: ./ann/optimization.md
 - Comparison of MLPs with other neural network architectures, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs).
+
+<iframe width="100%" height="470" src="https://www.youtube.com/embed/aircAruvnKk" allowfullscreen></iframe>
