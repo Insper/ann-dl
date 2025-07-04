@@ -37,6 +37,22 @@ This model, while simplistic, captures the essence of how neurons process inform
 
 The mathematical foundations of artificial neural networks are built upon linear algebra, calculus, and probability theory. These areas provide the tools necessary to understand how ANNs operate, how they learn from data, and how they can be optimized for various tasks. The Perceptron, introduced by Rosenblatt[^2] in 1958, is one of the earliest and simplest forms of an ANN. It consists of a single layer of neurons that can classify linearly separable data. The Perceptron algorithm adjusts the weights of the inputs based on the error in the output, allowing it to learn from examples.
 
+<center>
+``` mermaid
+flowchart LR
+    subgraph input
+        direction TB
+        x1(["x<sub>1</sub>"])
+        x2(["x<sub>2</sub>"])
+        x3(["x<sub>3</sub>"])
+    end
+    x1 -->|"w<sub>1</sub>"| N
+    x2 -->|"w<sub>2</sub>"| N
+    x3 -->|"w<sub>3</sub>"| N
+    N(["N"])
+    N --> out1@{ shape: dbl-circ, label: " " }
+```
+</center>
 
 TODO: improve Perceptron description, add more math, and explain the learning rule. Herbian learning rule, etc.
 
@@ -66,6 +82,8 @@ TODO: draw the XOR problem, explain it, and how the Perceptron cannot solve it.
 
 
 - Activation Functions: ./ann/activation-functions.md
+
+The input domain of ANNs is typically represented as a vector of features, where each feature corresponds to a specific aspect of the input data. The output domain can vary depending on the task, such as classification (discrete labels) or regression (continuous values). The architecture of an ANN consists of layers of neurons, where each layer transforms the input data through weighted connections and activation functions. The connections between neurons are represented by weights, which are adjusted during the training process to minimize the error in predictions.
 
 
 [^1]: McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. *The Bulletin of Mathematical Biophysics*, 5(4), 115-133. [DOI:10.1007/BF02478259](https://doi.org/10.1007/BF02478259){ target=_blank }

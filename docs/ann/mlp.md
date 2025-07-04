@@ -1,4 +1,37 @@
 
+<center>
+``` mermaid
+flowchart LR
+    classDef default fill:#fff,stroke:#333,stroke-width:1px;
+    subgraph input
+        x1(["x<sub>1</sub>"])
+        x2(["x<sub>2</sub>"])
+        x3(["x<sub>3</sub>"])
+    end
+    subgraph hidden
+        h1(["h<sub>1</sub>"])
+        h2(["h<sub>2</sub>"])
+    end
+    subgraph output
+        y1(["y<sub>1</sub>"])
+    end
+    in1@{ shape: circle, label: " " } --> x1
+    in2@{ shape: circle, label: " " } --> x2
+    in3@{ shape: circle, label: " " } --> x3
+    x1 -->|"w<sub>11</sub>"|h1
+    x1 -->|"w<sub>12</sub>"|h2
+    x2 -->|"w<sub>21</sub>"|h1
+    x2 -->|"w<sub>22</sub>"|h2
+    x3 -->|"w<sub>31</sub>"|h1
+    x3 -->|"w<sub>32</sub>"|h2
+    h1 -->|"v<sub>11</sub>"|y1
+    h2 -->|"v<sub>21</sub>"|y1
+    y1 --> out1@{ shape: dbl-circ, label: " " }
+    style input fill:#fff,stroke:#666,stroke-width:1px
+    style hidden fill:#fff,stroke:#666,stroke-width:1px
+    style output fill:#fff,stroke:#666,stroke-width:1px
+```
+</center>
 
 - Limitations of Perceptrons, such as their inability to solve non-linearly separable problems.
 - Introduction to Multi-Layer Perceptrons (MLPs) as an extension of the Perceptron model.
