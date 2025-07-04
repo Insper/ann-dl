@@ -13,3 +13,5 @@ neoteroi-mkdocs
 termynal
 matplotlib
 matplotlib_venn
+numpy
+pandas

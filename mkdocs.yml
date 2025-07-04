@@ -81,6 +81,7 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.inlinehilite
+  - pymdownx.blocks.caption
   - pymdownx.snippets:
       url_download: true
   - pymdownx.superfences:
@@ -141,14 +142,8 @@ nav:
 
   - Neural Networks:
     - Introduction: ./ann/intro.md
-    - Biological Inspiration: ./ann/biological-inspiration.md
-    - Mathematical Foundations: ./ann/mathematical-foundations.md
     - Perceptron: ./ann/perceptron.md
     - Multi-Layer Perceptron: ./ann/mlp.md
-    - Backpropagation: ./ann/backpropagation.md
-    - Activation Functions: ./ann/activation-functions.md
-    - Regularization: ./ann/regularization.md
-    - Optimization: ./ann/optimization.md
 
   - Deep Learning:
     - Introduction: ./dl/intro.md
