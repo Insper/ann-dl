@@ -12,3 +12,4 @@ mkdocs-render-swagger-plugin
 neoteroi-mkdocs
 termynal
 matplotlib
+matplotlib_venn
