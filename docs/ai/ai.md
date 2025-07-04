@@ -1,5 +1,6 @@
+Artificial Intelligence (AI) is a broad field that encompasses various approaches and techniques for creating intelligent systems capable of performing tasks that typically require human intelligence. These tasks include reasoning, learning, perception, and decision-making.
 
-Artificial Intelligence (AI) can be broadly categorized into three main paradigms: Symbolic AI, Connectionist AI, and Neuro-Symbolic AI. Each of these paradigms has its own strengths and weaknesses, and they are often used in different contexts depending on the problem being addressed.
+AI can be categorized into three main paradigms, each with its own strengths and weaknesses: Symbolic AI, Connectionist AI, and Neuro-Symbolic AI. Each of these paradigms has its own strengths and weaknesses, and they are often used in different contexts depending on the problem being addressed.
 
 ## AI Paradigms
 | Paradigm          | Description                                                                                   |
@@ -40,6 +41,11 @@ The techniques are often split into two main categories: **supervised learning**
     
     This approach is useful for discovering hidden structures in data, such as clusters or groups, without prior knowledge of the labels. It is often used in exploratory data analysis and feature extraction. Examples include clustering tasks (e.g., grouping similar documents) and dimensionality reduction tasks (e.g., reducing the number of features in a dataset while preserving important information).
 
+There are also **semi-supervised learning** techniques, which combine both labeled and unlabeled data to improve model performance. This approach is particularly useful when labeled data is scarce or expensive to obtain, allowing the model to leverage the abundance of unlabeled data to enhance its learning.
+
+Also, there are **reinforcement learning** techniques, where an agent learns to make decisions by interacting with an environment and receiving feedback in the form of rewards or penalties. This approach is particularly effective for tasks that involve sequential decision-making, such as game playing or robotic control.
+
+Machine learning techniques address a wide range of problems, primarily through **classification** and **regression**, which are core supervised learning tasks. Classification involves predicting discrete labels or categories based on input features, while regression focuses on predicting continuous values. These approaches are extensively applied across domains such as image recognition, natural language processing, and time series forecasting. However, machine learning also includes other techniques like clustering, dimensionality reduction, reinforcement learning, and anomaly detection, expanding its applicability to diverse challenges.
 
 ## Neural Networks
 
