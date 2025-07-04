@@ -136,7 +136,7 @@ extra_css:
 
 nav:
   - Ementa: index.md
-  - 2025.2: versions/2025.2/2025.2.md
+  - 2025.2: versions/2025.2/presentation.md
 
   - Artificial Intelligence: ./ai/ai.md
 
@@ -147,21 +147,23 @@ nav:
 
   - Deep Learning:
     - Introduction: ./dl/intro.md
-    - Deep Learning: ./dl/deep-learning.md
     - Convolutional Neural Networks: ./dl/cnn.md
     - Recurrent Neural Networks: ./dl/rnn.md
-    - Transformers: ./dl/transformers.md
+    - Transformers (LLM): ./dl/transformers.md
     - Generative Models: ./dl/generative-models.md
-    - Applications: ./dl/applications.md
-    - Future Directions: ./dl/future-directions.md
+    # - Applications: ./dl/applications.md
+    # - Future Directions: ./dl/future-directions.md
 
   - Metrics and Evaluation:
-    - Introduction: ./metrics/intro.md
     - Classification Metrics: ./metrics/classification-metrics.md
     - Regression Metrics: ./metrics/regression-metrics.md
     - Model Evaluation: ./metrics/model-evaluation.md
     - Cross-Validation: ./metrics/cross-validation.md
     - Hyperparameter Tuning: ./metrics/hyperparameter-tuning.md
 
+  - References: references.md
+
   - Versions:
-    - 2025.2: ./versions/2025.2/2025.2.md
+    - 2025.2:
+      - presentation: ./versions/2025.2/presentation.md
+      - exercises: ./versions/2025.2/exercises.md

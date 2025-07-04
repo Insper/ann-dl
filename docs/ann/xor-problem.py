@@ -41,10 +41,14 @@ ax[0].plot([xa, xa], [0, eq(xa)], 'b:')
 ax[0].plot([0, xa], [eq(xa), eq(xa)], 'b:')
 ax[0].plot(xa, eq(xa), 'ro', ms=15)
 ax[0].text(0, eq(xa), 'L=f(a)', horizontalalignment='right', verticalalignment='center', fontsize=15)
+ax[0].title.set_text('AND')
+
 ax[1].plot([xa, xa], [0, eq(xa)], 'b:')
 ax[1].plot([0, xa], [eq(xa), eq(xa)], 'm:')
 ax[1].plot(xa, eq(xa), marker='o', ms=15, mec='red', color='white')
 ax[1].text(0, eq(xa), 'L', horizontalalignment='right', verticalalignment='center', fontsize=15)
+ax[1].title.set_text('OR')
+
 ax[2].plot(xa, eq(xa), marker='o', ms=15, mec='white', color='white')
 ax[2].plot([xa, xa], [0, ya], 'b:')
 ax[2].plot([0, xa], [ya, ya], 'b:')
@@ -53,6 +57,8 @@ ax[2].plot(xa, eq(xa), marker='o', ms=15, mec='red', color='white')
 ax[2].plot(xa, ya, 'ro', ms=15)
 ax[2].text(0, ya, 'f(a)', horizontalalignment='right', verticalalignment='center', fontsize=15)
 ax[2].text(0, eq(xa), 'L', horizontalalignment='right', verticalalignment='center', fontsize=15)
+ax[2].title.set_text('XOR')
+
 
 # Adjust layout to prevent overlap
 plt.tight_layout()
