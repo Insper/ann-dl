@@ -101,6 +101,16 @@ $$
 
 
 
+
+
+Backpropagation is the algorithm used to train multi-layer perceptrons (MLPs) by adjusting the weights and biases based on the error between the predicted output and the actual target. The process involves two main steps:
+
+1. **Forward Pass**: The input data is passed through the network, layer by layer, to compute the output. The output is compared to the target value to calculate the loss (error).
+2. **Loss Calculation**: Calculate the loss (error) between the predicted output and the actual target using a loss function, such as mean squared error or cross-entropy.
+3. **Backward Pass**: The error is propagated backward through the network to compute the gradients of the loss with respect to each weight and bias. These gradients are then used to update the weights and biases using an optimization algorithm, such as stochastic gradient descent (SGD) or Adam.
+
+## Feedforward
+
 <center>
 ``` mermaid
 flowchart LR
@@ -152,6 +162,13 @@ y & = f \left( f ( x_1 * w_{11} + x_2 * w_{12} + b^h_{1} ) * v_{1} + f ( x_1 * w
 $$
 
 where \( f \) is the activation function, \( w_{ij} \) are the weights connecting inputs to hidden neurons, and \( v_{ij} \) are the weights connecting hidden neurons to output neurons. The biases \( b_1, b_2, \) and \( b_y \) are added to the respective layers.
+
+
+## Backpropagation
+
+The backpropagation algorithm is a method used to train multi-layer perceptrons (MLPs) by minimizing the error between the predicted output and the actual target. It involves two main steps: the forward pass and the backward pass. The update of weights and biases is done using the gradients computed during the backward pass.
+
+
 
 more:
 
