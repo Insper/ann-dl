@@ -69,13 +69,14 @@ flowchart LR
 
 TODO: improve Perceptron description, add more math, and explain the learning rule. Herbian learning rule, etc.
 
-The Perceptron learning rule can be expressed mathematically as follows:
+The Perceptron learning rule (Hebbian learning rule[^4]) can be expressed mathematically as follows:
 
 $$
 w_i(t+1) = w_i(t) + \eta (y - \hat{y}) x_i
 $$
 
 where:
+
 - \(w_i(t)\) is the weight of the \(i\)-th input at time \(t\),
 - \(\eta\) is the learning rate,
 - \(y\) is the true label,
@@ -105,6 +106,16 @@ Algorithms for training ANNs involve adjusting the weights of the connections be
 
 
 
-[^1]: McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. *The Bulletin of Mathematical Biophysics*, 5(4), 115-133. [doi:10.1007/BF02478259](https://doi.org/10.1007/BF02478259){ target=_blank }
-[^2]: Rosenblatt, F. (1958). The Perceptron: A probabilistic model for information storage and organization in the brain. *Psychological Review*, 65(6), 386-408. [doi:10.1037/h0042519](https://doi.org/10.1037/h0042519){ target=_blank }
-[^3]: Jurafsky, D., & Martin, J. H. (2025). Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models. [:fontawesome-regular-file-pdf:](https://web.stanford.edu/~jurafsky/slp3/ed3book_Jan25.pdf){ target=_blank }
+[^1]: McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. *The Bulletin of Mathematical Biophysics*, 5(4), 115-133.
+[doi:10.1007/BF02478259](https://doi.org/10.1007/BF02478259){ target=_blank }
+
+[^2]: Rosenblatt, F. (1958). The Perceptron: A probabilistic model for information storage and organization in the brain. *Psychological Review*, 65(6), 386-408.
+[doi:10.1037/h0042519](https://doi.org/10.1037/h0042519){ target=_blank }
+
+[^3]: Jurafsky, D., & Martin, J. H. (2025). Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models.
+[:octicons-download-24:](https://web.stanford.edu/~jurafsky/slp3/ed3book_Jan25.pdf){ target=_blank }
+
+[^4]: Hebb, D. O. (1949). The organization of behavior: A neuropsychological theory. *John Wiley & Sons*.
+[doi.org/10.1002/sce.37303405110](https://doi.org/10.1002/sce.37303405110){ target=_blank }
+[:material-wikipedia:](https://en.wikipedia.org/wiki/Hebbian_learning){ target=_blank }
+[:octicons-download-24:](https://pure.mpg.de/pubman/item/item_2346268_3/component/file_2346267/Hebb_1949_The_Organization_of_Behavior.pdf){ target=_blank }
