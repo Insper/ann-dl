@@ -40,17 +40,30 @@ The mathematical foundations of artificial neural networks are built upon linear
 <center>
 ``` mermaid
 flowchart LR
-    subgraph input
+    classDef default fill:#fff,stroke:#333,stroke-width:1px;
+    subgraph input["inputs"]
         direction TB
         x1(["x<sub>1</sub>"])
         x2(["x<sub>2</sub>"])
         x3(["x<sub>3</sub>"])
     end
-    x1 -->|"w<sub>1</sub>"| N
-    x2 -->|"w<sub>2</sub>"| N
-    x3 -->|"w<sub>3</sub>"| N
-    N(["N"])
-    N --> out1@{ shape: dbl-circ, label: " " }
+    subgraph output[" "]
+        direction LR
+        S(["Σ"])
+        subgraph af["activation function"]
+            f(["ƒ(Σ)"])
+        end
+    end
+    in1@{ shape: circle, label: " " } --> x1
+    in2@{ shape: circle, label: " " } --> x2
+    in3@{ shape: circle, label: " " } --> x3
+    x1 -->|"w<sub>1</sub>"| S
+    x2 -->|"w<sub>2</sub>"| S
+    x3 -->|"w<sub>3</sub>"| S
+    S --> f
+    f --> out1@{ shape: dbl-circ, label: " " }
+    style input fill:#fff,stroke:#fff,stroke-width:0px
+    style output fill:#fff,stroke:#fff,stroke-width:0px
 ```
 </center>
 

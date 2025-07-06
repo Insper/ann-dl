@@ -1,18 +1,7 @@
 import matplotlib.pyplot as plt
-import numpy as np
 from io import StringIO
 
-eq = lambda x: np.exp(x)
-
-x = np.linspace(-.2, 2.1)
-
-plt.rcParams["figure.figsize"] = (15, 5)
-
-xa = 1.5
-ya = 7
-k = 0.3
-ka = xa - k
-ak = xa + k
+plt.rcParams["figure.figsize"] = (9, 3)
 
 fig, ax = plt.subplots(1, 3)
 
@@ -23,41 +12,32 @@ for i in range(3):
   ax[i].spines['right'].set_visible(False)
   ax[i].spines['bottom'].set_visible(False)
   ax[i].spines['left'].set_visible(False)
-  ax[i].plot(x, eq(x), '-r', lw=4)
-  ax[i].set_xlim(min(x), max(x))
-  ax[i].set_xticks([])
-  ax[i].set_yticks([])
-  ax[i].plot([ka, ka], [0, eq(ka)], 'g:')
-  ax[i].plot([0, ka], [eq(ka), eq(ka)], 'g:')
-  ax[i].plot([ak, ak], [0, eq(ak)], 'g:')
-  ax[i].plot([0, ak], [eq(ak), eq(ak)], 'g:')
-  ax[i].text(xa, -0.5, 'a', horizontalalignment='center', fontsize=15)
-  ax[i].text(ka, -0.5, '$a-\delta$', horizontalalignment='center', fontsize=15)
-  ax[i].text(ak, -0.5, '$a+\delta$', horizontalalignment='center', fontsize=15)
-  ax[i].text(0, eq(ka), '$L-\epsilon$', horizontalalignment='right', verticalalignment='center', fontsize=15)
-  ax[i].text(0, eq(ak), '$L+\epsilon$', horizontalalignment='right', verticalalignment='center', fontsize=15)
-  
-ax[0].plot([xa, xa], [0, eq(xa)], 'b:')
-ax[0].plot([0, xa], [eq(xa), eq(xa)], 'b:')
-ax[0].plot(xa, eq(xa), 'ro', ms=15)
-ax[0].text(0, eq(xa), 'L=f(a)', horizontalalignment='right', verticalalignment='center', fontsize=15)
-ax[0].title.set_text('AND')
+  ax[i].set_xticks([0, 1])
+  ax[i].set_yticks([0, 1])
 
-ax[1].plot([xa, xa], [0, eq(xa)], 'b:')
-ax[1].plot([0, xa], [eq(xa), eq(xa)], 'm:')
-ax[1].plot(xa, eq(xa), marker='o', ms=15, mec='red', color='white')
-ax[1].text(0, eq(xa), 'L', horizontalalignment='right', verticalalignment='center', fontsize=15)
-ax[1].title.set_text('OR')
+i = 0
+ax[i].title.set_text('AND')
+ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(0, 1, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(1, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(1, 1, 'or', markersize=10)
+ax[i].plot([.4, 1], [1.05, .5], '-b', lw=4)
 
-ax[2].plot(xa, eq(xa), marker='o', ms=15, mec='white', color='white')
-ax[2].plot([xa, xa], [0, ya], 'b:')
-ax[2].plot([0, xa], [ya, ya], 'b:')
-ax[2].plot([0, xa], [eq(xa), eq(xa)], 'm:')
-ax[2].plot(xa, eq(xa), marker='o', ms=15, mec='red', color='white')
-ax[2].plot(xa, ya, 'ro', ms=15)
-ax[2].text(0, ya, 'f(a)', horizontalalignment='right', verticalalignment='center', fontsize=15)
-ax[2].text(0, eq(xa), 'L', horizontalalignment='right', verticalalignment='center', fontsize=15)
-ax[2].title.set_text('XOR')
+i = 1
+ax[i].title.set_text('OR')  
+ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(0, 1, 'or', markersize=10)
+ax[i].plot(1, 0, 'or', markersize=10)
+ax[i].plot(1, 1, 'or', markersize=10)
+ax[i].plot([-.05, .6], [.6, -0.05], '-b', lw=4)
+
+i = 2
+ax[i].title.set_text('XOR')
+ax[i].plot(0, 0, 'or', markersize=10)
+ax[i].plot(0, 1, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(1, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(1, 1, 'or', markersize=10)
+ax[i].text(.5, 0.5, '?', horizontalalignment='center', fontsize=24)
 
 
 # Adjust layout to prevent overlap
