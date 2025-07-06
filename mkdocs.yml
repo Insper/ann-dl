@@ -148,13 +148,14 @@ nav:
   - Deep Learning:
     - Introduction: ./dl/intro.md
     - Convolutional Neural Networks: ./dl/cnn.md
+    - Generative Models: ./dl/generative-models.md
     - Recurrent Neural Networks: ./dl/rnn.md
     - Transformers (LLM): ./dl/transformers.md
-    - Generative Models: ./dl/generative-models.md
     # - Applications: ./dl/applications.md
     # - Future Directions: ./dl/future-directions.md
 
   - Metrics and Evaluation:
+    - Introduction: ./metrics/intro.md    
     - Classification Metrics: ./metrics/classification-metrics.md
     - Regression Metrics: ./metrics/regression-metrics.md
     - Model Evaluation: ./metrics/model-evaluation.md

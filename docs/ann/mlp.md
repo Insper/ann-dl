@@ -1,39 +1,160 @@
 
 
+## Fast Forward: Multi-Layer Perceptrons (MLPs)
+
 <center>
 ``` mermaid
 flowchart LR
-    classDef default fill:#fff,stroke:#333,stroke-width:1px;
+    classDef default fill:transparent,stroke:#333,stroke-width:1px;
+    classDef others fill:transparent,stroke:transparent,stroke-width:0px;
     subgraph input
         x1(["x<sub>1</sub>"])
         x2(["x<sub>2</sub>"])
         x3(["x<sub>3</sub>"])
+        xd(["..."]):::others
+        xn(["x<sub>n</sub>"])
     end
     subgraph hidden
         h1(["h<sub>1</sub>"])
         h2(["h<sub>2</sub>"])
+        hd(["..."]):::others
+        hm(["h<sub>m</sub>"])
     end
     subgraph output
         y1(["y<sub>1</sub>"])
+        yd(["..."]):::others
+        yk(["y<sub>k</sub>"])
     end
     in1@{ shape: circle, label: " " } --> x1
     in2@{ shape: circle, label: " " } --> x2
     in3@{ shape: circle, label: " " } --> x3
+    inn@{ shape: circle, label: " " } --> xn
+
     x1 -->|"w<sub>11</sub>"|h1
     x1 -->|"w<sub>12</sub>"|h2
+    x1 -->|"w<sub>1n</sub>"|hm
     x2 -->|"w<sub>21</sub>"|h1
     x2 -->|"w<sub>22</sub>"|h2
+    x2 -->|"w<sub>2n</sub>"|hm
     x3 -->|"w<sub>31</sub>"|h1
     x3 -->|"w<sub>32</sub>"|h2
+    x3 -->|"w<sub>3n</sub>"|hm
+    xn -->|"w<sub>i1</sub>"|h1
+    xn -->|"w<sub>i2</sub>"|h2
+    xn -->|"w<sub>in</sub>"|hm
+    
     h1 -->|"v<sub>11</sub>"|y1
     h2 -->|"v<sub>21</sub>"|y1
+    hm -->|"v<sub>m1</sub>"|y1
+
     y1 --> out1@{ shape: dbl-circ, label: " " }
+    yk --> outn@{ shape: dbl-circ, label: " " }
+
     style input fill:#fff,stroke:#666,stroke-width:1px
     style hidden fill:#fff,stroke:#666,stroke-width:1px
     style output fill:#fff,stroke:#666,stroke-width:1px
 ```
 <i>Multi-Layer Perceptron (MLP) Architecture.</i>
 </center>
+
+$$
+y_k = f \left( \sum_{j=1}^{m} f \left( \sum_{i=1}^{n} x_i w_{ij} + b^{h}_{i} \right) v_{jk} + b^{y}_{j} \right)
+$$
+
+where:
+
+- \( y_k \) is the output for the \( k \)-th output neuron.
+- \( x_i \) are the input features.
+- \( w_{ij} \) are the weights connecting the \( i \)-th input to the \( j \)-th hidden neuron.
+- \( v_{jk} \) are the weights connecting the \( j \)-th hidden neuron to the \( k \)-th output neuron.
+- \( b^{h}_{i} \) is the bias for the \( i \)-th hidden neuron.
+- \( b^{y}_{j} \) is the bias for the \( j \)-th output neuron.
+- \( m \) is the number of hidden neurons.
+- \( n \) is the number of input features.
+- \( f \) is the activation function applied to the weighted sums at each layer, such as sigmoid, tanh, or ReLU.
+
+
+Matrix representation of the MLP architecture:
+
+$$
+\begin{align*}
+\text{Input Layer:} & \quad \mathbf{x} = [x_1, x_2, \ldots, x_n]^T \\
+\text{Hidden Layer:} & \quad \mathbf{h} = \sigma(\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
+\text{Output Layer:} & \quad \mathbf{y} = \sigma(\mathbf{V} \mathbf{h} + \mathbf{b}^y)
+\end{align*}
+$$
+
+
+
+<i>Multi-Layer Perceptron (MLP) Architecture.</i>
+</center>
+
+
+
+
+| Sigmoid | Tanh    | ReLU  |
+|---------|---------|-------|
+| \( \sigma(x) = \displaystyle \frac{1}{1 + e^{-x}} \) | \( \tanh(x) = \displaystyle \frac{e^{2x} - 1}{e^{2x} + 1} \) | \( \text{ReLU}(x) = \max(0, x) \) |
+| \( \sigma'(x) = \sigma(x)(1 - \sigma(x)) \)          | \( \tanh'(x) = 1 - \tanh^2(x) \)                             | \( \text{ReLU}'(x) = \begin{cases} 1 & \text{if } x > 0 \\ 0 & \text{if } x \leq 0 \end{cases} \) |
+| ![Sigmoid Graph](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Activation_logistic.svg/2560px-Activation_logistic.svg.png) | ![Tanh Graph](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Activation_tanh.svg/2560px-Activation_tanh.svg.png) | ![ReLU Graph](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Activation_rectified_linear.svg/2560px-Activation_rectified_linear.svg.png) |
+| Sigmoid is a smooth, S-shaped curve that outputs values between 0 and 1, making it suitable for binary classification tasks. | Tanh is a smooth curve that outputs values between -1 and 1, centering the data around zero, which can help with convergence in training. | ReLU is a piecewise linear function that outputs zero for negative inputs and the input itself for positive inputs, allowing for faster training and reducing the vanishing gradient problem. |
+
+
+
+<center>
+``` mermaid
+flowchart LR
+    classDef default fill:transparent,stroke:#333,stroke-width:1px;
+    classDef others fill:transparent,stroke:transparent,stroke-width:0px;
+    subgraph input
+        x1(["x<sub>1</sub>"])
+        x2(["x<sub>2</sub>"])
+    end
+    subgraph hidden
+        h1(["h<sub>1</sub>"])
+        h2(["h<sub>2</sub>"])
+    end
+    subgraph output
+        y(["y"])
+    end
+    in1@{ shape: circle, label: " " } --> x1
+    in2@{ shape: circle, label: " " } --> x2
+
+    x1 -->|"w<sub>11</sub>"|h1
+    x1 -->|"w<sub>12</sub>"|h2
+    x2 -->|"w<sub>21</sub>"|h1
+    x2 -->|"w<sub>22</sub>"|h2
+    
+    h1 -->|"v<sub>11</sub>"|y
+    h2 -->|"v<sub>21</sub>"|y
+
+    y --> out1@{ shape: dbl-circ, label: " " }
+
+    style input fill:#fff,stroke:#666,stroke-width:0px
+    style hidden fill:#fff,stroke:#666,stroke-width:0px
+    style output fill:#fff,stroke:#666,stroke-width:0px
+```
+<i>Multi-Layer Perceptron (MLP) Architecture.</i>
+</center>
+
+In cannonical form, the MLP can be expressed as:
+
+$$
+\begin{align}
+h_1 & = f ( x_1 * w_{11} + x_2 * w_{12} + b^h_1 ) \\
+h_2 & = f ( x_1 * w_{21} + x_2 * w_{22} + b^h_2 ) \\
+\\
+y & = f ( h_1 * v_{11} + h_2 * v_{21} + b^v_1 ) \\
+\\ \therefore \\
+\\
+y & = f \left( f ( x_1 * w_{11} + x_2 * w_{12} + b^h_{1} ) * v_{1} + f ( x_1 * w_{21} + x_2 * w_{22} + b^h_{2} )  * v_{2} + b^v_{1} \right)
+\end{align}
+$$
+
+where \( f \) is the activation function, \( w_{ij} \) are the weights connecting inputs to hidden neurons, and \( v_{ij} \) are the weights connecting hidden neurons to output neurons. The biases \( b_1, b_2, \) and \( b_y \) are added to the respective layers.
+
+more:
+
 
 - Limitations of Perceptrons, such as their inability to solve non-linearly separable problems.
 - Introduction to Multi-Layer Perceptrons (MLPs) as an extension of the Perceptron model.
