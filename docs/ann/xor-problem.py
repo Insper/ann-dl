@@ -14,6 +14,12 @@ for i in range(3):
   ax[i].spines['left'].set_visible(False)
   ax[i].set_xticks([0, 1])
   ax[i].set_yticks([0, 1])
+  ax[i].set_xlim(-.1, 1.1)
+  ax[i].set_ylim(-.1, 1.1)
+  ax[i].set_xlabel('$x_1$')
+  ax[i].xaxis.set_label_coords(.5, -.05)
+  ax[i].set_ylabel('$x_2$')
+  ax[i].yaxis.set_label_coords(-.05, .5)
 
 i = 0
 ax[i].title.set_text('AND')
@@ -21,7 +27,7 @@ ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', mark
 ax[i].plot(0, 1, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
 ax[i].plot(1, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
 ax[i].plot(1, 1, 'or', markersize=10)
-ax[i].plot([.4, 1], [1.05, .5], '-b', lw=4)
+ax[i].plot([.4, 1], [1.05, .5], '--b', lw=3)
 
 i = 1
 ax[i].title.set_text('OR')  
@@ -29,7 +35,7 @@ ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', mark
 ax[i].plot(0, 1, 'or', markersize=10)
 ax[i].plot(1, 0, 'or', markersize=10)
 ax[i].plot(1, 1, 'or', markersize=10)
-ax[i].plot([-.05, .6], [.6, -0.05], '-b', lw=4)
+ax[i].plot([-.05, .6], [.6, -0.05], '--b', lw=3)
 
 i = 2
 ax[i].title.set_text('XOR')
