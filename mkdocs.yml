@@ -165,6 +165,7 @@ nav:
   - References: references.md
 
   - Versions:
+    - Terms and Conditions: versions/terms-and-conditions.md
     - 2025.2:
       - Presentation: ./versions/2025.2/presentation.md
       - Exercises:

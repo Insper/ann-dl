@@ -7,6 +7,12 @@
 flowchart LR
     classDef default fill:transparent,stroke:#333,stroke-width:1px;
     classDef others fill:transparent,stroke:transparent,stroke-width:0px;
+    subgraph in[" "]
+        in1@{ shape: circle, label: " " }
+        in2@{ shape: circle, label: " " }
+        in3@{ shape: circle, label: " " }
+        inn@{ shape: circle, label: " " }
+    end
     subgraph input
         x1(["x<sub>1</sub>"])
         x2(["x<sub>2</sub>"])
@@ -79,8 +85,8 @@ Matrix representation of the MLP architecture:
 $$
 \begin{align*}
 \text{Input Layer:} & \quad \mathbf{x} = [x_1, x_2, \ldots, x_n]^T \\
-\text{Hidden Layer:} & \quad \mathbf{h} = \sigma(\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
-\text{Output Layer:} & \quad \mathbf{y} = \sigma(\mathbf{V} \mathbf{h} + \mathbf{b}^y)
+\text{Hidden Layer:} & \quad \mathbf{h} = f (\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
+\text{Output Layer:} & \quad \mathbf{y} = f (\mathbf{V} \mathbf{h} + \mathbf{b}^y)
 \end{align*}
 $$
 
@@ -169,6 +175,12 @@ where \( f \) is the activation function, \( w_{ij} \) are the weights connectin
 The backpropagation algorithm is a method used to train multi-layer perceptrons (MLPs) by minimizing the error between the predicted output and the actual target. It involves two main steps: the forward pass and the backward pass. The update of weights and biases is done using the gradients computed during the backward pass.
 
 
+
+## Training Process
+
+Online learning is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
+
+Batch learning, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
 
 more:
 

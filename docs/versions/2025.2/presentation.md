@@ -14,29 +14,29 @@
 
 | :octicons-location-24: | :fontawesome-regular-calendar: | :fontawesome-regular-clock: |
 |-|:-:|:-:|
-| Aula | Seg. | 12h00 :fontawesome-solid-arrow-right-long: 14h00 |
-| Aula | Ter. | 12h00 :fontawesome-solid-arrow-right-long: 14h00 |
-| Atendimento | Qui. | 14h00 :fontawesome-solid-arrow-right-long: 15h30 |
+| Lecture | Mon. | 12h00 :fontawesome-solid-arrow-right-long: 14h00 |
+| Lecture | Tue. | 12h00 :fontawesome-solid-arrow-right-long: 14h00 |
+| Office hours | Thu. | 14h00 :fontawesome-solid-arrow-right-long: 15h30 |
 
 
 ## Grade
 
-=== ":material-target: Final"
+$$
+\text{Final Grade} = \left\{\begin{array}{lll}
+    \text{Individual} \geq 5 \bigwedge \text{Team} \geq 5 &
+    \implies &
+    \displaystyle \frac{ \text{Individual} + \text{Team} } {2}
+    \\
+    \\
+    \text{Otherwise} &
+    \implies &
+    \min\left(\text{Individual}, \text{Team}\right)
+    \end{array}\right.
+$$
 
-    Final grade.
-
-
-=== ":octicons-person-24: Individual"
-
-    Individual grade.
-
-    !!! danger "Entrega"
-        - A entrega de um checkpoint implica, **OBRIGATORIAMENTE**, na entrega do checkpoint anterior;
-        - Trabalho em grupo deve ser documentado no GitHub. -->
-
-=== ":octicons-people-24: Team"
-
-    Team grade.
+```python exec="on" html="1"
+--8<-- "docs/versions/2025.2/grade.py"
+```
 
 ## Planning
 
