@@ -12,10 +12,10 @@ The individual activities in this course are designed to help you practice and a
 - The deadline for each activity is not extended, and it is expected that you complete them within the timeframe provided in the course schedule - NO EXCEPTIONS will be made for late submissions.
 - All deliverables for individual activities should be submitted through the course platform.
 
-## Group projects
+## Team projects
 
-Group projects are an essential part of this course, allowing you to collaborate with your peers and apply the concepts learned in a practical setting.
+Team projects are an essential part of this course, allowing you to collaborate with your peers and apply the concepts learned in a practical setting.
 
 !!! danger "Format of Deliverables"
 
-    All deliverables for group projects must be submitted in the format of GitHub Pages. This includes the project report, code, and any other relevant materials. The use of GitHub Pages allows for easy sharing and collaboration among team members.
+    All deliverables for team projects must be submitted in the format of GitHub Pages. This includes the project report, code, and any other relevant materials. The use of GitHub Pages allows for easy sharing and collaboration among team members.

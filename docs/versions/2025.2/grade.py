@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 from io import StringIO
 
 fig, ax = plt.subplots(1, 2)
@@ -7,7 +6,7 @@ fig, ax = plt.subplots(1, 2)
 fig.set_size_inches(10, 5)
 
 ax[0].pie(
-    np.array([5, 5, 10, 5, 30, 45]),
+    [5, 5, 10, 5, 30, 45],
     labels=["Data", "Perceptron", "MLP", "Metrics", "Midterm", "Final"],
     explode=[0, 0, 0, 0, 0, 0],
     autopct='%1.0f%%',
@@ -15,7 +14,7 @@ ax[0].pie(
 ax[0].title.set_text("Individual")
 
 ax[1].pie(
-    np.array([30, 30, 40]),
+    [30, 30, 40],
     labels=["Classification", "Regression", "Generative"],
     explode=[0, 0, 0],
     autopct='%1.0f%%',
