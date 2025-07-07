@@ -5,9 +5,14 @@
     
     By participating in the course, you agree to abide by these terms.
 
-## Indivual activities
+## General
 
-The individual activities in this course are designed to help you practice and apply the concepts learned in the lectures. Each activity will have a specific focus, such as implementing a neural network from scratch or analyzing the performance of a model.
+- Previously, the participants were required to read the material in advance to enhance your understanding and engagement during the lectures;
+- All deliverables must be submitted in the format specified: **GitHub Pages**. **No other formats will be accepted.** - there exists a template for the course that you can use to create your GitHub Pages - [Template](https://hsandmann.github.io/documentation.template/){target='_blank'};
+- There is a **strict policy against plagiarism**. Any form of plagiarism will result in a zero grade for the activity and may lead to further disciplinary actions as per the university's academic integrity policies;
+- The course is designed to be completed in a single semester, and all activities are structured to fit within this timeframe;
+
+## Indivual activities
 
 - The deadline for each activity is not extended, and it is expected that you complete them within the timeframe provided in the course schedule - NO EXCEPTIONS will be made for late submissions.
 - All deliverables for individual activities should be submitted through the course platform.
