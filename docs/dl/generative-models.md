@@ -6,6 +6,7 @@ Generative models are a class of machine learning models that learn to generate 
 
 Additionally, there are **diffusion models**, which have gained popularity in recent years for their ability to generate high-quality images and other data types. These models work by gradually transforming a simple noise distribution into a complex data distribution through a series of denoising steps, allowing them to capture intricate details and variations in the data.
 
+comfyUI
 
 ## Additional Resources
 

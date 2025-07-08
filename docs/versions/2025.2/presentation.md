@@ -22,7 +22,7 @@
 ## Grade
 
 $$
-\text{Final Grade} = \left\{\begin{array}{lll}
+\text{Final} = \left\{\begin{array}{lll}
     \text{Individual} \geq 5 \bigwedge \text{Team} \geq 5 &
     \implies &
     \displaystyle \frac{ \text{Individual} + \text{Team} } {2}
