@@ -5,7 +5,7 @@ Neural networks are the backbone of many modern AI applications, enabling machin
 
 ## Milestones
 
-[timeline left alternate(./docs/ann/timeline.json)]
+[timeline left alternate(./docs/classes/ann/timeline.json)]
 
 [^1]: **Hodgkin–Huxley model.**
 Alan Hodgkin and Andrew Huxley develop a mathematical model of the action potential in neurons, describing how neurons transmit signals through electrical impulses. This model is foundational for understanding neural dynamics and influences the development of artificial neural networks.
