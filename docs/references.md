@@ -89,3 +89,8 @@ ${type??''} ${route??''} ${number??''}  ${additional??''} - ${neighborhood??''}
 https://harvard-iacs.github.io/2022-CS109B/
 https://harvard-iacs.github.io/2019-CS109B/labs/lab11/GANS/
 https://docs.google.com/spreadsheets/d/1Ei_L9e8nLdz5IbZ26Gr7YeE7wpQU27qjE99CD1DiaUM/edit?gid=1450132264#gid=1450132264
+
+
+
+
+https://link.springer.com/series/1465

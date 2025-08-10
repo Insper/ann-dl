@@ -6,7 +6,7 @@ fig, ax = plt.subplots(1, 2)
 fig.set_size_inches(10, 5)
 
 ax[0].pie(
-    [5, 5, 10, 5, 30, 45],
+    [5, 5, 15, 10, 30, 35],
     labels=["Data", "Perceptron", "MLP", "Metrics", "Midterm", "Final"],
     explode=[0, 0, 0, 0, 0, 0],
     autopct='%1.0f%%',
