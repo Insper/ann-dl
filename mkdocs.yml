@@ -145,9 +145,9 @@ nav:
     - 4. Metrics and Evaluation:
       - 4.1. Classification Metrics: ./classes/metrics/classification/classification-metrics.md
       - 4.2. Regression Metrics: ./classes/metrics/regression/regression-metrics.md
-      - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
-      - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
-      - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
+      # - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
+      # - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
+      # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
     - 5. Neural Networks: ./classes/ann/intro.md
     - 6. Perceptron: ./classes/perceptron/perceptron.md
     - 7. Multi-Layer Perceptron: ./classes/mlp/mlp.md

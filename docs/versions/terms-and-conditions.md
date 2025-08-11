@@ -12,9 +12,9 @@
 - There is a **strict policy against plagiarism**. Any form of plagiarism will result in a zero grade for the activity and may lead to further disciplinary actions as per the university's academic integrity policies;
 - The course is designed to be completed in a single semester, and all activities are structured to fit within this timeframe;
 
-## Indivual activities
+## Individual activities
 
-- The deadline for each activity is not extended, and it is expected that you complete them within the timeframe provided in the course schedule - NO EXCEPTIONS will be made for late submissions.
+- **The deadline for each activity is not extended**, and it is expected that you complete them within the timeframe provided in the course schedule - NO EXCEPTIONS will be made for late submissions.
 - All deliverables for individual activities should be submitted through the course platform.
 
 ## Team projects

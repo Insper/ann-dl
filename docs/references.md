@@ -43,7 +43,7 @@ Stanford University School of Engineering
 | 17 | Issues in NLP and Possible Architectures for NLP | [:simple-youtube:](https://www.youtube.com/watch?v=B4v545V3Dq0){:target="_blank"} |
 | 18 | Tackling the Limits of Deep Learning for NLP | [:simple-youtube:](https://www.youtube.com/watch?v=JYwNmSe4HqE){:target="_blank"} |
 
-Thinking Publications
+<!-- Thinking Publications
 
 https://machinelearning.apple.com/research/illusion-of-thinking
 
@@ -93,4 +93,4 @@ https://docs.google.com/spreadsheets/d/1Ei_L9e8nLdz5IbZ26Gr7YeE7wpQU27qjE99CD1Di
 
 
 
-https://link.springer.com/series/1465
+https://link.springer.com/series/1465 -->
