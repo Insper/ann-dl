@@ -19,6 +19,7 @@ David H. Hubel and Torsten N. Wiesel conduct pioneering research on the visual c
 *Hubel, D. H., & Wiesel, T. N. (1963). Effects of monocular deprivation in kittens.*
 [:octicons-book-24:](https://doi.org/10.1007/bf00348878){target='_blank'}
 [:octicons-download-24:](https://cw.fel.cvut.cz/b241/_media/courses/a6m33ksy/hubel-wiesel-1964-kittens.pdf){target='_blank'}
+[:simple-youtube:](https://www.youtube.com/watch?v=KE952yueVLA&pp=0gcJCfwAo7VqN5tD){target='_blank'}
 [:medal:](https://www.nobelprize.org/prizes/medicine/1981/summary/){target='_blank'}.
 
 [^3]: **Neocognitron.** Kunihiko Fukushima develops the Neocognitron, an early convolutional neural network (CNN) model that mimics the hierarchical structure of the visual cortex. This model is a precursor to modern CNNs and demonstrates the potential of hierarchical feature extraction in image recognition tasks.

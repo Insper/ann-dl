@@ -182,7 +182,7 @@ nav:
   - Versions:
     - Terms and Conditions: versions/terms-and-conditions.md
     - 2025.2:
-      - Presentation: ./versions/2025.2/presentation.md
+      - Presentation: ./versions/2025.2/main.md
       - Exercises:
         - 1. Data: ./versions/2025.2/exercises/data/data.md
         - 2. Perceptron: ./versions/2025.2/exercises/perceptron/perceptron.md
