@@ -139,9 +139,9 @@ nav:
   # - 2025.2: versions/2025.2/presentation.md
 
   - Classes:
-    - 1. Concepts: ./classes/concepts/intro.md
-    - 2. Data: ./classes/data/data.md
-    - 3. Preprocessing: ./classes/data/preprocessing/preprocessing.md
+    - 1. Concepts: ./classes/concepts/main.md
+    - 2. Data: ./classes/data/main.md
+    - 3. Preprocessing: ./classes/preprocessing/main.md
     - 4. Metrics and Evaluation:
       - 4.1. Classification Metrics: ./classes/metrics/classification/classification-metrics.md
       - 4.2. Regression Metrics: ./classes/metrics/regression/regression-metrics.md

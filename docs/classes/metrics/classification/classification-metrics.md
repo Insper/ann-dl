@@ -1,3 +1,6 @@
+Below is a detailed list of metrics commonly used to evaluate the accuracy and performance of classification and regression models in machine learning, including neural networks. The metrics are categorized based on their applicability to classification or regression tasks, with explanations of their purpose and mathematical formulations where relevant.
+
+## Classification Metrics
 
 Classification tasks involve predicting discrete class labels. The following metrics assess the accuracy and effectiveness of such models:
 
@@ -52,5 +55,3 @@ Classification tasks involve predicting discrete class labels. The following met
     - **Formula**: \( \kappa = \frac{p_o - p_e}{1 - p_e} \)
       - \( p_o \): Observed agreement, \( p_e \): Expected agreement by chance.
     - **Use Case**: Useful for multi-class problems or when chance agreement is a concern.
-
-
