@@ -1,8 +1,9 @@
 import pandas as pd
+import yfinance as yf
 
-url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS0hLsLJGReYZeR3SI7Z_5R79xK8wK7YfXnC7GaogzYGWyx-lAsJMioL3jyIX5vjPXImPyln9DABrXe/pub?gid=0&single=true&output=csv'
+dat = yf.Ticker("AAPL")
+df = dat.history(period='1mo')
 
-df = pd.read_csv(url, index_col=0)
 df['Change'] = df['Close'].pct_change()
 df['Z-Volume'] = df['Volume'].apply(lambda x: (x-df['Volume'].mean())/df['Volume'].std())
 df['N-Volume'] = df['Volume'].apply(lambda x: (x-df['Volume'].min())/(df['Volume'].max()-df['Volume'].min()))

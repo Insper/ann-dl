@@ -40,7 +40,7 @@ Data cleaning involves identifying and rectifying errors, inconsistencies, and m
 
 ## Encoding Categorical Variables
 
-Categorical data, non-numeric by nature, must be converted for neural network input. One-hot encoding creates binary vectors for each category, e.g., transforming colors ["red", "blue", "green"] into ```[[1,0,0], [0,1,0], [0,0,1]]```. This avoids ordinal assumptions but increases dimensionality, which can be mitigated by embedding layers in neural networks for high-cardinality features. Label encoding assigns integers (e.g., 0 for "red", 1 for "blue"), suitable for ordinal categories but risky for nominal ones due to implied ordering. For text data in NLP tasks with transformers, tokenization and subword encoding (e.g., WordPiece) are basic steps to map words to integer IDs.
+Categorical data, non-numeric by nature, must be converted for neural network input. One-hot encoding creates binary vectors for each category, e.g., transforming colors ```['red', 'blue', 'green']``` into ```[[1,0,0], [0,1,0], [0,0,1]]```. This avoids ordinal assumptions but increases dimensionality, which can be mitigated by embedding layers in neural networks for high-cardinality features. Label encoding assigns integers (e.g., 0 for "red", 1 for "blue"), suitable for ordinal categories but risky for nominal ones due to implied ordering. For text data in NLP tasks with transformers, tokenization and subword encoding (e.g., WordPiece) are basic steps to map words to integer IDs.
 
 === "Result"
 
@@ -73,12 +73,12 @@ $$
 
 where \(\mu\) is the mean and \(\sigma\) the standard deviation. It is preferred for networks with ReLU activations or when data distributions are Gaussian-like, aiding faster gradient descent convergence. In practice, libraries like scikit-learn provide `MinMaxScaler` and `StandardScaler` for these operations. These techniques are especially vital in multilayer perceptrons (MLPs) and CNNs, where feature scales can dominate loss landscapes.
 
-Below is an example of how to apply normalization and standardization using pandas, based on the [NASDAQ Apple stock price dataset](https://docs.google.com/spreadsheets/d/19H9QrIXQwFFH70IiaoDKH4MoXSEk-6n_zPo6VvoykW8/edit?usp=sharing){target='_blank'}:
+Below is an example of how to apply normalization and standardization using pandas, based on the [NASDAQ Apple stock price dataset](https://ranaroussi.github.io/yfinance/){target='_blank'}:
 
 === "Result"
 
     ```python exec="on" html="0"
-    --8<-- "docs/classes/preprocessing/invest.py"
+    --8<-- "docs/classes/preprocessing/invest-preprocessing.py"
     ```
     
 === "Original"
@@ -90,7 +90,7 @@ Below is an example of how to apply normalization and standardization using pand
 === "Code"
 
     ```python
-    --8<-- "docs/classes/preprocessing/invest.py"
+    --8<-- "docs/classes/preprocessing/invest-preprocessing.py"
     ```
 
 
@@ -101,7 +101,7 @@ Feature scaling overlaps with normalization but specifically addresses disparate
 
 ## Data Augmentation
 
-Data augmentation artificially expands datasets to combat overfitting, particularly in CNNs for image classification. Basic operations include flipping, rotation (e.g., by 90° or random angles), and cropping, while advanced methods involve adding noise (Gaussian or salt-and-pepper) or color jittering. For text data in RNNs or transformers, techniques like synonym replacement, random insertion/deletion, or back-translation (translating to another language and back) generate variations while preserving semantics. In time-series for LSTMs, window slicing or synthetic minority over-sampling technique (SMOTE) variants create augmented sequences. Generative models like GANs (Generative Adversarial Networks) represent cutting-edge augmentation, producing realistic synthetic samples. These methods improve generalization by exposing models to diverse inputs.
+Data augmentation artificially expands datasets to combat overfitting, particularly in CNNs for image classification. Basic operations include flipping, rotation (e.g., by 90° or random angles), and cropping, while advanced methods involve adding noise (Gaussian or salt-and-pepper) or color jittering. For text data in RNNs or transformers, techniques like synonym replacement, random insertion/deletion, or back-translation (translating to another language and back) generate variations while preserving semantics. In time-series for LSTMs, window slicing or synthetic minority over-sampling technique (SMOTE)[^8] variants create augmented sequences. Generative models like GANs (Generative Adversarial Networks) represent cutting-edge augmentation, producing realistic synthetic samples. These methods improve generalization by exposing models to diverse inputs.
 
 ## Handling Imbalanced Data
 
@@ -113,7 +113,61 @@ Feature engineering crafts new features from existing ones, such as polynomial t
 
 ## Dimensionality Reduction
 
-Techniques like Principal Component Analysis (PCA) project data onto lower-dimensional spaces while preserving variance: \( X' = X \cdot W \), where \(W\) are principal components. Autoencoders, a neural-based approach, learn compressed representations through encoder-decoder architectures. t-SNE or UMAP are used for visualization but less for preprocessing due to non-linearity. These are vital for CNNs on high-resolution images or transformers on long sequences to reduce computational load.
+Techniques like Principal Component Analysis (PCA) project data onto lower-dimensional spaces while preserving variance:
+
+$$
+X' = X \cdot W
+$$
+
+where \(W\) are principal components. Autoencoders, a neural-based approach, learn compressed representations through encoder-decoder architectures. t-SNE or UMAP are used for visualization but less for preprocessing due to non-linearity. These are vital for CNNs on high-resolution images or transformers on long sequences to reduce computational load.
+
+PCA is widely used for dimensionality reduction[^5], while t-SNE[^6] and UMAP[^7] are popular for visualizing high-dimensional data in 2D or 3D spaces.
+
+Basically, PCA identifies orthogonal axes (principal components) capturing maximum variance, enabling efficient data representation. Autoencoders, trained to reconstruct inputs, learn compact latent spaces, useful for denoising or anomaly detection.
+
+!!! info "PCA Steps[^5]"
+
+    **1. Standardize the data:**
+
+    $$
+    X' = \frac{X - μ}{σ}
+    $$
+
+    **2. Compute the covariance matrix:**
+
+    $$
+    C = \frac{1}{n} * (X'ᵀ * X')
+    $$
+
+    **3. Calculate eigenvalues and eigenvectors:**
+
+    $$
+    \text{eigvals}, \text{eigvecs} = \text{np.linalg.eig}(C)
+    $$
+
+    **4. Sort eigenvectors by eigenvalues in descending order.**
+
+    **5. Select top \(k\) eigenvectors to form a new feature space**
+
+    $$
+    Y = X' * W
+    $$
+
+    where \(W\) is the matrix of selected eigenvectors.
+
+A example of PCA applied to the Iris dataset:
+
+```python
+--8<-- "docs/classes/preprocessing/iris-pca.py"
+```
+
+Now, the same example using scikit-learn is shown below:
+
+```python
+--8<-- "docs/classes/preprocessing/iris-pca-sklearn.py"
+```
+
+Eigenfaces, a PCA variant, is used in face recognition tasks to reduce image dimensions while retaining essential features[^4]. In NLP, techniques like Latent Semantic Analysis (LSA) apply SVD (Singular Value Decomposition) to reduce term-document matrices, enhancing transformer efficiency.
 
 ## Domain-Specific Advanced Techniques
 
@@ -127,3 +181,17 @@ For time-series in RNNs, techniques include Fast Fourier Transform (FFT) for fre
 [^2]: [TensorFlow - Data Augmentation](https://www.tensorflow.org/tutorials/images/data_augmentation){target='_blank'}
 
 [^3]: [AutoML - Automated Machine Learning](https://arxiv.org/abs/1708.02002){target='_blank'}
+
+[^4]: [Face Recognition with OpenCV](https://docs.opencv.org/4.x/da/d60/tutorial_face_main.html){target='_blank'}
+
+[^5]: [PCA - Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis){target='_blank'}
+
+[^6]: [Principal Component Analysis (PCA) from Scratch](https://bagheri365.github.io/blog/Principal-Component-Analysis-from-Scratch/){target='_blank'}
+
+[^7]: [t-SNE - t-distributed Stochastic Neighbor Embedding](https://distill.pub/2016/misread-tsne/){target='_blank'}
+
+[^8]: [SMOTE - Synthetic Minority Over-sampling Technique](https://arxiv.org/abs/1106.1813){target='_blank'}
+
+[^9]: [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002){target='_blank'}
+
+[^10]: [Word Embeddings - Word2Vec, GloVe, FastText](https://nlp.stanford.edu/projects/glove/){target='_blank'}
