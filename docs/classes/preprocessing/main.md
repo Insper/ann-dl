@@ -55,7 +55,7 @@ Categorical data, non-numeric by nature, must be converted for neural network in
     ```
 
 
-### Normalization and Standardization
+## Normalization and Standardization
 
 Normalization scales features to a bounded range, typically $[0, 1]$, using min-max scaling:
 
@@ -72,6 +72,8 @@ x' = \frac{x - \mu}{\sigma},
 $$
 
 where \(\mu\) is the mean and \(\sigma\) the standard deviation. It is preferred for networks with ReLU activations or when data distributions are Gaussian-like, aiding faster gradient descent convergence. In practice, libraries like scikit-learn provide `MinMaxScaler` and `StandardScaler` for these operations. These techniques are especially vital in multilayer perceptrons (MLPs) and CNNs, where feature scales can dominate loss landscapes.
+
+Below is an example of how to apply normalization and standardization using pandas, based on the [NASDAQ Apple stock price dataset](https://docs.google.com/spreadsheets/d/19H9QrIXQwFFH70IiaoDKH4MoXSEk-6n_zPo6VvoykW8/edit?usp=sharing){target='_blank'}:
 
 === "Result"
 
@@ -92,37 +94,30 @@ where \(\mu\) is the mean and \(\sigma\) the standard deviation. It is preferred
     ```
 
 
-### Feature Scaling
+## Feature Scaling
 
 Feature scaling overlaps with normalization but specifically addresses disparate scales across features. Beyond min-max and z-score, logarithmic scaling (\( x' = \log(x + 1) \)) handles skewed distributions, common in financial data for neural forecasting models. Scaling ensures equal contribution of features during weight updates in stochastic gradient descent (SGD).
 
-## Advanced Preprocessing Techniques
 
-Advanced techniques build upon basics to tackle sophisticated challenges, enhancing dataset richness and model robustness.
-
-### Data Augmentation
+## Data Augmentation
 
 Data augmentation artificially expands datasets to combat overfitting, particularly in CNNs for image classification. Basic operations include flipping, rotation (e.g., by 90° or random angles), and cropping, while advanced methods involve adding noise (Gaussian or salt-and-pepper) or color jittering. For text data in RNNs or transformers, techniques like synonym replacement, random insertion/deletion, or back-translation (translating to another language and back) generate variations while preserving semantics. In time-series for LSTMs, window slicing or synthetic minority over-sampling technique (SMOTE) variants create augmented sequences. Generative models like GANs (Generative Adversarial Networks) represent cutting-edge augmentation, producing realistic synthetic samples. These methods improve generalization by exposing models to diverse inputs.
 
-### Handling Imbalanced Data
+## Handling Imbalanced Data
 
 Imbalanced datasets, where classes are unevenly represented, bias neural networks toward majority classes. Advanced resampling includes oversampling minorities (e.g., SMOTE, which interpolates new instances) or undersampling majorities. Class weighting assigns higher penalties to minority misclassifications in the loss function, e.g., weighted cross-entropy. Ensemble methods, like balanced random forests integrated with neural embeddings, or focal loss in object detection CNNs, further address this. For sequential data, temporal resampling ensures balanced windows.
 
-### Feature Engineering and Selection
+## Feature Engineering and Selection
 
 Feature engineering crafts new features from existing ones, such as polynomial terms or interactions (e.g., \( x_1 \times x_2 \)) to capture non-linearities before neural input. Selection techniques like mutual information or recursive feature elimination reduce irrelevant features, alleviating the curse of dimensionality in high-dimensional data for autoencoders or dense networks. Embedded methods, like L1 regularization in neural training, perform selection during optimization.
 
-### Dimensionality Reduction
+## Dimensionality Reduction
 
 Techniques like Principal Component Analysis (PCA) project data onto lower-dimensional spaces while preserving variance: \( X' = X \cdot W \), where \(W\) are principal components. Autoencoders, a neural-based approach, learn compressed representations through encoder-decoder architectures. t-SNE or UMAP are used for visualization but less for preprocessing due to non-linearity. These are vital for CNNs on high-resolution images or transformers on long sequences to reduce computational load.
 
-### Domain-Specific Advanced Techniques
+## Domain-Specific Advanced Techniques
 
 For time-series in RNNs, techniques include Fast Fourier Transform (FFT) for frequency domain conversion or segmentation into fixed windows. In text preprocessing for sentiment analysis, advanced steps encompass negation handling (e.g., marking "not good" as "not_pos"), intensification (e.g., "very good" as "strong_pos"), and POS tagging to retain sentiment-bearing words. For images in CNNs, advanced signal processing like wavelet transforms or conversion to spectrograms enhances fault diagnosis applications.
-
-## Summary
-
-Preprocessing is indispensable for harnessing the full potential of neural networks, bridging raw data and model efficacy. Basic techniques ensure foundational quality, while advanced ones enable handling of complex, real-world scenarios. Future directions may involve automated preprocessing pipelines using AutoML or integration with neural architectures for end-to-end learning. Researchers should tailor techniques to dataset characteristics and network types to optimize outcomes.
 
 
 
