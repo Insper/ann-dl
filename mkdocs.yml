@@ -148,9 +148,9 @@ nav:
       # - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
       # - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
       # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
-    - 5. Neural Networks: ./classes/ann/intro.md
-    - 6. Perceptron: ./classes/perceptron/perceptron.md
-    - 7. Multi-Layer Perceptron: ./classes/mlp/mlp.md
+    - 5. Neural Networks: ./classes/ann/main.md
+    - 6. Perceptron: ./classes/perceptron/main.md
+    - 7. Multi-Layer Perceptron: ./classes/mlp/main.md
     - 8. Optimization:
       - 8.1. Gradient Descent: ./classes/optimization/gradient-descent.md
       - 8.2. SGD: ./classes/optimization/stochastic-gradient-descent.md

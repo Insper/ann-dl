@@ -264,6 +264,95 @@ Algorithms for training ANNs involve adjusting the weights of the connections be
 - [TensorFlow Playground](https://playground.tensorflow.org/){target="_blank"} is an interactive platform that allows users to visualize and experiment with neural networks. It provides a user-friendly interface to create, train, and test simple neural networks, making it an excellent tool for understanding the concepts of neural networks and their behavior. Users can adjust parameters such as the number of layers, activation functions, and learning rates to see how these changes affect the network's performance on various datasets.
 
 
+
+
+
+
+TODO: improve Perceptron description, add more math, and explain the learning rule. Herbian learning rule, etc.
+
+The Perceptron learning rule (Hebbian learning rule[^4]) can be expressed mathematically as follows:
+
+$$
+w_i(t+1) = w_i(t) + \eta (y - \hat{y}) x_i
+$$
+
+where:
+
+- \(w_i(t)\) is the weight of the \(i\)-th input at time \(t\),
+- \(\eta\) is the learning rate,
+- \(y\) is the true label,
+- \(\hat{y}\) is the predicted output,
+- \(x_i\) is the \(i\)-th input feature.
+
+This equation updates the weights based on the difference between the true label and the predicted output, scaled by the learning rate and the input feature. The learning rate \(\eta\) controls how much the weights are adjusted during each iteration, balancing the speed of learning and stability of convergence.
+
+This simple model can operate as a linear classifier, but it is limited to linearly separable data. 
+
+Minsky and Papert's work in the 1960s highlighted the limitations of the Perceptron, particularly its inability to solve problems like the XOR problem, which are not linearly separable. This led to a temporary decline in interest in neural networks, often referred to as the "AI winter." However, the development of multi-layer networks and backpropagation in the 1980s revived interest in ANNs, leading to the powerful deep learning models we see today.
+
+TODO: draw the XOR problem, explain it, and how the Perceptron cannot solve it.
+```python exec="on" html="1"
+--8<-- "docs/ann/xor-problem.py"
+```
+
+
+- Activation Functions: ./ann/activation-functions.md
+
+The input domain of ANNs is typically represented as a vector of features, where each feature corresponds to a specific aspect of the input data. The output domain can vary depending on the task, such as classification (discrete labels) or regression (continuous values). The architecture of an ANN consists of layers of neurons, where each layer transforms the input data through weighted connections and activation functions. The connections between neurons are represented by weights, which are adjusted during the training process to minimize the error in predictions.
+
+
+### Training and Optimization
+
+Algorithms for training ANNs involve adjusting the weights of the connections between neurons to minimize a loss function, which quantifies the difference between the predicted output and the true output. The most common optimization algorithm used in training ANNs is stochastic gradient descent (SGD), which iteratively updates the weights based on the gradient of the loss function with respect to the weights.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------
+
+
+
+A perceptron is a fundamental building block of neural networks, and its training process is a supervised learning algorithm used to classify data into two categories (binary classification). Below, I’ll explain the training process for a perceptron in a clear and structured way, covering the key concepts, steps, and intuition behind it.
+
+### What is a Perceptron?
+A perceptron is a simple artificial neuron that takes multiple inputs, applies weights to them, sums them up, adds a bias, and passes the result through an activation function (typically a step function) to produce a binary output (e.g., 0 or 1). It’s used to solve linearly separable classification problems.
+
+The perceptron’s output is computed as:
+- **Input**: A vector of features \( \mathbf{x} = [x_1, x_2, \dots, x_n] \).
+- **Weights**: A vector \( \mathbf{w} = [w_1, w_2, \dots, w_n] \) representing the importance of each input.
+- **Bias**: A scalar \( b \) that shifts the decision boundary.
+- **Output**: 
+  \[
+  y = \text{activation}(\mathbf{w} \cdot \mathbf{x} + b)
+  \]
+  where \( \mathbf{w} \cdot \mathbf{x} = w_1x_1 + w_2x_2 + \dots + w_nx_n \), and the activation function is typically a step function:
+  \[
+  \text{activation}(z) = 
+  \begin{cases} 
+  1 & \text{if } z \geq 0 \\
+  0 & \text{if } z < 0 
+  \end{cases}
+  \]
+
+The goal of training is to find the optimal weights \( \mathbf{w} \) and bias \( b \) so the perceptron correctly classifies the training data.
+
+---
+
+
+
+If you’d like, I can provide a code example (e.g., in Python) to demonstrate perceptron training or dive deeper into any specific aspect! Let me know.
+
 [^1]: Haykin, S. (1994). Neural Networks: A Comprehensive Foundation. Prentice Hall.
 [:fontawesome-brands-amazon:](https://www.amazon.com/Neural-Networks-Comprehensive-Foundation-2nd/dp/0132733501){target="_blank"}
 
@@ -274,4 +363,7 @@ Algorithms for training ANNs involve adjusting the weights of the connections be
 [^3]: Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.
 [:fontawesome-brands-amazon:](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618){target="_blank"}
 [:octicons-download-24:](https://www.deeplearningbook.org/){target="_blank"}
+
+
+
 
