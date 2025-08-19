@@ -249,9 +249,11 @@ Suppose we have a dataset with two features \( \mathbf{x} = [x_1, x_2] \) and bi
 
 ### Visualizing the Decision Boundary
 The decision boundary is the hyperplane where \( \mathbf{w} \cdot \mathbf{x} + b = 0 \). For a 2D dataset (\( x_1, x_2 \)), this is a line:
+
 \[
 w_1x_1 + w_2x_2 + b = 0 \implies x_2 = -\frac{w_1}{w_2}x_1 - \frac{b}{w_2}
 \]
+
 During training, the weights and bias are adjusted to move this line so that it separates the two classes correctly.
 
 ---
