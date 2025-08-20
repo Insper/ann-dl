@@ -209,6 +209,13 @@ If the data is linearly separable, the perceptron is guaranteed to converge to a
 Suppose we have a dataset with two features \( \mathbf{x} = [x_1, x_2] \) and binary labels (0 or 1). Let’s train a perceptron to classify points.
 
 ### Dataset:
+
+<div style="float: right; width: 35%;">
+``` python exec="on" html="on"
+--8<-- "docs/classes/perceptron/perceptron-dataset.py"
+```
+</div>
+
 | \( x_1 \) | \( x_2 \) | Label (\( y \)) |
 |-----------|-----------|-----------------|
 | 1         | 1         | 1               |
