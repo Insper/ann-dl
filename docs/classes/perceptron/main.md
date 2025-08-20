@@ -39,6 +39,8 @@ The mathematical foundations of artificial neural networks are built upon linear
 
 **The Perceptron**, introduced by Rosenblatt[^2] in 1958, is one of the earliest and simplest forms of an ANN. It consists of a single layer of neurons that can classify linearly separable data. The Perceptron algorithm adjusts the weights of the inputs based on the error in the output, allowing it to learn from examples.
 
+The Perceptron can be mathematically described as follows:
+
 <center>
 ``` mermaid
 flowchart LR
@@ -76,6 +78,12 @@ flowchart LR
     style outputs fill:#fff,stroke:#fff,stroke-width:0px
 ```
 </center>
+
+The Perceptron computes the output \(y\) as follows:
+
+\[
+y = \text{activation}\left(\sum_{i=1}^n w_i x_i + b\right)
+\]
 
 A perceptron is a simple artificial neuron that takes multiple inputs, applies weights to them, sums them up, adds a bias, and passes the result through an activation function (typically a step function) to produce a binary output (e.g., 0 or 1). It’s used to solve linearly separable classification problems.
 
@@ -274,6 +282,19 @@ During training, the weights and bias are adjusted to move this line so that it 
 
 ## Summary
 The perceptron training algorithm is a simple, iterative process that adjusts weights and bias to minimize classification errors on a linearly separable dataset. It involves initializing parameters, computing predictions, calculating errors, and updating weights based on the perceptron learning rule. While limited to binary classification and linearly separable data, it’s a foundational concept for understanding more complex neural networks.
+
+```python exec="on" html="on"
+import plotly.express as px
+import numpy as np
+
+df = px.data.tips()
+fig = px.bar(df, x='sex', y='total_bill', facet_col='day', color='smoker', barmode='group',
+             template='presentation+plotly'
+             )
+fig.update_layout(height=400)
+fig
+```
+
 
 [^1]: McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. *The Bulletin of Mathematical Biophysics*, 5(4), 115-133.
 [doi:10.1007/BF02478259](https://doi.org/10.1007/BF02478259){ target=_blank }
