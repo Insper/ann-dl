@@ -81,43 +81,45 @@ A perceptron is a simple artificial neuron that takes multiple inputs, applies w
 
 The perceptron’s output is computed as:
 
-**Input**: a vector of features \( \mathbf{x} = [x_1, x_2, \dots, x_n] \).
+- **Input**: a vector of features \( \mathbf{x} = [x_1, x_2, \dots, x_n] \).
 
-**Weights**: a vector \( \mathbf{w} = [w_1, w_2, \dots, w_n] \) representing the importance of each input.
-**Bias**: a scalar \( b \) that shifts the decision boundary.
+- **Weights**: a vector \( \mathbf{w} = [w_1, w_2, \dots, w_n] \) representing the importance of each input.
 
-**Output**:
+- **Bias**: a scalar \( b \) that shifts the decision boundary.
 
-\[ y = \text{activation}(\mathbf{w} \cdot \mathbf{x} + b) \]
+- **Output**:
 
-where \( \mathbf{w} \cdot \mathbf{x} = w_1x_1 + w_2x_2 + \dots + w_nx_n \), and the activation function is typically a step function:
+    \[ y = \text{activation}(\mathbf{w} \cdot \mathbf{x} + b) \]
 
-\[
-\text{activation}(z) = 
-\begin{cases} 
-1 & \text{if } z \geq 0 \\
-0 & \text{if } z < 0 
-\end{cases}
-\]
+    where \( \mathbf{w} \cdot \mathbf{x} = w_1x_1 + w_2x_2 + \dots + w_nx_n \), and the activation function is typically a step function:
+
+    \[
+    \text{activation}(z) = 
+    \begin{cases} 
+    1 & \text{if } z \geq 0 \\
+    0 & \text{if } z < 0 
+    \end{cases}
+    \]
 
 The goal of training is to find the optimal weights \( \mathbf{w} \) and bias \( b \) so the perceptron correctly classifies the training data.
 
-### Perceptron Training Process
+## Perceptron Training Process
 The perceptron training algorithm adjusts the weights and bias iteratively based on errors in classification. Here’s a step-by-step explanation:
 
-#### 1. **Initialize Weights and Bias**
+### 1. **Initialize Weights and Bias**
 
 Start with small random values for the weights \( \mathbf{w} \) and bias \( b \), or initialize them to zero. These initial values don’t need to be perfect, as the algorithm will adjust them during training.
 
-#### 2. **Provide Training Data**
- The training dataset consists of input-output pairs \( \{(\mathbf{x}^{(i)}, y^{(i)})\} \), where:
+### 2. **Provide Training Data**
+
+The training dataset consists of input-output pairs \( \{(\mathbf{x}^{(i)}, y^{(i)})\} \), where:
 
 - \( \mathbf{x}^{(i)} \) is the feature vector for the \( i \)-th example.
 - \( y^{(i)} \) is the true label (0 or 1).
 
 The data must be **linearly separable** for the perceptron to converge (i.e., a straight line or hyperplane can separate the two classes).
 
-#### 3. **Forward Pass: Compute Prediction**
+### 3. **Forward Pass: Compute Prediction**
 
 For each training example \( \mathbf{x}^{(i)} \):
 
@@ -133,7 +135,7 @@ Apply the activation function to get the predicted output \( \hat{y}^{(i)} \):
 
 Compare the predicted output \( \hat{y}^{(i)} \) with the true label \( y^{(i)} \).
 
-#### 4. **Compute Error**
+### 4. **Compute Error**
 
 The error is the difference between the true label and the predicted label:
 
@@ -147,7 +149,7 @@ Since \( y^{(i)} \) and \( \hat{y}^{(i)} \) are binary (0 or 1), the error can b
 - \( 1 \) (predicted 0, but true label is 1),
 - \( -1 \) (predicted 1, but true label is 0).
 
-#### 5. **Update Weights and Bias**
+### 5. **Update Weights and Bias**
 
 If the prediction is correct (\( \text{error} = 0 \)), no update is needed.
 
@@ -167,21 +169,26 @@ where:
 
 The update moves the decision boundary to reduce the error for the current example.
 
-#### 6. **Iterate**
+### 6. **Iterate**
 
 Repeat steps 3–5 for all training examples in the dataset (one pass through the dataset is called an **epoch**).
 
-Continue iterating for a fixed number of epochs or until the perceptron correctly classifies all training examples (i.e., no errors).
+!!! warning "Stop Criteria"
 
-#### 7. **Convergence**
+    Continue iterating for a fixed number of epochs or until the perceptron correctly classifies all training examples (i.e., no errors).
+
+### 7. **Convergence**
 
 If the data is linearly separable, the perceptron is guaranteed to converge to a solution that correctly classifies all training examples.
 
-If the data is not linearly separable, the algorithm will not converge and may oscillate. In such cases, you may need to limit the number of epochs or use a different model.
+!!! warning "Stop Criteria"
+
+    If the data is not linearly separable, the algorithm will not converge and may oscillate. In such cases, you may need to limit the number of epochs or use a different model.
 
 ---
 
 ### Intuition Behind the Training
+
 - The perceptron learns by adjusting the decision boundary (a hyperplane defined by \( \mathbf{w} \cdot \mathbf{x} + b = 0 \)) to separate the two classes.
 - Each weight update moves the hyperplane slightly to reduce misclassification errors.
 - The learning rate \( \eta \) controls how aggressively the hyperplane is adjusted:
@@ -190,10 +197,10 @@ If the data is not linearly separable, the algorithm will not converge and may o
 
 ---
 
-### Example: Training a Perceptron
+## Example: Training a Perceptron
 Suppose we have a dataset with two features \( \mathbf{x} = [x_1, x_2] \) and binary labels (0 or 1). Let’s train a perceptron to classify points.
 
-#### Dataset:
+### Dataset:
 | \( x_1 \) | \( x_2 \) | Label (\( y \)) |
 |-----------|-----------|-----------------|
 | 1         | 1         | 1               |
@@ -207,33 +214,33 @@ Suppose we have a dataset with two features \( \mathbf{x} = [x_1, x_2] \) and bi
 
 2. **First Example**: \( \mathbf{x}^{(1)} = [1, 1] \), \( y^{(1)} = 1 \).
 
-    - Compute: \( z = 0 \cdot 1 + 0 \cdot 1 + 0 = 0 \), so \( \hat{y}^{(1)} = 1 \) (since \( z \geq 0 \)).
+    - Compute: \( z = \underbrace{0}_{w_1} \cdot \underbrace{1}_{x_1} + \underbrace{0}_{w_2} \cdot \underbrace{1}_{x_2} + \underbrace{0}_{b} = 0 \), so \( \hat{y}^{(1)} = 1 \) (since \( z \geq 0 \)).
     - Error: \( y^{(1)} - \hat{y}^{(1)} = 1 - 1 = 0 \). No update needed.
 
 3. **Second Example**: \( \mathbf{x}^{(2)} = [2, 2] \), \( y^{(2)} = 1 \).
 
-    - Compute: \( z = 0 \cdot 2 + 0 \cdot 2 + 0 = 0 \), so \( \hat{y}^{(2)} = 1 \).
-    - Error: \( 1 - 1 = 0 \). No update.
+    - Compute: \( z = \underbrace{0}_{w_1} \cdot \underbrace{2}_{x_1} + \underbrace{0}_{w_2} \cdot \underbrace{2}_{x_2} + \underbrace{0}_{b} = 0 \), so \( \hat{y}^{(2)} = 1 \).
+    - Error: \( \underbrace{1}_{y^{(1)}} - \underbrace{1}_{\hat{y}^{(1)}} = 0 \). No update.
 
 4. **Third Example**: \( \mathbf{x}^{(3)} = [-1, -1] \), \( y^{(3)} = 0 \).
 
-    - Compute: \( z = 0 \cdot (-1) + 0 \cdot (-1) + 0 = 0 \), so \( \hat{y}^{(3)} = 1 \).
-    - Error: \( 0 - 1 = -1 \).
+    - Compute: \( z = \underbrace{0}_{w_1} \cdot \underbrace{-1}_{x_1} + \underbrace{0}_{w_2} \cdot \underbrace{-1}_{x_2} + \underbrace{0}_{b} = 0 \), so \( \hat{y}^{(3)} = 1 \).
+    - Error: \( \underbrace{0}_{y^{(1)}} - \underbrace{1}_{\hat{y}^{(1)}} = -1 \).
     - Update:
 
     \[
-    \mathbf{w} = [0, 0] + 0.1 \cdot (-1) \cdot [-1, -1] = [0, 0] + [0.1, 0.1] = [0.1, 0.1]
+    \mathbf{w} = \underbrace{[0, 0]}_{\mathbf{w}} + \underbrace{0.1}_{\eta} \cdot \underbrace{-1}_{\text{error}} \cdot \underbrace{[-1, -1]}_{\mathbf{x}^{(3)}} = [0, 0] + [0.1, 0.1] = [0.1, 0.1]
     \]
 
     \[
-    b = 0 + 0.1 \cdot (-1) = -0.1
+    b = \underbrace{0}_{b} + \underbrace{0.1}_{\eta} \cdot \underbrace{-1}_{\text{error}} = -0.1
     \]
 
 5. **Fourth Example**: \( \mathbf{x}^{(4)} = [-2, -1] \), \( y^{(4)} = 0 \).
 
-    - Compute: \( z = 0.1 \cdot (-2) + 0.1 \cdot (-1) + (-0.1) = -0.2 - 0.1 - 0.1 = -0.4 \), so \( \hat{y}^{(4)} = 0 \).
-    
-    - Error: \( 0 - 0 = 0 \). No update.
+    - Compute: \( z = \underbrace{0.1}_{w_1} \cdot \underbrace{-2}_{x_1} + \underbrace{0.1}_{w_2} \cdot \underbrace{-1}_{x_2} + \underbrace{-0.1}_{b} = -0.4 \), so \( \hat{y}^{(4)} = 0 \).
+
+    - Error: \( \underbrace{0}_{y^{(4)}} - \underbrace{0}_{\hat{y}^{(4)}} = 0 \). No update.
 
 6. **Repeat**: Continue iterating through the dataset, updating weights and bias when errors occur, until all examples are correctly classified or a maximum number of epochs is reached.
 
@@ -258,14 +265,14 @@ During training, the weights and bias are adjusted to move this line so that it 
 
 ---
 
-### Practical Considerations
+## Practical Considerations
 - **Preprocessing**: Normalize or standardize input features to ensure they’re on similar scales, which helps the perceptron learn more effectively.
 - **Epochs**: Set a maximum number of epochs to prevent infinite loops if the data is not linearly separable.
 - **Extensions**: To handle multi-class problems, you can use multiple perceptrons (one-vs-rest) or move to more advanced models like MLPs or support vector machines (SVMs).
 
 ---
 
-### Summary
+## Summary
 The perceptron training algorithm is a simple, iterative process that adjusts weights and bias to minimize classification errors on a linearly separable dataset. It involves initializing parameters, computing predictions, calculating errors, and updating weights based on the perceptron learning rule. While limited to binary classification and linearly separable data, it’s a foundational concept for understanding more complex neural networks.
 
 [^1]: McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. *The Bulletin of Mathematical Biophysics*, 5(4), 115-133.

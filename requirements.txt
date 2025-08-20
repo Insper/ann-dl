@@ -4,6 +4,7 @@ mkdocs-badges
 mkdocs-material
 mkdocs-material-extensions
 mkdocs-minify-plugin
+mkdocs-plotly-plugin 
 mkdocs-glightbox
 mkdocs-git-authors-plugin
 mkdocs-git-committers-plugin-2
@@ -19,3 +20,4 @@ scikit-learn
 seaborn
 tabulate
 yfinance
+plotly
