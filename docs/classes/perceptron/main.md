@@ -287,6 +287,22 @@ During training, the weights and bias are adjusted to move this line so that it 
 
 ---
 
+## Limitations of the Perceptron
+
+While the perceptron is a foundational model in machine learning, it has several limitations:
+
+1. **Linearly Separable Data**: The perceptron can only solve problems where the classes are linearly separable. If the data cannot be separated by a straight line (or hyperplane in higher dimensions), the perceptron will fail to converge. A classic example of this limitation is the **XOR problem**[^5], which cannot be solved by a single-layer perceptron.
+
+    ``` python exec="on" html="on"
+    --8<-- "docs/classes/perceptron/xor-problem.py"
+    ```
+
+2. **Binary Classification**: The basic perceptron is designed for binary classification tasks. While it can be extended to multi-class problems using techniques like one-vs-rest, it is not inherently suited for multi-class classification.
+3. **No Probability Estimates**: The perceptron outputs binary decisions (0 or 1) without providing probability estimates for its predictions. This can be a limitation in applications where understanding the confidence of predictions is important.
+4. **Sensitivity to Learning Rate**: The choice of learning rate can significantly affect the training process. A learning rate that is too high can cause the algorithm to overshoot the optimal solution, while a learning rate that is too low can lead to slow convergence.
+
+---
+
 ## Summary
 The perceptron training algorithm is a simple, iterative process that adjusts weights and bias to minimize classification errors on a linearly separable dataset. It involves initializing parameters, computing predictions, calculating errors, and updating weights based on the perceptron learning rule. While limited to binary classification and linearly separable data, it’s a foundational concept for understanding more complex neural networks.
 
@@ -316,3 +332,8 @@ fig
 [doi.org/10.1002/sce.37303405110](https://doi.org/10.1002/sce.37303405110){ target=_blank }
 [:material-wikipedia:](https://en.wikipedia.org/wiki/Hebbian_learning){ target=_blank }
 [:octicons-download-24:](https://pure.mpg.de/pubman/item/item_2346268_3/component/file_2346267/Hebb_1949_The_Organization_of_Behavior.pdf){ target=_blank }
+
+[^5]: Minsky, M., & Papert, S. (1969). Perceptrons: An introduction to computational geometry. *MIT Press*.
+[:octicons-book-24:](https://mitpress.mit.edu/9780262630221/perceptrons/){target='_blank'} 
+[:material-wikipedia:](https://en.wikipedia.org/wiki/Perceptrons_(book)){target='_blank'}
+[:octicons-download-24:](https://rodsmith.nz/wp-content/uploads/Minsky-and-Papert-Perceptrons.pdf){target='_blank'}",

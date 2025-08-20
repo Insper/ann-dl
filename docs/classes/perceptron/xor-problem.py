@@ -23,15 +23,15 @@ for i in range(3):
 
 i = 0
 ax[i].title.set_text('AND')
-ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
-ax[i].plot(0, 1, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
-ax[i].plot(1, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='red', markeredgewidth=2 )
+ax[i].plot(0, 1, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='red', markeredgewidth=2 )
+ax[i].plot(1, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='red', markeredgewidth=2 )
 ax[i].plot(1, 1, 'or', markersize=10)
 ax[i].plot([.4, 1], [1.05, .5], '--b', lw=3)
 
 i = 1
 ax[i].title.set_text('OR')  
-ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(0, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='red', markeredgewidth=2 )
 ax[i].plot(0, 1, 'or', markersize=10)
 ax[i].plot(1, 0, 'or', markersize=10)
 ax[i].plot(1, 1, 'or', markersize=10)
@@ -40,8 +40,8 @@ ax[i].plot([-.05, .6], [.6, -0.05], '--b', lw=3)
 i = 2
 ax[i].title.set_text('XOR')
 ax[i].plot(0, 0, 'or', markersize=10)
-ax[i].plot(0, 1, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
-ax[i].plot(1, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='grey', markeredgewidth=2 )
+ax[i].plot(0, 1, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='red', markeredgewidth=2 )
+ax[i].plot(1, 0, 'o', markersize=10, color='grey', markerfacecolor='white', markeredgecolor='red', markeredgewidth=2 )
 ax[i].plot(1, 1, 'or', markersize=10)
 ax[i].text(.5, 0.5, '?', horizontalalignment='center', fontsize=24)
 
