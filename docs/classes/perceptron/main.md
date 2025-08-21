@@ -306,17 +306,39 @@ While the perceptron is a foundational model in machine learning, it has several
 ## Summary
 The perceptron training algorithm is a simple, iterative process that adjusts weights and bias to minimize classification errors on a linearly separable dataset. It involves initializing parameters, computing predictions, calculating errors, and updating weights based on the perceptron learning rule. While limited to binary classification and linearly separable data, it’s a foundational concept for understanding more complex neural networks.
 
-```python exec="on" html="on"
-import plotly.express as px
+<!-- ```python exec="on" html="on"
+import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.animation import FuncAnimation
 
-df = px.data.tips()
-fig = px.bar(df, x='sex', y='total_bill', facet_col='day', color='smoker', barmode='group',
-             template='presentation+plotly'
-             )
-fig.update_layout(height=400)
-fig
+# 1. Prepare data and plot
+fig, ax = plt.subplots()
+x_data, y_data = [], []
+line, = ax.plot([], [], 'r-')
+
+# 2. Define init function
+def init():
+    ax.set_xlim(0, 2 * np.pi)
+    ax.set_ylim(-1, 1)
+    return line,
+
+# 3. Define update function
+def update(frame):
+    x_data.append(frame)
+    y_data.append(np.sin(frame))
+    line.set_data(x_data, y_data)
+    return line,
+
+# 4. Create FuncAnimation object
+ani = FuncAnimation(fig, update, frames=np.linspace(0, 2 * np.pi, 100),
+                    init_func=init, blit=True, interval=50)
+
+# 5. Save as GIF
+# Requires a writer like 'pillow' (pip install pillow)
+ani.save('docs/classes/perceptron/animated_plot.gif', writer='pillow', fps=20)
 ```
+
+![](docs/classes/perceptron/animated_plot.gif){ width=50% } -->
 
 
 [^1]: McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. *The Bulletin of Mathematical Biophysics*, 5(4), 115-133.
@@ -336,4 +358,4 @@ fig
 [^5]: Minsky, M., & Papert, S. (1969). Perceptrons: An introduction to computational geometry. *MIT Press*.
 [:octicons-book-24:](https://mitpress.mit.edu/9780262630221/perceptrons/){target='_blank'} 
 [:material-wikipedia:](https://en.wikipedia.org/wiki/Perceptrons_(book)){target='_blank'}
-[:octicons-download-24:](https://rodsmith.nz/wp-content/uploads/Minsky-and-Papert-Perceptrons.pdf){target='_blank'}",
+[:octicons-download-24:](https://rodsmith.nz/wp-content/uploads/Minsky-and-Papert-Perceptrons.pdf){target='_blank'},

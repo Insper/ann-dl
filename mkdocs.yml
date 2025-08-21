@@ -146,25 +146,25 @@ nav:
     - 1. Concepts: ./classes/concepts/main.md
     - 2. Data: ./classes/data/main.md
     - 3. Preprocessing: ./classes/preprocessing/main.md
-    - 4. Metrics and Evaluation:
-      - 4.1. Classification Metrics: ./classes/metrics/classification/classification-metrics.md
-      - 4.2. Regression Metrics: ./classes/metrics/regression/regression-metrics.md
+    - 4. Neural Networks: ./classes/ann/main.md
+    - 5. Perceptron: ./classes/perceptron/main.md
+    - 6. Multi-Layer Perceptron: ./classes/mlp/main.md
+    - 7. Optimization:
+      - 7.1. Gradient Descent: ./classes/optimization/gradient-descent.md
+      - 7.2. SGD: ./classes/optimization/stochastic-gradient-descent.md
+      - 7.3. Momentum: ./classes/optimization/momentum.md
+      - 7.4. Adam Optimizer: ./classes/optimization/adam-optimizer.md
+    - 8. Regularization:
+      - 8.1. L1 and L2 Regularization: ./classes/regularization/l1-l2-regularization.md
+      - 8.2. Dropout: ./classes/regularization/dropout.md
+      - 8.3. Batch Normalization: ./classes/regularization/batch-normalization.md
+      - 8.4. Early Stopping: ./classes/regularization/early-stopping.md
+    - 9. Metrics and Evaluation:
+      - 9.1. Classification Metrics: ./classes/metrics/classification/classification-metrics.md
+      - 9.2. Regression Metrics: ./classes/metrics/regression/regression-metrics.md
       # - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
       # - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
       # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
-    - 5. Neural Networks: ./classes/ann/main.md
-    - 6. Perceptron: ./classes/perceptron/main.md
-    - 7. Multi-Layer Perceptron: ./classes/mlp/main.md
-    - 8. Optimization:
-      - 8.1. Gradient Descent: ./classes/optimization/gradient-descent.md
-      - 8.2. SGD: ./classes/optimization/stochastic-gradient-descent.md
-      - 8.3. Momentum: ./classes/optimization/momentum.md
-      - 8.4. Adam Optimizer: ./classes/optimization/adam-optimizer.md
-    - 9. Regularization:
-      - 9.1. L1 and L2 Regularization: ./classes/regularization/l1-l2-regularization.md
-      - 9.2. Dropout: ./classes/regularization/dropout.md
-      - 9.3. Batch Normalization: ./classes/regularization/batch-normalization.md
-      - 9.4. Early Stopping: ./classes/regularization/early-stopping.md
     - 10. Deep Learning: ./classes/deep-learning/intro.md
     - 11. Convolutional: ./classes/convolutional-neural-networks/cnn.md
     - 12. Generative Models:
