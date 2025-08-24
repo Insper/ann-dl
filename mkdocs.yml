@@ -188,11 +188,11 @@ nav:
     - 2025.2:
       - Presentation: ./versions/2025.2/main.md
       - Exercises:
-        - 1. Data: ./versions/2025.2/exercises/data/data.md
-        - 2. Perceptron: ./versions/2025.2/exercises/perceptron/perceptron.md
-        - 3. MLP: ./versions/2025.2/exercises/mlp/mlp.md
-        - 4. Metrics: ./versions/2025.2/exercises/metrics/metrics.md
+        - 1. Data: ./versions/2025.2/exercises/data/main.md
+        - 2. Perceptron: ./versions/2025.2/exercises/perceptron/main.md
+        - 3. MLP: ./versions/2025.2/exercises/mlp/main.md
+        - 4. Metrics: ./versions/2025.2/exercises/metrics/main.md
       - Projects:
-        - 1. Classification: ./versions/2025.2/projects/classification/classification.md
-        - 2. Regression: ./versions/2025.2/projects/regression/regression.md
-        - 3. Generative Models: ./versions/2025.2/projects/generative/generative.md
+        - 1. Classification: ./versions/2025.2/projects/classification/main.md
+        - 2. Regression: ./versions/2025.2/projects/regression/main.md
+        - 3. Generative Models: ./versions/2025.2/projects/generative/main.md
