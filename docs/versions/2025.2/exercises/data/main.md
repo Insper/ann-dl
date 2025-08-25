@@ -137,26 +137,26 @@ The deliverable for this activity consists of a **report** that includes:
 
 **Grade Criteria:**
 
-- **Exercise 1 (3 points):**
+**Exercise 1 (3 points):**
 
-    | Criteria | Description |
-    |:--------:|-------------|
-    | **1 pt** | Data is generated correctly and visualized in a clear scatter plot with proper labels and colors. |
-    | **2 pts** | The analysis of class separability is accurate, and the proposed decision boundaries are logical and well-explained in the context of what a network would learn. |
+| Criteria | Description |
+|:--------:|-------------|
+| **1 pt** | Data is generated correctly and visualized in a clear scatter plot with proper labels and colors. |
+| **2 pts** | The analysis of class separability is accurate, and the proposed decision boundaries are logical and well-explained in the context of what a network would learn. |
 
-- **Exercise 2 (3 points):**
+**Exercise 2 (3 points):**
 
-    | Criteria | Description |
-    |:--------:|-------------|
-    | **1 pt** | Data is generated correctly using the specified multivariate parameters. |
-    | **1 pt** | Dimensionality reduction is applied correctly, and the resulting 2D projection is clearly plotted. |
-    | **1 pt** | The analysis correctly identifies the non-linear relationship and explains why a neural network would be a suitable model. |
+| Criteria | Description |
+|:--------:|-------------|
+| **1 pt** | Data is generated correctly using the specified multivariate parameters. |
+| **1 pt** | Dimensionality reduction is applied correctly, and the resulting 2D projection is clearly plotted. |
+| **1 pt** | The analysis correctly identifies the non-linear relationship and explains why a neural network would be a suitable model. |
 
-- **Exercise 3 (4 points):**
+**Exercise 3 (4 points):**
 
-    | Criteria | Description |
-    |:--------:|-------------|
-    | **1 pt** | The data is correctly loaded, and its characteristics are accurately described. |
-    | **2 pts** | All preprocessing steps (handling missing data, encoding, and appropriate feature scaling for `tanh`) are implemented correctly and with clear justification for a neural network context. |
-    | **1 pt** | Visualizations effectively demonstrate the impact of the data preprocessing. |
+| Criteria | Description |
+|:--------:|-------------|
+| **1 pt** | The data is correctly loaded, and its characteristics are accurately described. |
+| **2 pts** | All preprocessing steps (handling missing data, encoding, and appropriate feature scaling for `tanh`) are implemented correctly and with clear justification for a neural network context. |
+| **1 pt** | Visualizations effectively demonstrate the impact of the data preprocessing. |
 
