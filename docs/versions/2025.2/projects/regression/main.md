@@ -92,7 +92,7 @@ Follow these steps in your work. Your report must address each one explicitly.
 
 ### 8. **Evaluation Metrics**
 
-- Apply regression metrics suitable for regression tasks, such as Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R²).
+- Apply regression metrics suitable for regression tasks, such as Mean Absolute Error (MAE), MAPE, Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R²).
 - Compare to baselines (e.g., mean predictor).
 - In your report: Present results in tables (e.g., metric values) and visualizations (e.g., residual plots). Discuss strengths/weaknesses (e.g., "High RMSE indicates model struggles with outliers").
 
