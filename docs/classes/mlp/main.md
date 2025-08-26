@@ -438,4 +438,6 @@ more: -->
 [:fontawesome-brands-amazon:](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618){target="_blank"}
 [:octicons-download-24:](https://www.deeplearningbook.org/){target="_blank"}
 
-[^4]: [Physics of Neural Networks, Book Series](https://link.springer.com/series/1465){target="_blank"}
+[^4]: [Physics of Neural Networks](https://link.springer.com/series/1465){target="_blank"}, Book Series.
+
+[^5]: [Introduction to Mathematical Optimization](https://indrag49.github.io/Numerical-Optimization/){target="_blank"}, by Indrajit Ghosh.
