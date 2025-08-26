@@ -68,9 +68,9 @@ flowchart LR
     yk --> outn@{ shape: dbl-circ, label: " " }
 
     style in fill:#fff,stroke:#666,stroke-width:0px
-    style input fill:#eee,stroke:#666,stroke-width:1px
-    style hidden fill:#eee,stroke:#666,stroke-width:1px
-    style output fill:#eee,stroke:#666,stroke-width:1px
+    style input fill:#fff,stroke:#666,stroke-width:1px
+    style hidden fill:#fff,stroke:#666,stroke-width:1px
+    style output fill:#fff,stroke:#666,stroke-width:1px
 ```
 <i>Multi-Layer Perceptron (MLP) Architecture.</i>
 </center>
