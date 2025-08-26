@@ -21,6 +21,7 @@ flowchart LR
         xn(["x<sub>n</sub>"])
     end
     subgraph hidden
+        direction TB
         h1(["h<sub>1</sub>"])
         h2(["h<sub>2</sub>"])
         hd(["..."]):::others
@@ -56,6 +57,7 @@ flowchart LR
     y1 --> out1@{ shape: dbl-circ, label: " " }
     yk --> outn@{ shape: dbl-circ, label: " " }
 
+    style in fill:#fff,stroke:#666,stroke-width:0px
     style input fill:#fff,stroke:#666,stroke-width:1px
     style hidden fill:#fff,stroke:#666,stroke-width:1px
     style output fill:#fff,stroke:#666,stroke-width:1px
@@ -117,6 +119,22 @@ Backpropagation is the algorithm used to train multi-layer perceptrons (MLPs) by
 
 ## Feedforward
 
+Consider a Multi-Layer Perceptron (MLP) with:
+
+- 2 input neurons: \(x_1\) and \(x_2\)
+- 1 hidden layer with 2 neurons: \(h_1\) and \(h_2\)
+- 1 output neuron: \(y\)
+
+We assume sigmoid activation functions for both the hidden and output layers:
+
+$$\displaystyle f(z) = \frac{1}{1 + e^{-z}}$$
+
+, with derivative
+
+$$f'(z) = f(z)(1 - f(z))$$
+
+The architecture can be visualized as follows:
+
 <center>
 ``` mermaid
 flowchart LR
@@ -127,11 +145,27 @@ flowchart LR
         x2(["x<sub>2</sub>"])
     end
     subgraph hidden
-        h1(["h<sub>1</sub>"])
-        h2(["h<sub>2</sub>"])
+        direction TB
+        subgraph nh1[" "]
+            direction TB
+            style nh1 fill:transparent,stroke:transparent,stroke-width:0px
+            h1(["h<sub>1</sub>"])
+            bh1(["b<sup>h</sup><sub>1</sub>"])
+        end
+        subgraph nh2[" "]
+            direction TB
+            style nh2 fill:transparent,stroke:transparent,stroke-width:0px
+            h2(["h<sub>2</sub>"])
+            bh2(["b<sup>h</sup><sub>2</sub>"])
+        end
     end
     subgraph output
-        y(["y"])
+        subgraph ny[" "]
+            direction TB
+            style ny fill:transparent,stroke:transparent,stroke-width:0px
+            y(["y"])
+            by(["b<sup>y</sup><sub>1</sub>"])
+        end
     end
     in1@{ shape: circle, label: " " } --> x1
     in2@{ shape: circle, label: " " } --> x2
@@ -144,7 +178,7 @@ flowchart LR
     h1 -->|"v<sub>11</sub>"|y
     h2 -->|"v<sub>21</sub>"|y
 
-    y --> out1@{ shape: dbl-circ, label: " " }
+    y(("ŷ")) --> out1@{ shape: dbl-circ, label: " " }
 
     style input fill:#fff,stroke:#666,stroke-width:0px
     style hidden fill:#fff,stroke:#666,stroke-width:0px
@@ -153,205 +187,226 @@ flowchart LR
 <i>Multi-Layer Perceptron (MLP) Architecture.</i>
 </center>
 
-In cannonical form, the MLP can be expressed as:
+In mathematical terms, the feedforward process can be described as follows:
+
+$$
+\begin{align*}
+\text{Input Layer:} & \quad \mathbf{x} = [x_1, x_2]^T \\
+\text{Hidden Layer:} & \quad \mathbf{h} = f (\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
+\text{Output Layer:} & \quad \mathbf{y} = f (\mathbf{V} \mathbf{h} + \mathbf{b}^y)
+\end{align*}
+$$
+
+or, more canonical for our simple MLP:
+
+1. Hidden layer pre-activation:
 
 $$
 \begin{align}
-h_1 & = f ( x_1 * w_{11} + x_2 * w_{12} + b^h_1 ) \\
-h_2 & = f ( x_1 * w_{21} + x_2 * w_{22} + b^h_2 ) \\
-\\
-y & = f ( h_1 * v_{11} + h_2 * v_{21} + b^v_1 ) \\
-\\ \therefore \\
-\\
-y & = f \left( f ( x_1 * w_{11} + x_2 * w_{12} + b^h_{1} ) * v_{1} + f ( x_1 * w_{21} + x_2 * w_{22} + b^h_{2} )  * v_{2} + b^v_{1} \right)
+z_1 & = w_{11} x_1 + w_{21} x_2 + b^h_1 \\
+z_2 & = w_{12} x_1 + w_{22} x_2 + b^h_2
 \end{align}
 $$
 
-where \( f \) is the activation function, \( w_{ij} \) are the weights connecting inputs to hidden neurons, and \( v_{ij} \) are the weights connecting hidden neurons to output neurons. The biases \( b_1, b_2, \) and \( b_y \) are added to the respective layers.
+2. Hidden layer activations:
 
+$$
+\begin{align}
+h_1 & = f(z_1) \\
+h_2 & = f(z_2)
+\end{align}
+$$
 
-## Backpropagation
+3. Output layer pre-activation:
+
+$$
+\begin{align}
+u & = v_{11} h_1 + v_{21} h_2 + b^y_1
+\end{align}
+$$
+
+4. Output layer activation:
+
+$$
+\begin{align}
+\hat{y} & = f(u)
+\end{align}
+$$
+
+where \( f \) is the activation function, \( w_{ij} \) are the weights connecting inputs to hidden neurons, and \( v_{ij} \) are the weights connecting hidden neurons to output neurons. The biases \( b^h_1, b^h_2, \) and \( b^y_1 \) are added to the respective layers. \( \hat{y} \) is the predicted output of the MLP.
+
+## Loss Calculation
+
+The loss function quantifies the difference between the predicted output and the actual target. For regression tasks, a common loss function is the Mean Squared Error (MSE):
+
+$$
+L = \text{MSE} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2
+$$
+
+where \( N \) is the number of samples, \( y_i \) is the true output, and \( \hat{y}_i \) is the predicted output.
+
+## Backpropagation: Computing Gradients
 
 The backpropagation algorithm is a method used to train multi-layer perceptrons (MLPs) by minimizing the error between the predicted output and the actual target. It involves two main steps: the forward pass and the backward pass. The update of weights and biases is done using the gradients computed during the backward pass.
 
+Backpropagation computes the partial derivatives of \(L\) with respect to each parameter using the chain rule, starting from the output and propagating errors backward.
+
+### Update Rule
+
+To update parameters during training (e.g., via gradient descent with learning rate \(\eta\)), for each weight/bias \(p\):
+
+$$
+p \leftarrow p - \eta \cdot \frac{\partial L}{\partial p}
+$$
+
+This derivation assumes a single example; for batches, average the gradients. For other activations or losses (e.g., softmax + cross-entropy), the deltas would adjust accordingly, but the chain rule structure remains similar.
 
 
-## Training Process
+### Step 1: Output Layer Error
+
+The error term (delta) for the output is:
+
+$$
+\begin{align}
+    \delta_y = \frac{\partial L}{\partial u} &= \overbrace{\frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial u}}^{\text{chain rule}} \\ 
+    &= \overbrace{(y - \hat{y})}^{\text{MSE}} \cdot \overbrace{\sigma'(u)}^{\text{sigmoid}} \\
+    \\
+    &= (y - \hat{y}) \cdot \hat{y}(1 - \hat{y})
+\end{align}
+$$
+
+### Step 2: Gradients for Output Weights and Bias
+
+!!! info inline end "Remember"
+
+    $$
+    \begin{align}
+    u & = v_{11} h_1 + v_{21} h_2 + b^y_1
+    \end{align}
+    $$
+
+Using \(\delta_y\):
+
+$\begin{align}
+    \frac{\partial L}{\partial v_{11}} &= \delta_y \cdot h_1 \\
+    \\
+    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial v_{11}}}^{\text{chain rule}} &= \delta_y \cdot h_1
+\end{align}$
+
+Similarly:
+
+$\begin{align}
+    \frac{\partial L}{\partial v_{21}} &= \delta_y \cdot h_2 \\
+    \\
+    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial v_{21}}}^{\text{chain rule}} &= \delta_y \cdot h_2
+\end{align}$
+
+### Step 3: Hidden Layer Errors
+
+!!! info inline end "Remember"
+
+    $$
+    \begin{align}
+    z_1 & = w_{11} x_1 + w_{21} x_2 + b^h_1 \\
+    z_2 & = w_{12} x_1 + w_{22} x_2 + b^h_2
+    \end{align}
+    $$
+
+
+Propagate the error back to the hidden layer. For each hidden neuron:
+
+$\begin{align}
+    \delta_{h_1} &= \frac{\partial L}{\partial z_1} \\
+    \\
+    &= \frac{\partial L}{\partial h_1} & \cdot \frac{\partial h_1}{\partial z_1} \\
+    \\
+    &= \left( \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial h_1} \right) & \cdot \sigma'(z_1) \\
+    \\
+    &= (\delta_y \cdot v_1) & \cdot \sigma'(z_1) \\
+    \\
+    &= (\delta_y \cdot v_1) & \cdot h_1(1 - h_1)
+\end{align}$
+
+
+Similarly:
+
+$\delta_{h_2} = (\delta_y \cdot v_2) \cdot h_2(1 - h_2)$
+
+### Step 4: Gradients for Hidden Weights and Biases
+
+Using the hidden deltas:
+
+$\begin{align}
+\frac{\partial L}{\partial w_{11}}
+&= \frac{\partial L}{\partial z_1} \cdot \frac{\partial z_1}{\partial w_{11}}
+&= \delta_{h_1} \cdot x_1
+\end{align}$
+
+$\begin{align}
+\frac{\partial L}{\partial w_{21}}
+&= \frac{\partial L}{\partial z_1} \cdot \frac{\partial z_1}{\partial w_{21}}
+&= \delta_{h_1} \cdot x_2
+\end{align}$
+
+$\begin{align}
+\frac{\partial L}{\partial w_{12}}
+&= \frac{\partial L}{\partial z_2} \cdot \frac{\partial z_2}{\partial w_{12}}
+&= \delta_{h_2} \cdot x_1
+\end{align}$
+
+$\begin{align}
+\frac{\partial L}{\partial w_{22}} 
+&= \frac{\partial L}{\partial z_2} \cdot \frac{\partial z_2}{\partial w_{22}}
+&= \delta_{h_2} \cdot x_2
+\end{align}$
+
+similarly for biases:
+
+$\begin{align}
+\frac{\partial L}{\partial b_1}
+&= \delta_{h_1} \cdot 1
+&= \delta_{h_1}
+\end{align}$
+
+$\begin{align}
+\frac{\partial L}{\partial b_2}
+&= \delta_{h_2} \cdot 1
+&= \delta_{h_2}
+\end{align}$
+
+### Step 5: Update Weights and Biases
+
+!!! info inline end "Remember"
+
+    $$
+    p \leftarrow p - \eta \cdot \frac{\partial L}{\partial p}
+    $$
+
+Finally, update the weights and biases using the computed gradients and a learning rate \(\eta\):
+
+$\begin{align}
+v_{11} & \leftarrow v_{11} - \eta \cdot \frac{\partial L}{\partial v_{11}} \\
+v_{21} & \leftarrow v_{21} - \eta \cdot \frac{\partial L}{\partial v_{21}} \\
+w_{11} & \leftarrow w_{11} - \eta \cdot \frac{\partial L}{\partial w_{11}} \\
+w_{21} & \leftarrow w_{21} - \eta \cdot \frac{\partial L}{\partial w_{21}} \\
+w_{12} & \leftarrow w_{12} - \eta \cdot \frac{\partial L}{\partial w_{12}} \\
+w_{22} & \leftarrow w_{22} - \eta \cdot \frac{\partial L}{\partial w_{22}} \\
+b^h_1 & \leftarrow b^h_1 - \eta \cdot \frac{\partial L}{\partial b^h_1} \\
+b^h_2 & \leftarrow b^h_2 - \eta \cdot \frac{\partial L}{\partial b^h_2} \\
+b^y_1 & \leftarrow b^y_1 - \eta \cdot \frac{\partial L}{\partial b^y_1}
+\end{align}$
+
+
+<!-- ## Training Process
 
 Online learning is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
 
 Batch learning, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
 
-more:
+more: -->
 
 
-- Limitations of Perceptrons, such as their inability to solve non-linearly separable problems.
-- Introduction to Multi-Layer Perceptrons (MLPs) as an extension of the Perceptron model.
-- Structure of MLPs, including input, hidden, and output layers.
-- Activation functions used in MLPs, such as sigmoid, tanh, and ReLU.
-- The concept of feedforward and backpropagation in MLPs.
-- The role of weights and biases in MLPs and how they are adjusted during training.
-- The training process of MLPs, including the use of gradient descent and backpropagation.
-- The importance of loss functions in MLP training, such as mean squared error and cross-entropy.
 
-## Regularization techniques to prevent overfitting in MLPs, such as dropout and L2 regularization. https://grok.com/chat/0e1af7da-0d92-4603-84a6-99f2aa1b8686
-
-
-### Dropout
-What it is: Dropout is a regularization technique where, during training, a random subset of neurons (or their connections) is "dropped" (set to zero) in each forward and backward pass. This prevents the network from relying too heavily on specific neurons.
-How it works:
-
-During training, each neuron has a probability $ p $ (typically 0.2 to 0.5) of being dropped.
-This forces the network to learn redundant representations, making it more robust and less likely to memorize the training data.
-At test time, all neurons are active, but their weights are scaled by $ 1-p $ to account for the reduced activation during training.
-
-Why it prevents overfitting:
-
-Dropout acts like training an ensemble of smaller subnetworks, reducing co-dependency between neurons.
-It introduces noise, making the model less sensitive to specific patterns in the training data.
-
-Practical tips:
-
-Common dropout rates: 20–50% for hidden layers, lower (10–20%) for input layers.
-Use in deep networks, especially in fully connected layers or convolutional neural networks (CNNs).
-Avoid dropout in the output layer or when the network is small (it may hurt performance).
-
-
-### L2 Regularization (Weight Decay)
-What it is: L2 regularization adds a penalty term to the loss function based on the magnitude of the model’s weights, discouraging large weights that can lead to complex, overfitted models.
-How it works:
-
-The loss function is modified to include an L2 penalty:
-$$\text{Loss} = \text{Original Loss} + \lambda \sum w_i^2$$
-where $ w_i $ are the model’s weights, and $ \lambda $ (regularization strength) controls the penalty’s impact.
-During optimization, this penalty encourages smaller weights, simplifying the model.
-
-Why it prevents overfitting:
-
-Large weights amplify small input changes, leading to overfitting. L2 regularization constrains weights, making the model smoother and less sensitive to noise.
-It effectively reduces the model’s capacity to memorize training data.
-
-Practical tips:
-
-Common $ \lambda $: $ 10^{-5} $ to $ 10^{-2} $, tuned via cross-validation.
-Works well in linear models, fully connected NNs, and CNNs.
-Combine with other techniques (e.g., dropout) for better results.
-
-
-
-- Optimization algorithms used in MLP training, such as stochastic gradient descent (SGD), Adam, and RMSprop.
-- Evaluation metrics for MLP performance, such as accuracy, precision, recall, and F1 score.
-- Common challenges in training MLPs, such as overfitting, underfitting, the vanishing gradient problem and the need for large datasets.
-- Real-world applications of MLPs in various fields, including computer vision, natural language processing, and time series forecasting.
-- Applications of MLPs in various domains, including image recognition, natural language processing, and time series prediction.
-
-
-- Backpropagation: ./ann/backpropagation.md
-- Regularization: ./ann/regularization.md
-- Optimization: ./ann/optimization.md
-- Comparison of MLPs with other neural network architectures, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs).
-
-<iframe width="100%" height="470" src="https://www.youtube.com/embed/aircAruvnKk" allowfullscreen></iframe>
-
-
-### Training and Optimization
-
-Algorithms for training ANNs involve adjusting the weights of the connections between neurons to minimize a loss function, which quantifies the difference between the predicted output and the true output. The most common optimization algorithm used in training ANNs is stochastic gradient descent (SGD), which iteratively updates the weights based on the gradient of the loss function with respect to the weights.
-
-
-## Additional Resources
-
-- [TensorFlow Playground](https://playground.tensorflow.org/){target="_blank"} is an interactive platform that allows users to visualize and experiment with neural networks. It provides a user-friendly interface to create, train, and test simple neural networks, making it an excellent tool for understanding the concepts of neural networks and their behavior. Users can adjust parameters such as the number of layers, activation functions, and learning rates to see how these changes affect the network's performance on various datasets.
-
-
-
-
-
-
-TODO: improve Perceptron description, add more math, and explain the learning rule. Herbian learning rule, etc.
-
-The Perceptron learning rule (Hebbian learning rule[^4]) can be expressed mathematically as follows:
-
-$$
-w_i(t+1) = w_i(t) + \eta (y - \hat{y}) x_i
-$$
-
-where:
-
-- \(w_i(t)\) is the weight of the \(i\)-th input at time \(t\),
-- \(\eta\) is the learning rate,
-- \(y\) is the true label,
-- \(\hat{y}\) is the predicted output,
-- \(x_i\) is the \(i\)-th input feature.
-
-This equation updates the weights based on the difference between the true label and the predicted output, scaled by the learning rate and the input feature. The learning rate \(\eta\) controls how much the weights are adjusted during each iteration, balancing the speed of learning and stability of convergence.
-
-This simple model can operate as a linear classifier, but it is limited to linearly separable data. 
-
-Minsky and Papert's work in the 1960s highlighted the limitations of the Perceptron, particularly its inability to solve problems like the XOR problem, which are not linearly separable. This led to a temporary decline in interest in neural networks, often referred to as the "AI winter." However, the development of multi-layer networks and backpropagation in the 1980s revived interest in ANNs, leading to the powerful deep learning models we see today.
-
-TODO: draw the XOR problem, explain it, and how the Perceptron cannot solve it.
-```python exec="on" html="1"
---8<-- "docs/ann/xor-problem.py"
-```
-
-
-- Activation Functions: ./ann/activation-functions.md
-
-The input domain of ANNs is typically represented as a vector of features, where each feature corresponds to a specific aspect of the input data. The output domain can vary depending on the task, such as classification (discrete labels) or regression (continuous values). The architecture of an ANN consists of layers of neurons, where each layer transforms the input data through weighted connections and activation functions. The connections between neurons are represented by weights, which are adjusted during the training process to minimize the error in predictions.
-
-
-### Training and Optimization
-
-Algorithms for training ANNs involve adjusting the weights of the connections between neurons to minimize a loss function, which quantifies the difference between the predicted output and the true output. The most common optimization algorithm used in training ANNs is stochastic gradient descent (SGD), which iteratively updates the weights based on the gradient of the loss function with respect to the weights.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-------------
-
-
-
-A perceptron is a fundamental building block of neural networks, and its training process is a supervised learning algorithm used to classify data into two categories (binary classification). Below, I’ll explain the training process for a perceptron in a clear and structured way, covering the key concepts, steps, and intuition behind it.
-
-### What is a Perceptron?
-A perceptron is a simple artificial neuron that takes multiple inputs, applies weights to them, sums them up, adds a bias, and passes the result through an activation function (typically a step function) to produce a binary output (e.g., 0 or 1). It’s used to solve linearly separable classification problems.
-
-The perceptron’s output is computed as:
-- **Input**: A vector of features \( \mathbf{x} = [x_1, x_2, \dots, x_n] \).
-- **Weights**: A vector \( \mathbf{w} = [w_1, w_2, \dots, w_n] \) representing the importance of each input.
-- **Bias**: A scalar \( b \) that shifts the decision boundary.
-- **Output**: 
-  \[
-  y = \text{activation}(\mathbf{w} \cdot \mathbf{x} + b)
-  \]
-  where \( \mathbf{w} \cdot \mathbf{x} = w_1x_1 + w_2x_2 + \dots + w_nx_n \), and the activation function is typically a step function:
-  \[
-  \text{activation}(z) = 
-  \begin{cases} 
-  1 & \text{if } z \geq 0 \\
-  0 & \text{if } z < 0 
-  \end{cases}
-  \]
-
-The goal of training is to find the optimal weights \( \mathbf{w} \) and bias \( b \) so the perceptron correctly classifies the training data.
-
----
-
-
-
-If you’d like, I can provide a code example (e.g., in Python) to demonstrate perceptron training or dive deeper into any specific aspect! Let me know.
 
 [^1]: Haykin, S. (1994). Neural Networks: A Comprehensive Foundation. Prentice Hall.
 [:fontawesome-brands-amazon:](https://www.amazon.com/Neural-Networks-Comprehensive-Foundation-2nd/dp/0132733501){target="_blank"}
