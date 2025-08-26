@@ -19,6 +19,7 @@ flowchart LR
         x3(["x<sub>3</sub>"])
         xd(["..."]):::others
         xn(["x<sub>n</sub>"])
+        xb(["1"])
     end
     subgraph hidden
         direction TB
@@ -26,6 +27,7 @@ flowchart LR
         h2(["h<sub>2</sub>"])
         hd(["..."]):::others
         hm(["h<sub>m</sub>"])
+        hb(["1"])
     end
     subgraph output
         y1(["y<sub>1</sub>"])
@@ -49,18 +51,26 @@ flowchart LR
     xn -->|"w<sub>i1</sub>"|h1
     xn -->|"w<sub>i2</sub>"|h2
     xn -->|"w<sub>in</sub>"|hm
-    
+    xb -->|"b<sup>i</sup><sub>1</sub>"|h1
+    xb -->|"b<sup>i</sup><sub>2</sub>"|h2
+    xb -->|"b<sup>i</sup><sub>n</sub>"|hm
+
     h1 -->|"v<sub>11</sub>"|y1
+    h1 -->|"v<sub>1k</sub>"|yk
     h2 -->|"v<sub>21</sub>"|y1
+    h2 -->|"v<sub>2k</sub>"|yk
     hm -->|"v<sub>m1</sub>"|y1
+    hm -->|"v<sub>mk</sub>"|yk
+    hb -->|"b<sup>h</sup><sub>1</sub>"|y1
+    hb -->|"b<sup>h</sup><sub>k</sub>"|yk
 
     y1 --> out1@{ shape: dbl-circ, label: " " }
     yk --> outn@{ shape: dbl-circ, label: " " }
 
     style in fill:#fff,stroke:#666,stroke-width:0px
-    style input fill:#fff,stroke:#666,stroke-width:1px
-    style hidden fill:#fff,stroke:#666,stroke-width:1px
-    style output fill:#fff,stroke:#666,stroke-width:1px
+    style input fill:#eee,stroke:#666,stroke-width:1px
+    style hidden fill:#eee,stroke:#666,stroke-width:1px
+    style output fill:#eee,stroke:#666,stroke-width:1px
 ```
 <i>Multi-Layer Perceptron (MLP) Architecture.</i>
 </center>
@@ -143,40 +153,29 @@ flowchart LR
     subgraph input
         x1(["x<sub>1</sub>"])
         x2(["x<sub>2</sub>"])
+        xb(["1"])
     end
     subgraph hidden
-        direction TB
-        subgraph nh1[" "]
-            direction TB
-            style nh1 fill:transparent,stroke:transparent,stroke-width:0px
-            h1(["h<sub>1</sub>"])
-            bh1(["b<sup>h</sup><sub>1</sub>"])
-        end
-        subgraph nh2[" "]
-            direction TB
-            style nh2 fill:transparent,stroke:transparent,stroke-width:0px
-            h2(["h<sub>2</sub>"])
-            bh2(["b<sup>h</sup><sub>2</sub>"])
-        end
+        h1(["h<sub>1</sub>"])
+        h2(["h<sub>2</sub>"])
+        hb(["1"])
     end
     subgraph output
-        subgraph ny[" "]
-            direction TB
-            style ny fill:transparent,stroke:transparent,stroke-width:0px
-            y(["y"])
-            by(["b<sup>y</sup><sub>1</sub>"])
-        end
+        y(["y"])
     end
     in1@{ shape: circle, label: " " } --> x1
     in2@{ shape: circle, label: " " } --> x2
 
     x1 -->|"w<sub>11</sub>"|h1
     x1 -->|"w<sub>12</sub>"|h2
+    xb -->|"b<sup>h</sup><sub>1</sub>"|h1
     x2 -->|"w<sub>21</sub>"|h1
     x2 -->|"w<sub>22</sub>"|h2
-    
+    xb -->|"b<sup>h</sup><sub>2</sub>"|h2
+
     h1 -->|"v<sub>11</sub>"|y
     h2 -->|"v<sub>21</sub>"|y
+    hb -->|"b<sup>y</sup><sub>1</sub>"|y
 
     y(("ŷ")) --> out1@{ shape: dbl-circ, label: " " }
 
@@ -198,6 +197,20 @@ $$
 $$
 
 or, more canonical for our simple MLP:
+
+$$
+\hat{y} = f \left(
+\underbrace{v_{11}
+    \underbrace{f \left(
+        \underbrace{w_{11} x_1 + w_{21} x_2 + b^h_1}_{z_1}
+    \right)}_{h_1}
+    + v_{21}
+    \underbrace{f \left(
+        \underbrace{w_{12} x_1 + w_{22} x_2 + b^h_2}_{z_2}
+    \right)}_{h_2} + b^y_1
+}_{u}
+\right)
+$$
 
 1. Hidden layer pre-activation:
 
@@ -301,6 +314,14 @@ $\begin{align}
     \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial v_{21}}}^{\text{chain rule}} &= \delta_y \cdot h_2
 \end{align}$
 
+For the bias:
+
+$\begin{align}
+    \frac{\partial L}{\partial b^y_1} &= \delta_y \cdot 1 \\
+    \\
+    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial b^y_1}}^{\text{chain rule}} &= \delta_y
+\end{align}$
+
 ### Step 3: Hidden Layer Errors
 
 !!! info inline end "Remember"
@@ -315,18 +336,13 @@ $\begin{align}
 
 Propagate the error back to the hidden layer. For each hidden neuron:
 
-$\begin{align}
-    \delta_{h_1} &= \frac{\partial L}{\partial z_1} \\
-    \\
-    &= \frac{\partial L}{\partial h_1} & \cdot \frac{\partial h_1}{\partial z_1} \\
-    \\
-    &= \left( \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial h_1} \right) & \cdot \sigma'(z_1) \\
-    \\
-    &= (\delta_y \cdot v_1) & \cdot \sigma'(z_1) \\
-    \\
-    &= (\delta_y \cdot v_1) & \cdot h_1(1 - h_1)
-\end{align}$
-
+$\begin{array}
+     \displaystyle \delta_{h_1} &= \displaystyle \frac{\partial L}{\partial z_1} \\
+    &= \displaystyle \frac{\partial L}{\partial h_1} & \displaystyle \cdot \frac{\partial h_1}{\partial z_1} \\
+    &=  \displaystyle \overbrace{ \left( \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial h_1} \right)}^{\text{chain rule}} & \cdot \sigma'(z_1) \\
+    &= (\delta_y \cdot v_1) & \cdot \sigma'(z_1)  \\
+    &= (\delta_y \cdot v_1) & \cdot h_1(1 - h_1) 
+\end{array}$
 
 Similarly:
 
