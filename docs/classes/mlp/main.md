@@ -396,6 +396,9 @@ b^h_2 & \leftarrow b^h_2 - \eta \cdot \frac{\partial L}{\partial b^h_2} \\
 b^y_1 & \leftarrow b^y_1 - \eta \cdot \frac{\partial L}{\partial b^y_1}
 \end{align}$
 
+---
+
+![](gradient-descent.gif){width="100%"}
 
 <!-- ## Training Process
 
