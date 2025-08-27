@@ -438,6 +438,10 @@ $$
 \end{bmatrix}, \quad b^y = 0.4
 $$
 
+$$
+\eta = 0.7
+$$
+
 ### Forward Pass
 
 For the sample:
@@ -533,7 +537,7 @@ $$
     \displaystyle \frac{\partial L}{\partial \mathbf{h}} &= \displaystyle \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial \mathbf{h}} \\
     &= \displaystyle \frac{\partial L}{\partial \hat{y}} \cdot \mathbf{V} \cdot \mathbf{h} (1 - \mathbf{h}) \\
     &\approx -0.289 \cdot \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} \cdot \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} \cdot \left(1 - \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} \right) \\
-    &\approx -0.289 \cdot \underbrace{ \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} \cdot \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} \cdot \begin{bmatrix} 0.373 \\ 0.242 \end{bmatrix} }_{\text{element-wise multiplication, Hadamard product}} \\
+    &\approx -0.289 \cdot \underbrace{ \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} \cdot \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} \cdot \begin{bmatrix} 0.373 \\ 0.242 \end{bmatrix} }_{\text{element-wise multiplication}} \\
     &\approx -0.289 \cdot \begin{bmatrix} 0.07 \\ 0.092 \end{bmatrix} \\
     &\approx \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix}
     \end{array}
@@ -543,10 +547,10 @@ $$
 
     $$
     \begin{array}{ll}
-    \frac{\partial L}{\partial \mathbf{W}} &= \frac{\partial L}{\partial \mathbf{h}} \cdot \frac{\partial \mathbf{h}}{\partial \mathbf{W}} \\
-    &= \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix} \cdot \mathbf{x}^T \\
-    &\approx \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix} \cdot \begin{bmatrix} 0.5 & 0.8 \end{bmatrix} \\
-    &\approx \begin{bmatrix} 0.0475 & 0.076 \\ 0.0245 & 0.0392 \end{bmatrix}
+    \displaystyle \frac{\partial L}{\partial \mathbf{W}} &= \displaystyle \frac{\partial L}{\partial \mathbf{h}} \cdot \frac{\partial \mathbf{h}}{\partial \mathbf{W}} \\
+    &= \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix} \cdot \mathbf{x} \\
+    &\approx \underbrace{ \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix} \cdot \begin{bmatrix} 0.5 & 0.5 \\ 0.8 & 0.8 \end{bmatrix} }_{\text{element-wise multiplication}} \\
+    &\approx \begin{bmatrix} -0.010 & -0.013 \\ -0.016 & -0.021 \end{bmatrix}
     \end{array}
     $$
 
@@ -554,9 +558,30 @@ $$
 
     $$
     \begin{array}{ll}
-    \frac{\partial L}{\partial \mathbf{b}} &= \frac{\partial L}{\partial \mathbf{h}} \cdot \frac{\partial \mathbf{h}}{\partial \mathbf{b}} \\
-    &= \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix} \\
-    &\approx \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix}
+    \displaystyle \frac{\partial L}{\partial \mathbf{b^y}} &= \displaystyle \frac{\partial L}{\partial \mathbf{y}} \cdot \frac{\partial \mathbf{y}}{\partial \mathbf{b^y}} \\
+    &\approx -0.289 \cdot 1 \\
+    &\approx -0.289
+    \end{array}
+    $$
+
+    $$
+    \begin{array}{ll}
+    \displaystyle \frac{\partial L}{\partial \mathbf{b^h}} &= \displaystyle \frac{\partial L}{\partial \mathbf{h}} \cdot \frac{\partial \mathbf{h}}{\partial \mathbf{b^h}} \\
+    &\approx \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix} \cdot 1 \\
+    &\approx \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix}
+    \end{array}
+    $$
+
+5. Update the parameters:
+
+    $$
+    \begin{array}{ll}
+    \mathbf{W} &\leftarrow \mathbf{W} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{W}} \\
+    &\leftarrow \displaystyle \begin{bmatrix} 0.2 & 0.4 \\ 0.6 & 0.8 \end{bmatrix} - 0.7 \cdot \displaystyle \begin{bmatrix} -0.010 & -0.013 \\ -0.016 & -0.021 \end{bmatrix} \\
+    \mathbf{V} &\leftarrow \mathbf{V} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{V}} \\
+    &\leftarrow \displaystyle \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} - 0.7 \cdot \displaystyle \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix} \\
+    \mathbf{b^y} &\leftarrow \mathbf{b^y} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^y}} \\
+    \mathbf{b^h} &\leftarrow \mathbf{b^h} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^h}}
     \end{array}
     $$
 
