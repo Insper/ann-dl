@@ -578,8 +578,10 @@ $$
     \begin{array}{ll}
     \mathbf{W} &\leftarrow \mathbf{W} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{W}} \\
     &\leftarrow \displaystyle \begin{bmatrix} 0.2 & 0.4 \\ 0.6 & 0.8 \end{bmatrix} - 0.7 \cdot \displaystyle \begin{bmatrix} -0.010 & -0.013 \\ -0.016 & -0.021 \end{bmatrix} \\
+    \\
     \mathbf{V} &\leftarrow \mathbf{V} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{V}} \\
     &\leftarrow \displaystyle \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} - 0.7 \cdot \displaystyle \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix} \\
+    \\
     \mathbf{b^y} &\leftarrow \mathbf{b^y} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^y}} \\
     \mathbf{b^h} &\leftarrow \mathbf{b^h} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^h}}
     \end{array}
