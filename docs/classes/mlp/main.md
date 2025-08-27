@@ -513,6 +513,53 @@ $$
 \end{array}
 $$
 
+### Backward Pass
+
+1. Compute output layer gradients:
+
+    $$
+    \begin{array}{ll}
+    \displaystyle \frac{\partial L}{\partial \hat{y}} &= \displaystyle \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial \hat{y}} \\
+    &= 2(y - \hat{y}) \cdot \hat{y} (1 - \hat{y}) \\
+    &\approx 2(0 - 0.725) \cdot 0.725 \cdot (1 - 0.725) \\
+    &\approx -0.289
+    \end{array}
+    $$
+
+2. Compute hidden layer gradients:
+
+    $$
+    \begin{array}{ll}
+    \displaystyle \frac{\partial L}{\partial \mathbf{h}} &= \displaystyle \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial \mathbf{h}} \\
+    &= \displaystyle \frac{\partial L}{\partial \hat{y}} \cdot \mathbf{V} \cdot \mathbf{h} (1 - \mathbf{h}) \\
+    &\approx -0.289 \cdot \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} \cdot \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} \cdot \left(1 - \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} \right) \\
+    &\approx -0.289 \cdot \underbrace{ \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} \cdot \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} \cdot \begin{bmatrix} 0.373 \\ 0.242 \end{bmatrix} }_{\text{element-wise multiplication, Hadamard product}} \\
+    &\approx -0.289 \cdot \begin{bmatrix} 0.07 \\ 0.092 \end{bmatrix} \\
+    &\approx \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix}
+    \end{array}
+    $$
+
+3. Compute weight gradients:
+
+    $$
+    \begin{array}{ll}
+    \frac{\partial L}{\partial \mathbf{W}} &= \frac{\partial L}{\partial \mathbf{h}} \cdot \frac{\partial \mathbf{h}}{\partial \mathbf{W}} \\
+    &= \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix} \cdot \mathbf{x}^T \\
+    &\approx \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix} \cdot \begin{bmatrix} 0.5 & 0.8 \end{bmatrix} \\
+    &\approx \begin{bmatrix} 0.0475 & 0.076 \\ 0.0245 & 0.0392 \end{bmatrix}
+    \end{array}
+    $$
+
+4. Compute bias gradients:
+
+    $$
+    \begin{array}{ll}
+    \frac{\partial L}{\partial \mathbf{b}} &= \frac{\partial L}{\partial \mathbf{h}} \cdot \frac{\partial \mathbf{h}}{\partial \mathbf{b}} \\
+    &= \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix} \\
+    &\approx \begin{bmatrix} 0.095 \\ 0.049 \end{bmatrix}
+    \end{array}
+    $$
+
 ## Gradient Descent Visualization
 
 To visualize the gradient descent process, we can create a simple 3D plot that shows how the parameters of a model are updated over iterations to minimize a loss function. Below is an example code using Python with Matplotlib to create such a visualization.
