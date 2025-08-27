@@ -282,9 +282,9 @@ The error term (delta) for the output is:
 $$
 \begin{align}
     \delta_y = \frac{\partial L}{\partial u} &= \overbrace{\frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial u}}^{\text{chain rule}} \\ 
-    &= \overbrace{(y - \hat{y})}^{\text{MSE}} \cdot \overbrace{\sigma'(u)}^{\text{sigmoid}} \\
+    &= \overbrace{\frac{2}{N}(y - \hat{y})}^{\text{MSE}} \cdot \overbrace{\sigma'(u)}^{\text{sigmoid}} \\
     \\
-    &= (y - \hat{y}) \cdot \hat{y}(1 - \hat{y})
+    &= \frac{2}{N}(y - \hat{y}) \cdot \hat{y}(1 - \hat{y})
 \end{align}
 $$
 
@@ -403,16 +403,120 @@ Finally, update the weights and biases using the computed gradients and a learni
 $\begin{align}
 v_{11} & \leftarrow v_{11} - \eta \cdot \frac{\partial L}{\partial v_{11}} \\
 v_{21} & \leftarrow v_{21} - \eta \cdot \frac{\partial L}{\partial v_{21}} \\
+\\
 w_{11} & \leftarrow w_{11} - \eta \cdot \frac{\partial L}{\partial w_{11}} \\
 w_{21} & \leftarrow w_{21} - \eta \cdot \frac{\partial L}{\partial w_{21}} \\
 w_{12} & \leftarrow w_{12} - \eta \cdot \frac{\partial L}{\partial w_{12}} \\
 w_{22} & \leftarrow w_{22} - \eta \cdot \frac{\partial L}{\partial w_{22}} \\
+\\
 b^h_1 & \leftarrow b^h_1 - \eta \cdot \frac{\partial L}{\partial b^h_1} \\
 b^h_2 & \leftarrow b^h_2 - \eta \cdot \frac{\partial L}{\partial b^h_2} \\
+\\
 b^y_1 & \leftarrow b^y_1 - \eta \cdot \frac{\partial L}{\partial b^y_1}
 \end{align}$
 
 ---
+
+## Numerical Simulation
+
+Based on the MLP architecture and backpropagation steps described above, we can implement a simple numerical simulation demonstrate the training process of a multi-layer perceptron (MLP) using backpropagation.
+
+### Initizalization
+
+The weight matrices and bias vectors are initialized as follows (randomically in $[0,1]$):
+
+$$
+\mathbf{W} = \begin{bmatrix}
+0.2 & 0.4 \\
+0.6 & 0.8
+\end{bmatrix}, \quad \mathbf{b}^h = [0.1, 0.2]^T
+$$
+
+$$
+\mathbf{V} = \begin{bmatrix}
+0.3 & 0.5
+\end{bmatrix}, \quad b^y = 0.4
+$$
+
+### Forward Pass
+
+For the sample:
+
+$$
+\mathbf{x} = \begin{bmatrix} 0.5 \\ 0.8 \end{bmatrix},
+\quad y = 0
+$$
+
+1. Compute hidden layer pre-activation:
+
+    $$
+    \begin{array}{ll}
+    \mathbf{z} &= \mathbf{W} \mathbf{x} + \mathbf{b}^h \\
+    &= \begin{bmatrix}
+    0.2 & 0.4 \\
+    0.6 & 0.8
+    \end{bmatrix}
+    \begin{bmatrix} 0.5 \\ 0.8 \end{bmatrix} +
+    \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix} \\
+    &= \begin{bmatrix} 0.2*0.5 + 0.4*0.8 + 0.1 \\ 0.6*0.5 + 0.8*0.8 + 0.2 \end{bmatrix} \\
+    \mathbf{z} &= \begin{bmatrix} 0.52 \\ 1.14 \end{bmatrix}
+    \end{array}
+    $$
+
+2. Compute hidden layer activations:
+
+    $$
+    \begin{array}{ll}
+    \mathbf{h} &= f(\mathbf{z}) \\
+    &= f\left( \begin{bmatrix} 0.52 \\ 1.14 \end{bmatrix} \right) \\
+    &= \begin{bmatrix}
+    \displaystyle \frac{1}{1 + e^{-0.52}} \\
+    \displaystyle \frac{1}{1 + e^{-1.14}}
+    \end{bmatrix} \\
+    \mathbf{h} &\approx \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix}
+    \end{array}
+    $$
+
+3. Compute output layer pre-activation:
+
+    $$
+    \begin{array}{ll}
+    u &= \mathbf{V} \mathbf{h} + b^y \\
+    &= \begin{bmatrix} 0.3 & 0.5 \end{bmatrix}
+    \begin{bmatrix} 0.627 \\ 0.758 \end{bmatrix} + 0.4 \\
+    &= 0.3*0.627 + 0.5*0.758 + 0.4 \\
+    u &\approx 0.967
+    \end{array}
+    $$
+
+4. Compute output layer activation:
+
+    $$
+    \begin{array}{ll}
+    \hat{y} &= f(u) \\
+    &= f(0.967) \\
+    &= \displaystyle \frac{1}{1 + e^{-0.967}} \\
+    \hat{y} &\approx 0.725
+    \end{array}
+    $$
+
+### Loss Calculation
+
+Using Mean Squared Error (MSE):
+
+$$
+\begin{array}{ll}
+\text{MSE} =& L &= \displaystyle \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 \\
+  & L &= \displaystyle \frac{1}{1} (y - \hat{y})^2 \\
+  & L &\approx (0 - 0.725)^2 \\
+  & L &\approx 0.5249
+\end{array}
+$$
+
+## Gradient Descent Visualization
+
+To visualize the gradient descent process, we can create a simple 3D plot that shows how the parameters of a model are updated over iterations to minimize a loss function. Below is an example code using Python with Matplotlib to create such a visualization.
+
 
 ![](gradient-descent.gif){width="100%"}
 
