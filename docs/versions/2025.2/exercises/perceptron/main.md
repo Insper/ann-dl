@@ -95,6 +95,8 @@ The deliverable for this activity consists of a **report** that includes:
 
 - All deliverables for individual activities should be submitted through the course platform [insper.blackboard.com](http://insper.blackboard.com/){:target="_blank"}.
 
+
+
 **Grade Criteria:**
 
 | Criteria | Description |
