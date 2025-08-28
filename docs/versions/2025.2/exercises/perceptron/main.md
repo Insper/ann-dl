@@ -97,4 +97,12 @@ The deliverable for this activity consists of a **report** that includes:
 
 **Grade Criteria:**
 
+| Criteria | Description |
+|:--------:|-------------|
+| **4 pts** | Correctness of the perceptron implementation |
+| **2 pts** | Exercise 1: Data generation, training, evaluation, and analysis. |
+| **2 pts** | Exercise 2: Data generation, training, evaluation, and analysis. |
+| **1 pt** | Visualizations: Quality and clarity of plots (data distribution, decision boundary, accuracy over epochs). |
+| **1 pt** | Report Quality: Clarity, organization, and completeness of the report. |
+
 
