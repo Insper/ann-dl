@@ -150,15 +150,16 @@ nav:
     - 5. Perceptron: ./classes/perceptron/main.md
     - 6. Multi-Layer Perceptron: ./classes/mlp/main.md
     - 7. Optimization:
-      - 7.1. Gradient Descent: ./classes/optimization/gradient-descent.md
-      - 7.2. SGD: ./classes/optimization/stochastic-gradient-descent.md
-      - 7.3. Momentum: ./classes/optimization/momentum.md
-      - 7.4. Adam Optimizer: ./classes/optimization/adam-optimizer.md
+      - 7.1. Gradient Descent: ./classes/optimization/gradient-descent/main.md
+      - 7.2. SGD: ./classes/optimization/stochastic-gradient-descent/main.md
+      - 7.3. Momentum: ./classes/optimization/momentum/main.md
+      - 7.4. Adam Optimizer: ./classes/optimization/adam-optimizer/main.md
+      - 7.5. Comparison: ./classes/optimization/comparison.md
     - 8. Regularization:
-      - 8.1. L1 and L2 Regularization: ./classes/regularization/l1-l2-regularization.md
-      - 8.2. Dropout: ./classes/regularization/dropout.md
-      - 8.3. Batch Normalization: ./classes/regularization/batch-normalization.md
-      - 8.4. Early Stopping: ./classes/regularization/early-stopping.md
+      - 8.1. L1 and L2 Regularization: ./classes/regularization/l1-l2-regularization/main.md
+      - 8.2. Dropout: ./classes/regularization/dropout/main.md
+      - 8.3. Batch Normalization: ./classes/regularization/batch-normalization/main.md
+      - 8.4. Early Stopping: ./classes/regularization/early-stopping/main.md
     - 9. Metrics and Evaluation:
       - 9.1. Classification: ./classes/metrics/classification/main.md
       - 9.2. Regression: ./classes/metrics/regression/main.md
