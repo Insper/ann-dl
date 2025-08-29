@@ -160,8 +160,8 @@ nav:
       - 8.3. Batch Normalization: ./classes/regularization/batch-normalization.md
       - 8.4. Early Stopping: ./classes/regularization/early-stopping.md
     - 9. Metrics and Evaluation:
-      - 9.1. Classification Metrics: ./classes/metrics/classification/classification-metrics.md
-      - 9.2. Regression Metrics: ./classes/metrics/regression/regression-metrics.md
+      - 9.1. Classification Metrics: ./classes/metrics/classification/main.md
+      - 9.2. Regression Metrics: ./classes/metrics/regression/main.md
       # - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
       # - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
       # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
