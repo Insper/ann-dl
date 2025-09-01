@@ -65,6 +65,7 @@ Perform the following steps explicitly, showing all mathematical derivations and
     - Gradients for output layer: \( \frac{\partial L}{\partial \mathbf{W}^{(2)}} \), \( \frac{\partial L}{\partial b^{(2)}} \).
     - Propagate to hidden layer: \( \frac{\partial L}{\partial \mathbf{a}^{(1)}} \), \( \frac{\partial L}{\partial \mathbf{z}^{(1)}} \).
     - Gradients for hidden layer: \( \frac{\partial L}{\partial \mathbf{W}^{(1)}} \), \( \frac{\partial L}{\partial \mathbf{b}^{(1)}} \).
+    
     Show all intermediate steps and calculations.
 
 4. **Parameter Update**: Using the learning rate \( \eta = 0.1 \), update all weights and biases via gradient descent:
@@ -73,6 +74,7 @@ Perform the following steps explicitly, showing all mathematical derivations and
     - \( b^{(2)} \leftarrow b^{(2)} - \eta \frac{\partial L}{\partial b^{(2)}} \)
     - \( \mathbf{W}^{(1)} \leftarrow \mathbf{W}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{W}^{(1)}} \)
     - \( \mathbf{b}^{(1)} \leftarrow \mathbf{b}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{b}^{(1)}} \)
+    
     Provide the numerical values for all updated parameters.
 
 **Submission Requirements**: Show all mathematical steps explicitly, including intermediate calculations (e.g., matrix multiplications, tanh applications, gradient derivations). Use exact numerical values throughout and avoid rounding excessively to maintain precision (at least 4 decimal places).

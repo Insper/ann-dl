@@ -14,14 +14,6 @@ This activity is designed to test your skills in evaluating machine learning mod
 
 ***
 
-## Exercise 1
-
-
-
-## Exercise 2
-
-
-## Exercise 3
 
 
 ## **Evaluation Criteria**
