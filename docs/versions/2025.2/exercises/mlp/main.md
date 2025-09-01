@@ -74,7 +74,7 @@ Perform the following steps explicitly, showing all mathematical derivations and
     - \( b^{(2)} \leftarrow b^{(2)} - \eta \frac{\partial L}{\partial b^{(2)}} \)
     - \( \mathbf{W}^{(1)} \leftarrow \mathbf{W}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{W}^{(1)}} \)
     - \( \mathbf{b}^{(1)} \leftarrow \mathbf{b}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{b}^{(1)}} \)
-    
+
     Provide the numerical values for all updated parameters.
 
 **Submission Requirements**: Show all mathematical steps explicitly, including intermediate calculations (e.g., matrix multiplications, tanh applications, gradient derivations). Use exact numerical values throughout and avoid rounding excessively to maintain precision (at least 4 decimal places).
@@ -158,15 +158,15 @@ The deliverable for this activity consists of a **report** that includes:
 
 **Grade Criteria:**
 
-- **Exercise 1 (3 points)**:
-    - Forward pass fully explicit (1 point)
+- **Exercise 1 (2 points)**:
+    - Forward pass fully explicit (0.5 points)
     - Loss and backward pass with all gradients derived (1 point)
-    - Parameter updates shown correctly (1 point)
+    - Parameter updates shown correctly (0.5 point)
     - Deductions for missing steps or incorrect math.
 
-- **Exercise 2 (2 points)**:
+- **Exercise 2 (3 points)**:
     - Correct data generation and splitting (0.5 points)
-    - Functional MLP implementation from scratch (1 point)
+    - Functional MLP implementation from scratch (2 point)
     - Training, evaluation, and results reported (0.5 points)
     - Deductions for using forbidden libraries in the model core or poor performance due to errors.
 
