@@ -120,8 +120,9 @@ Use `make_classification` to generate a synthetic dataset with:
 
 - Number of samples: 1500
 - Number of classes: 3
+- Number of features: 4
 - Number of clusters per class: Achieve 2 clusters for one class, 3 for another, and 4 for the last (again, you may need to generate subsets separately and combine them, as the function doesn't directly support varying clusters per class).
-- Other parameters: `n_features=2`, `n_informative=2`, `n_redundant=0`, `random_state=42`.
+- Other parameters: `n_features=4`, `n_informative=4`, `n_redundant=0`, `random_state=42`.
 
 Implement an MLP from scratch to classify this data. You may choose the architecture freely, but for an extra point (bringing this exercise to 4 points), reuse the exact same MLP implementation code from Exercise 2, modifying only hyperparameters (e.g., output layer size for 3 classes, loss function to categorical cross-entropy if needed) without changing the core structure.
 
