@@ -30,7 +30,7 @@ For this exercise, use the following specific values:
 
     \( \mathbf{x} = [0.5, -0.2] \)
 
-    \( y = 0.1 \)
+    \( y = 1.0 \)
 
 - Hidden layer weights:
 
