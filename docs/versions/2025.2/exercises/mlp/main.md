@@ -14,7 +14,7 @@ This activity is designed to test your skills in Multi-Layer Perceptrons (MLPs).
 
 !!! failure "Usage of Toolboxes"
 
-    You may use toolboxes (e.g., NumPy) ==ONLY for matrix operations and calculations== during this activity. All other computations, including activation functions, loss calculations, gradients, and the forward pass, ==**MUST BE IMPLEMENTED** within your MLP== (Multi-Layer Perceptron) code. The use of ==third-party libraries== for the ==MLP implementation **IS STRICTLY PROHIBITED**==.
+    You may use toolboxes (e.g., NumPy) ==ONLY for matrix operations and calculations== during this activity. All other computations, including activation functions, loss calculations, gradients, and the forward pass, ==**MUST BE IMPLEMENTED** within your MLP== (Multi-Layer Perceptron) code. The use of ==third-party libraries for the MLP implementation **IS STRICTLY PROHIBITED**==.
 
     **Failure to comply with these instructions will result in your submission being rejected.**
 
