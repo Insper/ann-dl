@@ -20,14 +20,27 @@ Consider a simple MLP with 2 input features, 1 hidden layer containing 2 neurons
 
 For this exercise, use the following specific values:
 
-- Input vector: \( \mathbf{x} = [0.5, -0.2] \)
-- True output: \( y = 0.8 \)
+- Input and output vectors:
 
-- Hidden layer weights: \( \mathbf{W}^{(1)} = \begin{bmatrix} 0.3 & -0.1 \\ 0.2 & 0.4 \end{bmatrix} \)
-- Hidden layer biases: \( \mathbf{b}^{(1)} = [0.1, -0.2] \)
+    \( \mathbf{x} = [0.5, -0.2] \)
 
-- Output layer weights: \( \mathbf{W}^{(2)} = [0.5, -0.3] \)
-- Output layer bias: \( b^{(2)} = 0.2 \)
+    \( y = 0.8 \)
+
+- Hidden layer weights:
+
+    \( \mathbf{W}^{(1)} = \begin{bmatrix} 0.3 & -0.1 \\ 0.2 & 0.4 \end{bmatrix} \)
+
+- Hidden layer biases:
+
+    \( \mathbf{b}^{(1)} = [0.1, -0.2] \)
+
+- Output layer weights:
+
+    \( \mathbf{W}^{(2)} = [0.5, -0.3] \)
+
+- Output layer bias:
+
+    \( b^{(2)} = 0.2 \)
 
 - Learning rate: \( \eta = 0.3 \)
 
