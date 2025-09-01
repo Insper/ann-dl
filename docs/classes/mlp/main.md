@@ -585,18 +585,20 @@ $$
     &\leftarrow \begin{bmatrix} 0.314 & 0.518 \end{bmatrix}\\
     \\
     \mathbf{b^y} &\leftarrow \mathbf{b^y} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^y}} \\
-    \mathbf{b^h} &\leftarrow \mathbf{b^h} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^h}}
+    &\leftarrow 0.4 - 0.7 \cdot (-0.289) \\
+    &\leftarrow 0.602
+    \\
+    \mathbf{b^h} &\leftarrow \mathbf{b^h} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^h}} \\
+    &\leftarrow \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix} - 0.7 \cdot \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix} \\
+    &\leftarrow \begin{bmatrix} 0.114 \\ 0.218 \end{bmatrix}
     \end{array}
     $$
 
+6. Repeat the training process for each sample or multiple epochs. About the training process, there are two main approaches: online learning and batch learning:
 
-## Training Process
+    **Online learning** is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
 
-About the training process, there are two main approaches: online learning and batch learning.
-
-**Online learning** is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
-
-**Batch learning**, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
+    **Batch learning**, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
 
 ## Additional
 
