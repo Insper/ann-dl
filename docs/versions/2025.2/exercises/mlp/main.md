@@ -12,11 +12,17 @@
 
 This activity is designed to test your skills in Multi-Layer Perceptrons (MLPs).
 
+!!! failure "Usage of Toolboxes"
+
+    You may use toolboxes (e.g., NumPy) ==ONLY for matrix operations and calculations== during this activity. All other computations, including activation functions, loss calculations, gradients, and the forward pass, ==**MUST BE IMPLEMENTED** within your MLP== (Multi-Layer Perceptron) code. The use of ==third-party libraries== for the ==MLP implementation **IS STRICTLY PROHIBITED**==.
+
+    **Failure to comply with these instructions will result in your submission being rejected.**
+
 ***
 
 ## Exercise 1: Manual Calculation of MLP Steps
 
-Consider a simple MLP with 2 input features, 1 hidden layer containing 2 neurons, and 1 output neuron. Use the hyperbolic tangent (tanh) function as the activation for both the hidden layer and the output layer. The loss function is mean squared error (MSE): \( L = \frac{1}{2} (y - \hat{y})^2 \), where \( \hat{y} \) is the network's output.
+Consider a simple MLP with 2 input features, 1 hidden layer containing 2 neurons, and 1 output neuron. Use the hyperbolic tangent (tanh) function as the activation for both the hidden layer and the output layer. The loss function is mean squared error (MSE): \( L = \frac{1}{N} (y - \hat{y})^2 \), where \( \hat{y} \) is the network's output.
 
 For this exercise, use the following specific values:
 
@@ -24,7 +30,7 @@ For this exercise, use the following specific values:
 
     \( \mathbf{x} = [0.5, -0.2] \)
 
-    \( y = 0.8 \)
+    \( y = 0.1 \)
 
 - Hidden layer weights:
 
@@ -57,7 +63,9 @@ Perform the following steps explicitly, showing all mathematical derivations and
 
 2. **Loss Calculation**:
 
-    - Compute the MSE loss: \( L = \frac{1}{2} (y - \hat{y})^2 \).
+    - Compute the MSE loss:
+
+        \( L = \frac{1}{N} (y - \hat{y})^2 \).
 
 3. **Backward Pass (Backpropagation)**: Compute the gradients of the loss with respect to all weights and biases. Start with \( \frac{\partial L}{\partial \hat{y}} \), then compute:
 
