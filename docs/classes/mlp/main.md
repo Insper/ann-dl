@@ -76,7 +76,7 @@ flowchart LR
 </center>
 
 $$
-y_k = f \left( \sum_{j=1}^{m} f \left( \sum_{i=1}^{n} x_i w_{ij} + b^{h}_{i} \right) v_{jk} + b^{y}_{j} \right)
+y_k = \sigma \left( \sum_{j=1}^{m} \sigma \left( \sum_{i=1}^{n} x_i w_{ij} + b^{h}_{i} \right) v_{jk} + b^{y}_{j} \right)
 $$
 
 where:
@@ -89,7 +89,7 @@ where:
 - \( b^{y}_{j} \) is the bias for the \( j \)-th output neuron.
 - \( m \) is the number of hidden neurons.
 - \( n \) is the number of input features.
-- \( f \) is the activation function applied to the weighted sums at each layer, such as sigmoid, tanh, or ReLU.
+- \( \sigma \) is the activation function applied to the weighted sums at each layer, such as sigmoid, tanh, or ReLU.
 
 
 Matrix representation of the MLP architecture:
@@ -97,8 +97,8 @@ Matrix representation of the MLP architecture:
 $$
 \begin{align*}
 \text{Input Layer:} & \quad \mathbf{x} = [x_1, x_2, \ldots, x_n]^T \\
-\text{Hidden Layer:} & \quad \mathbf{h} = f (\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
-\text{Output Layer:} & \quad \mathbf{y} = f (\mathbf{V} \mathbf{h} + \mathbf{b}^y)
+\text{Hidden Layer:} & \quad \mathbf{h} = \sigma (\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
+\text{Output Layer:} & \quad \mathbf{y} = \sigma (\mathbf{V} \mathbf{h} + \mathbf{b}^y)
 \end{align*}
 $$
 
@@ -137,11 +137,11 @@ Consider a Multi-Layer Perceptron (MLP) with:
 
 We assume sigmoid activation functions for both the hidden and output layers:
 
-$$\displaystyle f(z) = \frac{1}{1 + e^{-z}}$$
+$$\displaystyle \sigma(z) = \frac{1}{1 + e^{-z}}$$
 
 , with derivative
 
-$$f'(z) = f(z)(1 - f(z))$$
+$$\sigma'(z) = \sigma(z)(1 - \sigma(z))$$
 
 The architecture can be visualized as follows:
 
@@ -191,21 +191,21 @@ In mathematical terms, the feedforward process can be described as follows:
 $$
 \begin{align*}
 \text{Input Layer:} & \quad \mathbf{x} = [x_1, x_2]^T \\
-\text{Hidden Layer:} & \quad \mathbf{h} = f (\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
-\text{Output Layer:} & \quad \mathbf{y} = f (\mathbf{V} \mathbf{h} + \mathbf{b}^y)
+\text{Hidden Layer:} & \quad \mathbf{h} = \sigma (\mathbf{W} \mathbf{x} + \mathbf{b}^h) \\
+\text{Output Layer:} & \quad \mathbf{y} = \sigma (\mathbf{V} \mathbf{h} + \mathbf{b}^y)
 \end{align*}
 $$
 
 or, more canonical for our simple MLP:
 
 $$
-\hat{y} = f \left(
+\hat{y} = \sigma \left(
 \underbrace{v_{11}
-    \underbrace{f \left(
+    \underbrace{\sigma \left(
         \underbrace{w_{11} x_1 + w_{21} x_2 + b^h_1}_{z_1}
     \right)}_{h_1}
     + v_{21}
-    \underbrace{f \left(
+    \underbrace{\sigma \left(
         \underbrace{w_{12} x_1 + w_{22} x_2 + b^h_2}_{z_2}
     \right)}_{h_2} + b^y_1
 }_{u}
@@ -225,8 +225,8 @@ $$
 
 $$
 \begin{align}
-h_1 & = f(z_1) \\
-h_2 & = f(z_2)
+h_1 & = \sigma(z_1) \\
+h_2 & = \sigma(z_2)
 \end{align}
 $$
 
@@ -242,11 +242,11 @@ $$
 
 $$
 \begin{align}
-\hat{y} & = f(u)
+\hat{y} & = \sigma(u)
 \end{align}
 $$
 
-where \( f \) is the activation function, \( w_{ij} \) are the weights connecting inputs to hidden neurons, and \( v_{ij} \) are the weights connecting hidden neurons to output neurons. The biases \( b^h_1, b^h_2, \) and \( b^y_1 \) are added to the respective layers. \( \hat{y} \) is the predicted output of the MLP.
+where \( \sigma \) is the activation function, \( w_{ij} \) are the weights connecting inputs to hidden neurons, and \( v_{ij} \) are the weights connecting hidden neurons to output neurons. The biases \( b^h_1, b^h_2, \) and \( b^y_1 \) are added to the respective layers. \( \hat{y} \) is the predicted output of the MLP.
 
 ## Loss Calculation
 
@@ -281,7 +281,7 @@ The error term (delta) for the output is:
 
 $$
 \begin{align}
-    \delta_y = \frac{\partial L}{\partial u} &= \overbrace{\frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial u}}^{\text{chain rule}} \\ 
+    \sigma_y = \frac{\partial L}{\partial u} &= \overbrace{\frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial u}}^{\text{chain rule}} \\ 
     &= \overbrace{\frac{2}{N}(y - \hat{y})}^{\text{MSE}} \cdot \overbrace{\sigma'(u)}^{\text{sigmoid}} \\
     \\
     &= \frac{2}{N}(y - \hat{y}) \cdot \hat{y}(1 - \hat{y})
@@ -298,28 +298,28 @@ $$
     \end{align}
     $$
 
-Using \(\delta_y\):
+Using \(\sigma_y\):
 
 $\begin{align}
-    \frac{\partial L}{\partial v_{11}} &= \delta_y \cdot h_1 \\
+    \frac{\partial L}{\partial v_{11}} &= \sigma_y \cdot h_1 \\
     \\
-    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial v_{11}}}^{\text{chain rule}} &= \delta_y \cdot h_1
+    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial v_{11}}}^{\text{chain rule}} &= \sigma_y \cdot h_1
 \end{align}$
 
 Similarly:
 
 $\begin{align}
-    \frac{\partial L}{\partial v_{21}} &= \delta_y \cdot h_2 \\
+    \frac{\partial L}{\partial v_{21}} &= \sigma_y \cdot h_2 \\
     \\
-    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial v_{21}}}^{\text{chain rule}} &= \delta_y \cdot h_2
+    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial v_{21}}}^{\text{chain rule}} &= \sigma_y \cdot h_2
 \end{align}$
 
 For the bias:
 
 $\begin{align}
-    \frac{\partial L}{\partial b^y_1} &= \delta_y \cdot 1 \\
+    \frac{\partial L}{\partial b^y_1} &= \sigma_y \cdot 1 \\
     \\
-    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial b^y_1}}^{\text{chain rule}} &= \delta_y
+    \overbrace{\frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial b^y_1}}^{\text{chain rule}} &= \sigma_y
 \end{align}$
 
 ### Step 3: Hidden Layer Errors
@@ -337,16 +337,16 @@ $\begin{align}
 Propagate the error back to the hidden layer. For each hidden neuron:
 
 $\begin{array}
-     \displaystyle \delta_{h_1} &= \displaystyle \frac{\partial L}{\partial z_1} \\
+     \displaystyle \sigma_{h_1} &= \displaystyle \frac{\partial L}{\partial z_1} \\
     &= \displaystyle \frac{\partial L}{\partial h_1} & \displaystyle \cdot \frac{\partial h_1}{\partial z_1} \\
     &=  \displaystyle \overbrace{ \left( \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial h_1} \right)}^{\text{chain rule}} & \cdot \sigma'(z_1) \\
-    &= (\delta_y \cdot v_1) & \cdot \sigma'(z_1)  \\
-    &= (\delta_y \cdot v_1) & \cdot h_1(1 - h_1) 
+    &= (\sigma_y \cdot v_1) & \cdot \sigma'(z_1)  \\
+    &= (\sigma_y \cdot v_1) & \cdot h_1(1 - h_1) 
 \end{array}$
 
 Similarly:
 
-$\delta_{h_2} = (\delta_y \cdot v_2) \cdot h_2(1 - h_2)$
+$\sigma_{h_2} = (\sigma_y \cdot v_2) \cdot h_2(1 - h_2)$
 
 ### Step 4: Gradients for Hidden Weights and Biases
 
@@ -355,39 +355,39 @@ Using the hidden deltas:
 $\begin{align}
 \frac{\partial L}{\partial w_{11}}
 &= \frac{\partial L}{\partial z_1} \cdot \frac{\partial z_1}{\partial w_{11}}
-&= \delta_{h_1} \cdot x_1
+&= \sigma_{h_1} \cdot x_1
 \end{align}$
 
 $\begin{align}
 \frac{\partial L}{\partial w_{21}}
 &= \frac{\partial L}{\partial z_1} \cdot \frac{\partial z_1}{\partial w_{21}}
-&= \delta_{h_1} \cdot x_2
+&= \sigma_{h_1} \cdot x_2
 \end{align}$
 
 $\begin{align}
 \frac{\partial L}{\partial w_{12}}
 &= \frac{\partial L}{\partial z_2} \cdot \frac{\partial z_2}{\partial w_{12}}
-&= \delta_{h_2} \cdot x_1
+&= \sigma_{h_2} \cdot x_1
 \end{align}$
 
 $\begin{align}
 \frac{\partial L}{\partial w_{22}} 
 &= \frac{\partial L}{\partial z_2} \cdot \frac{\partial z_2}{\partial w_{22}}
-&= \delta_{h_2} \cdot x_2
+&= \sigma_{h_2} \cdot x_2
 \end{align}$
 
 similarly for biases:
 
 $\begin{align}
 \frac{\partial L}{\partial b_1}
-&= \delta_{h_1} \cdot 1
-&= \delta_{h_1}
+&= \sigma_{h_1} \cdot 1
+&= \sigma_{h_1}
 \end{align}$
 
 $\begin{align}
 \frac{\partial L}{\partial b_2}
-&= \delta_{h_2} \cdot 1
-&= \delta_{h_2}
+&= \sigma_{h_2} \cdot 1
+&= \sigma_{h_2}
 \end{align}$
 
 ### Step 5: Update Weights and Biases
@@ -471,7 +471,7 @@ $$
 
     $$
     \begin{array}{ll}
-    \mathbf{h} &= f(\mathbf{z}) \\
+    \mathbf{h} &= \sigma(\mathbf{z}) \\
     &= f\left( \begin{bmatrix} 0.52 \\ 1.14 \end{bmatrix} \right) \\
     &= \begin{bmatrix}
     \displaystyle \frac{1}{1 + e^{-0.52}} \\
@@ -497,8 +497,8 @@ $$
 
     $$
     \begin{array}{ll}
-    \hat{y} &= f(u) \\
-    &= f(0.967) \\
+    \hat{y} &= \sigma(u) \\
+    &= \sigma(0.967) \\
     &= \displaystyle \frac{1}{1 + e^{-0.967}} \\
     \hat{y} &\approx 0.725
     \end{array}
@@ -578,14 +578,31 @@ $$
     \begin{array}{ll}
     \mathbf{W} &\leftarrow \mathbf{W} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{W}} \\
     &\leftarrow \displaystyle \begin{bmatrix} 0.2 & 0.4 \\ 0.6 & 0.8 \end{bmatrix} - 0.7 \cdot \displaystyle \begin{bmatrix} -0.010 & -0.013 \\ -0.016 & -0.021 \end{bmatrix} \\
+    &\leftarrow \begin{bmatrix} 0.207 & 0.409 \\ 0.611 & 0.815 \end{bmatrix}
     \\
     \mathbf{V} &\leftarrow \mathbf{V} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{V}} \\
     &\leftarrow \displaystyle \begin{bmatrix} 0.3 & 0.5 \end{bmatrix} - 0.7 \cdot \displaystyle \begin{bmatrix} -0.020 \\ -0.026 \end{bmatrix} \\
+    &\leftarrow \begin{bmatrix} 0.314 & 0.518 \end{bmatrix}\\
     \\
     \mathbf{b^y} &\leftarrow \mathbf{b^y} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^y}} \\
     \mathbf{b^h} &\leftarrow \mathbf{b^h} - \eta \displaystyle \frac{\partial L}{\partial \mathbf{b^h}}
     \end{array}
     $$
+
+
+## Training Process
+
+About the training process, there are two main approaches: online learning and batch learning.
+
+**Online learning** is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
+
+**Batch learning**, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
+
+## Additional
+
+For a more intuitive understanding of neural networks, I highly recommend the following video series by 3Blue1Brown, which provides excellent visual explanations of the concepts: [https://www.3blue1brown.com/lessons/neural-networks](https://www.3blue1brown.com/lessons/neural-networks){target="_blank"}
+
+<iframe width="100%" height="470" src="https://www.youtube.com/embed/aircAruvnKk" title="But what is a neural network? | Deep learning chapter 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Gradient Descent Visualization
 
@@ -593,14 +610,6 @@ To visualize the gradient descent process, we can create a simple 3D plot that s
 
 
 ![](gradient-descent.gif){width="100%"}
-
-<!-- ## Training Process
-
-Online learning is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
-
-Batch learning, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
-
-more: -->
 
 
 

@@ -16,6 +16,6 @@ In summary,
 - GD is basic but inefficient;
 - SGD adds speed at the cost of noise; 
 - Momentum smooths SGD; 
-- and ADAM offers the most automation and efficiency for MLPs, though SGD/Momentum may edge out in generalization for fine-tuned tasks.
+- and, ADAM offers the most automation and efficiency for MLPs, though SGD/Momentum may edge out in generalization for fine-tuned tasks.
 
 Choice depends on dataset size, computational resources, and problem complexity—experiment with validation sets for best results.
