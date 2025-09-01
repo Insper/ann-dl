@@ -80,6 +80,12 @@ Report the final weights, bias, accuracy, and discuss how the overlap affects tr
 
 ## **Evaluation Criteria**
 
+!!! failure "Usage of Toolboxes"
+
+    You may use toolboxes (e.g., NumPy) ==ONLY for matrix operations and calculations== during this activity. All other computations, including activation functions, loss calculations, gradients, and the forward pass, ==**MUST BE IMPLEMENTED** within your Perceptron== code. The use of ==third-party libraries for the Perceptron implementation **IS STRICTLY PROHIBITED**==.
+
+    **Failure to comply with these instructions will result in your submission being rejected.**
+
 The deliverable for this activity consists of a **report** that includes:
 
 

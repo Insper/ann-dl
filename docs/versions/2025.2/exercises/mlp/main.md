@@ -1,3 +1,4 @@
+
 !!! success inline end "Deadline and Submission"
 
     :date: 19.sep (friday)
@@ -11,12 +12,6 @@
 **Activity: Understanding Multi-Layer Perceptrons (MLPs)**
 
 This activity is designed to test your skills in Multi-Layer Perceptrons (MLPs).
-
-!!! failure "Usage of Toolboxes"
-
-    You may use toolboxes (e.g., NumPy) ==ONLY for matrix operations and calculations== during this activity. All other computations, including activation functions, loss calculations, gradients, and the forward pass, ==**MUST BE IMPLEMENTED** within your MLP== (Multi-Layer Perceptron) code. The use of ==third-party libraries for the MLP implementation **IS STRICTLY PROHIBITED**==.
-
-    **Failure to comply with these instructions will result in your submission being rejected.**
 
 ***
 
@@ -153,6 +148,12 @@ The deliverable for this activity consists of a **report** that includes:
 
 
 **Important Notes:**
+
+!!! failure "Usage of Toolboxes"
+
+    You may use toolboxes (e.g., NumPy) ==ONLY for matrix operations and calculations== during this activity. All other computations, including activation functions, loss calculations, gradients, and the forward pass, ==**MUST BE IMPLEMENTED** within your MLP== (Multi-Layer Perceptron) code. The use of ==third-party libraries for the MLP implementation **IS STRICTLY PROHIBITED**==.
+
+    **Failure to comply with these instructions will result in your submission being rejected.**
 
 - The deliverable must be submitted in the format specified: **GitHub Pages**. **No other formats will be accepted.** - there exists a template for the course that you can use to create your GitHub Pages - [template](https://hsandmann.github.io/documentation.template/){target='_blank'};
 
