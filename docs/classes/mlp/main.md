@@ -596,23 +596,15 @@ $$
 
 6. Repeat the training process for each sample or multiple epochs. About the training process, there are two main approaches: online learning and batch learning:
 
-    **Online learning** is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
+    - **Online learning** is a method of training multi-layer perceptrons (MLPs) where the model is updated after each training example. This approach allows for faster convergence and can be more effective in scenarios with large datasets or when the data is not stationary.
 
-    **Batch learning**, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
+    - **Batch learning**, on the other hand, involves updating the model after processing a batch of training examples. This method can lead to more stable updates and is often used in practice due to its efficiency in utilizing computational resources.
 
 ## Additional
 
 For a more intuitive understanding of neural networks, I highly recommend the following video series by 3Blue1Brown, which provides excellent visual explanations of the concepts: [https://www.3blue1brown.com/lessons/neural-networks](https://www.3blue1brown.com/lessons/neural-networks){target="_blank"}
 
 <iframe width="100%" height="470" src="https://www.youtube.com/embed/aircAruvnKk" title="But what is a neural network? | Deep learning chapter 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## Gradient Descent Visualization
-
-To visualize the gradient descent process, we can create a simple 3D plot that shows how the parameters of a model are updated over iterations to minimize a loss function. Below is an example code using Python with Matplotlib to create such a visualization.
-
-
-![](gradient-descent.gif){width="100%"}
-
 
 
 
