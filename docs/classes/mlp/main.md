@@ -472,7 +472,7 @@ $$
     $$
     \begin{array}{ll}
     \mathbf{h} &= \sigma(\mathbf{z}) \\
-    &= f\left( \begin{bmatrix} 0.52 \\ 1.14 \end{bmatrix} \right) \\
+    &= \sigma \left( \begin{bmatrix} 0.52 \\ 1.14 \end{bmatrix} \right) \\
     &= \begin{bmatrix}
     \displaystyle \frac{1}{1 + e^{-0.52}} \\
     \displaystyle \frac{1}{1 + e^{-1.14}}
