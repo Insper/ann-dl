@@ -22,7 +22,7 @@ Generate two classes of 2D data points (1000 samples per class) using multivaria
 
 - Class 0:
 
-    Mean = $[2, 2]$,
+    Mean = $[1.5, 1.5]$,
     
     Covariance matrix = $[[0.5, 0], [0, 0.5]]$ (i.e., variance of $0.5$ along each dimension, no covariance).  
 
