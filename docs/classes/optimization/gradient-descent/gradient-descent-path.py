@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib.animation import FuncAnimation, PillowWriter
+from matplotlib.animation import FuncAnimation
 
 # Define the objective function (a simple paraboloid for illustration)
 def f(x, y):
@@ -30,7 +29,7 @@ for _ in range(num_iterations):
     path_z.append(f(next_x, next_y))
 
 # Create the 3D figure
-fig = plt.figure(figsize=(10, 8))
+fig = plt.figure(figsize=(10, 10))
 ax = fig.add_subplot(111, projection='3d')
 
 # Generate the surface mesh
@@ -61,5 +60,6 @@ def update(frame):
 # Create the animation
 ani = FuncAnimation(fig, update, frames=len(path_x), interval=200, blit=False)
 
-# Display the plot (run this in a Python environment with GUI support, like Jupyter or a local script)
-ani.save('gradient_descent.gif', writer=PillowWriter(fps=10))
+print(ani.to_jshtml())
+
+plt.close()

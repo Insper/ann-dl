@@ -259,6 +259,11 @@ Suppose we have a dataset with two features \( \mathbf{x} = [x_1, x_2] \) and bi
 
 6. **Repeat**: Continue iterating through the dataset, updating weights and bias when errors occur, until all examples are correctly classified or a maximum number of epochs is reached.
 
+
+``` python exec="on" html="on"
+--8<-- "docs/classes/perceptron/perceptron-animate.py"
+```
+
 ---
 
 ### Key Points

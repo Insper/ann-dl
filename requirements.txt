@@ -22,3 +22,4 @@ tabulate
 yfinance
 plotly
 Pillow
+ipython
