@@ -4,8 +4,11 @@ Gradient Descent is an optimization algorithm used to minimize the loss function
 The main idea behind gradient descent is to update the model parameters in the opposite direction of the gradient of the loss function with respect to the parameters. This is done using the following update rule:
 
 \[
-\theta = \theta - \eta \nabla J(\theta)
+\theta_{t+1} = \theta_t - \eta \nabla J(\theta_t)
 \]
+/// caption
+Vanilla Gradient Descent
+///
 
 where:
 
@@ -32,6 +35,10 @@ There are several variants of gradient descent, each with its own characteristic
 
 1. **Batch Gradient Descent**: Computes the gradient using the entire dataset. It provides a stable estimate of the gradient but can be slow for large datasets. Formula is given by:
 
+    \[
+    \theta = \theta - \eta \frac{1}{N} \sum_{i=1}^{N} \nabla J(\theta; x^{(i)}, y^{(i)})
+    \]
+
     ``` python
     for epoch in range(num_epochs):
         gradients = compute_gradients(X, y, model)
@@ -39,6 +46,10 @@ There are several variants of gradient descent, each with its own characteristic
     ```
 
 2. **Stochastic Gradient Descent (SGD)**: Computes the gradient using a single data point at a time. It introduces noise into the optimization process, which can help escape local minima but may lead to oscillations.  Formula is given by:
+
+    \[
+    \theta_{t+1} = \theta_t - \eta \nabla J(\theta_t; x^{(i)}, y^{(i)})
+    \]
 
     ``` python
     for epoch in range(num_epochs):
@@ -48,6 +59,10 @@ There are several variants of gradient descent, each with its own characteristic
     ```
 
 3. **Mini-Batch Gradient Descent**: Combines the advantages of batch and stochastic gradient descent by using a small random subset of the data (mini-batch) to compute the gradient. It balances the stability of batch gradient descent with the speed of SGD.
+
+    \[
+    \theta_{t+1} = \theta_t - \eta \frac{1}{B} \sum_{i=1}^{B} \nabla J(\theta_t; x^{(i)}, y^{(i)})
+    \]
 
     ``` python
     for epoch in range(num_epochs):
@@ -64,24 +79,60 @@ Momentum is a variant of gradient descent that helps accelerate the optimization
 In Momentum, we have two iterates ($p$ and $\theta$) instead of just one. The updates are as follows:
 
 $$
-p_{k+1} = \beta p_k + (1 - \beta) \nabla f_i(\theta_k)
+V_{t+1} = \beta V_t + (1 - \beta) \nabla J(\theta_t)
 $$
 
 $$
-\theta_{k+1} = \theta_k - \eta p_{k+1}
+\theta_{t+1} = \theta_t - \eta V_{t+1}
 $$
 
-$p$ is called the SGD momentum. At each update step we add the stochastic gradient to the old value of the momentum, after dampening it by a factor $\beta$ (value between 0 and 1). $p$ can be thought of as a running average of the gradients. Finally we move $\theta$ in the direction of the new momentum $p$ [^1].
+$V$ is called the SGD momentum. At each update step we add the stochastic gradient to the old value of the momentum, after dampening it by a factor $\beta$ (value between 0 and 1). $V$ can be thought of as a running average of the gradients. Finally we move $\theta$ in the direction of the new momentum $V$ [^1].
 
 Alternate Form: Stochastic Heavy Ball Method
 
 \[
-\theta_{k+1} = \theta_k - \eta \nabla f_i(\theta_k) + \beta( \theta_k - \theta_{k-1} ) \quad 0 \leq \beta < 1
+\theta_{t+1} = \theta_t - \eta \nabla f_i(\theta_t) + \beta( \theta_t - \theta_{t-1} ) \quad 0 \leq \beta < 1
 \]
 
 This form is mathematically equivalent to the previous form. Here, the next step is a combination of previous step’s direction and the new negative gradient.
 
 The momentum term helps to dampen oscillations and can lead to faster convergence, especially in scenarios with noisy gradients or ravines in the loss landscape.
+
+
+## RMSProp
+
+RMSProp (Root Mean Square Propagation) is an adaptive learning rate optimization algorithm designed to address the diminishing learning rates of AdaGrad. It maintains a moving average of the squared gradients and uses this to normalize the gradients. The update rule is given by:
+
+$$
+V_{t+1} = \beta V_t + (1 - \beta) \nabla (\theta_t)^2
+$$
+
+\[
+\theta_{t+1} = \theta_t - \eta\frac{\nabla (\theta_t)}{\sqrt{V_{t+1} + \epsilon}}
+\]
+
+Where:
+
+- \(V_t\) is the moving average of the squared gradients,
+- \(\epsilon\) is a small constant added for numerical stability, helping to prevent division by zero.
+
+
+<!-- ## AdaGrad
+
+AdaGrad (Adaptive Gradient Algorithm) is an optimization algorithm that adapts the learning rate for each parameter based on the historical gradients. It performs larger updates for infrequent parameters and smaller updates for frequent parameters. The update rule is given by:
+
+$$
+V_{t+1} = \beta V_t + \nabla (\theta_t)^2
+$$
+
+\[
+\theta_{t + 1} = \theta_t - \frac{\eta}{\sqrt{G_t + \epsilon}} \nabla J(\theta)
+\]
+
+Where:
+
+- \(G_t\) is the diagonal matrix of the accumulated squared gradients,
+- \(\epsilon\) is a small constant added for numerical stability. -->
 
 ## ADAM Optimizer
 
@@ -127,6 +178,7 @@ Where:
 - \(v_t\) is the second moment (the uncentered variance of the gradients),
 - \(\beta_1\) and \(\beta_2\) are hyperparameters that control the decay rates of the moving averages,
 - \(\epsilon\) is a small constant added for numerical stability.
+The default values for the hyperparameters are typically set to \(\beta_1 = 0.9\), \(\beta_2 = 0.999\), and \(\epsilon = 10^{-8}\)[^2][^3].
 
 ADAM is widely used in practice due to its adaptive learning rate properties and is particularly effective for training deep learning models.
 
@@ -135,8 +187,17 @@ ADAM is widely used in practice due to its adaptive learning rate properties and
 ---8<-- "docs/classes/optimization/comparison.md"
 
 
+## Additional Resources
+
+<iframe width="100%" height="470" src="https://www.youtube.com/embed/MD2fYip6QsQ" title="Who&#39;s Adam and What&#39;s He Optimizing? | Deep Dive into Optimizers for Machine Learning!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
 [^1]: [Introduction to Gradient Descent and Backpropagation Algorithm](https://atcold.github.io/NYU-DLSP20/en/week02/02-1/){:target="_blank"}, LeCun, Y.
 
 [^2]: [ADAM: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980){:target="_blank"}, Kingma, D. P., & Ba, J.
 
 [^3]: [Dive into Deep Learning](https://d2l.ai){:target="_blank"}, Zhang, A., & Lipton, Z. C.
+
+[^4]: [Stochastic and Mini-batch Gradient Descent](https://kenndanielso.github.io/mlrefined/blog_posts/13_Multilayer_perceptrons/13_6_Stochastic_and_minibatch_gradient_descent.html){:target="_blank"}
