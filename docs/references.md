@@ -8,7 +8,6 @@ NYU Center for Data Science:
 |---|---|
 | Deep Learning - DS-GA 1008 | [Spring 2020](https://atcold.github.io/NYU-DLSP20/){:target="_blank"} \| [Summary](https://atcold.github.io/didactics.html){:target="_blank"} | 
 
-
 ## Natural Language Processing
 
 Stanford University
@@ -42,6 +41,10 @@ Stanford University School of Engineering
 | 16 | Dynamic Neural Networks for Question Answering | [:simple-youtube:](https://www.youtube.com/watch?v=T3octNTE7Is){:target="_blank"} |
 | 17 | Issues in NLP and Possible Architectures for NLP | [:simple-youtube:](https://www.youtube.com/watch?v=B4v545V3Dq0){:target="_blank"} |
 | 18 | Tackling the Limits of Deep Learning for NLP | [:simple-youtube:](https://www.youtube.com/watch?v=JYwNmSe4HqE){:target="_blank"} |
+
+
+
+https://github.com/jtrecenti/2025-verao-torch
 
 <!-- Thinking Publications
 

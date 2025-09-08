@@ -1,3 +1,4 @@
+## Comparison
 
 Here's a tabular comparison to highlight key differences:
 

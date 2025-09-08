@@ -1,120 +1,142 @@
 
-- Limitations of Perceptrons, such as their inability to solve non-linearly separable problems.
-- Introduction to Multi-Layer Perceptrons (MLPs) as an extension of the Perceptron model.
-- Structure of MLPs, including input, hidden, and output layers.
-- Activation functions used in MLPs, such as sigmoid, tanh, and ReLU.
-- The concept of feedforward and backpropagation in MLPs.
-- The role of weights and biases in MLPs and how they are adjusted during training.
-- The training process of MLPs, including the use of gradient descent and backpropagation.
-- The importance of loss functions in MLP training, such as mean squared error and cross-entropy.
+Gradient Descent is an optimization algorithm used to minimize the loss function in machine learning models. It works by iteratively adjusting the model parameters in the direction of the steepest descent of the loss function, as defined by the negative gradient.
 
-## Regularization techniques to prevent overfitting in MLPs, such as dropout and L2 regularization. https://grok.com/chat/0e1af7da-0d92-4603-84a6-99f2aa1b8686
+The main idea behind gradient descent is to update the model parameters in the opposite direction of the gradient of the loss function with respect to the parameters. This is done using the following update rule:
 
-
-### Dropout
-What it is: Dropout is a regularization technique where, during training, a random subset of neurons (or their connections) is "dropped" (set to zero) in each forward and backward pass. This prevents the network from relying too heavily on specific neurons.
-How it works:
-
-During training, each neuron has a probability $ p $ (typically 0.2 to 0.5) of being dropped.
-This forces the network to learn redundant representations, making it more robust and less likely to memorize the training data.
-At test time, all neurons are active, but their weights are scaled by $ 1-p $ to account for the reduced activation during training.
-
-Why it prevents overfitting:
-
-Dropout acts like training an ensemble of smaller subnetworks, reducing co-dependency between neurons.
-It introduces noise, making the model less sensitive to specific patterns in the training data.
-
-Practical tips:
-
-Common dropout rates: 20–50% for hidden layers, lower (10–20%) for input layers.
-Use in deep networks, especially in fully connected layers or convolutional neural networks (CNNs).
-Avoid dropout in the output layer or when the network is small (it may hurt performance).
-
-
-### L2 Regularization (Weight Decay)
-What it is: L2 regularization adds a penalty term to the loss function based on the magnitude of the model’s weights, discouraging large weights that can lead to complex, overfitted models.
-How it works:
-
-The loss function is modified to include an L2 penalty:
-$$\text{Loss} = \text{Original Loss} + \lambda \sum w_i^2$$
-where $ w_i $ are the model’s weights, and $ \lambda $ (regularization strength) controls the penalty’s impact.
-During optimization, this penalty encourages smaller weights, simplifying the model.
-
-Why it prevents overfitting:
-
-Large weights amplify small input changes, leading to overfitting. L2 regularization constrains weights, making the model smoother and less sensitive to noise.
-It effectively reduces the model’s capacity to memorize training data.
-
-Practical tips:
-
-Common $ \lambda $: $ 10^{-5} $ to $ 10^{-2} $, tuned via cross-validation.
-Works well in linear models, fully connected NNs, and CNNs.
-Combine with other techniques (e.g., dropout) for better results.
-
-
-
-- Optimization algorithms used in MLP training, such as stochastic gradient descent (SGD), Adam, and RMSprop.
-- Evaluation metrics for MLP performance, such as accuracy, precision, recall, and F1 score.
-- Common challenges in training MLPs, such as overfitting, underfitting, the vanishing gradient problem and the need for large datasets.
-- Real-world applications of MLPs in various fields, including computer vision, natural language processing, and time series forecasting.
-- Applications of MLPs in various domains, including image recognition, natural language processing, and time series prediction.
-
-
-- Backpropagation: ./ann/backpropagation.md
-- Regularization: ./ann/regularization.md
-- Optimization: ./ann/optimization.md
-- Comparison of MLPs with other neural network architectures, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs).
-
-<iframe width="100%" height="470" src="https://www.youtube.com/embed/aircAruvnKk" allowfullscreen></iframe>
-
-
-### Training and Optimization
-
-Algorithms for training ANNs involve adjusting the weights of the connections between neurons to minimize a loss function, which quantifies the difference between the predicted output and the true output. The most common optimization algorithm used in training ANNs is stochastic gradient descent (SGD), which iteratively updates the weights based on the gradient of the loss function with respect to the weights.
-
-
-## Additional Resources
-
-- [TensorFlow Playground](https://playground.tensorflow.org/){target="_blank"} is an interactive platform that allows users to visualize and experiment with neural networks. It provides a user-friendly interface to create, train, and test simple neural networks, making it an excellent tool for understanding the concepts of neural networks and their behavior. Users can adjust parameters such as the number of layers, activation functions, and learning rates to see how these changes affect the network's performance on various datasets.
-
-
-
-
-
-
-TODO: improve Perceptron description, add more math, and explain the learning rule. Herbian learning rule, etc.
-
-The Perceptron learning rule (Hebbian learning rule[^4]) can be expressed mathematically as follows:
-
-$$
-w_i(t+1) = w_i(t) + \eta (y - \hat{y}) x_i
-$$
+\[
+\theta = \theta - \eta \nabla J(\theta)
+\]
 
 where:
 
-- \(w_i(t)\) is the weight of the \(i\)-th input at time \(t\),
-- \(\eta\) is the learning rate,
-- \(y\) is the true label,
-- \(\hat{y}\) is the predicted output,
-- \(x_i\) is the \(i\)-th input feature.
+- \(\theta\) represents the model parameters,
+- \(\eta\) is the learning rate (a hyperparameter that controls the step size),
+- \(\nabla J(\theta)\) is the gradient of the loss function with respect to the parameters.
 
-This equation updates the weights based on the difference between the true label and the predicted output, scaled by the learning rate and the input feature. The learning rate \(\eta\) controls how much the weights are adjusted during each iteration, balancing the speed of learning and stability of convergence.
+In the standard Supervised Learning paradigm, the loss (per sample) is simply the output of the cost function. Machine Learning is mostly about optimizing functions (usually minimizing them). It could also involve finding Nash Equilibria between two functions like with GANs. This is done using Gradient Based Methods, though not necessarily Gradient Descent[^1].
 
-This simple model can operate as a linear classifier, but it is limited to linearly separable data. 
+A **Gradient Based Method** is a method/algorithm that finds the minima of a function, assuming that one can easily compute the gradient of that function. It assumes that the function is continuous and differentiable almost everywhere (it need not be differentiable everywhere)[^1].
 
-Minsky and Papert's work in the 1960s highlighted the limitations of the Perceptron, particularly its inability to solve problems like the XOR problem, which are not linearly separable. This led to a temporary decline in interest in neural networks, often referred to as the "AI winter." However, the development of multi-layer networks and backpropagation in the 1980s revived interest in ANNs, leading to the powerful deep learning models we see today.
+**Gradient Descent Intuition** - Imagine being in a mountain in the middle of a foggy night. Since you want to go down to the village and have only limited vision, you look around your immediate vicinity to find the direction of steepest descent and take a step in that direction[^1].
 
-TODO: draw the XOR problem, explain it, and how the Perceptron cannot solve it.
-```python exec="on" html="1"
---8<-- "docs/ann/xor-problem.py"
+To visualize the gradient descent process, we can create a simple 3D plot that shows how the parameters of a model are updated over iterations to minimize a loss function. Below is an example code using Python with Matplotlib to create such a visualization.
+
+
+``` python exec="on" html="on"
+--8<-- "docs/classes/optimization/gradient-descent-path.py"
 ```
 
+## Gradient Descent Variants
 
-- Activation Functions: ./ann/activation-functions.md
+There are several variants of gradient descent, each with its own characteristics:
 
-The input domain of ANNs is typically represented as a vector of features, where each feature corresponds to a specific aspect of the input data. The output domain can vary depending on the task, such as classification (discrete labels) or regression (continuous values). The architecture of an ANN consists of layers of neurons, where each layer transforms the input data through weighted connections and activation functions. The connections between neurons are represented by weights, which are adjusted during the training process to minimize the error in predictions.
+1. **Batch Gradient Descent**: Computes the gradient using the entire dataset. It provides a stable estimate of the gradient but can be slow for large datasets. Formula is given by:
+
+    ``` python
+    for epoch in range(num_epochs):
+        gradients = compute_gradients(X, y, model)
+        model.parameters -= learning_rate * gradients
+    ```
+
+2. **Stochastic Gradient Descent (SGD)**: Computes the gradient using a single data point at a time. It introduces noise into the optimization process, which can help escape local minima but may lead to oscillations.  Formula is given by:
+
+    ``` python
+    for epoch in range(num_epochs):
+        for i in range(len(X)):
+            gradients = compute_gradients(X[i], y[i], model)
+            model.parameters -= learning_rate * gradients
+    ```
+
+3. **Mini-Batch Gradient Descent**: Combines the advantages of batch and stochastic gradient descent by using a small random subset of the data (mini-batch) to compute the gradient. It balances the stability of batch gradient descent with the speed of SGD.
+
+    ``` python
+    for epoch in range(num_epochs):
+        for batch in get_mini_batches(X, y, batch_size):
+            gradients = compute_gradients(batch.X, batch.y, model)
+            model.parameters -= learning_rate * gradients
+    ```
 
 
-### Training and Optimization
+## Momentum
 
-Algorithms for training ANNs involve adjusting the weights of the connections between neurons to minimize a loss function, which quantifies the difference between the predicted output and the true output. The most common optimization algorithm used in training ANNs is stochastic gradient descent (SGD), which iteratively updates the weights based on the gradient of the loss function with respect to the weights.
+Momentum is a variant of gradient descent that helps accelerate the optimization process by using the past gradients to smooth out the updates. It introduces a "momentum" term that accumulates the past gradients and adds it to the current gradient update. The update rule with momentum is given by:
+
+In Momentum, we have two iterates ($p$ and $\theta$) instead of just one. The updates are as follows:
+
+$$
+p_{k+1} = \beta p_k + (1 - \beta) \nabla f_i(\theta_k)
+$$
+
+$$
+\theta_{k+1} = \theta_k - \eta p_{k+1}
+$$
+
+$p$ is called the SGD momentum. At each update step we add the stochastic gradient to the old value of the momentum, after dampening it by a factor $\beta$ (value between 0 and 1). $p$ can be thought of as a running average of the gradients. Finally we move $\theta$ in the direction of the new momentum $p$ [^1].
+
+Alternate Form: Stochastic Heavy Ball Method
+
+\[
+\theta_{k+1} = \theta_k - \eta \nabla f_i(\theta_k) + \beta( \theta_k - \theta_{k-1} ) \quad 0 \leq \beta < 1
+\]
+
+This form is mathematically equivalent to the previous form. Here, the next step is a combination of previous step’s direction and the new negative gradient.
+
+The momentum term helps to dampen oscillations and can lead to faster convergence, especially in scenarios with noisy gradients or ravines in the loss landscape.
+
+## ADAM Optimizer
+
+ADAM (Adaptive Moment Estimation) is an advanced optimization algorithm that combines the benefits of both AdaGrad and RMSProp. It maintains two moving averages for each parameter: the first moment (mean) and the second moment (uncentered variance). The update rules are as follows:
+
+1. Compute the gradients:
+
+\[
+g_t = \nabla J(\theta_t)
+\]
+
+2. Update the first moment estimate:
+
+\[
+m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t
+\]
+
+3. Update the second moment estimate:
+
+\[
+v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2
+\]
+
+4. Compute bias-corrected estimates:
+
+\[
+\hat{m}_t = \frac{m_t}{1 - \beta_1^t}
+\]
+
+\[
+\hat{v}_t = \frac{v_t}{1 - \beta_2^t}
+\]
+
+5. Update the parameters:
+
+\[
+\theta_{t+1} = \theta_t - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
+\]
+
+Where:
+
+- \(m_t\) is the first moment (the mean of the gradients),
+- \(v_t\) is the second moment (the uncentered variance of the gradients),
+- \(\beta_1\) and \(\beta_2\) are hyperparameters that control the decay rates of the moving averages,
+- \(\epsilon\) is a small constant added for numerical stability.
+
+ADAM is widely used in practice due to its adaptive learning rate properties and is particularly effective for training deep learning models.
+
+
+
+---8<-- "docs/classes/optimization/comparison.md"
+
+
+[^1]: [Introduction to Gradient Descent and Backpropagation Algorithm](https://atcold.github.io/NYU-DLSP20/en/week02/02-1/){:target="_blank"}, LeCun, Y.
+
+[^2]: [ADAM: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980){:target="_blank"}, Kingma, D. P., & Ba, J.
+
+[^3]: [Dive into Deep Learning](https://d2l.ai){:target="_blank"}, Zhang, A., & Lipton, Z. C.

@@ -149,12 +149,7 @@ nav:
     - 4. Neural Networks: ./classes/ann/main.md
     - 5. Perceptron: ./classes/perceptron/main.md
     - 6. Multi-Layer Perceptron: ./classes/mlp/main.md
-    - 7. Optimization:
-      - 7.1. Gradient Descent: ./classes/optimization/gradient-descent/main.md
-      - 7.2. SGD: ./classes/optimization/stochastic-gradient-descent/main.md
-      - 7.3. Momentum: ./classes/optimization/momentum/main.md
-      - 7.4. Adam Optimizer: ./classes/optimization/adam-optimizer/main.md
-      - 7.5. Comparison: ./classes/optimization/comparison.md
+    - 7. Optimization: ./classes/optimization/main.md
     - 8. Regularization:
       - 8.1. L1 and L2 Regularization: ./classes/regularization/l1-l2-regularization/main.md
       - 8.2. Dropout: ./classes/regularization/dropout/main.md
