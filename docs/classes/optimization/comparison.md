@@ -19,4 +19,9 @@ In summary,
 - Momentum smooths SGD; 
 - and, ADAM offers the most automation and efficiency for MLPs, though SGD/Momentum may edge out in generalization for fine-tuned tasks.
 
+``` python exec="on" html="on"
+--8<-- "docs/classes/optimization/gradient-comparation.py"
+```
+
+
 Choice depends on dataset size, computational resources, and problem complexity—experiment with validation sets for best results.
