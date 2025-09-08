@@ -1,6 +1,6 @@
 !!! success inline end "Deadline and Submission"
 
-    :date: 12.sep (friday)
+    :date: 14.sep (sunday)
     
     :clock1: Commits until 23:59
 
