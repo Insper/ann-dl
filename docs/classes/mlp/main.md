@@ -622,3 +622,5 @@ For a more intuitive understanding of neural networks, I highly recommend the fo
 [^4]: [Physics of Neural Networks](https://link.springer.com/series/1465){target="_blank"}, Book Series.
 
 [^5]: [Introduction to Mathematical Optimization](https://indrag49.github.io/Numerical-Optimization/){target="_blank"}, by Indrajit Ghosh.
+
+[^6]: [TensorFlow Playground](https://playground.tensorflow.org/){target="_blank"}
