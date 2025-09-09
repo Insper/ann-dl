@@ -130,6 +130,6 @@ ani = FuncAnimation(fig, update, frames=iterations, interval=200, blit=True)
 # writer = PillowWriter(fps=10, metadata=dict(artist='Me'), bitrate=1800)
 # ani.save('gradient-comparation.gif', writer=writer)
 
-# print(ani.to_jshtml())
+print(ani.to_jshtml())
 
 plt.close()
