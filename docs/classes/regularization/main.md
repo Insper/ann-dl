@@ -1,6 +1,8 @@
 
 Regularization techniques to prevent overfitting in MLPs, such as dropout, L1 and L2 regularization, batch normalization, and early stopping.
 
+
+
 !!! info "Balance Between Bias and Variance"
 
     The relationship between bias and variance is often referred to as the bias-variance tradeoff, which highlights the need for balance:
@@ -14,29 +16,38 @@ Regularization techniques to prevent overfitting in MLPs, such as dropout, L1 an
     Illustration of underfitting and overfitting in neural networks. Source: [GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/underfitting-and-overfitting-in-machine-learning/)
     ///
 
-    !!! tip "Techniques to Reduce Underfitting"
+    <div class="grid cards" markdown>
+
+    -   __Reducing Underfitting__
+
+        ---
+
+        - Increase model complexity.
+        - Increase the number of features, performing feature engineering.
+        - Remove noise from the data.
+        - Increase the number of epochs or increase the duration of training to get better results.
+
+    -   __Reducing Overfitting__
+
+        ---
+
+        - Improving the quality of training data reduces overfitting by focusing on meaningful patterns, mitigate the risk of fitting the noise or irrelevant features.
+        - Increase the training data can improve the model's ability to generalize to unseen data and reduce the likelihood of overfitting.
+        - Reduce model complexity.
+        - Early stopping during the training phase (have an eye over the loss over the training period as soon as loss begins to increase stop training).
+        - Ridge Regularization and Lasso Regularization.
+        - Use dropout for neural networks to tackle overfitting.
     
-    - Increase model complexity.
-    - Increase the number of features, performing feature engineering.
-    - Remove noise from the data.
-    - Increase the number of epochs or increase the duration of training to get better results.
+    </div>
 
-    !!! tip "Techniques to Reduce Overfitting"
-
-    - Improving the quality of training data reduces overfitting by focusing on meaningful patterns, mitigate the risk of fitting the noise or irrelevant features.
-    - Increase the training data can improve the model's ability to generalize to unseen data and reduce the likelihood of overfitting.
-    - Reduce model complexity.
-    - Early stopping during the training phase (have an eye over the loss over the training period as soon as loss begins to increase stop training).
-    - Ridge Regularization and Lasso Regularization.
-    - Use dropout for neural networks to tackle overfitting.
-
+---
 
 ## Dropout
 
 Dropout[^1] is a regularization technique where, during training, a random subset of neurons (or their connections) is "dropped" (set to zero) in each forward and backward pass. This prevents the network from relying too heavily on specific neurons.
 
-During training, each neuron has a probability $ p $ (typically 0.2 to 0.5) of being dropped.
-This forces the network to learn redundant representations, making it more robust and less likely to memorize the training data. At test time, all neurons are active, but their weights are scaled by $ 1-p $ to account for the reduced activation during training.
+During training, each neuron has a probability \( p \) (typically 0.2 to 0.5) of being dropped.
+This forces the network to learn redundant representations, making it more robust and less likely to memorize the training data. At test time, all neurons are active, but their weights are scaled by \( 1-p \) to account for the reduced activation during training.
 
 Dropout acts like training an ensemble of smaller subnetworks, reducing co-dependency between neurons.
 It introduces noise, making the model less sensitive to specific patterns in the training data, thus improving generalization.
@@ -56,10 +67,26 @@ Crossed units have been dropped. Source: [Dropout: A Simple Way to Prevent Neura
 Avoid dropout in the output layer or when the network is small (it may hurt performance).
 
 
-**Pros**: Effective for deep networks; computationally cheap.
+<div class="grid cards" markdown>
 
-**Cons**: Requires tuning p; can slow convergence.
+-   __Pros__
 
+    ---
+
+    - Effective for deep networks;
+    - Computationally cheap.
+
+-   __Cons__
+
+    ---
+
+    - Requires tuning \( p \); can slow convergence;
+    - May not work well with all datasets;
+    - Can introduce noise, making optimization harder.
+
+</div>
+
+---
 
 ## L1 and L2 Regularizations
 
@@ -87,9 +114,9 @@ Avoid dropout in the output layer or when the network is small (it may hurt perf
 
 ### Key Differences
 
-**L1**: Encourages **sparse models** (some weights = 0), useful for feature selection or when you want a simpler model with fewer active connections.
+- **L1**: Encourages **sparse models** (some weights = 0), useful for feature selection or when you want a simpler model with fewer active connections.
 
-**L2**: Produces **small but non-zero weights**, often leading to better generalization in many cases, especially in deep neural networks.
+- **L2**: Produces **small but non-zero weights**, often leading to better generalization in many cases, especially in deep neural networks.
 
 ### Practical tips
 
@@ -98,10 +125,25 @@ Avoid dropout in the output layer or when the network is small (it may hurt perf
 - Combine with other techniques (e.g., dropout) for better results.
 - The regularization affects the **weights** (not biases, typically) of the chosen layers.
 
-**Pros**: Encourages simpler models; can improve generalization.
+<div class="grid cards" markdown>
 
-**Cons**: Requires careful tuning of $ \lambda $; may not work well with all datasets.
+-   __Pros__
 
+    ---
+
+    - Encourages simpler models;
+    - Can improve generalization.
+
+-   __Cons__
+
+    ---
+
+    - Requires careful tuning of \( \lambda \);
+    - May not work well with all datasets;
+
+</div>
+
+---
 
 ## Batch Normalization
 
@@ -125,10 +167,27 @@ This allows the model to maintain the representational power while benefiting fr
 - It can be used with other regularization techniques (e.g., dropout) for improved generalization.
 - Consider using it in the training phase only, and not during inference, to avoid introducing noise.
 
-**Pros**: Speeds up training; allows higher learning rates; reduces sensitivity to initialization.
+<div class="grid cards" markdown>
 
-**Cons**: Adds complexity to the model; may not always improve performance.
+-   __Pros__
 
+    ---
+
+    - Speeds up training;
+    - Allows higher learning rates;
+    - Reduces sensitivity to initialization.
+
+-   __Cons__
+
+    ---
+
+    - Adds complexity to the model;
+    - May not always improve performance.
+
+</div>
+
+
+---
 
 ## Early Stopping
 
@@ -148,9 +207,24 @@ Early stopping helps to find a balance between underfitting and overfitting by a
 - Use early stopping in conjunction with other regularization techniques (e.g., dropout, weight decay) for better results.
 - Monitor multiple metrics (e.g., training loss, validation loss) to make informed decisions about stopping.
 
-**Pros**: Helps prevent overfitting; can save training time.
+<div class="grid cards" markdown>
 
-**Cons**: Requires careful tuning of patience; may stop training too early.
+-   __Pros__
+
+    ---
+
+    - Helps prevent overfitting;
+    - Can save training time.
+
+-   __Cons__
+
+    ---
+
+    - Requires careful tuning of patience;
+    - May stop training too early.
+
+</div>
+
 
 ---
 
