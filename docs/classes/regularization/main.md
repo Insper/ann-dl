@@ -1,6 +1,36 @@
 
 Regularization techniques to prevent overfitting in MLPs, such as dropout, L1 and L2 regularization, batch normalization, and early stopping.
 
+!!! info "Balance Between Bias and Variance"
+
+    The relationship between bias and variance is often referred to as the bias-variance tradeoff, which highlights the need for balance:
+
+    Increasing model complexity reduces bias but increases variance (risk of overfitting).
+    Simplifying the model reduces variance but increases bias (risk of underfitting).
+    The goal is to find an optimal balance where both bias and variance are minimized, resulting in good generalization performance.
+
+    ![](fitting.png)
+    /// caption
+    Illustration of underfitting and overfitting in neural networks. Source: [GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/underfitting-and-overfitting-in-machine-learning/)
+    ///
+
+    !!! tip "Techniques to Reduce Underfitting"
+    
+    - Increase model complexity.
+    - Increase the number of features, performing feature engineering.
+    - Remove noise from the data.
+    - Increase the number of epochs or increase the duration of training to get better results.
+
+    !!! tip "Techniques to Reduce Overfitting"
+
+    - Improving the quality of training data reduces overfitting by focusing on meaningful patterns, mitigate the risk of fitting the noise or irrelevant features.
+    - Increase the training data can improve the model's ability to generalize to unseen data and reduce the likelihood of overfitting.
+    - Reduce model complexity.
+    - Early stopping during the training phase (have an eye over the loss over the training period as soon as loss begins to increase stop training).
+    - Ridge Regularization and Lasso Regularization.
+    - Use dropout for neural networks to tackle overfitting.
+
+
 ## Dropout
 
 Dropout[^1] is a regularization technique where, during training, a random subset of neurons (or their connections) is "dropped" (set to zero) in each forward and backward pass. This prevents the network from relying too heavily on specific neurons.
@@ -122,8 +152,14 @@ Early stopping helps to find a balance between underfitting and overfitting by a
 
 **Cons**: Requires careful tuning of patience; may stop training too early.
 
+---
 
+## Additional
+
+<iframe width="100%" height="470" src="https://www.youtube.com/embed/EuBBz3bI-aA" title="Machine Learning Fundamentals: Bias and Variance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 [^1]: [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf){:target="_blank"}, Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., & Salakhutdinov, R.
 
 [^2]: [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167){:target="_blank"}, Ioffe, S., & Szegedy, C.
+
+[^3]: [Underfitting and Overfitting in Machine Learning](https://www.geeksforgeeks.org/machine-learning/underfitting-and-overfitting-in-machine-learning/)
