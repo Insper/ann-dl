@@ -150,11 +150,7 @@ nav:
     - 5. Perceptron: ./classes/perceptron/main.md
     - 6. Multi-Layer Perceptron: ./classes/mlp/main.md
     - 7. Optimization: ./classes/optimization/main.md
-    - 8. Regularization:
-      - 8.1. L1 and L2 Regularization: ./classes/regularization/l1-l2-regularization/main.md
-      - 8.2. Dropout: ./classes/regularization/dropout/main.md
-      - 8.3. Batch Normalization: ./classes/regularization/batch-normalization/main.md
-      - 8.4. Early Stopping: ./classes/regularization/early-stopping/main.md
+    - 8. Regularization: ./classes/regularization/main.md
     - 9. Metrics and Evaluation:
       - 9.1. Classification: ./classes/metrics/classification/main.md
       - 9.2. Regression: ./classes/metrics/regression/main.md
