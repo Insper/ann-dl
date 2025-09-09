@@ -4,11 +4,16 @@ from matplotlib.animation import FuncAnimation, PillowWriter
 
 # Define the loss function: f(x, y) = x^2 + y^2 + 0.5
 def loss_function(x, y):
-    return x**2 + y**2 + 0.5
+    fx = 1/10*np.power(x, 4) + np.power(x, 3) + 1/7*np.power(x, 2) - 14*x
+    fy = 1/10*np.power(y, 4) + np.power(y, 3) + 1/7*np.power(y, 2) - 14*y
+    return fx + fy
 
 # Gradient of the loss function
 def gradient(x, y):
-    return np.array([2*x, 2*y])
+    return np.array([
+        4/10*x**3+3*x**2+2/7*x-14,
+        4/10*y**3+3*y**2+2/7*y-14
+    ])
 
 # Optimization algorithms
 def gradient_descent(pos, learning_rate=0.1):
@@ -45,8 +50,8 @@ fig = plt.figure(figsize=(10, 8))
 ax = fig.add_subplot(111, projection='3d')
 
 # Create mesh for the surface plot
-x = np.linspace(-5, 5, 100)
-y = np.linspace(-5, 5, 100)
+x = np.linspace(-9, 4, 100)
+y = np.linspace(-9, 4, 100)
 X, Y = np.meshgrid(x, y)
 Z = loss_function(X, Y)
 
@@ -58,7 +63,7 @@ ax.set_zlabel('Loss')
 ax.set_title('3D Optimization Algorithms Comparison')
 
 # Initialize starting point and parameters
-start_pos = np.array([4.0, 4.0])
+start_pos = np.array([-2.8, -2.82])
 iterations = 50
 paths = {
     'GD': [start_pos.copy()],
@@ -122,9 +127,9 @@ def update(frame):
 
 # Create and store animation
 ani = FuncAnimation(fig, update, frames=iterations, interval=200, blit=True)
-# writer = PillowWriter(fps=15, metadata=dict(artist='Me'), bitrate=1800)
+# writer = PillowWriter(fps=10, metadata=dict(artist='Me'), bitrate=1800)
 # ani.save('gradient-comparation.gif', writer=writer)
 
-print(ani.to_jshtml())
+# print(ani.to_jshtml())
 
 plt.close()
