@@ -3,6 +3,7 @@
 Convolutional Neural Networks (CNNs) are a class of deep neural networks commonly used for image recognition, video analysis, and other tasks involving grid-like data (e.g., pixels in images). Unlike fully connected networks, CNNs exploit spatial hierarchies through **convolutions**, which apply learnable filters (kernels) to local regions of the input. This reduces parameters, enables translation invariance, and captures features like edges, textures, or objects.
 
 A typical CNN architecture includes:
+
 - **Convolutional layers**: Extract features via convolution.
 - **Activation functions** (e.g., ReLU): Introduce non-linearity.
 - **Pooling layers** (e.g., max pooling): Downsample to reduce spatial dimensions and computational load.

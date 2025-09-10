@@ -3,6 +3,7 @@
 Stable Diffusion is a type of generative AI model based on **diffusion models**, specifically a Latent Diffusion Model (LDM). It generates images from text prompts by learning to reverse a noise-adding process. The core idea comes from Denoising Diffusion Probabilistic Models (DDPMs), where data (e.g., images) is gradually corrupted with noise (forward process), and a neural network learns to reverse this by predicting and removing noise (backward process). This allows sampling new data from noise.
 
 Key components in Stable Diffusion:
+
 - **VAE (Variational Autoencoder)**: Compresses images to a lower-dimensional latent space for efficiency (e.g., from 512x512 pixels to 64x64 latents).
 - **U-Net**: A CNN-like architecture (with attention for text conditioning) that predicts noise at each step.
 - **Text Encoder** (e.g., CLIP): Converts prompts to embeddings for conditioning.
