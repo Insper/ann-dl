@@ -52,9 +52,9 @@ Perform the following steps explicitly, showing all mathematical derivations and
 1. **Forward Pass**:
 
     - Compute the hidden layer pre-activations: \( \mathbf{z}^{(1)} = \mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)} \).
-    - Apply tanh to get hidden activations: \( \mathbf{a}^{(1)} = \tanh(\mathbf{z}^{(1)}) \).
-    - Compute the output pre-activation: \( z^{(2)} = \mathbf{W}^{(2)} \mathbf{a}^{(1)} + b^{(2)} \).
-    - Compute the final output: \( \hat{y} = \tanh(z^{(2)}) \).
+    - Apply tanh to get hidden activations: \( \mathbf{h}^{(1)} = \tanh(\mathbf{z}^{(1)}) \).
+    - Compute the output pre-activation: \( u^{(2)} = \mathbf{W}^{(2)} \mathbf{h}^{(1)} + b^{(2)} \).
+    - Compute the final output: \( \hat{y} = \tanh(u^{(2)}) \).
 
 2. **Loss Calculation**:
 
@@ -62,21 +62,21 @@ Perform the following steps explicitly, showing all mathematical derivations and
 
         \( L = \frac{1}{N} (y - \hat{y})^2 \).
 
-3. **Backward Pass (Backpropagation)**: Compute the gradients of the loss with respect to all weights and biases. Start with \( \frac{\partial L}{\partial \hat{y}} \), then compute:
+3. **Backward Pass (Backpropagation)**: Compute the gradients of the loss with respect to all weights and biases. Start with \( \displaystyle \frac{\partial L}{\partial \hat{y}} \), then compute:
 
-    - \( \frac{\partial L}{\partial z^{(2)}} \) (using the tanh derivative: \( \frac{d}{dz} \tanh(z) = 1 - \tanh^2(z) \)).
-    - Gradients for output layer: \( \frac{\partial L}{\partial \mathbf{W}^{(2)}} \), \( \frac{\partial L}{\partial b^{(2)}} \).
-    - Propagate to hidden layer: \( \frac{\partial L}{\partial \mathbf{a}^{(1)}} \), \( \frac{\partial L}{\partial \mathbf{z}^{(1)}} \).
-    - Gradients for hidden layer: \( \frac{\partial L}{\partial \mathbf{W}^{(1)}} \), \( \frac{\partial L}{\partial \mathbf{b}^{(1)}} \).
+    - \( \displaystyle \frac{\partial L}{\partial u^{(2)}} \) (using the tanh derivative: \( \displaystyle \frac{d}{du} \tanh(u) = 1 - \tanh^2(u) \)).
+    - Gradients for output layer: \( \displaystyle \frac{\partial L}{\partial \mathbf{W}^{(2)}} \), \( \displaystyle \frac{\partial L}{\partial b^{(2)}} \).
+    - Propagate to hidden layer: \( \displaystyle \frac{\partial L}{\partial \mathbf{h}^{(1)}} \), \( \displaystyle \frac{\partial L}{\partial \mathbf{z}^{(1)}} \).
+    - Gradients for hidden layer: \( \displaystyle \frac{\partial L}{\partial \mathbf{W}^{(1)}} \), \( \displaystyle \frac{\partial L}{\partial \mathbf{b}^{(1)}} \).
     
     Show all intermediate steps and calculations.
 
 4. **Parameter Update**: Using the learning rate \( \eta = 0.1 \), update all weights and biases via gradient descent:
 
-    - \( \mathbf{W}^{(2)} \leftarrow \mathbf{W}^{(2)} - \eta \frac{\partial L}{\partial \mathbf{W}^{(2)}} \)
-    - \( b^{(2)} \leftarrow b^{(2)} - \eta \frac{\partial L}{\partial b^{(2)}} \)
-    - \( \mathbf{W}^{(1)} \leftarrow \mathbf{W}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{W}^{(1)}} \)
-    - \( \mathbf{b}^{(1)} \leftarrow \mathbf{b}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{b}^{(1)}} \)
+    - \( \displaystyle \mathbf{W}^{(2)} \leftarrow \mathbf{W}^{(2)} - \eta \frac{\partial L}{\partial \mathbf{W}^{(2)}} \)
+    - \( \displaystyle b^{(2)} \leftarrow b^{(2)} - \eta \frac{\partial L}{\partial b^{(2)}} \)
+    - \( \displaystyle \mathbf{W}^{(1)} \leftarrow \mathbf{W}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{W}^{(1)}} \)
+    - \( \displaystyle \mathbf{b}^{(1)} \leftarrow \mathbf{b}^{(1)} - \eta \frac{\partial L}{\partial \mathbf{b}^{(1)}} \)
 
     Provide the numerical values for all updated parameters.
 

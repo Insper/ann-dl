@@ -445,7 +445,6 @@ $$
 ### Forward Pass
 
 For the sample:
-
 $$
 \mathbf{x} = \begin{bmatrix} 0.5 \\ 0.8 \end{bmatrix},
 \quad y = 0
