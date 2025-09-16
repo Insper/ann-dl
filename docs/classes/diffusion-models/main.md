@@ -10,7 +10,7 @@ Key components in Stable Diffusion:
 - **Scheduler**: Controls the noise addition/removal schedule (e.g., linear beta schedule).
 
 The "forward pass" refers to the diffusion (noising) process during training. The "backward pass" is the reverse diffusion (denoising) for generation, but training involves backpropagation to update the model. I'll focus on the math for the core DDPM, then note Stable Diffusion's extensions. Assume images as vectors \( \mathbf{x} \in \mathbb{R}^D \) (flattened), time steps \( T \) (e.g., 1000).
-<!-- 
+
 ### Forward Pass in Diffusion Models (Noising Process)
 
 The forward pass is a Markov chain that progressively adds Gaussian noise to the data until it's pure noise. This is non-learnable; it's fixed.
@@ -20,7 +20,7 @@ The forward pass is a Markov chain that progressively adds Gaussian noise to the
 - Time step: \( t = 1 \) to \( T \).
 - Noise schedule: \( \beta_t \in (0,1) \) (variance, often increasing linearly from ~0.0001 to 0.02).
 - Cumulative: \( \alpha_t = 1 - \beta_t \), \( \bar{\alpha}_t = \prod_{s=1}^t \alpha_s \).
-- Noise: \( \boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) \).
+- Noise: \( \mathbf{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) \).
 
 #### Forward Transition:
 At each step:
@@ -32,30 +32,30 @@ q(\mathbf{x}_t | \mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_t; \sqrt{\alpha_t} \
 Direct sampling from \( \mathbf{x}_0 \) to any \( \mathbf{x}_t \) (key for training):
 
 \[
-\mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t} \boldsymbol{\epsilon}
+\mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t} \mathbf{\epsilon}
 \]
 
-- **How to arrive at this**: This closed-form derives from reparameterizing the Gaussian transitions. Starting from \( \mathbf{x}_1 = \sqrt{\alpha_1} \mathbf{x}_0 + \sqrt{\beta_1} \boldsymbol{\epsilon}_1 \), inductively, the mean scales by \( \sqrt{\bar{\alpha}_t} \), and variance accumulates to \( 1 - \bar{\alpha}_t \). At \( t=T \), \( \mathbf{x}_T \approx \mathcal{N}(\mathbf{0}, \mathbf{I}) \).
+- **How to arrive at this**: This closed-form derives from reparameterizing the Gaussian transitions. Starting from \( \mathbf{x}_1 = \sqrt{\alpha_1} \mathbf{x}_0 + \sqrt{\beta_1} \mathbf{\epsilon}_1 \), inductively, the mean scales by \( \sqrt{\bar{\alpha}_t} \), and variance accumulates to \( 1 - \bar{\alpha}_t \). At \( t=T \), \( \mathbf{x}_T \approx \mathcal{N}(\mathbf{0}, \mathbf{I}) \).
 
 In Stable Diffusion, this happens in latent space: First, encode image \( \mathbf{z}_0 = \text{Encoder}(\mathbf{x}_0) \), then diffuse \( \mathbf{z}_t \).
 
 ### Backward Pass in Diffusion Models (Denoising Process)
 
-The backward pass learns to reverse the forward process, starting from noise \( \mathbf{x}_T \) and iteratively denoising to \( \mathbf{x}_0 \). A neural network \( \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) \) (e.g., U-Net) predicts the noise \( \boldsymbol{\epsilon} \) added at step t.
+The backward pass learns to reverse the forward process, starting from noise \( \mathbf{x}_T \) and iteratively denoising to \( \mathbf{x}_0 \). A neural network \( \mathbf{\epsilon}_\theta(\mathbf{x}_t, t) \) (e.g., U-Net) predicts the noise \( \mathbf{\epsilon} \) added at step t.
 
 #### Key Notations:
-- Reverse transition: \( p_\theta(\mathbf{x}_{t-1} | \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \boldsymbol{\mu}_\theta(\mathbf{x}_t, t), \sigma_t^2 \mathbf{I}) \).
-- Predicted mean: \( \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) = \frac{1}{\sqrt{\alpha_t}} \left( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) \right) \).
+- Reverse transition: \( p_\theta(\mathbf{x}_{t-1} | \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \mathbf{\mu}_\theta(\mathbf{x}_t, t), \sigma_t^2 \mathbf{I}) \).
+- Predicted mean: \( \mathbf{\mu}_\theta(\mathbf{x}_t, t) = \frac{1}{\sqrt{\alpha_t}} \left( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \mathbf{\epsilon}_\theta(\mathbf{x}_t, t) \right) \).
 - Variance: \( \sigma_t^2 = \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \beta_t \) (or simplified in DDPM).
 
 #### Training Objective:
 Minimize the difference between predicted and actual noise. Loss (simplified variational bound):
 
 \[
-L = \mathbb{E}_{t, \mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \| \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) \|^2 \right]
+L = \mathbb{E}_{t, \mathbf{x}_0, \mathbf{\epsilon}} \left[ \| \mathbf{\epsilon} - \mathbf{\epsilon}_\theta(\mathbf{x}_t, t) \|^2 \right]
 \]
 
-Where \( \mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t} \boldsymbol{\epsilon} \), t uniform in [1,T].
+Where \( \mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t} \mathbf{\epsilon} \), t uniform in [1,T].
 
 - Backpropagation: Standard gradient descent on \( L \) w.r.t. \( \theta \) (U-Net params). The "backward pass" here means both the reverse sampling and the autograd backward for training.
 
@@ -63,13 +63,13 @@ Where \( \mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alp
 Start from \( \mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) \), then for t=T to 1:
 
 \[
-\mathbf{x}_{t-1} = \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) + \sigma_t \mathbf{z}, \quad \mathbf{z} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})
+\mathbf{x}_{t-1} = \mathbf{\mu}_\theta(\mathbf{x}_t, t) + \sigma_t \mathbf{z}, \quad \mathbf{z} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})
 \]
 
-- **How to arrive at this**: The reverse is derived by matching the forward Gaussian posterior. The mean \( \boldsymbol{\mu}_\theta \) is obtained by Bayes' rule on the forward process, approximating the reverse with the noise predictor. The loss is a reweighted ELBO from the diffusion model's probabilistic framework.
+- **How to arrive at this**: The reverse is derived by matching the forward Gaussian posterior. The mean \( \mathbf{\mu}_\theta \) is obtained by Bayes' rule on the forward process, approximating the reverse with the noise predictor. The loss is a reweighted ELBO from the diffusion model's probabilistic framework.
 
 In Stable Diffusion:
-- Conditioning: \( \boldsymbol{\epsilon}_\theta(\mathbf{z}_t, t, \mathbf{c}) \), where \( \mathbf{c} \) is text embedding.
+- Conditioning: \( \mathbf{\epsilon}_\theta(\mathbf{z}_t, t, \mathbf{c}) \), where \( \mathbf{c} \) is text embedding.
 - After denoising \( \mathbf{z}_0 \), decode to image: \( \mathbf{x}_0 = \text{Decoder}(\mathbf{z}_0) \).
 - Schedulers like DDIM allow fewer steps (e.g., 50 instead of 1000) by deterministic sampling.
 
@@ -159,6 +159,12 @@ This trains on random data and generates new samples. Outputs might look like:
 
 For Stable Diffusion, use libraries like `diffusers` from Hugging Face for real implementation (e.g., `StableDiffusionPipeline`). The math scales up: U-Net predicts noise on latents, with cross-attention for text.
 
-source: https://grok.com/chat/aeb2b344-5ad6-4b03-8ce1-a7afd6fbf018
+<!-- source: https://grok.com/chat/aeb2b344-5ad6-4b03-8ce1-a7afd6fbf018 -->
 
- -->
+
+https://github.com/openai/CLIP
+https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/multimodal/vlm/clip.html
+https://openai.com/index/clip/
+https://huggingface.co/docs/transformers/model_doc/clip
+https://en.wikipedia.org/wiki/Contrastive_Language-Image_Pre-training
+https://en.wikipedia.org/wiki/U-Net

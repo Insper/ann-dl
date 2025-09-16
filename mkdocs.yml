@@ -159,10 +159,10 @@ nav:
       # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
     - 10. Deep Learning: ./classes/deep-learning/main.md
     - 11. Convolutional: ./classes/convolutional-neural-networks/main.md
-    - 12. Generative Models:
-      - 12.1. GANs: ./classes/generative-adversarial-networks/main.md
-      - 12.2. VAEs: ./classes/variational-autoencoders/main.md
-      - 12.3. Diffusion Models: ./classes/diffusion-models/main.md
+    - 12. Generative Models: ./classes/generative-models/main.md
+    - 13. GANs: ./classes/generative-adversarial-networks/main.md
+    - 14. VAEs: ./classes/variational-autoencoders/main.md
+    - 15. Diffusion Models: ./classes/diffusion-models/main.md
 
   # - 11. Transfer Learning: ./classes/deep-learning/transfer-learning.md
   # - 12. Recurrent Neural Networks: ./classes/deep-learning/rnn.md
