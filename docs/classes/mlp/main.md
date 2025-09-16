@@ -523,8 +523,8 @@ $$
 
     $$
     \begin{array}{ll}
-    \displaystyle \frac{\partial L}{\partial \hat{y}} &= \displaystyle \frac{\partial L}{\partial u} \cdot \frac{\partial u}{\partial \hat{y}} \\
-    &= 2(y - \hat{y}) \cdot \hat{y} (1 - \hat{y}) \\
+    \displaystyle \frac{\partial L}{\partial u} &= \displaystyle \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial u} \\
+    &= 2(y - \hat{y}) \cdot \underbrace{\hat{y} (1 - \hat{y})}_{\sigma'(u)} \\
     &\approx 2(0 - 0.725) \cdot 0.725 \cdot (1 - 0.725) \\
     &\approx -0.289
     \end{array}

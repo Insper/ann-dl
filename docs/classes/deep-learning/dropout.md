@@ -1,4 +1,4 @@
-![](dropout.png)
+![](dropout.png){width="90%"}
 /// caption
 Dropout Neural Net Model. Left: A standard neural net with 2 hidden layers. Right:
 An example of a thinned net produced by applying dropout to the network on the left.
