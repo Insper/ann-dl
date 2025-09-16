@@ -186,17 +186,7 @@ Downsamples the output from convolutional layers, reducing computational load an
 
 ### H. Dropout
 
-**Forward Pass**: Mask during training.
-
-**Backward Pass**: Same mask applied to upstream gradient (scale by 1/(1-p)).
-
-**Numerical Example**: Same as forward; backward passes dy through mask.
-
-**Implementation**:
-
-```pyodide install="pandas,scikit-learn" exec="on" html="1"
---8<-- "docs/classes/deep-learning/dropout.py"
-```
+--8<-- "docs/classes/deep-learning/dropout.md"
 
 ---
 
