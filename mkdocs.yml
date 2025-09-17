@@ -143,26 +143,26 @@ nav:
   # - 2025.2: versions/2025.2/presentation.md
 
   - Classes:
-    - 1. Concepts: ./classes/concepts/main.md
-    - 2. Data: ./classes/data/main.md
-    - 3. Preprocessing: ./classes/preprocessing/main.md
-    - 4. Neural Networks: ./classes/ann/main.md
-    - 5. Perceptron: ./classes/perceptron/main.md
-    - 6. Multi-Layer Perceptron: ./classes/mlp/main.md
-    - 7. Optimization: ./classes/optimization/main.md
-    - 8. Regularization: ./classes/regularization/main.md
+    - 1. Concepts: ./classes/concepts/index.md
+    - 2. Data: ./classes/data/index.md
+    - 3. Preprocessing: ./classes/preprocessing/index.md
+    - 4. Neural Networks: ./classes/ann/index.md
+    - 5. Perceptron: ./classes/perceptron/index.md
+    - 6. Multi-Layer Perceptron: ./classes/mlp/index.md
+    - 7. Optimization: ./classes/optimization/index.md
+    - 8. Regularization: ./classes/regularization/index.md
     - 9. Metrics and Evaluation:
-      - 9.1. Classification: ./classes/metrics/classification/main.md
-      - 9.2. Regression: ./classes/metrics/regression/main.md
+      - 9.1. Classification: ./classes/metrics/classification/index.md
+      - 9.2. Regression: ./classes/metrics/regression/index.md
       # - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
       # - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
       # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
-    - 10. Deep Learning: ./classes/deep-learning/main.md
-    - 11. Convolutional: ./classes/convolutional-neural-networks/main.md
-    - 12. Generative Models: ./classes/generative-models/main.md
-    - 13. GANs: ./classes/generative-adversarial-networks/main.md
-    - 14. VAEs: ./classes/variational-autoencoders/main.md
-    - 15. Diffusion Models: ./classes/diffusion-models/main.md
+    - 10. Deep Learning: ./classes/deep-learning/index.md
+    - 11. Convolutional: ./classes/convolutional-neural-networks/index.md
+    - 12. Generative Models: ./classes/generative-models/index.md
+    - 13. GANs: ./classes/generative-adversarial-networks/index.md
+    - 14. VAEs: ./classes/variational-autoencoders/index.md
+    - 15. Diffusion Models: ./classes/diffusion-models/index.md
 
   # - 11. Transfer Learning: ./classes/deep-learning/transfer-learning.md
   # - 12. Recurrent Neural Networks: ./classes/deep-learning/rnn.md
@@ -178,13 +178,13 @@ nav:
   - Versions:
     - Terms and Conditions: versions/terms-and-conditions.md
     - 2025.2:
-      - Presentation: ./versions/2025.2/main.md
+      - Presentation: ./versions/2025.2/index.md
       - Exercises:
-        - 1. Data: ./versions/2025.2/exercises/data/main.md
-        - 2. Perceptron: ./versions/2025.2/exercises/perceptron/main.md
-        - 3. MLP: ./versions/2025.2/exercises/mlp/main.md
-        - 4. Metrics: ./versions/2025.2/exercises/metrics/main.md
+        - 1. Data: ./versions/2025.2/exercises/data/index.md
+        - 2. Perceptron: ./versions/2025.2/exercises/perceptron/index.md
+        - 3. MLP: ./versions/2025.2/exercises/mlp/index.md
+        - 4. Metrics: ./versions/2025.2/exercises/metrics/index.md
       - Projects:
-        - 1. Classification: ./versions/2025.2/projects/classification/main.md
-        - 2. Regression: ./versions/2025.2/projects/regression/main.md
-        - 3. Generative Models: ./versions/2025.2/projects/generative/main.md
+        - 1. Classification: ./versions/2025.2/projects/classification/index.md
+        - 2. Regression: ./versions/2025.2/projects/regression/index.md
+        - 3. Generative Models: ./versions/2025.2/projects/generative/index.md

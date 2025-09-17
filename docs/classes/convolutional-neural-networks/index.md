@@ -95,3 +95,58 @@ For pooling, backward pass upsamples the gradient (e.g., for max pooling, place 
 
 
 https://colab.research.google.com/drive/1AOONNT2DS0xP6k3thCq8pog1PoJUKTe6#scrollTo=b2tjGQ76GbeD
+
+
+https://en.wikipedia.org/wiki/Region_Based_Convolutional_Neural_Networks
+
+https://ravjot03.medium.com/detecting-vehicles-in-videos-with-faster-r-cnn-a-step-by-step-guide-932bbabf978b
+
+https://cs231n.github.io/assignments2025/assignment3
+https://cs231n.stanford.edu/assignments.html
+
+https://www.kaggle.com/code/christofhenkel/temporal-convolutional-network/notebook
+
+
+
+## Additional
+
+### When is a Neural Network Considered "Deep"?
+
+The term "deep" in the context of neural networks refers to the architecture's depth, specifically the number of layers (particularly hidden layers) that enable the network to learn hierarchical and abstract representations of data. There is no universally agreed-upon minimum threshold that strictly divides "shallow" from "deep" neural networks, as it can depend on the context, task, and historical usage in research. However, based on established definitions and expert consensus in machine learning, a neural network is generally considered deep if it has at least two hidden layers (in addition to the input and output layers), resulting in a total of at least four layers overall. This aligns with the concept of a substantial credit assignment path (CAP) depth greater than two, where the CAP represents the chain of transformations from input to output.
+
+<div class="grid cards" markdown>
+
+- **Shallow vs. Deep Networks**
+
+    ---
+
+    - A shallow neural network typically has 0 or 1 hidden layer (e.g., a basic perceptron or multilayer perceptron with one hidden layer). These are sufficient for simple tasks but struggle with complex, hierarchical data patterns.
+    - Deep networks, by contrast, stack multiple hidden layers to capture increasingly abstract features (e.g., edges in early layers for image recognition, evolving to objects in deeper layers). The "deep" descriptor emphasizes this multi-layer stacking, often with non-linear activations.
+
+- **Historical and Theoretical Basis**
+
+    ---
+
+    - Early deep learning models, such as those from Geoffrey Hinton's group in the 2000s, featured three hidden layers and were pivotal in reviving interest in deep architectures.
+    - Jürgen Schmidhuber's work defines "very deep" learning as having CAP depth >10, but the baseline for "deep" starts at multiple non-linear layers (CAP >2).
+    - The universal approximation theorem shows that even a single hidden layer can theoretically approximate any function, but in practice, deeper networks (with fewer neurons per layer) are more efficient for complex tasks, avoiding the need for exponentially more neurons in shallow setups.
+
+- **Common Thresholds from Sources**
+
+    ---
+
+    - Most researchers and textbooks agree on **at least 2 hidden layers** as the minimum for "deep" (total layers: input + 2 hidden + output = 4).
+    - Some sources, like IBM's overview, specify **more than 3 total layers** (inclusive of input and output), which equates to at least 1 hidden layer—but this is often critiqued as too low, as it would classify basic MLPs as deep.
+    - In practice, modern deep networks (e.g., CNNs or transformers) have dozens or hundreds of layers, but the minimum remains the focus for foundational classification.
+
+- **Why the Ambiguity?**
+
+    ---
+
+    - The term "deep" originated as somewhat informal or "marketing" in early literature but has solidified around the multi-layer criterion.
+    - For recurrent neural networks (RNNs), depth can be effectively unlimited due to signal propagation through layers over time, but the static layer count still applies for feedforward cases.
+    - In educational or certification contexts (e.g., CFA materials), there's occasional debate between 2 or 3 hidden layers, but evidence leans toward 2 as the practical minimum.
+
+</div>
+
+If you're implementing a network, start with 2–3 hidden layers for "deep" experiments and tune based on your dataset and performance metrics (e.g., via cross-validation). For specific architectures like CNNs, the minimum might vary slightly due to convolutional layers.
