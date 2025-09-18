@@ -140,7 +140,7 @@ extra_css:
 
 nav:
   - Ementa: index.md
-  # - 2025.2: versions/2025.2/presentation.md
+  - 2025.2: versions/2025.2/index.md
 
   - Classes:
     - 1. Concepts: ./classes/concepts/index.md
