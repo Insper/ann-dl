@@ -97,3 +97,17 @@ https://docs.google.com/spreadsheets/d/1Ei_L9e8nLdz5IbZ26Gr7YeE7wpQU27qjE99CD1Di
 
 
 https://link.springer.com/series/1465 -->
+
+
+
+[Latent Space Visualisation: PCA, t-SNE, UMAP](https://www.youtube.com/watch?v=o_cAOa5fMhE){:target="_blank"}
+[UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction](https://arxiv.org/abs/1802.03426){:target="_blank"}
+[Visualizing Data using t-SNE](https://www.jmlr.org/papers/v9/vandermaaten08a.html){:target="_blank"}
+[How to Use t-SNE Effectively](https://distill.pub/2016/misread-tsne/){:target="_blank"}
+[An Introduction to Variational Autoencoders](https://arxiv.org/abs/1906.02691){:target="_blank"}
+[Autoencoders, Unsupervised Learning, and Deep Architectures](https://www.cs.toronto.edu/~larocheh/publications/laroche_nips2012_autoencoders.pdf){:target="_blank"}
+[Autoencoders](https://www.youtube.com/watch?v=9zKuYvjFFS8){:target="_blank"}
+[Generative Adversarial Networks (GANs)](https://www.youtube.com/watch?v=8L11aMN7n7w){:target="_blank"}
+[Generative Adversarial Networks (GANs) - Deep Learning Specialization](https://www.coursera.org/learn/build-basic-generativeative-adversarial-networks-gans){:target="_blank"}
+[Generative Adversarial Networks (GANs) - Paper](https://arxiv.org/abs/1406.2661){:target="_blank"}
+[GANs in Action: Deep learning with Generative Adversarial Networks](https://www.manning.com/books/gans-in-action){:target="_blank"}

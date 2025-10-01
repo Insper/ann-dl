@@ -203,3 +203,4 @@ volume/
 __pycache__/
 .DS_Store
 .env
+encryptcontent.cache

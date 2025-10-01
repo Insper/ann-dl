@@ -115,7 +115,8 @@ plugins:
       repository: insper/ann-dl
       branch: main
       token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
-  - search
+  - search: {}
+  - encryptcontent: {}
   - minify:
       minify_html: true
   - badges

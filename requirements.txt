@@ -1,6 +1,7 @@
 markdown-grid-tables
 markdown-exec
 mkdocs-badges
+mkdocs-encryptcontent-plugin
 mkdocs-material
 mkdocs-material-extensions
 mkdocs-minify-plugin

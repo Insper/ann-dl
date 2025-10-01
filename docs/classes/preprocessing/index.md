@@ -113,6 +113,12 @@ Feature engineering crafts new features from existing ones, such as polynomial t
 
 ## Dimensionality Reduction
 
+High-dimensional data can lead to overfitting and increased computational costs in neural networks. Dimensionality reduction techniques help mitigate these issues by projecting data onto lower-dimensional spaces. Basic techniques include:
+
+### **Principal Component Analysis (PCA)**
+
+A linear method that identifies orthogonal axes (principal components) capturing maximum variance in the data. It is widely used for reducing dimensionality while retaining essential information.
+
 Techniques like Principal Component Analysis (PCA) project data onto lower-dimensional spaces while preserving variance:
 
 $$
@@ -168,6 +174,14 @@ Now, the same example using scikit-learn is shown below:
 ```
 
 Eigenfaces, a PCA variant, is used in face recognition tasks to reduce image dimensions while retaining essential features[^4]. In NLP, techniques like Latent Semantic Analysis (LSA) apply SVD (Singular Value Decomposition) to reduce term-document matrices, enhancing transformer efficiency.
+
+### **t-SNE (t-distributed Stochastic Neighbor Embedding)**
+
+A non-linear technique that preserves local structures in data, making it suitable for visualizing clusters in high-dimensional spaces.
+
+### **UMAP (Uniform Manifold Approximation and Projection)**
+
+Another non-linear method that maintains both local and global data structures, often faster than t-SNE for large datasets.
 
 ## Domain-Specific Advanced Techniques
 
