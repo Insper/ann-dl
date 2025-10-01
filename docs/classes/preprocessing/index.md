@@ -161,7 +161,7 @@ Basically, PCA identifies orthogonal axes (principal components) capturing maxim
 
     where \(W\) is the matrix of selected eigenvectors.
 
-A example of PCA applied to the Iris dataset:
+<!-- A example of PCA applied to the Iris dataset:
 
 ```python
 --8<-- "docs/classes/preprocessing/iris-pca.py"
@@ -171,7 +171,7 @@ Now, the same example using scikit-learn is shown below:
 
 ```python
 --8<-- "docs/classes/preprocessing/iris-pca-sklearn.py"
-```
+``` -->
 
 Eigenfaces, a PCA variant, is used in face recognition tasks to reduce image dimensions while retaining essential features[^4]. In NLP, techniques like Latent Semantic Analysis (LSA) apply SVD (Singular Value Decomposition) to reduce term-document matrices, enhancing transformer efficiency.
 
