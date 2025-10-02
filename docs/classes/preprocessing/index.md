@@ -194,6 +194,13 @@ For time-series in RNNs, techniques include Fast Fourier Transform (FFT) for fre
 
 --8<-- "docs/classes/preprocessing/normalization-vs-standardization.md"
 
+---
+
+### Latent Space Visualisation: PCA, t-SNE, UMAP
+
+<iframe width="100%" height="470" src="https://www.youtube.com/embed/o_cAOa5fMhE" allowfullscreen></iframe>
+
+
 
 [^1]: [Scikit-learn - Preprocessing data](https://scikit-learn.org/stable/modules/preprocessing.html){target='_blank'}
 
@@ -205,12 +212,19 @@ For time-series in RNNs, techniques include Fast Fourier Transform (FFT) for fre
 
 [^5]: [PCA - Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis){target='_blank'}
 
-[^6]: [Principal Component Analysis (PCA) from Scratch](https://bagheri365.github.io/blog/Principal-Component-Analysis-from-Scratch/){target='_blank'}
+[^6]: [Latent Space Visualisation: PCA, t-SNE, UMAP](https://www.youtube.com/watch?v=o_cAOa5fMhE){:target="_blank"}
 
-[^7]: [t-SNE - t-distributed Stochastic Neighbor Embedding](https://distill.pub/2016/misread-tsne/){target='_blank'}
+[^7]: [Principal Component Analysis (PCA) from Scratch](https://bagheri365.github.io/blog/Principal-Component-Analysis-from-Scratch/){target='_blank'}
 
-[^8]: [SMOTE - Synthetic Minority Over-sampling Technique](https://arxiv.org/abs/1106.1813){target='_blank'}
+[^8]: [t-SNE - t-distributed Stochastic Neighbor Embedding](https://distill.pub/2016/misread-tsne/){target='_blank'}
 
-[^9]: [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002){target='_blank'}
+[^9]: [Visualizing Data using t-SNE](https://www.jmlr.org/papers/v9/vandermaaten08a.html){:target="_blank"}
 
-[^10]: [Word Embeddings - Word2Vec, GloVe, FastText](https://nlp.stanford.edu/projects/glove/){target='_blank'}
+[^10]: [UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction](https://arxiv.org/abs/1802.03426){:target="_blank"}
+
+[^11]: [SMOTE - Synthetic Minority Over-sampling Technique](https://arxiv.org/abs/1106.1813){target='_blank'}
+
+[^12]: [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002){target='_blank'}
+
+[^13]: [Word Embeddings - Word2Vec, GloVe, FastText](https://nlp.stanford.edu/projects/glove/){target='_blank'}
+
