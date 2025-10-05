@@ -15,3 +15,5 @@ Where:
 During training, VAEs optimize the ELBO using stochastic gradient descent, often employing reparameterization tricks to allow backpropagation through the stochastic layers.
 
 ### Backward Pass in VAEs
+
+![](https://upload.wikimedia.org/wikipedia/commons/4/4a/VAE_Basic.png)
