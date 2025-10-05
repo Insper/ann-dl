@@ -17,3 +17,6 @@ During training, VAEs optimize the ELBO using stochastic gradient descent, often
 ### Backward Pass in VAEs
 
 ![](https://upload.wikimedia.org/wikipedia/commons/4/4a/VAE_Basic.png)
+/// caption
+*Figure: Basic architecture of a Variational Autoencoder (VAE). The encoder maps input data \( \mathbf{x} \) to a latent representation \( \mathbf{z} \), and the decoder reconstructs \( \mathbf{x'} \) from \( \mathbf{z} \). The model is trained to maximize the ELBO, balancing reconstruction accuracy and latent space regularization. Source: [Wikipedia](https://en.wikipedia.org/wiki/Variational_autoencoder){:target="_blank"}*
+///

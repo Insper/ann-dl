@@ -16,3 +16,7 @@ Generative AI's roots trace back to early probability models, evolving through r
 ## Additional
 
 [This person doest not exist](https://thispersondoesnotexist.com/){:target="_blank"}
+
+[^1]: Geeks for Geeks - [What is Generative AI?](https://www.geeksforgeeks.org/artificial-intelligence/what-is-generative-ai/){:target="_blank"}
+[^2]: [A Brief History of Generative Models](https://medium.com/@jimcanary/a-brief-history-and-overview-of-generative-models-in-machine-learning-8881ee7ff87b){:target="_blank"}
+[^3]: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/){:target="_blank"}
