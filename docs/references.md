@@ -111,3 +111,6 @@ https://link.springer.com/series/1465 -->
 [Generative Adversarial Networks (GANs) - Deep Learning Specialization](https://www.coursera.org/learn/build-basic-generativeative-adversarial-networks-gans){:target="_blank"}
 [Generative Adversarial Networks (GANs) - Paper](https://arxiv.org/abs/1406.2661){:target="_blank"}
 [GANs in Action: Deep learning with Generative Adversarial Networks](https://www.manning.com/books/gans-in-action){:target="_blank"}
+
+
+https://mathigon.org/timeline/shannon
