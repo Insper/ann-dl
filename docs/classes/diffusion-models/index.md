@@ -168,3 +168,6 @@ https://openai.com/index/clip/
 https://huggingface.co/docs/transformers/model_doc/clip
 https://en.wikipedia.org/wiki/Contrastive_Language-Image_Pre-training
 https://en.wikipedia.org/wiki/U-Net
+
+
+[^3]: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/){:target="_blank"}
