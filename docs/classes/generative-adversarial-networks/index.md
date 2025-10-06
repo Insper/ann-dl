@@ -158,7 +158,7 @@ GANs have a wide range of applications across various fields:
 
 ## Implementations
 
-???+ example "CIFAR-10"
+??? example "CIFAR-10"
 
     Below is a basic example of how to create and train a GAN on the CIFAR-10 dataset.
 
