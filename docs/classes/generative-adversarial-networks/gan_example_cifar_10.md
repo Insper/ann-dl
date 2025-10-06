@@ -1,6 +1,6 @@
 Example extracted from [https://www.geeksforgeeks.org/deep-learning/generative-adversarial-network-gan/](https://www.geeksforgeeks.org/deep-learning/generative-adversarial-network-gan/)
 
-## 1. Importing Libraries
+#### 1. Importing Libraries
 
 
 ```python
@@ -15,7 +15,7 @@ import numpy as np
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ```
 
-## 2. Defining Image Transformations
+#### 2. Defining Image Transformations
 
 
 ```python
@@ -25,7 +25,7 @@ transform = transforms.Compose([
 ])
 ```
 
-## 3. Loaging the CIFAR-10 Dataset
+#### 3. Loaging the CIFAR-10 Dataset
 
 
 ```python
@@ -38,7 +38,7 @@ dataloader = torch.utils.data.DataLoader(train_dataset, \
     100%|██████████| 170M/170M [00:16<00:00, 10.5MB/s]
 
 
-## 4. Defining GAN Hyperparameters
+#### 4. Defining GAN Hyperparameters
 
 Set important training parameters:
 
@@ -56,7 +56,7 @@ beta2 = 0.999
 num_epochs = 30
 ```
 
-## 5. Building the Generator
+#### 5. Building the Generator
 
 Create a neural network that converts random noise into images. Use transpose convolutional layers, batch normalization and ReLU activations. The final layer uses Tanh activation to scale outputs to the range [-1, 1].
 
@@ -91,7 +91,7 @@ class Generator(nn.Module):
         return img
 ```
 
-## 6. Building the Discriminator
+#### 6. Building the Discriminator
 
 Create a binary classifier network that distinguishes real from fake images. Use convolutional layers, batch normalization, dropout, LeakyReLU activation and a Sigmoid output layer to give a probability between 0 and 1.
 
@@ -131,7 +131,7 @@ class Discriminator(nn.Module):
         return validity
 ```
 
-## 7. Initializing
+#### 7. Initializing
 
 - Generator and Discriminator are initialized on the available device (GPU or CPU).
 - Binary Cross-Entropy (BCE) Loss is chosen as the loss function.
@@ -150,7 +150,7 @@ optimizer_D = optim.Adam(discriminator.parameters()\
                          , lr=lr, betas=(beta1, beta2))
 ```
 
-## 8. Training
+#### 8. Training
 
 Train the discriminator on real and fake images, then update the generator to improve its fake image quality. Track losses and visualize generated images after each epoch.
 
