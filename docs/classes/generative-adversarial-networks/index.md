@@ -164,6 +164,23 @@ GANs have a wide range of applications across various fields:
 
     --8<-- "docs/classes/generative-adversarial-networks/gan_example_cifar_10.md"
 
+    ??? info "Architecture Visualization"
+
+        === "Generator"
+
+            ![](gan_example_cifar_10_files/generator_network.png)
+
+        === "Discriminator"
+
+            ![](gan_example_cifar_10_files/discriminator_network.png)
+
+
+<!-- ??? example "MNIST"
+
+    Below is a basic example of how to create and train a GAN on the MNIST dataset.
+
+    --8<-- "docs/classes/generative-adversarial-networks/gan_example_mnist.md"
+ -->
 
 
 
