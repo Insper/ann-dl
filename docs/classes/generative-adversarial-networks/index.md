@@ -143,6 +143,27 @@ Training GANs can be challenging due to several factors:
 | Evaluation Metrics | Assessing the quality of generated data can be subjective and challenging, as traditional metrics may not fully capture the realism of the outputs. |
 | Hyperparameter Tuning | Finding the right hyperparameters (e.g., learning rates, batch sizes) for both the Generator and Discriminator is crucial for stable training but can be time-consuming and complex. |
 
+## Applications of GANs
+
+GANs have a wide range of applications across various fields:
+
+| Application | Description |
+|-------------|-------------|
+| Image Generation | GANs can create high-quality images that are indistinguishable from real photos. |
+| Data Augmentation | GANs can generate additional training data to improve the performance of machine learning models. |
+| Style Transfer | GANs can apply the style of one image to another, enabling artistic transformations. |
+| Super-Resolution | GANs can enhance the resolution of images, making them clearer and more detailed. |
+| Text-to-Image Synthesis | GANs can generate images from textual descriptions, enabling creative content generation. |
+| Anomaly Detection | GANs can be used to identify anomalies in data by learning the normal data distribution. |
+
+## Implementations
+
+???+ example "CIFAR-10"
+
+    Below is a basic example of how to create and train a GAN on the CIFAR-10 dataset.
+
+    --8<-- "docs/classes/generative-adversarial-networks/gan_example_cifar_10.md"
+
 
 
 
@@ -159,3 +180,7 @@ Training GANs can be challenging due to several factors:
 [^6]: [Mode Collapse](https://en.wikipedia.org/wiki/Mode_collapse){target='_blank'} is a common problem in GAN training where the Generator produces a limited variety of outputs, often collapsing to a few modes of the data distribution. This results in a lack of diversity in the generated samples, which can be detrimental to the overall performance of the GAN.
 
 [^7]: [GAN Lab](https://poloclub.github.io/ganlab/){target='_blank'} is an interactive visualization tool that helps users understand how Generative Adversarial Networks (GANs) work. It provides a hands-on experience of training GANs, allowing users to visualize the generator and discriminator networks, observe their interactions, and see how they evolve during the training process. This tool is particularly useful for those new to GANs or for educators looking to demonstrate the concepts behind adversarial training in a more intuitive way.
+
+[^8]: [TensorFlow GAN Tutorial](https://www.tensorflow.org/tutorials/generative/dcgan){target='_blank'} provides a step-by-step guide on how to implement a Deep Convolutional Generative Adversarial Network (DCGAN) using TensorFlow and Keras. The tutorial covers the essential components of GANs, including the architecture of the Generator and Discriminator, the training process, and how to generate new images after training. It is a practical resource for those looking to gain hands-on experience with GANs and understand their implementation in a deep learning framework.
+
+[^9]: [ThisPersonDoesNotExist](https://thispersondoesnotexist.com/){target='_blank'} is a website that uses Generative Adversarial Networks (GANs) to generate realistic images of human faces that do not belong to any real person. Each time the page is refreshed, a new, unique face is created by the GAN model, showcasing the impressive capabilities of AI in generating lifelike images. The site serves as a fascinating demonstration of how GANs can be used for creative and practical applications in image synthesis.

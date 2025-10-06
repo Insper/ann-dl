@@ -46,10 +46,6 @@ Generative AI, the branch of artificial intelligence focused on creating new con
 
 This timeline illustrates how generative AI shifted from rudimentary pattern-matching in the 1960s to scalable, creative systems today, driven by computational power and data availability. By 2025, the field continues to evolve with ethical considerations, such as the EU AI Act's risk assessments and calls for pauses in development from tech leaders. As tools like advanced GPT iterations and diffusion-based video generators emerge, generative AI promises to redefine creativity, but also raises questions about authorship, bias, and societal impact. -->
 
-## Additional
-
-[This person doest not exist](https://thispersondoesnotexist.com/){:target="_blank"}
-
 [^1]: Geeks for Geeks - [What is Generative AI?](https://www.geeksforgeeks.org/artificial-intelligence/what-is-generative-ai/){:target="_blank"}
 [^2]: [A Brief History of Generative Models](https://medium.com/@jimcanary/a-brief-history-and-overview-of-generative-models-in-machine-learning-8881ee7ff87b){:target="_blank"}
 [^3]: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/){:target="_blank"}
