@@ -37,6 +37,8 @@ Vanilla encoders are fully connected layers for encoder and decoder. It works to
 The encoder such as the decoder are fully connected networks. The encoder addresses the input data to the latent space (compressed space - encoded data). The decoder addresses the latent space data to output (reconstructed data). Source: [^1].
 ///
 
+Latent Space is a compressed representation of the input data. The dimensionality of the latent space is typically much smaller than that of the input data, which forces the autoencoder to learn a compact representation that captures the most important features of the data.
+
 ### **Convolutional Autoencoders**
 
 In convolutional autoencoders, the encoder and the decoder are neural networks based on Convolutional Neural Networks. So, the approach is more intensive for handling image data.
@@ -118,7 +120,7 @@ Thus, the loss function for training a VAE can be expressed as:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/4/4a/VAE_Basic.png)
 /// caption
-*Figure: Basic architecture of a Variational Autoencoder (VAE). The encoder maps input data \( \mathbf{x} \) to a latent representation \( \mathbf{z} \), and the decoder reconstructs \( \mathbf{x'} \) from \( \mathbf{z} \). The model is trained to maximize the ELBO, balancing reconstruction accuracy and latent space regularization. Source: [Wikipedia](https://en.wikipedia.org/wiki/Variational_autoencoder){:target="_blank"}*
+*Figure: Basic architecture of a Variational Autoencoder (VAE). The encoder maps input data \( \mathbf{x} \) to a latent representation \( \mathbf{z} \), and the decoder reconstructs \( \mathbf{x'} \) from \( \mathbf{z} \). Source: [Wikipedia](https://en.wikipedia.org/wiki/Variational_autoencoder){:target="_blank"}*
 ///
 
 #### Reparameterization Trick
@@ -131,13 +133,13 @@ z = \mu + \sigma \cdot \epsilon
 
 where \( \mu \) and \( \sigma \) are the mean and standard deviation outputs of the encoder. This transformation allows us to backpropagate through the network while still maintaining the stochastic nature of the latent variable.
 
-![reparameterization trick](vae-reparameterization-trick.png)
+![reparameterization trick](vae-reparametrization-trick.png)
 
-![reparameterization trick](vae-reparameterized.png)
+![reparameterization trick](vae-reparametrized.png)
 
 #### Implementation
 
-##### Fashion-MNIST with PyTorch
+##### Fashion-MNIST
 
 ??? example "Fashion-MNIST"
 
