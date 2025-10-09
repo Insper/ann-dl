@@ -207,3 +207,7 @@ GANs have a wide range of applications across various fields:
 [:material-book-open-variant: Analyzing and Improving the Image Quality of StyleGAN](https://arxiv.org/abs/1912.04958){target='_blank'}.
 
 [^10]: [Artbreeder](https://www.artbreeder.com/){target='_blank'} is an online platform that leverages Generative Adversarial Networks (GANs) to allow users to create and explore new images by blending and evolving existing ones. Users can manipulate various parameters to generate unique artworks, portraits, landscapes, and more. Artbreeder provides an intuitive interface for experimenting with AI-generated art, making it accessible for both artists and enthusiasts interested in the creative possibilities of GANs.
+
+[^11]: [A Short Introduction to Generative Adversarial Networks](https://sthalles.github.io/intro-to-gans/){target='_blank'}
+
+[^12]: DeepLearning Book - [Generative Adversarial Networks](https://www.deeplearningbook.org/contents/generative_models.html){target='_blank'}
