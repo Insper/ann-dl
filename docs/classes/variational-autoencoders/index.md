@@ -143,6 +143,26 @@ where \( \mu \) and \( \sigma \) are the mean and standard deviation outputs of 
 
     --8<-- "docs/classes/variational-autoencoders/vae-numerical-simulation.md"
 
+---
+
+## Additional
+
+### Relation between Log Variance and Standard Deviation
+
+???+ tip "Relation between Log Variance and Standard Deviation"
+
+    - In VAEs, the encoder outputs the mean \( \mu \) and log variance \( \log(\sigma^2) \) of the latent space distribution.
+    - The standard deviation \( \sigma \) can be derived from the log variance using the relationship:
+
+    \[
+    \sigma = \exp\left(\frac{1}{2} \log(\sigma^2)\right)
+    \]
+
+    - This transformation ensures numerical stability and positivity of the variance during training.
+
+    ---
+
+    --8<-- "docs/classes/variational-autoencoders/relation-log-variance-std.md"
 
 
 <!-- ![reparameterization trick](vae-reparametrization-trick.png)
