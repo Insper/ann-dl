@@ -51,6 +51,13 @@ In this exercise, you will implement and evaluate a Variational Autoencoder (VAE
     - Experiment the same dataset with a Autoencoder (AE) and compare the results with the VAE;
     - Experiment with different latent space dimensions and report the effects on reconstruction quality and sample generation.
 
+
+!!! danger "Important Guidelines"
+
+    This is an **individual activity**. You must complete the work on your own. Collaboration is not allowed, but you can discuss general concepts with your peers or instructors;
+    
+    You could use the scratch MLP built in the exercise before, but you can use any framework you prefer (e.g., PyTorch, TensorFlow, Keras), also AI tools can be used to help you in the implementation. ==BUT== remember that the main goal is to understand the VAE architecture and training process, then **you must be able to explain all parts of the code and analysis submitted**.
+
 **Important Notes:**
 
 - The deliverable must be submitted in the format specified: **GitHub Pages**. **No other formats will be accepted.** - there exists a template for the course that you can use to create your GitHub Pages - [template](https://hsandmann.github.io/documentation.template/){target='_blank'};
