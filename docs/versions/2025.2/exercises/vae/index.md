@@ -68,8 +68,9 @@ In this exercise, you will implement and evaluate a Variational Autoencoder (VAE
 
 | Criteria | Description |
 |:--------:|-------------|
-| **4 pts** | Correctness of the VAE implementation |
+| **3 pts** | Correctness of the VAE implementation |
 | **1 pts** | Training and Evaluation: Proper training procedure, loss monitoring, and evaluation on the validation set. |
 | **2 pts** | Sampling: Quality of generated samples. |
-| **2 pts** | Visualizations: Quality and clarity of plots (data distribution, decision boundary, accuracy over epochs). |
+| **2 pts** | Latent Space: Quality of the learned latent space representation. |
+| **1 pts** | Visualizations: Quality and clarity of plots (data distribution, decision boundary, accuracy over epochs). |
 | **1 pt** | Report Quality: Clarity, organization, and completeness of the report. |
