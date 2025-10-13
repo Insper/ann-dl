@@ -39,12 +39,17 @@ In this exercise, you will implement and evaluate a Variational Autoencoder (VAE
 5. **Visualization**:
 
     - Visualize original and reconstructed images;
-    - Visualize the latent space (e.g., using t-SNE, UMAP or PCA).
+    - Visualize the latent space (in case of a latent space until 3-D, otherwise use a reduced visualization, e.g., using t-SNE, UMAP or PCA).
 
 6. **Report**:
 
     - Summarize your findings, including challenges faced and insights gained;
     - Include visualizations of reconstructions and latent space.
+
+7. **Extra Credit (Optional)**:
+
+    - Experiment the same dataset with a Autoencoder (AE) and compare the results with the VAE;
+    - Experiment with different latent space dimensions and report the effects on reconstruction quality and sample generation.
 
 **Important Notes:**
 
