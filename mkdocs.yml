@@ -184,7 +184,7 @@ nav:
         - 1. Data: ./versions/2025.2/exercises/data/index.md
         - 2. Perceptron: ./versions/2025.2/exercises/perceptron/index.md
         - 3. MLP: ./versions/2025.2/exercises/mlp/index.md
-        - 4. Metrics: ./versions/2025.2/exercises/metrics/index.md
+        - 4. VAE: ./versions/2025.2/exercises/vae/index.md
       - Projects:
         - 1. Classification: ./versions/2025.2/projects/classification/index.md
         - 2. Regression: ./versions/2025.2/projects/regression/index.md
