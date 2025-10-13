@@ -133,11 +133,20 @@ z = \mu + \sigma \cdot \epsilon
 
 where \( \mu \) and \( \sigma \) are the mean and standard deviation outputs of the encoder. This transformation allows us to backpropagate through the network while still maintaining the stochastic nature of the latent variable.
 
-![reparameterization trick](vae-reparametrization-trick.png)
+![reparametrized vae](vae-reparametrized.png)
 
-![reparameterization trick](vae-reparametrized.png)
+---
 
-#### Implementation
+#### Numerical Simulation
+
+???+ example "Numerical Simulation of VAE"
+
+    --8<-- "docs/classes/variational-autoencoders/vae-numerical-simulation.md"
+
+---
+
+
+<!-- ![reparameterization trick](vae-reparametrization-trick.png)
 
 ##### Fashion-MNIST
 
@@ -156,7 +165,6 @@ where \( \mu \) and \( \sigma \) are the mean and standard deviation outputs of 
         === "Decoder"
 
             ![](vae_example_fashion_mnist_files/decoder_network.png) -->
-
 
 
 [^1]: [Sharma, A. “Introduction to Autoencoders,” PyImageSearch, P. Chugh, A. R. Gosthipaty, S. Huot, K. Kidriavsteva, and R. Raha, eds., 2023](https://pyimg.co/ehnlf){:target="_blank"}.
