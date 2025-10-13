@@ -17,24 +17,24 @@ In this exercise, you will implement and evaluate a Variational Autoencoder (VAE
 
 1. **Data Preparation**:
 
-   - Load the MNIST/Fashion MNIST dataset;
-   - Normalize the images to the range [0, 1];
-   - Split the dataset into training and validation sets.
+    - Load the MNIST/Fashion MNIST dataset;
+    - Normalize the images to the range [0, 1];
+    - Split the dataset into training and validation sets.
 
 2. **Model Implementation**:
 
-   - Define the VAE architecture, including the encoder and decoder networks;
-   - Implement the reparameterization trick.
+    - Define the VAE architecture, including the encoder and decoder networks;
+    - Implement the reparameterization trick.
 
 3. **Training**:
 
-   - Train the VAE on the MNIST/Fashion MNIST dataset;
-   - Monitor the loss and generate reconstructions during training.
+    - Train the VAE on the MNIST/Fashion MNIST dataset;
+    - Monitor the loss and generate reconstructions during training.
 
 4. **Evaluation**:
 
-   - Evaluate the VAE's performance on the validation set;
-   - Generate new samples from the learned latent space.
+    - Evaluate the VAE's performance on the validation set;
+    - Generate new samples from the learned latent space.
 
 5. **Visualization**:
 
