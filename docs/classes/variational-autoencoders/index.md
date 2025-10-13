@@ -139,11 +139,10 @@ where \( \mu \) and \( \sigma \) are the mean and standard deviation outputs of 
 
 #### Numerical Simulation
 
-???+ example "Numerical Simulation of VAE"
+???+ example "VAE - Variational Autoencoder"
 
     --8<-- "docs/classes/variational-autoencoders/vae-numerical-simulation.md"
 
----
 
 
 <!-- ![reparameterization trick](vae-reparametrization-trick.png)

@@ -10,14 +10,14 @@
 
 **Activity: VAE Implementation**
 
-In this exercise, you will implement and evaluate a Variational Autoencoder (VAE) on the MNIST dataset. The goal is to understand the architecture, training process, and performance of VAEs.
+In this exercise, you will implement and evaluate a Variational Autoencoder (VAE) on the MNIST or Fashion MNIST dataset. The goal is to understand the architecture, training process, and performance of VAEs.
 
 
 ## Instructions
 
 1. **Data Preparation**:
 
-   - Load the MNIST dataset;
+   - Load the MNIST/Fashion MNIST dataset;
    - Normalize the images to the range [0, 1];
    - Split the dataset into training and validation sets.
 
@@ -28,7 +28,7 @@ In this exercise, you will implement and evaluate a Variational Autoencoder (VAE
 
 3. **Training**:
 
-   - Train the VAE on the MNIST dataset;
+   - Train the VAE on the MNIST/Fashion MNIST dataset;
    - Monitor the loss and generate reconstructions during training.
 
 4. **Evaluation**:
@@ -40,7 +40,6 @@ In this exercise, you will implement and evaluate a Variational Autoencoder (VAE
 
     - Visualize original and reconstructed images;
     - Visualize the latent space (e.g., using t-SNE, UMAP or PCA).
-
 
 6. **Report**:
 
@@ -58,7 +57,6 @@ In this exercise, you will implement and evaluate a Variational Autoencoder (VAE
 - **AI Collaboration is allowed**, but each student **MUST UNDERSTAND** and be able to explain all parts of the code and analysis submitted. Any use of AI tools must be properly cited in your report. **ORAL EXAMS** may require you to explain your work in detail.
 
 - All deliverables for individual activities should be submitted through the course platform [insper.blackboard.com](http://insper.blackboard.com/){:target="_blank"}.
-
 
 
 **Grade Criteria:**
