@@ -88,6 +88,12 @@ Report the final weights, bias, accuracy, and discuss how the overlap affects tr
 
 The deliverable for this activity consists of a **report** that includes:
 
+- A brief description of your implementation approach and any challenges faced;
+- The final weights and bias after training for both exercises;
+- The accuracy achieved on the training and validation sets for both exercises;
+- Visualizations of the decision boundary and data distribution.
+- A plot showing training accuracy over epochs for both exercises;
+- Discussion on the differences in training and performance between the two exercises, particularly focusing on the impact of data separability.
 
 **Important Notes:**
 
