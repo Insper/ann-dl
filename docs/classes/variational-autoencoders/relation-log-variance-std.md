@@ -36,7 +36,7 @@ From the above definition:
 Taking the square root to get the standard deviation:
 
 \[
-\displaystyle \sigma = \sqrt{e^{\text{log_var}}} = e^{\frac{1}{2}\text{log_var}}
+\displaystyle \sigma = \displaystyle \sqrt{e^{\text{log_var}}} = \displaystyle e^{\frac{1}{2}\text{log_var}}
 \]
 
 **So:**
