@@ -43,6 +43,24 @@ Classification tasks involve predicting discrete class labels. The following met
 <!-- | Log Loss | Penalizes incorrect predictions based on predicted probabilities | \( \displaystyle -\frac{1}{N} \sum_{i=1}^N [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)] \) | Common in probabilistic classifiers like neural networks with softmax outputs | -->
 
 
+## Loss Functions
+
+Loss functions commonly used in classification tasks:
+
+| Metric | Purpose | Use Case |
+|--------|---------|----------|
+| **Cross-Entropy Loss** <br> \( \displaystyle -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right] \) | Measures the performance of a classification model whose output is a probability value between 0 and 1. It increases as the predicted probability diverges from the actual label. | Commonly used in classification tasks with probabilistic outputs. |
+| **Binary Cross-Entropy** <br> \( \displaystyle -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right] \) | Used for binary classification tasks, measuring the difference between two probability distributions. | Commonly used in binary classification problems. |
+| **Categorical Cross-Entropy** <br> \( \displaystyle -\sum_{i=1}^{N} \sum_{c=1}^{C} y_{i,c} \log(\hat{y}_{i,c}) \) | Used when there are two or more label classes. It is a generalization of binary cross-entropy to multi-class problems. | Suitable for multi-class classification tasks with one-hot encoded labels. |
+| **Sparse Categorical Cross-Entropy** <br> \( \displaystyle -\sum_{i=1}^{N} \log(\hat{y}_{i,y_i}) \) | Similar to categorical cross-entropy but used when labels are provided as integers rather than one-hot encoded vectors. | Useful for multi-class classification with integer labels. |
+| **Balanced Cross-Entropy** <br> \( \displaystyle -\frac{1}{N} \sum_{i=1}^{N} \left[ w_1 y_i \log(\hat{y}_i) + w_0 (1 - y_i) \log(1 - \hat{y}_i) \right] \) | Adjusts the standard cross-entropy loss to account for class imbalance by weighting classes inversely proportional to their frequency. | Useful in imbalanced classification tasks. |
+| **Kullback-Leibler Divergence** <br> \( \displaystyle D_{KL}(P \| Q) = \sum_{i} P(i) \log\left(\frac{P(i)}{Q(i)}\right) \)  | Measures how one probability distribution diverges from a second, expected probability distribution. It is often used in variational autoencoders and other probabilistic models. | Useful in scenarios involving probabilistic models and distributions. |
+| **Hinge Loss** <br> \( \displaystyle \sum_{i=1}^{N} \max(0, 1 - y_i \cdot \hat{y}_i) \) | Used for "maximum-margin" classification, primarily for support vector machines (SVMs). It is designed to ensure that the correct class is not only predicted but also separated from the decision boundary by a margin. | Effective for SVMs and tasks requiring a margin between classes. |
+| **Focal Loss** <br> \( \displaystyle -\frac{1}{N} \sum_{i=1}^{N} \alpha_t (1 - p_t)^\gamma \log(p_t) \) | A modified version of cross-entropy loss that addresses class imbalance by down-weighting easy examples and focusing training on hard negatives. | Beneficial in scenarios with significant class imbalance, such as object detection. |
+| **Multi-Class Log Loss** <br> \( \displaystyle -\frac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} y_{i,c} \log(\hat{y}_{i,c}) \) | Extends binary log loss to multi-class classification problems, penalizing incorrect predictions based on predicted probabilities. | Suitable for multi-class classification tasks. |
+| **Hamming Loss** <br> \( \displaystyle \frac{1}{N} \sum_{i=1}^N \frac{1}{L} \sum_{j=1}^L \mathbf{1}(y_{ij} \neq \hat{y}_{ij}) \) | Measures the fraction of incorrect labels to the total number of labels, useful for multi-label classification tasks. | Effective for multi-label classification scenarios. |
+
+
 ### Explanation of ROC Curve (AUC-ROC)
 
 An ROC curve plots the True Positive Rate (TPR, or sensitivity/recall) against the False Positive Rate (FPR) at various classification thresholds. It helps visualize the trade-off between sensitivity and specificity for a classifier:
@@ -62,22 +80,5 @@ An ROC curve plots the True Positive Rate (TPR, or sensitivity/recall) against t
 ## Additional
 
 <iframe width="100%" height="470" src="https://www.youtube.com/embed/4jRBRDbJemM" title="ROC and AUC, Clearly Explained!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
----
-
-Loss functions commonly used in classification tasks include:
-
-| Metric | Purpose | Formula | Use Case |
-|--------|---------|:-------:|----------|
-| **Cross-Entropy Loss** | Measures the performance of a classification model whose output is a probability value between 0 and 1. It increases as the predicted probability diverges from the actual label. | \( \text{Cross-Entropy Loss} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right] \) | Commonly used in classification tasks with probabilistic outputs. |
-| **Binary Cross-Entropy** | Used for binary classification tasks, measuring the difference between two probability distributions. | \( \text{Binary Cross-Entropy} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right] \) | Commonly used in binary classification problems. |
-| **Categorical Cross-Entropy** | Used when there are two or more label classes. It is a generalization of binary cross-entropy to multi-class problems. | \( \text{Categorical Cross-Entropy} = -\sum_{i=1}^{N} \sum_{c=1}^{C} y_{i,c} \log(\hat{y}_{i,c}) \) | Suitable for multi-class classification tasks with one-hot encoded labels. |
-| **Sparse Categorical Cross-Entropy** | Similar to categorical cross-entropy but used when labels are provided as integers rather than one-hot encoded vectors. | \( \text{Sparse Categorical Cross-Entropy} = -\sum_{i=1}^{N} \log(\hat{y}_{i,y_i}) \) | Useful for multi-class classification with integer labels. |
-| **Balanced Cross-Entropy** | Adjusts the standard cross-entropy loss to account for class imbalance by weighting classes inversely proportional to their frequency. | \( \text{Balanced Cross-Entropy} = -\frac{1}{N} \sum_{i=1}^{N} \left[ w_1 y_i \log(\hat{y}_i) + w_0 (1 - y_i) \log(1 - \hat{y}_i) \right] \) | Useful in imbalanced classification tasks. |
-| **Kullback-Leibler Divergence** | Measures how one probability distribution diverges from a second, expected probability distribution. It is often used in variational autoencoders and other probabilistic models. | \( D_{KL}(P \| Q) = \sum_{i} P(i) \log\left(\frac{P(i)}{Q(i)}\right) \)  | Useful in scenarios involving probabilistic models and distributions. |
-| **Hinge Loss** | Used for "maximum-margin" classification, primarily for support vector machines (SVMs). It is designed to ensure that the correct class is not only predicted but also separated from the decision boundary by a margin. | \( \text{Hinge Loss} = \sum_{i=1}^{N} \max(0, 1 - y_i \cdot \hat{y}_i) \) | Effective for SVMs and tasks requiring a margin between classes. |
-| **Focal Loss** | A modified version of cross-entropy loss that addresses class imbalance by down-weighting easy examples and focusing training on hard negatives. | \( \text{Focal Loss} = -\frac{1}{N} \sum_{i=1}^{N} \alpha_t (1 - p_t)^\gamma \log(p_t) \) | Beneficial in scenarios with significant class imbalance, such as object detection. |
-| **Multi-Class Log Loss** | Extends binary log loss to multi-class classification problems, penalizing incorrect predictions based on predicted probabilities. | \( \text{Multi-Class Log Loss} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} y_{i,c} \log(\hat{y}_{i,c}) \) | Suitable for multi-class classification tasks. |
-| **Hamming Loss** | Measures the fraction of incorrect labels to the total number of labels, useful for multi-label classification tasks. | \( \text{Hamming Loss} = \frac{1}{N} \sum_{i=1}^N \frac{1}{L} \sum_{j=1}^L \mathbf{1}(y_{ij} \neq \hat{y}_{ij}) \) | Effective for multi-label classification scenarios. |
 
 [^1]: [:material-wikipedia: Confusion Matrix](https://en.wikipedia.org/wiki/Confusion_matrix)
