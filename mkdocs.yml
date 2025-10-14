@@ -188,4 +188,4 @@ nav:
       - Projects:
         - 1. Classification: ./versions/2025.2/projects/classification/index.md
         - 2. Regression: ./versions/2025.2/projects/regression/index.md
-        - 3. Generative Models: ./versions/2025.2/projects/generative/index.md
+        - 3. Generative: ./versions/2025.2/projects/generative/index.md
