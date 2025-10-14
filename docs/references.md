@@ -114,3 +114,15 @@ https://link.springer.com/series/1465 -->
 
 
 https://mathigon.org/timeline/shannon
+
+## DSA - Data Structures and Algorithms
+
+![TutorialsPoint - Data Structures and Algorithms](https://www.tutorialspoint.com/data_structures_algorithms/){target="_blank"}
+
+![GeeksforGeeks - Data Structures and Algorithms](https://www.geeksforgeeks.org/data-structures/){target="_blank"}
+
+![David Galles - Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html){target="_blank"}
+
+![Antti Laaksonen - Competitive Programmer’s Handbook](https://cses.fi/book/book.pdf){target="_blank"}
+
+![Gayle Laakmann McDowell, Mike Mroczka, Aline Lerner - Beyond Cracking the Coding Interview](https://www.amazon.com.br/Beyond-Cracking-Interview-Laakmann-McDowell/dp/195570600X){target="_blank"}
