@@ -28,17 +28,17 @@ Below is a detailed list of metrics commonly used to evaluate the accuracy and p
 
 Classification tasks involve predicting discrete class labels. The following metrics assess the accuracy and effectiveness of such models:
 
-| Metric | Purpose | Formula | Use Case |
-|--------|---------|:-------:|----------|
-| Accuracy | Measures the proportion of correct predictions across all classes | \( \displaystyle \frac{TP + TN}{TP + TN + FP + FN} \) | Suitable for balanced datasets but misleading for imbalanced ones |
-| Precision | Evaluates the proportion of positive predictions that are actually correct | \( \displaystyle \frac{TP}{TP + FP} \) | Important when false positives are costly (e.g., spam detection) |
-| Recall (Sensitivity) | Assesses the proportion of actual positives correctly identified | \( \displaystyle \frac{TP}{TP + FN} \) | Critical when false negatives are costly (e.g., disease detection) |
-| F1-Score | Harmonic mean of precision and recall, balancing both metrics | \( \displaystyle 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \) | Useful for imbalanced datasets where both precision and recall matter |
-| AUC-ROC | Measures the model’s ability to distinguish between classes across all thresholds | Area under the curve plotting True Positive Rate (Recall) vs. False Positive Rate \( \displaystyle \left( \frac{FP}{FP + TN} \right) \) | Effective for binary classification and assessing model robustness |
-| AUC-PR | Focuses on precision and recall trade-off, especially for imbalanced datasets | Area under the curve plotting Precision vs. Recall | Preferred when positive class is rare (e.g., fraud detection) |
-| Confusion Matrix[^1] | Provides a tabular summary of prediction outcomes (TP, TN, FP, FN) | ![](confusion-matrix.png) | Offers detailed insights into class-specific performance, especially for multi-class problems |
-| Hamming Loss | Calculates the fraction of incorrect labels to the total number of labels | \( \displaystyle \frac{1}{N} \sum_{i=1}^N \frac{1}{L} \sum_{j=1}^L \mathbf{1}(y_{ij} \neq \hat{y}_{ij}) \) | Suitable for multi-label classification tasks |
-| Balanced Accuracy | Average of recall obtained on each class, useful for imbalanced datasets | \( \displaystyle \frac{1}{C} \sum_{i=1}^C \frac{TP_i}{TP_i + FN_i} \) | Effective for multi-class problems with class imbalance |
+| Metric | Purpose | Use Case |
+|--------|---------|----------|
+| Accuracy <br> \( \displaystyle \frac{TP + TN}{TP + TN + FP + FN} \) | Measures the proportion of correct predictions across all classes | Suitable for balanced datasets but misleading for imbalanced ones |
+| Precision <br> \( \displaystyle \frac{TP}{TP + FP} \) | Evaluates the proportion of positive predictions that are actually correct | Important when false positives are costly (e.g., spam detection) |
+| Recall (Sensitivity) <br> \( \displaystyle \frac{TP}{TP + FN} \) | Assesses the proportion of actual positives correctly identified | Critical when false negatives are costly (e.g., disease detection) |
+| F1-Score <br> \( \displaystyle 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \) | Harmonic mean of precision and recall, balancing both metrics | Useful for imbalanced datasets where both precision and recall matter |
+| AUC-ROC <br> Area under the curve plotting True Positive Rate (Recall) vs. False Positive Rate \( \displaystyle \left( \frac{FP}{FP + TN} \right) \) | Measures the model’s ability to distinguish between classes across all thresholds | Effective for binary classification and assessing model robustness |
+| AUC-PR <br> Area under the curve plotting Precision vs. Recall | Focuses on precision and recall trade-off, especially for imbalanced datasets | Preferred when positive class is rare (e.g., fraud detection) |
+| Confusion Matrix[^1] <br> ![](confusion-matrix.png) | Provides a tabular summary of prediction outcomes (TP, TN, FP, FN) | Offers detailed insights into class-specific performance, especially for multi-class problems |
+| Hamming Loss <br> \( \displaystyle \frac{1}{N} \sum_{i=1}^N \frac{1}{L} \sum_{j=1}^L \mathbf{1}(y_{ij} \neq \hat{y}_{ij}) \) | Calculates the fraction of incorrect labels to the total number of labels | Suitable for multi-label classification tasks |
+| Balanced Accuracy <br> \( \displaystyle \frac{1}{C} \sum_{i=1}^C \frac{TP_i}{TP_i + FN_i} \) | Average of recall obtained on each class, useful for imbalanced datasets | Effective for multi-class problems with class imbalance |
 
 <!-- | Log Loss | Penalizes incorrect predictions based on predicted probabilities | \( \displaystyle -\frac{1}{N} \sum_{i=1}^N [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)] \) | Common in probabilistic classifiers like neural networks with softmax outputs | -->
 
