@@ -61,6 +61,10 @@ Loss functions commonly used in classification tasks:
 | **Hamming Loss** <br> \( \displaystyle \frac{1}{N} \sum_{i=1}^N \frac{1}{L} \sum_{j=1}^L \mathbf{1}(y_{ij} \neq \hat{y}_{ij}) \) | Measures the fraction of incorrect labels to the total number of labels, useful for multi-label classification tasks. | Effective for multi-label classification scenarios. |
 
 
+---
+
+## Additional
+
 ### Explanation of ROC Curve (AUC-ROC)
 
 An ROC curve plots the True Positive Rate (TPR, or sensitivity/recall) against the False Positive Rate (FPR) at various classification thresholds. It helps visualize the trade-off between sensitivity and specificity for a classifier:
@@ -75,10 +79,10 @@ An ROC curve plots the True Positive Rate (TPR, or sensitivity/recall) against t
 --8<-- "docs/classes/metrics/classification/auc-roc-example.py"
 ```
 
----
-
-## Additional
-
 <iframe width="100%" height="470" src="https://www.youtube.com/embed/4jRBRDbJemM" title="ROC and AUC, Clearly Explained!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
 
 [^1]: [:material-wikipedia: Confusion Matrix](https://en.wikipedia.org/wiki/Confusion_matrix)
