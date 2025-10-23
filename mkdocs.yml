@@ -163,7 +163,8 @@ nav:
     - 12. Generative Models: ./classes/generative-models/index.md
     - 13. GANs: ./classes/generative-adversarial-networks/index.md
     - 14. VAEs: ./classes/variational-autoencoders/index.md
-    - 15. Diffusion Models: ./classes/diffusion-models/index.md
+    - 15. CLIP: ./classes/clip/index.md
+    - 16. Stable Diffusion: ./classes/stable-diffusion/index.md
 
   # - 11. Transfer Learning: ./classes/deep-learning/transfer-learning.md
   # - 12. Recurrent Neural Networks: ./classes/deep-learning/rnn.md
@@ -173,6 +174,13 @@ nav:
   # - 16. Natural Language Processing: ./classes/deep-learning/nlp.md
   # - 17. Computer Vision: ./classes/deep-learning/cv.md
   # - 18. Reinforcement Learning: ./classes/deep-learning/reinforcement-learning.md
+
+  - Definitions: 
+    - Latent Space vs. Embedding: definitions/latent_space_vs_embedding.md
+    # - Overfitting vs. Underfitting: definitions/overfitting_vs_underfitting.md
+    # - Batch Size vs. Epochs: definitions/batch_size_vs_epochs.md
+    # - Learning Rate vs. Momentum: definitions/learning_rate_vs_momentum.md
+    # - Precision vs. Recall vs. F1-Score: definitions/precision_vs_recall_vs_f1score.md
 
   - References: references.md
 

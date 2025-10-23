@@ -226,3 +226,5 @@ The great challenge in machine learning is to seek the best separation between c
 [^5]: Richard O. Duda, Peter E. Hart, and David G. Stork. 2000. [Pattern Classification (2nd Edition)](https://dl.acm.org/doi/book/10.5555/954544){:target="_blank"}. Wiley-Interscience, USA.
 
 [^6]: [Data Augmentation - Wikipedia](https://en.wikipedia.org/wiki/Data_augmentation){:target="_blank"}
+
+[^7]: [DataCamp - Complete Guide to Data Augmentation](https://www.datacamp.com/tutorial/complete-guide-data-augmentation){:target="_blank"}

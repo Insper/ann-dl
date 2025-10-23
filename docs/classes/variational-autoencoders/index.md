@@ -195,3 +195,5 @@ where \( \mu \) and \( \sigma \) are the mean and standard deviation outputs of 
 [^4]: [Wikipedia - Kullback–Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence){:target="_blank"}.
 
 [^5]: [GeeksforGeeks - Understanding KL Divergence in PyTorch](https://www.geeksforgeeks.org/deep-learning/understanding-kl-divergence-in-pytorch/){:target="_blank"}.
+
+[^6]: [DataCamp - Variational Autoencoders](https://www.datacamp.com/tutorial/variational-autoencoders){:target="_blank"}.
