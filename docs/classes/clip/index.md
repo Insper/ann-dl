@@ -9,7 +9,7 @@ CLIP (Contrastive Language-Image Pretraining) is a multimodal machine learning m
 - **Image Encoder**: Typically a Vision Transformer (ViT) or a modified ResNet that processes images into fixed-dimensional embeddings (e.g., 512 or 768 dimensions).
 - **Text Encoder**: A Transformer-based model (like a modified GPT or BERT variant) that encodes text captions into embeddings of the same dimensionality.
 - **Training Objective**: Contrastive loss (specifically, a symmetric version of InfoNCE loss). For a batch of N image-text pairs, it computes a similarity matrix between all image and text embeddings, treats the diagonal (matching pairs) as positives, and off-diagonals as negatives. The goal is to maximize similarity for positives and minimize for negatives.
-- **Inference**: To classify an image, encode it and compare its embedding (via cosine similarity) to encoded text prompts like "a photo of a [class]". The highest similarity wins.
+- **Inference**: To classify an image, encode it and compare its embedding (via cosine similarity) to encoded text prompts like =="a photo of a [class]"==. The highest similarity wins.
 
 ![](overview-a.svg){width="70%"}
 /// caption
