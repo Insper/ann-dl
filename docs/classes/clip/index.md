@@ -7,10 +7,14 @@ CLIP (Contrastive Language-Image Pretraining) is a multimodal machine learning m
 - **Training Objective**: Contrastive loss (specifically, a symmetric version of InfoNCE loss). For a batch of N image-text pairs, it computes a similarity matrix between all image and text embeddings, treats the diagonal (matching pairs) as positives, and off-diagonals as negatives. The goal is to maximize similarity for positives and minimize for negatives.
 - **Inference**: To classify an image, encode it and compare its embedding (via cosine similarity) to encoded text prompts like "a photo of a [class]". The highest similarity wins.
 
-![](overview-a.svg){width="43%"}
-![](overview-b.svg){width="43%"}
+![](overview-a.svg){width="60%"}
 /// caption
-CLIP architecture overview. Left: During training, image and text encoders are trained jointly with contrastive loss on image-text pairs. Right: At inference, image embeddings are compared to text embeddings of class prompts for zero-shot classification. (Images from OpenAI's CLIP paper[^2])
+CLIP architecture overview. During training, image and text encoders are trained jointly with contrastive loss on image-text pairs. (from OpenAI's CLIP paper[^2])
+///
+
+![](overview-b.svg){width="60%"}
+/// caption
+CLIP architecture overview. At inference, image embeddings are compared to text embeddings of class prompts for zero-shot classification. (from OpenAI's CLIP paper[^2])
 ///
 
 CLIP's strength lies in its scalability and generalization. It doesn't require task-specific fine-tuning and can handle open-vocabulary tasks, but it has limitations like sensitivity to prompt engineering and biases from internet data.
