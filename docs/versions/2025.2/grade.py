@@ -6,9 +6,9 @@ fig, ax = plt.subplots(1, 2)
 fig.set_size_inches(10, 5)
 
 ax[0].pie(
-    [5, 5, 15, 10, 30, 35],
-    labels=["Data", "Perceptron", "MLP", "Metrics", "Midterm", "Final"],
-    colors=["mediumturquoise", "lightseagreen", "turquoise", "aquamarine", "mediumaquamarine", "mediumspringgreen"],
+    [15, 20, 35, 30],
+    labels=["Data", "Perceptron", "MLP", "VAE"],
+    colors=["mediumturquoise", "lightseagreen", "turquoise", "aquamarine"],
     autopct='%1.0f%%',
     startangle=90)
 ax[0].title.set_text("Individual")
