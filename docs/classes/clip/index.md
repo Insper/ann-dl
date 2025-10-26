@@ -1,3 +1,7 @@
+!!! tip inline end "More about NLP"
+
+    Check out Tiago Forte's NLP course that covers Transformers and other advanced NLP topics: [https://tiagoft.github.io/nlp_course/](https://tiagoft.github.io/nlp_course/){:target="_blank"}.
+
 CLIP (Contrastive Language-Image Pretraining) is a multimodal machine learning model developed by OpenAI in 2021. It bridges the gap between vision and language by jointly training an image encoder and a text encoder on a massive dataset of image-text pairs scraped from the internet (around 400 million pairs). The core idea is to learn representations where images and their corresponding textual descriptions are embedded close together in a shared latent space, while non-matching pairs are pushed apart. This enables zero-shot learning capabilities, meaning CLIP can perform tasks like image classification without being explicitly trained on labeled data for those tasks—simply by comparing image embeddings to text embeddings of class descriptions.
 
 ## Key Components:
@@ -7,12 +11,12 @@ CLIP (Contrastive Language-Image Pretraining) is a multimodal machine learning m
 - **Training Objective**: Contrastive loss (specifically, a symmetric version of InfoNCE loss). For a batch of N image-text pairs, it computes a similarity matrix between all image and text embeddings, treats the diagonal (matching pairs) as positives, and off-diagonals as negatives. The goal is to maximize similarity for positives and minimize for negatives.
 - **Inference**: To classify an image, encode it and compare its embedding (via cosine similarity) to encoded text prompts like "a photo of a [class]". The highest similarity wins.
 
-![](overview-a.svg){width="60%"}
+![](overview-a.svg){width="70%"}
 /// caption
 CLIP architecture overview. During training, image and text encoders are trained jointly with contrastive loss on image-text pairs. (from OpenAI's CLIP paper[^2])
 ///
 
-![](overview-b.svg){width="60%"}
+![](overview-b.svg){width="70%"}
 /// caption
 CLIP architecture overview. At inference, image embeddings are compared to text embeddings of class prompts for zero-shot classification. (from OpenAI's CLIP paper[^2])
 ///
@@ -43,9 +47,9 @@ To illustrate how CLIP works numerically, let's simulate a tiny batch with 3 ima
 
 - Text embeddings (T):  
 
-    \( T_1 = [0.9, 0.1, 0.0] \)  (close to I1)  
-    \( T_2 = [0.1, 0.8, 0.1] \)  (close to I2)  
-    \( T_3 = [0.0, 0.3, 0.7] \)  (close to I3)  
+    \( T_1 = [0.9, 0.1, 0.0] \)  (close to $I_1$)  
+    \( T_2 = [0.1, 0.8, 0.1] \)  (close to $I_2$)  
+    \( T_3 = [0.0, 0.3, 0.7] \)  (close to $I_3$)  
 
 - Batch size ($N$): $3$
 
@@ -221,4 +225,3 @@ L2-normalized embeddings are vectors whose length is scaled to a unit of 1, mean
 [^3]: [How to Normalize a Vector](https://nextbridge.com/learn-how-to-normalize-a-vector/){:target="_blank"}, Nextbridge.
 
 [^4]: [Cosine Similarity](https://www.geeksforgeeks.org/dbms/cosine-similarity/){:target="_blank"}, GeeksforGeeks.
-
