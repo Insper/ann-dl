@@ -26,8 +26,8 @@ For example, you can create a text-to-image pipeline that generates images based
 |:---------:|-------------|
 | I | - Delivery of none or incomplete project. |
 | D | - Delivery of a basic project with errors; <br> - ==OR==, explanation of the model architecture is missing. |
-| C | - Delivery of one implementation (Image2Video, Video2Image, etc.) with correct model architecture explanation. <br> - At least, 5 examples of input-output pairs. |
-| B | - Delivery of two implementations (Image2Video, Video2Image, etc.) with correct model architecture explanation. <br> - At least, 5 examples of input-output pairs each. |
+| C | - Delivery of one implementation (Image2Video, Video2Image, etc.) with correct model architecture explanation. <br> - At least, 5 examples of input-output pairs (different parameters). |
+| B | - Delivery of two implementations (Image2Video, Video2Image, etc.) with correct model architecture explanation and its respective input-output pairs. |
 | A | - Delivery of B. <br> - Additional use of LoRA, ControlNet, or other advanced techniques. |
 
 A half-grade will be added or subtracted based on the quality of the report, examples provided and creativity of the project.
