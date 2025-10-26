@@ -14,7 +14,7 @@ This is a open themed project where you will explore generative models, the only
 
 A suggestion of platform to explore is [Comfy UI](https://www.comfy.org){:target="_blank"}, which is an open-source platform for building and deploying generative AI models. It provides a user-friendly interface and tools to create, train, and deploy models for various generative tasks. Also, it supports a wide range of generative models, including text-to-image, image-to-image, and more.
 
-![](comfyui-image-generation.png){width="40%", align=right, .rounded-corners }
+![](comfyui-image-generation.png){width="40%", align=right }
 
 Build on pipeline using generative models. You can start from templates available in Comfy UI or create your own from scratch. You can also explore other platforms or frameworks if you prefer.
 
