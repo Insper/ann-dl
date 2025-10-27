@@ -161,8 +161,8 @@ nav:
     - 10. Deep Learning: ./classes/deep-learning/index.md
     - 11. Convolutional: ./classes/convolutional-neural-networks/index.md
     - 12. Generative Models: ./classes/generative-models/index.md
-    - 13. GANs: ./classes/generative-adversarial-networks/index.md
-    - 14. VAEs: ./classes/variational-autoencoders/index.md
+    - 13. GAN: ./classes/generative-adversarial-networks/index.md
+    - 14. VAE: ./classes/variational-autoencoders/index.md
     - 15. CLIP: ./classes/clip/index.md
     - 16. Stable Diffusion: ./classes/stable-diffusion/index.md
 
