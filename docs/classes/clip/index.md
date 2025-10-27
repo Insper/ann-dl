@@ -59,7 +59,7 @@ To illustrate how CLIP works numerically, let's simulate a tiny batch with 3 ima
 
 1. **Normalize Embeddings**:
 
-CLIP uses L2-normalized embeddings for cosine similarity. Here, they're already unit-length for simplicity (assume they are).
+    CLIP uses L2-normalized embeddings for cosine similarity. Here, they're already unit-length for simplicity (assume they are).
 
 2. **Compute Similarity Matrix (Logits)**:
 
