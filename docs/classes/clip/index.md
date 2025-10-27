@@ -132,7 +132,7 @@ CLIP uses L2-normalized embeddings for cosine similarity. Here, they're already 
     
     \(
     \begin{align*}
-    \text{Softmax}_{I} &\approx \begin{bmatrix}
+    \text{Softmax}(I) &\approx \begin{bmatrix}
     \frac{e^{12.857}}{383523} &  \frac{e^{1.4286}}{383523} &  \frac{e^{0}}{383523} \\
     \frac{e^{1.4286}}{91987} &  \frac{e^{11.4286}}{91987} &  \frac{e^{4.2857}}{91987} \\
     \frac{e^{0}}{22031} &  \frac{e^{1.4286}}{22031} &  \frac{e^{10}}{22031}
