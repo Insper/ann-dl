@@ -1,6 +1,6 @@
 !!! tip inline end "More about NLP"
 
-    Check out Tiago Forte's NLP course that covers Transformers and other advanced NLP topics: [https://tiagoft.github.io/nlp_course/](https://tiagoft.github.io/nlp_course/){:target="_blank"}.
+    Check out Tiago Tavares' NLP course that covers Transformers and other advanced NLP topics: [https://tiagoft.github.io/nlp_course/](https://tiagoft.github.io/nlp_course/){:target="_blank"}.
 
 CLIP (Contrastive Language-Image Pretraining) is a multimodal machine learning model developed by OpenAI in 2021. It bridges the gap between vision and language by jointly training an image encoder and a text encoder on a massive dataset of image-text pairs scraped from the internet (around 400 million pairs). The core idea is to learn representations where images and their corresponding textual descriptions are embedded close together in a shared latent space, while non-matching pairs are pushed apart. This enables zero-shot learning capabilities, meaning CLIP can perform tasks like image classification without being explicitly trained on labeled data for those tasks—simply by comparing image embeddings to text embeddings of class descriptions.
 
