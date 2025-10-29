@@ -8,7 +8,12 @@
 
 ## Students
 
-<!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSBrh2n-7jhuIIntmYyeaxwQBOWj4biWko_6bpci6XpZxVGDFJ-g43ehPepqxKbNjxz0fqr6ndWf1wI/pubhtml?gid=1397413588&amp;single=true&amp;widget=false&amp;headers=false" width="100%" height="720px"></iframe> -->
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFKeVBzwAywvB-NEmfOnhKhUHJpwOQaD9f0EOewKusi3VFKFxHfxurRv2H3dGy7OADidvG3JGEcyEQ/pubhtml?gid=66177665&amp;single=true&amp;widget=false&amp;headers=false" width="100%" height="720px"></iframe>
+
+
+!!! warning "Subscription"
+
+    If your name is not on the list yet, please fill out the [subscription form](https://forms.gle/WRc5efWFuPt4Y5ux9){:target="_blank"}.
 
 ## Meetings
 
