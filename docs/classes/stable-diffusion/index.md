@@ -350,13 +350,29 @@ U-Net Architecture. Source: [^14].
         style U1,U2,U3 fill:#dcedc1
     ```
 
-### Deepia: Diffusion Models: DDPM | Generative AI Animated
+### Videos
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/EhndHhIvWWw" title="Diffusion Models: DDPM | Generative AI Animated" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+=== "Deepia: DDPM"
 
-### Welch Labs: But how do AI images and videos actually work?
+    **Deepia: Diffusion Models: DDPM | Generative AI Animated**
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/iv-5mZ_9CPY" title="But how do AI images and videos actually work? | Guest video by Welch Labs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="100%" height="480" src="https://www.youtube.com/embed/EhndHhIvWWw" title="Diffusion Models: DDPM | Generative AI Animated" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+=== "Deepia: Score-based"
+
+    **Deepia: Score-based Diffusion Models | Generative AI Animated**
+
+    <iframe width="100%" height="480" src="https://www.youtube.com/embed/lUljxdkolK8" title="Score-based Diffusion Models | Generative AI Animated" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+=== "Welch Labs: AI images/videos"
+
+    **But how do AI images and videos actually work? | Guest video by Welch Labs**
+
+    <iframe width="100%" height="480" src="https://www.youtube.com/embed/iv-5mZ_9CPY" title="But how do AI images and videos actually work? | Guest video by Welch Labs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+=== "Latent Diffusion Models"
+
+    <iframe width="100%" height="480" src="https://www.youtube.com/embed/wuwByIh5kDU" title="Latent Diffusion Models" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 [^1]: [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585){:target="_blank"}, 2015.
@@ -392,3 +408,5 @@ U-Net Architecture. Source: [^14].
 [^16]: [Hugging Face - Stable Diffusion 3.5 Large](https://huggingface.co/stabilityai/stable-diffusion-3.5-large){:target="_blank"}
 
 [^17]: [How to Use Stable Diffusion 3 API](https://www.datacamp.com/tutorial/how-to-use-stable-diffusion-3-api){:target="_blank"}
+
+[^18]: [Stable Diffusion Models](https://ankittaxak5713.medium.com/stable-diffusion-models-24a953276240){:target="_blank"}, by Ankit Kumar.
