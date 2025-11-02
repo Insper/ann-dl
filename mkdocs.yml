@@ -155,6 +155,7 @@ nav:
     - 9. Metrics and Evaluation:
       - 9.1. Classification: ./classes/metrics/classification/index.md
       - 9.2. Regression: ./classes/metrics/regression/index.md
+      - 9.3. Generative: ./classes/metrics/generative/index.md
       # - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
       # - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
       # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
