@@ -166,6 +166,7 @@ nav:
     - 14. VAE: ./classes/variational-autoencoders/index.md
     - 15. CLIP: ./classes/clip/index.md
     - 16. Stable Diffusion: ./classes/stable-diffusion/index.md
+    - 17. Flow-Matching: ./classes/flow-matching/index.md
 
   # - 11. Transfer Learning: ./classes/deep-learning/transfer-learning.md
   # - 12. Recurrent Neural Networks: ./classes/deep-learning/rnn.md

@@ -413,4 +413,6 @@ U-Net Architecture. Source: [^14].
 
 [^19]: [Scalable Diffusion Models with Transformers (DiT)](https://github.com/facebookresearch/DiT){:target="_blank"}, 2023.
 
-[^20]: [Flux: A General Framework for Diffusion Models](https://github.com/black-forest-labs/flux){:target="_blank"}, 2024.
+[^20]: [Flow-Matching: A New Paradigm for Generative Modeling](https://arxiv.org/abs/2210.02747){:target="_blank"}, 2022.
+
+[^21]: [Flux: A General Framework for Diffusion Models](https://github.com/black-forest-labs/flux){:target="_blank"}, 2024.
