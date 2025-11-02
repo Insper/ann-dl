@@ -178,6 +178,7 @@ nav:
 
   - Definitions: 
     - Latent Space vs. Embedding: definitions/latent_space_vs_embedding.md
+    - Stable Diffusion vs. Flow-Matching: definitions/stable_difussion_vs_flow-matching.md
     # - Overfitting vs. Underfitting: definitions/overfitting_vs_underfitting.md
     # - Batch Size vs. Epochs: definitions/batch_size_vs_epochs.md
     # - Learning Rate vs. Momentum: definitions/learning_rate_vs_momentum.md

@@ -374,10 +374,6 @@ U-Net Architecture. Source: [^14].
 
     <iframe width="100%" height="480" src="https://www.youtube.com/embed/wuwByIh5kDU" title="Latent Diffusion Models" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-=== "Flow-Matching vs Diffusion Models"
-
-    <iframe width="100%" height="480" src="https://www.youtube.com/embed/firXjwZ_6KI" title="Flow-Matching vs Diffusion Models explained side by side" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 
 [^1]: [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585){:target="_blank"}, 2015.
 
