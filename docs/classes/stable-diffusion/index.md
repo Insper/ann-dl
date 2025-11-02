@@ -374,6 +374,10 @@ U-Net Architecture. Source: [^14].
 
     <iframe width="100%" height="480" src="https://www.youtube.com/embed/wuwByIh5kDU" title="Latent Diffusion Models" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+=== "Flow-Matching vs Diffusion Models"
+
+    <iframe width="100%" height="480" src="https://www.youtube.com/embed/firXjwZ_6KI" title="Flow-Matching vs Diffusion Models explained side by side" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 [^1]: [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585){:target="_blank"}, 2015.
 
@@ -410,3 +414,7 @@ U-Net Architecture. Source: [^14].
 [^17]: [How to Use Stable Diffusion 3 API](https://www.datacamp.com/tutorial/how-to-use-stable-diffusion-3-api){:target="_blank"}
 
 [^18]: [Stable Diffusion Models](https://ankittaxak5713.medium.com/stable-diffusion-models-24a953276240){:target="_blank"}, by Ankit Kumar.
+
+[^19]: [Scalable Diffusion Models with Transformers (DiT)](https://github.com/facebookresearch/DiT){:target="_blank"}, 2023.
+
+[^20]: [Flux: A General Framework for Diffusion Models](https://github.com/black-forest-labs/flux){:target="_blank"}, 2024.
