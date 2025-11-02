@@ -263,7 +263,7 @@ Latent Diffusion Model Architecture. Source: [^6].
 
 
 
-### Example
+### Examples
 
 
 * [GeeksForGeeks - Generate Images from Text in Python - Stable Diffusion](https://www.geeksforgeeks.org/deep-learning/generate-images-from-text-in-python-stable-diffusion/){:target="_blank"}[^9]. Coded at: [https://colab.research.google.com/drive/1LzkO8GySnbTLMNQj_xVJCVRAjWD3JkpX](https://colab.research.google.com/drive/1LzkO8GySnbTLMNQj_xVJCVRAjWD3JkpX){:target="_blank"}
