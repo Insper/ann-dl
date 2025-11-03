@@ -67,7 +67,7 @@ p_\theta(x_{t-1} | x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta
 
 where \( \mu_\theta \) and \( \Sigma_\theta \) are the mean and covariance predicted by the neural network parameterized by \( \theta \).
 
-![](./ddpm-diffusion.png){:style="max-width: 100%; height: auto;"}
+![](./ddpm-reverse.png){:style="max-width: 100%; height: auto;"}
 /// caption
 Reverse Diffusion Process. Source: [^12].
 ///
