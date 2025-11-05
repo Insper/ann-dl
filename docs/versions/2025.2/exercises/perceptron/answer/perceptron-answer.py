@@ -74,6 +74,7 @@ def animate(i):
 
 ani = FuncAnimation(fig, animate, repeat=False, frames=epoch, interval=200)
 
-print(ani.to_jshtml())
+# print(ani.to_jshtml())
 
+plt.show()
 plt.close()
