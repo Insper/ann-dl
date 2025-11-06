@@ -261,7 +261,7 @@ Suppose we have a dataset with two features \( \mathbf{x} = [x_1, x_2] \) and bi
 
 
 ``` python exec="on" html="on"
---8<-- "docs/classes/perceptron/perceptron-animate.py"
+--8<-- "docs/classes/perceptron/perceptron_animate.py"
 ```
 
 ---
@@ -309,41 +309,10 @@ While the perceptron is a foundational model in machine learning, it has several
 ---
 
 ## Summary
+
 The perceptron training algorithm is a simple, iterative process that adjusts weights and bias to minimize classification errors on a linearly separable dataset. It involves initializing parameters, computing predictions, calculating errors, and updating weights based on the perceptron learning rule. While limited to binary classification and linearly separable data, it’s a foundational concept for understanding more complex neural networks.
 
-<!-- ```python exec="on" html="on"
-import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.animation import FuncAnimation
-
-# 1. Prepare data and plot
-fig, ax = plt.subplots()
-x_data, y_data = [], []
-line, = ax.plot([], [], 'r-')
-
-# 2. Define init function
-def init():
-    ax.set_xlim(0, 2 * np.pi)
-    ax.set_ylim(-1, 1)
-    return line,
-
-# 3. Define update function
-def update(frame):
-    x_data.append(frame)
-    y_data.append(np.sin(frame))
-    line.set_data(x_data, y_data)
-    return line,
-
-# 4. Create FuncAnimation object
-ani = FuncAnimation(fig, update, frames=np.linspace(0, 2 * np.pi, 100),
-                    init_func=init, blit=True, interval=50)
-
-# 5. Save as GIF
-# Requires a writer like 'pillow' (pip install pillow)
-ani.save('docs/classes/perceptron/animated_plot.gif', writer='pillow', fps=20)
-```
-
-![](docs/classes/perceptron/animated_plot.gif){ width=50% } -->
+![](./perceptron_classification.gif){ width=100% }
 
 
 [^1]: McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. *The Bulletin of Mathematical Biophysics*, 5(4), 115-133.

@@ -1,6 +1,8 @@
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 import numpy as np
+from pathlib import Path
+import os
 
 def activation(sigma):
     return 1 if sigma >= 0 else 0
@@ -70,11 +72,12 @@ while not stop:
 def animate(i):
     line_plotted.set_data((xp, yp[i]))
     ax.set_title(f'epoch: {i+1} - wrong: {wrongs[i]}')
-    return ([plt])
+    return line_plotted
 
-ani = FuncAnimation(fig, animate, repeat=False, frames=epoch, interval=200)
+ani = FuncAnimation(fig, animate, repeat=False, frames=epoch, interval=200, blit=False)
+ani.save(Path.cwd() / 'perceptron_classification.gif')
 
 # print(ani.to_jshtml())
 
-plt.show()
+# plt.show()
 plt.close()
