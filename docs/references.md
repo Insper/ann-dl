@@ -137,3 +137,27 @@ To explore for the next version:
 [Harvard - CS249R Book](https://github.com/harvard-edge/cs249r_book){:target="_blank"} suggested by [Miranda](https://github.com/mirwox){:target="_blank"}
 
 [KAN: Kolmogorov-Arnold Networks](https://arxiv.org/abs/2404.19756){:target="_blank"}
+
+[Training YOLOv12 for Detecting Pothole Severity Using a Custom Dataset](https://pyimagesearch.com/2025/07/21/training-yolov12-for-detecting-pothole-severity-using-a-custom-dataset/){:target="_blank"}
+
+https://pyimagesearch.com/2025/03/24/fastapi-meets-openai-clip-build-and-deploy-with-docker/
+
+https://pyimagesearch.com/2023/10/02/a-deep-dive-into-variational-autoencoders-with-pytorch/
+
+https://lilianweng.github.io/posts/2018-10-13-flow-models/
+
+https://en.wikipedia.org/wiki/Evidence_lower_bound
+
+https://github.com/black-forest-labs/flux
+
+https://www.youtube.com/watch?v=eMlx5fFNoYc
+
+https://github.com/cloudedrepo/Cloud-Computing-Curricula/blob/master/Core/KAs/KAs.md
+
+https://cloudedrepo.github.io/Cloud-Computing-Curricula/Core/KAs/KAs.html
+
+https://ai.meta.com/blog/code-llama-large-language-model-coding/
+
+https://avandekleut.github.io/vae/#motivation
+
+https://github.com/ageron/handson-ml3
