@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Concepts of Stable Diffusion Introduced",
+        "content": "
+        **Laid the theoretical groundwork for diffusion models, inspiring future advancements in generative modeling.**<br>
+        The introduction of diffusion models as a framework for generative tasks, leveraging the idea of gradually adding and removing noise from data.<br><br>
+        <small>
+        Sohl-Dickstein J., Weiss E.A., Maheswaranathan N., Ganguli S. (2015). Deep Unsupervised Learning using Nonequilibrium Thermodynamics.
+        </small><br>
+        [:octicons-book-24:](https://arxiv.org/abs/1503.03585){target='_blank'}",
+        "icon": ":octicons-rocket-24:",
+        "sub_title": "2015"
+    },
+    {
+        "title": "Denoising Diffusion Probabilistic Models (DDPM)",
+        "content": "
+        **Established a practical and effective approach to training diffusion models for high-quality image generation.**<br>
+        The DDPM framework introduced a method for training diffusion models by learning to reverse a gradual noising process, enabling the generation of high-fidelity images.<br><br>
+        <small>
+        Ho J., Jain A., Abbeel P. (2020). Denoising Diffusion Probabilistic Models.
+        </small><br>
+        [:octicons-book-24:](https://arxiv.org/abs/2006.11239){target='_blank'}",
+        "icon": ":fontawesome-solid-bullhorn:",
+        "sub_title": "2020"
+    },
+    {
+        "title": "Denoising Diffusion Implicit Models (DDIM)",
+        "content": "
+        **Improved sampling efficiency and flexibility in diffusion models, paving the way for faster image generation.**<br>
+        The DDIM approach introduced a non-Markovian diffusion process that allows for faster sampling while maintaining high-quality outputs.<br><br>
+        <small>
+        Song J., Meng C., Ermon S. (2020). Denoising Diffusion Implicit Models.
+        </small><br>
+        [:octicons-book-24:](https://arxiv.org/abs/2010.02502){target='_blank'}",
+        "icon": ":octicons-arrow-right-24:",
+        "sub_title": "2020"
+    }
+]
