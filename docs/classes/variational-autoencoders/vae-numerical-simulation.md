@@ -11,7 +11,9 @@ The model uses PyTorch with random initialization (seeded at 42 for reproducibil
 
 ##### Model Architecture
 
-![](./vae-4-8-2-8-4.png)
+--8<-- "docs/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4.md"
+
+<!-- ![](./vae-4-8-2-8-4.png) -->
 
 
 - **Encoder**:

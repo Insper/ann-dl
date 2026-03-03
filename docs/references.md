@@ -128,3 +128,12 @@ https://mathigon.org/timeline/shannon
 [Antti Laaksonen - Competitive Programmer’s Handbook](https://cses.fi/book/book.pdf){target="_blank"}
 
 [Gayle Laakmann McDowell, Mike Mroczka, Aline Lerner - Beyond Cracking the Coding Interview](https://www.amazon.com.br/Beyond-Cracking-Interview-Laakmann-McDowell/dp/195570600X){target="_blank"}
+
+
+To explore for the next version:
+
+[MIT - Deep Learning 6 - 7960](https://deeplearning6-7960.github.io/){:target="_blank"} suggested by [Miranda](https://github.com/mirwox){:target="_blank"}
+
+[Harvard - CS249R Book](https://github.com/harvard-edge/cs249r_book){:target="_blank"} suggested by [Miranda](https://github.com/mirwox){:target="_blank"}
+
+[KAN: Kolmogorov-Arnold Networks](https://arxiv.org/abs/2404.19756){:target="_blank"}

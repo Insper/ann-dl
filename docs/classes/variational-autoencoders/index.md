@@ -197,3 +197,5 @@ where \( \mu \) and \( \sigma \) are the mean and standard deviation outputs of 
 [^5]: [GeeksforGeeks - Understanding KL Divergence in PyTorch](https://www.geeksforgeeks.org/deep-learning/understanding-kl-divergence-in-pytorch/){:target="_blank"}.
 
 [^6]: [DataCamp - Variational Autoencoders](https://www.datacamp.com/tutorial/variational-autoencoders){:target="_blank"}.
+
+[^7]: [Variational AutoEncoders (VAE) with PyTorch](https://avandekleut.github.io/vae/){:target="_blank"}.
