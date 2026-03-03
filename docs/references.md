@@ -161,3 +161,5 @@ https://ai.meta.com/blog/code-llama-large-language-model-coding/
 https://avandekleut.github.io/vae/#motivation
 
 https://github.com/ageron/handson-ml3
+
+[Lora](https://www.youtube.com/watch?v=t1caDsMzWBk)
