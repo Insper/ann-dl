@@ -49,7 +49,6 @@ theme:
     - navigation.path
     - navigation.tracking
   icon:
-    # logo: assets/images/devops
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -108,13 +107,13 @@ markdown_extensions:
 
 plugins:
   - glightbox
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - git-authors
-  - git-committers:
-      repository: insper/ann-dl
-      branch: main
-      token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+  # - git-authors
+  # - git-committers:
+  #     repository: insper/ann-dl
+  #     branch: main
+  #     token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
   - search: {}
   - encryptcontent: {}
   - minify:
@@ -140,42 +139,51 @@ extra_css:
   - assets/stylesheets/extra.css
 
 nav:
-  - Ementa: index.md
-  - 2025.2: versions/2025.2/index.md
+  - ANN-DL: index.md
+  - 2025.2:
+    - Overview: ./2025.2/index.md
+    - Classes:
+      - 1. Concepts: ./2025.2/classes/concepts/index.md
+      - 2. Data: ./2025.2/classes/data/index.md
+      - 3. Preprocessing: ./2025.2/classes/preprocessing/index.md
+      - 4. Neural Networks: ./2025.2/classes/ann/index.md
+      - 5. Perceptron: ./2025.2/classes/perceptron/index.md
+      - 6. Multi-Layer Perceptron: ./2025.2/classes/mlp/index.md
+      - 7. Optimization: ./2025.2/classes/optimization/index.md
+      - 8. Regularization: ./2025.2/classes/regularization/index.md
+      - 9. Metrics and Evaluation:
+        - 9.1. Classification: ./2025.2/classes/metrics/classification/index.md
+        - 9.2. Regression: ./2025.2/classes/metrics/regression/index.md
+        - 9.3. Generative: ./2025.2/classes/metrics/generative/index.md
+        # - 4.3. Model Evaluation: ./2025.2/classes/metrics/model-evaluation.md
+        # - 4.4. Cross-Validation: ./2025.2/classes/metrics/cross-validation.md
+        # - 4.5. Hyperparameter Tuning: ./2025.2/classes/metrics/hyperparameter-tuning.md
+      - 10. Deep Learning: ./2025.2/classes/deep-learning/index.md
+      - 11. Convolutional: ./2025.2/classes/convolutional-neural-networks/index.md
+      - 12. Generative Models: ./2025.2/classes/generative-models/index.md
+      - 13. GAN: ./2025.2/classes/generative-adversarial-networks/index.md
+      - 14. VAE: ./2025.2/classes/variational-autoencoders/index.md
+      - 15. CLIP: ./2025.2/classes/clip/index.md
+      - 16. Stable Diffusion: ./2025.2/classes/stable-diffusion/index.md
+      - 17. Flow-Matching: ./2025.2/classes/flow-matching/index.md
+    - Exercises:
+      - 1. Data: ./2025.2/exercises/data/index.md
+      - 2. Perceptron: ./2025.2/exercises/perceptron/index.md
+      - 3. MLP: ./2025.2/exercises/mlp/index.md
+      - 4. VAE: ./2025.2/exercises/vae/index.md
+    - Projects:
+      - 1. Classification: ./2025.2/projects/classification/index.md
+      - 2. Regression: ./2025.2/projects/regression/index.md
+      - 3. Generative: ./2025.2/projects/generative/index.md
 
-  - Classes:
-    - 1. Concepts: ./classes/concepts/index.md
-    - 2. Data: ./classes/data/index.md
-    - 3. Preprocessing: ./classes/preprocessing/index.md
-    - 4. Neural Networks: ./classes/ann/index.md
-    - 5. Perceptron: ./classes/perceptron/index.md
-    - 6. Multi-Layer Perceptron: ./classes/mlp/index.md
-    - 7. Optimization: ./classes/optimization/index.md
-    - 8. Regularization: ./classes/regularization/index.md
-    - 9. Metrics and Evaluation:
-      - 9.1. Classification: ./classes/metrics/classification/index.md
-      - 9.2. Regression: ./classes/metrics/regression/index.md
-      - 9.3. Generative: ./classes/metrics/generative/index.md
-      # - 4.3. Model Evaluation: ./classes/metrics/model-evaluation.md
-      # - 4.4. Cross-Validation: ./classes/metrics/cross-validation.md
-      # - 4.5. Hyperparameter Tuning: ./classes/metrics/hyperparameter-tuning.md
-    - 10. Deep Learning: ./classes/deep-learning/index.md
-    - 11. Convolutional: ./classes/convolutional-neural-networks/index.md
-    - 12. Generative Models: ./classes/generative-models/index.md
-    - 13. GAN: ./classes/generative-adversarial-networks/index.md
-    - 14. VAE: ./classes/variational-autoencoders/index.md
-    - 15. CLIP: ./classes/clip/index.md
-    - 16. Stable Diffusion: ./classes/stable-diffusion/index.md
-    - 17. Flow-Matching: ./classes/flow-matching/index.md
-
-  # - 11. Transfer Learning: ./classes/deep-learning/transfer-learning.md
-  # - 12. Recurrent Neural Networks: ./classes/deep-learning/rnn.md
-  # - 13. Long Short-Term Memory Networks: ./classes/deep-learning/lstm.md
-  # - 14. Attention Mechanisms: ./classes/deep-learning/attention.md
-  # - 15. Transformers: ./classes/deep-learning/transformers.md
-  # - 16. Natural Language Processing: ./classes/deep-learning/nlp.md
-  # - 17. Computer Vision: ./classes/deep-learning/cv.md
-  # - 18. Reinforcement Learning: ./classes/deep-learning/reinforcement-learning.md
+  # - 11. Transfer Learning: ./2025.2/classes/deep-learning/transfer-learning.md
+  # - 12. Recurrent Neural Networks: ./2025.2/classes/deep-learning/rnn.md
+  # - 13. Long Short-Term Memory Networks: ./2025.2/classes/deep-learning/lstm.md
+  # - 14. Attention Mechanisms: ./2025.2/classes/deep-learning/attention.md
+  # - 15. Transformers: ./2025.2/classes/deep-learning/transformers.md
+  # - 16. Natural Language Processing: ./2025.2/classes/deep-learning/nlp.md
+  # - 17. Computer Vision: ./2025.2/classes/deep-learning/cv.md
+  # - 18. Reinforcement Learning: ./2025.2/classes/deep-learning/reinforcement-learning.md
 
   - Definitions: 
     - Latent Space vs. Embedding: definitions/latent_space_vs_embedding.md
@@ -187,16 +195,4 @@ nav:
 
   - References: references.md
 
-  - Versions:
-    - Terms and Conditions: versions/terms-and-conditions.md
-    - 2025.2:
-      - Presentation: ./versions/2025.2/index.md
-      - Exercises:
-        - 1. Data: ./versions/2025.2/exercises/data/index.md
-        - 2. Perceptron: ./versions/2025.2/exercises/perceptron/index.md
-        - 3. MLP: ./versions/2025.2/exercises/mlp/index.md
-        - 4. VAE: ./versions/2025.2/exercises/vae/index.md
-      - Projects:
-        - 1. Classification: ./versions/2025.2/projects/classification/index.md
-        - 2. Regression: ./versions/2025.2/projects/regression/index.md
-        - 3. Generative: ./versions/2025.2/projects/generative/index.md
+  - Terms and Conditions: terms-and-conditions/index.md

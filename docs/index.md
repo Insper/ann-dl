@@ -8,6 +8,24 @@ docs:
   trilha: "eletiva"
 ---
 
+
+## Versions
+
+<div class="grid cards" markdown>
+
+- **2026.2**
+
+    ---
+
+
+- [**2025.2**](2025.2/)
+
+    ---
+
+
+</div>
+
+
 ## Ementa
 
 Este curso oferece uma introdução abrangente à Redes Neurais e Deep Learning, um subcampo do aprendizado de máquina que se concentra em algoritmos chamados de redes neurais artificiais. Abordaremos os princípios fundamentais, os alicerces matemáticos, as principais arquiteturas e as técnicas de implementação prática. O curso se inspira em cursos acadêmicos de ponta e utiliza frameworks modernos de aprendizado profundo, principalmente o TensorFlow e PyTorch. Os tópicos incluem conceitos fundamentais (gradiente descendente, retropropagação), principais arquiteturas de rede (MLPs, CNNs, LSTMs, Transformers), modelos generativos (GANs) e aprendizado autossupervisionado. A ênfase será dada tanto à compreensão teórica quanto à aplicação prática em problemas do mundo real em áreas como visão computacional e processamento de linguagem natural.
