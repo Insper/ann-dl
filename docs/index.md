@@ -13,9 +13,11 @@ docs:
 
 <div class="grid cards" markdown>
 
-- **2026.2**<br>is comming soon!
+- **2026.2**
 
     ---
+
+    is comming soon!
 
 
 - [**2025.2**](2025.2/)
