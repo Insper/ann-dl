@@ -13,7 +13,7 @@ docs:
 
 <div class="grid cards" markdown>
 
-- **2026.2**
+- **2026.2**<br>is comming soon!
 
     ---
 
