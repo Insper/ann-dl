@@ -33,41 +33,53 @@ $$
 
 ## Ementa 2026.2
 
-!!! tip "Novo em 2026.2"
-    As aulas marcadas com **\*** são **novas nesta edição**: Mecanismos de Atenção, Transformers, Transfer Learning, Transformers de Difusão, Geração Autorregressiva e Grandes Modelos de Linguagem. Todas as aulas foram revisadas com visualizações interativas e quizzes ao final de cada aula.
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin:2rem 0;">
 
-```mermaid
-mindmap
-  root((ANN-DL<br/>2026.2))
-    )Modulo 1<br/>Fundamentos(
-      Conceitos e IA
-      Dados
-      Pre-processamento
-      Redes Neurais
-      Perceptron
-      MLP
-      Otimizacao
-      Regularizacao
-      Metricas
-    )Modulo 2<br/>Arquiteturas Profundas(
-      Camadas de AP
-      CNNs
-      Atencao*
-      Transformers*
-      Transfer Learning*
-      LLMs*
-    )Modulo 3<br/>Modelos Generativos(
-      Visao Geral
-      VAE
-      GAN
-      CLIP
-      Stable Diffusion
-      Flow Matching
-      DiT*
-      Geracao AR*
-```
+<div style="background:linear-gradient(160deg,#1a365d,#2c5282);border-radius:14px;padding:1.2rem 1.2rem 1.2rem 0.8rem;color:#fff;">
+  <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Módulo 1</div>
+  <div style="font-size:1.05rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Fundamentos</div>
+  <ul style="list-style:none;padding:0;margin:0;font-size:.8rem;line-height:1.85;">
+    <li>Conceitos e IA</li>
+    <li>Dados</li>
+    <li>Pré-processamento</li>
+    <li>Redes Neurais</li>
+    <li>Perceptron</li>
+    <li>MLP</li>
+    <li>Otimização</li>
+    <li>Regularização</li>
+    <li>Métricas</li>
+  </ul>
+</div>
 
-<div style="color:#8b949e;font-size:.8rem;margin-top:.5rem;text-align:center;">* = novo em 2026.2</div>
+<div style="background:linear-gradient(160deg,#44337a,#6b46c1);border-radius:14px;padding:1.2rem 1.2rem 1.2rem 0.8rem;color:#fff;">
+  <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Módulo 2</div>
+  <div style="font-size:1.05rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Arquiteturas Profundas</div>
+  <ul style="list-style:none;padding:0;margin:0;font-size:.8rem;line-height:1.85;">
+    <li>Camadas de AP</li>
+    <li>CNNs</li>
+    <li>Atenção <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li>Transformers <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li>Transfer Learning <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li>LLMs <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+  </ul>
+</div>
+
+<div style="background:linear-gradient(160deg,#1a4731,#276749);border-radius:14px;padding:1.2rem 1.2rem 1.2rem 0.8rem;color:#fff;">
+  <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Módulo 3</div>
+  <div style="font-size:1.05rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Modelos Generativos</div>
+  <ul style="list-style:none;padding:0;margin:0;font-size:.8rem;line-height:1.85;">
+    <li>Visão Geral</li>
+    <li>VAE</li>
+    <li>GAN</li>
+    <li>CLIP</li>
+    <li>Stable Diffusion</li>
+    <li>Flow Matching</li>
+    <li>Transformers de Difusão <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li>Geração Autorregressiva <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+  </ul>
+</div>
+
+</div>
 
 ---
 

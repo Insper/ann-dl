@@ -109,10 +109,10 @@ plugins:
       languages:
         - locale: en
           default: true
-          name: English
+          name: 🇺🇸 English
           build: true
         - locale: pt
-          name: Português
+          name: 🇧🇷 Português
           build: true
       fallback_to_default: true
   - glightbox
