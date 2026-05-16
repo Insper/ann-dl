@@ -26,21 +26,34 @@ The `MKDOCS_GIT_COMMITTERS_APIKEY` env var (GitHub PAT) is needed for the git-co
 
 ```
 docs/
-  2025.2/
+  2026.2/                   # Current semester (21 classes including new Attention, Transformers, Transfer Learning, LLMs)
     classes/<topic>/        # One folder per lecture topic
-      index.md              # Main lecture page (Markdown + MkDocs extensions)
+      index.md              # Main lecture page (Markdown + MkDocs extensions + inline HTML/JS)
       *.py                  # Python scripts rendered inline via markdown-exec
       *.gif / *.png         # Figures referenced in pages
-  versions/2025.2/
     exercises/<topic>/      # Student exercise pages per topic
     projects/               # Project briefs
-    index.md                # Semester overview (schedule, grading, students)
+    index.md                # Semester overview
+  2025.2/                   # Previous semester (17 classes, archived)
+    classes/<topic>/
+    exercises/<topic>/
+    projects/
+    index.md
   definitions/              # Short comparison/definition pages
   biblio/                   # PDF copies of seminal papers
   assets/                   # CSS, JS, images
 mkdocs.yml                  # Full site config: nav, plugins, markdown extensions
 requirements.txt            # Python deps for both mkdocs plugins and code generation
 ```
+
+## 2026.2 new classes
+
+Compared to 2025.2, the following classes are new in 2026.2:
+- `docs/2026.2/classes/attention/` — Mecanismos de Atenção (interactive JS heatmap, playground)
+- `docs/2026.2/classes/transformers/` — Transformers (step-through architecture viz)
+- `docs/2026.2/classes/transfer-learning/` — Transfer Learning & Fine-Tuning (LoRA, QLoRA)
+- `docs/2026.2/classes/llms/` — Grandes Modelos de Linguagem (LLMs, RLHF, MoE)
+- `docs/2026.2/classes/flow-matching/` — Rewritten with full content and animated particle viz
 
 ## Key MkDocs extensions in use
 

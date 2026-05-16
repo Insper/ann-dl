@@ -130,6 +130,7 @@ plugins:
 
 extra_javascript:
   - assets/javascripts/mathjax.js
+  - assets/javascripts/quiz.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
@@ -140,6 +141,58 @@ extra_css:
 
 nav:
   - ANN-DL: index.md
+  - 2026.2:
+    - Overview: ./2026.2/index.md
+    - Classes:
+      # Módulo 1 — Fundamentos
+      - 1. Concepts: ./2026.2/classes/concepts/index.md
+      - 2. Data:
+        - Overview: ./2026.2/classes/data/index.md
+        - Feature Types: ./2026.2/classes/data/types/index.md
+        - Distributions: ./2026.2/classes/data/distributions/index.md
+        - Train/Val/Test Split: ./2026.2/classes/data/splitting/index.md
+        - Data Leakage: ./2026.2/classes/data/leakage/index.md
+        - Data Quality: ./2026.2/classes/data/quality/index.md
+        - Class Imbalance: ./2026.2/classes/data/imbalance/index.md
+      - 3. Preprocessing: ./2026.2/classes/preprocessing/index.md
+      - 4. Neural Networks: ./2026.2/classes/ann/index.md
+      - 5. Perceptron: ./2026.2/classes/perceptron/index.md
+      - 6. Multi-Layer Perceptron: ./2026.2/classes/mlp/index.md
+      - 7. Optimization: ./2026.2/classes/optimization/index.md
+      - 8. Regularization: ./2026.2/classes/regularization/index.md
+      - 9. Metrics and Evaluation:
+        - 9.1. Classification: ./2026.2/classes/metrics/classification/index.md
+        - 9.2. Regression: ./2026.2/classes/metrics/regression/index.md
+        - 9.3. Generative: ./2026.2/classes/metrics/generative/index.md
+        - 9.4. LLM: ./2026.2/classes/metrics/llm/index.md
+      # Módulo 2 — Arquiteturas Profundas
+      - 10. Deep Learning: ./2026.2/classes/deep-learning/index.md
+      - 11. Convolutional: ./2026.2/classes/convolutional-neural-networks/index.md
+      - 12. Attention Mechanisms: ./2026.2/classes/attention/index.md
+      - 13. Transformers: ./2026.2/classes/transformers/index.md
+      - 14. Transfer Learning: ./2026.2/classes/transfer-learning/index.md
+      - 15. LLMs: ./2026.2/classes/llms/index.md
+      # Módulo 3 — Modelos Generativos
+      - 16. Generative Models: ./2026.2/classes/generative-models/index.md
+      - 17. VAE: ./2026.2/classes/variational-autoencoders/index.md
+      - 18. GAN: ./2026.2/classes/generative-adversarial-networks/index.md
+      - 19. CLIP: ./2026.2/classes/clip/index.md
+      - 20. Stable Diffusion: ./2026.2/classes/stable-diffusion/index.md
+      - 21. Flow-Matching: ./2026.2/classes/flow-matching/index.md
+      - 22. Diffusion Transformers: ./2026.2/classes/diffusion-transformers/index.md
+      - 23. Autoregressive Generation: ./2026.2/classes/autoregressive-generation/index.md
+    - Exercises:
+      - 1. Data: ./2026.2/exercises/data/index.md
+      - 2. Perceptron: ./2026.2/exercises/perceptron/index.md
+      - 3. MLP: ./2026.2/exercises/mlp/index.md
+      - 4. Transformers & Attention: ./2026.2/exercises/transformers/index.md
+      - 5. VAE: ./2026.2/exercises/vae/index.md
+      - 6. LLM Fine-Tuning: ./2026.2/exercises/llm/index.md
+    - Projects:
+      - 1. Classification: ./2026.2/projects/classification/index.md
+      - 2. Regression: ./2026.2/projects/regression/index.md
+      - 3. Generative: ./2026.2/projects/generative/index.md
+
   - 2025.2:
     - Overview: ./2025.2/index.md
     - Classes:
@@ -155,9 +208,6 @@ nav:
         - 9.1. Classification: ./2025.2/classes/metrics/classification/index.md
         - 9.2. Regression: ./2025.2/classes/metrics/regression/index.md
         - 9.3. Generative: ./2025.2/classes/metrics/generative/index.md
-        # - 4.3. Model Evaluation: ./2025.2/classes/metrics/model-evaluation.md
-        # - 4.4. Cross-Validation: ./2025.2/classes/metrics/cross-validation.md
-        # - 4.5. Hyperparameter Tuning: ./2025.2/classes/metrics/hyperparameter-tuning.md
       - 10. Deep Learning: ./2025.2/classes/deep-learning/index.md
       - 11. Convolutional: ./2025.2/classes/convolutional-neural-networks/index.md
       - 12. Generative Models: ./2025.2/classes/generative-models/index.md
@@ -175,15 +225,6 @@ nav:
       - 1. Classification: ./2025.2/projects/classification/index.md
       - 2. Regression: ./2025.2/projects/regression/index.md
       - 3. Generative: ./2025.2/projects/generative/index.md
-
-  # - 11. Transfer Learning: ./2025.2/classes/deep-learning/transfer-learning.md
-  # - 12. Recurrent Neural Networks: ./2025.2/classes/deep-learning/rnn.md
-  # - 13. Long Short-Term Memory Networks: ./2025.2/classes/deep-learning/lstm.md
-  # - 14. Attention Mechanisms: ./2025.2/classes/deep-learning/attention.md
-  # - 15. Transformers: ./2025.2/classes/deep-learning/transformers.md
-  # - 16. Natural Language Processing: ./2025.2/classes/deep-learning/nlp.md
-  # - 17. Computer Vision: ./2025.2/classes/deep-learning/cv.md
-  # - 18. Reinforcement Learning: ./2025.2/classes/deep-learning/reinforcement-learning.md
 
   - Definitions: 
     - Latent Space vs. Embedding: definitions/latent_space_vs_embedding.md

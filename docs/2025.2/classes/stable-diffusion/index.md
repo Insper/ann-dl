@@ -155,7 +155,7 @@ The Stable Diffusion architecture consists of three main components:
 
 - **The Diffusion Model**: The core of the LDM is a U-Net architecture that learns to denoise the latent representations. It takes as input the noisy latent tensor and the text embedding (from the text encoder) and iteratively refines the latent representation over a series of time steps.
 
-- **The Autoencoder**: The input of the model is a random noise of the size of the desired output. It will first reduce the sample to a lower dimensional latent space. For that, the authors used the [VAE Architecture](../variational-autoencoders/), which consists of two parts - encoder and decoder. The encoder is used during training to convert the sample into a lower latent representation and passes it as input to the next block. On inference, the denoised, generated samples undergo reverse diffusion and are transformed back to their original dimensional latent space.
+- **The Autoencoder**: The input of the model is a random noise of the size of the desired output. It will first reduce the sample to a lower dimensional latent space. For that, the authors used the [VAE Architecture](../variational-autoencoders/index.md), which consists of two parts - encoder and decoder. The encoder is used during training to convert the sample into a lower latent representation and passes it as input to the next block. On inference, the denoised, generated samples undergo reverse diffusion and are transformed back to their original dimensional latent space.
 
 ![](latent-stable-diffusion-architecture.png){:style="max-width: 100%; height: auto;"}
 /// caption
