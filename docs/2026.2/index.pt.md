@@ -1,4 +1,4 @@
-# 2026.2 — Redes Neurais Artificiais e Aprendizado Profundo
+# 2026.2
 
 ## Instrutor
 

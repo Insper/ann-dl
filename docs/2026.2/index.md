@@ -1,4 +1,4 @@
-# 2026.2 — Artificial Neural Networks and Deep Learning
+# 2026.2
 
 ## Instructor
 

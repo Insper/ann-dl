@@ -1,4 +1,4 @@
-# 2025.2 — Artificial Neural Networks and Deep Learning
+# 2025.2
 
 ## Instructor
 
