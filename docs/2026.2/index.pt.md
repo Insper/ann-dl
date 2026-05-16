@@ -39,15 +39,15 @@ $$
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Módulo 1</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Fundamentos</div>
   <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
-    <li>Conceitos e IA</li>
-    <li>Dados</li>
-    <li>Pré-processamento</li>
-    <li>Redes Neurais</li>
-    <li>Perceptron</li>
-    <li>MLP</li>
-    <li>Otimização</li>
-    <li>Regularização</li>
-    <li>Métricas</li>
+    <li style="margin-left: 0px;">Conceitos e IA</li>
+    <li style="margin-left: 0px;">Dados</li>
+    <li style="margin-left: 0px;">Pré-processamento</li>
+    <li style="margin-left: 0px;">Redes Neurais</li>
+    <li style="margin-left: 0px;">Perceptron</li>
+    <li style="margin-left: 0px;">MLP</li>
+    <li style="margin-left: 0px;">Otimização</li>
+    <li style="margin-left: 0px;">Regularização</li>
+    <li style="margin-left: 0px;">Métricas</li>
   </ul>
 </div>
 
@@ -55,12 +55,12 @@ $$
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Módulo 2</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Arquiteturas Profundas</div>
   <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
-    <li>Camadas de AP</li>
-    <li>CNNs</li>
-    <li>Atenção <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
-    <li>Transformers <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
-    <li>Transfer Learning <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
-    <li>LLMs <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li style="margin-left: 0px;">Camadas de AP</li>
+    <li style="margin-left: 0px;">CNNs</li>
+    <li style="margin-left: 0px;">Atenção <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li style="margin-left: 0px;">Transformers <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li style="margin-left: 0px;">Transfer Learning <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li style="margin-left: 0px;">LLMs <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
   </ul>
 </div>
 
@@ -68,14 +68,14 @@ $$
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Módulo 3</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Modelos Generativos</div>
   <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
-    <li>Visão Geral</li>
-    <li>VAE</li>
-    <li>GAN</li>
-    <li>CLIP</li>
-    <li>Stable Diffusion</li>
-    <li>Flow Matching</li>
-    <li>Transformers de Difusão <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
-    <li>Geração Autorregressiva <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li style="margin-left: 0px;">Visão Geral</li>
+    <li style="margin-left: 0px;">VAE</li>
+    <li style="margin-left: 0px;">GAN</li>
+    <li style="margin-left: 0px;">CLIP</li>
+    <li style="margin-left: 0px;">Stable Diffusion</li>
+    <li style="margin-left: 0px;">Flow Matching</li>
+    <li style="margin-left: 0px;">Transformers de Difusão <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
+    <li style="margin-left: 0px;">Geração Autorregressiva <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NOVO</span></li>
   </ul>
 </div>
 

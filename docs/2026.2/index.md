@@ -39,15 +39,15 @@ $$
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Module 1</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Foundations</div>
   <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
-    <li>Concepts &amp; AI</li>
-    <li>Data</li>
-    <li>Preprocessing</li>
-    <li>Neural Networks</li>
-    <li>Perceptron</li>
-    <li>MLP</li>
-    <li>Optimization</li>
-    <li>Regularization</li>
-    <li>Metrics</li>
+    <li style="margin-left: 0px;">Concepts &amp; AI</li>
+    <li style="margin-left: 0px;">Data</li>
+    <li style="margin-left: 0px;">Preprocessing</li>
+    <li style="margin-left: 0px;">Neural Networks</li>
+    <li style="margin-left: 0px;">Perceptron</li>
+    <li style="margin-left: 0px;">MLP</li>
+    <li style="margin-left: 0px;">Optimization</li>
+    <li style="margin-left: 0px;">Regularization</li>
+    <li style="margin-left: 0px;">Metrics</li>
   </ul>
 </div>
 
@@ -55,12 +55,12 @@ $$
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Module 2</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Deep Architectures</div>
   <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
-    <li>DL Layers</li>
-    <li>CNNs</li>
-    <li>Attention <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
-    <li>Transformers <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
-    <li>Transfer Learning <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
-    <li>LLMs <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
+    <li style="margin-left: 0px;">DL Layers</li>
+    <li style="margin-left: 0px;">CNNs</li>
+    <li style="margin-left: 0px;">Attention <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
+    <li style="margin-left: 0px;">Transformers <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
+    <li style="margin-left: 0px;">Transfer Learning <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
+    <li style="margin-left: 0px;">LLMs <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
   </ul>
 </div>
 
@@ -68,14 +68,14 @@ $$
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Module 3</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Generative Models</div>
   <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
-    <li>Overview</li>
-    <li>VAE</li>
-    <li>GAN</li>
-    <li>CLIP</li>
-    <li>Stable Diffusion</li>
-    <li>Flow Matching</li>
-    <li>Diffusion Transformers <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
-    <li>AR Generation <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
+    <li style="margin-left: 0px;">Overview</li>
+    <li style="margin-left: 0px;">VAE</li>
+    <li style="margin-left: 0px;">GAN</li>
+    <li style="margin-left: 0px;">CLIP</li>
+    <li style="margin-left: 0px;">Stable Diffusion</li>
+    <li style="margin-left: 0px;">Flow Matching</li>
+    <li style="margin-left: 0px;">Diffusion Transformers <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
+    <li style="margin-left: 0px;">AR Generation <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
   </ul>
 </div>
 
