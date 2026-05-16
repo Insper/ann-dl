@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Artificial Neural Networks and Deep Learning course at Insper"><meta name=author content="Sandmann, H."><link href=https://insper.github.io/ann-dl/2026.2/classes/autoregressive-generation/ rel=canonical><link href=../diffusion-transformers/ rel=prev><link href=../../exercises/data/ rel=next><link rel=alternate href=./ hreflang=en><link rel=alternate href=../../../pt/2026.2/classes/autoregressive-generation/ hreflang=pt><link rel=icon href=../../../assets/images/favicon.png><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.7.6"><title>23. Autoregressive Generation - Artificial Neural Networks and Deep Learning</title><link rel=stylesheet href=../../../assets/stylesheets/main.484c7ddc.min.css><link rel=stylesheet href=../../../assets/stylesheets/palette.ab4e12ef.min.css><style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M384%20512H96c-53%200-96-43-96-96V96C0%2043%2043%200%2096%200h304c26.5%200%2048%2021.5%2048%2048v288c0%2020.9-13.4%2038.7-32%2045.3V448c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032zM96%20384c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h256v-64zm32-232c0%2013.3%2010.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H152c-13.3%200-24%2010.7-24%2024m24%2072c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h176c13.3%200%2024-10.7%2024-24s-10.7-24-24-24z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-32-352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200m-8%2064h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M461.2%2018.9C472.7%2024%20480%2035.4%20480%2048v416c0%2012.6-7.3%2024-18.8%2029.1s-24.8%203.2-34.3-5.1l-46.6-40.7c-43.6-38.1-98.7-60.3-156.4-63V480c0%2017.7-14.3%2032-32%2032h-32c-17.7%200-32-14.3-32-32v-96C57.3%20384%200%20326.7%200%20256s57.3-128%20128-128h84.5c61.8-.2%20121.4-22.7%20167.9-63.3L427%2024c9.4-8.3%2022.9-10.2%2034.3-5.1zM224%20320v.2c70.3%202.7%20137.8%2028.5%20192%2073.4V118.3c-54.2%2044.9-121.7%2070.7-192%2073.4z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M434.8%2070.1c14.3%2010.4%2017.5%2030.4%207.1%2044.7l-256%20352c-5.5%207.6-14%2012.3-23.4%2013.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l101.5%20101.5%20234-321.7c10.4-14.3%2030.4-17.5%2044.7-7.1z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m0-336c-17.7%200-32%2014.3-32%2032%200%2013.3-10.7%2024-24%2024s-24-10.7-24-24c0-44.2%2035.8-80%2080-80s80%2035.8%2080%2080c0%2047.2-36%2067.2-56%2074.5v3.8c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24v-8.1c0-20.5%2014.8-35.2%2030.1-40.2%206.4-2.1%2013.2-5.5%2018.2-10.3%204.3-4.2%207.7-10%207.7-19.6%200-17.7-14.3-32-32-32zm-32%20192a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M480-16c6.9%200%2013%204.4%2015.2%2010.9l13.5%2040.4%2040.4%2013.5C555.6%2051%20560%2057.1%20560%2064s-4.4%2013-10.9%2015.2l-40.4%2013.5-13.5%2040.4c-2.2%206.5-8.3%2010.9-15.2%2010.9s-13-4.4-15.2-10.9l-13.5-40.4-40.4-13.5C404.4%2077%20400%2070.9%20400%2064s4.4-13%2010.9-15.2l40.4-13.5%2013.5-40.4C467-11.6%20473.1-16%20480-16M321.4%2097.4c12.5-12.5%2032.8-12.5%2045.3%200l80%2080c12.5%2012.5%2012.5%2032.8%200%2045.3l-10.9%2010.9c7.9%2022%2012.2%2045.7%2012.2%2070.5%200%20114.9-93.1%20208-208%20208S32%20418.9%2032%20304%20125.1%2096%20240%2096c24.7%200%2048.5%204.3%2070.5%2012.3zM144%20304c0-53%2043-96%2096-96%2013.3%200%2024-10.7%2024-24s-10.7-24-24-24c-79.5%200-144%2064.5-144%20144%200%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M416%20427.4c58.5-44%2096-111.6%2096-187.4C512%20107.5%20397.4%200%20256%200S0%20107.5%200%20240c0%2075.8%2037.5%20143.4%2096%20187.4V464c0%2026.5%2021.5%2048%2048%2048h32v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h64v-40c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v40h32c26.5%200%2048-21.5%2048-48zM96%20256a64%2064%200%201%201%20128%200%2064%2064%200%201%201-128%200m256-64a64%2064%200%201%201%200%20128%2064%2064%200%201%201%200-128%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20640%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M352%200c0-17.7-14.3-32-32-32s-32%2014.3-32%2032v64h-96c-53%200-96%2043-96%2096v224c0%2053%2043%2096%2096%2096h256c53%200%2096-43%2096-96V160c0-53-43-96-96-96h-96zM160%20368c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24m120%200c0-13.3%2010.7-24%2024-24h32c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-32c-13.3%200-24-10.7-24-24M224%20176a48%2048%200%201%201%200%2096%2048%2048%200%201%201%200-96m144%2048a48%2048%200%201%201%2096%200%2048%2048%200%201%201-96%200m-304%200c0-17.7-14.3-32-32-32S0%20206.3%200%20224v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32zm544-32c-17.7%200-32%2014.3-32%2032v96c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32v-96c0-17.7-14.3-32-32-32%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v151.5L7.5%20426.3C2.6%20435%200%20444.7%200%20454.7%200%20486.4%2025.6%20512%2057.3%20512h333.4c31.6%200%2057.3-25.6%2057.3-57.3%200-10-2.6-19.8-7.5-28.4L320%20215.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20215.5V64h64v151.5c0%2011.1%202.9%2022.1%208.4%2031.8L306%20320H142l41.6-72.7c5.5-9.7%208.4-20.6%208.4-31.8%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.1.0%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%20216C0%20149.7%2053.7%2096%20120%2096h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64zm256%200c0-66.3%2053.7-120%20120-120h8c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-8c-30.9%200-56%2025.1-56%2056v8h64c35.3%200%2064%2028.7%2064%2064v64c0%2035.3-28.7%2064-64%2064h-64c-35.3%200-64-28.7-64-64z%22/%3E%3C/svg%3E');}</style><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../../../assets/_markdown_exec_pyodide.css><link rel=stylesheet href=../../../assets/stylesheets/neoteroi-mkdocs.min.css><link rel=stylesheet href=../../../assets/stylesheets/neoteroi-timeline.css><link rel=stylesheet href=../../../assets/stylesheets/extra.css><link rel=stylesheet href=../../../assets/stylesheets/badge.css><link rel=stylesheet href=../../../termynal.css><script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><link href=../../../assets/stylesheets/glightbox.min.css rel=stylesheet><script src=../../../assets/javascripts/glightbox.min.js></script><style id=glightbox-style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#autoregressive-image-generation class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class="md-header md-header--shadow" data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../../.. title="Artificial Neural Networks and Deep Learning" class="md-header__button md-logo" aria-label="Artificial Neural Networks and Deep Learning" data-md-component=logo> <img src=../../../assets/images/ann-dl.png alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Artificial Neural Networks and Deep Learning </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> 23. Autoregressive Generation </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to dark mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg> </label> <input class=md-option data-md-color-media=(prefers-color-scheme) data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to light mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_2 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to dark mode" type=radio name=__palette id=__palette_2> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_3 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to system preference" type=radio name=__palette id=__palette_3> <label class="md-header__button md-icon" title="Switch to system preference" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg> </label> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <div class=md-header__option> <div class=md-select> <button class="md-header__button md-icon" aria-label="Select language"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg> </button> <div class=md-select__inner> <ul class=md-select__list> <li class=md-select__item> <a href=./ hreflang=en class=md-select__link> 🇺🇸 English </a> </li> <li class=md-select__item> <a href=../../../pt/2026.2/classes/autoregressive-generation/ hreflang=pt class=md-select__link> 🇧🇷 Português </a> </li> </ul> </div> </div> </div> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg> </button> </nav> </form> <div class=md-search__output> <div class=md-search__scrollwrap tabindex=0 data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/insper/ann-dl title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg> </div> <div class=md-source__repository> insper/ann-dl </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../../.. title="Artificial Neural Networks and Deep Learning" class="md-nav__button md-logo" aria-label="Artificial Neural Networks and Deep Learning" data-md-component=logo> <img src=../../../assets/images/ann-dl.png alt=logo> </a> Artificial Neural Networks and Deep Learning </label> <div class=md-nav__source> <a href=https://github.com/insper/ann-dl title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg> </div> <div class=md-source__repository> insper/ann-dl </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../.. class=md-nav__link> <span class=md-ellipsis> ANN-DL </span> </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2 checked> <label class=md-nav__link for=__nav_2 id=__nav_2_label tabindex=0> <span class=md-ellipsis> 2026.2 </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_2_label aria-expanded=true> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> 2026.2 </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../ class=md-nav__link> <span class=md-ellipsis> Overview </span> </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2_2 checked> <label class=md-nav__link for=__nav_2_2 id=__nav_2_2_label tabindex=0> <span class=md-ellipsis> Classes </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_2_2_label aria-expanded=true> <label class=md-nav__title for=__nav_2_2> <span class="md-nav__icon md-icon"></span> Classes </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../concepts/ class=md-nav__link> <span class=md-ellipsis> 1. Concepts </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2_2_2> <label class=md-nav__link for=__nav_2_2_2 id=__nav_2_2_2_label tabindex=0> <span class=md-ellipsis> 2. Data </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=3 aria-labelledby=__nav_2_2_2_label aria-expanded=false> <label class=md-nav__title for=__nav_2_2_2> <span class="md-nav__icon md-icon"></span> 2. Data </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../data/ class=md-nav__link> <span class=md-ellipsis> Overview </span> </a> </li> <li class=md-nav__item> <a href=../data/types/ class=md-nav__link> <span class=md-ellipsis> Feature Types </span> </a> </li> <li class=md-nav__item> <a href=../data/distributions/ class=md-nav__link> <span class=md-ellipsis> Distributions </span> </a> </li> <li class=md-nav__item> <a href=../data/splitting/ class=md-nav__link> <span class=md-ellipsis> Train/Val/Test Split </span> </a> </li> <li class=md-nav__item> <a href=../data/leakage/ class=md-nav__link> <span class=md-ellipsis> Data Leakage </span> </a> </li> <li class=md-nav__item> <a href=../data/quality/ class=md-nav__link> <span class=md-ellipsis> Data Quality </span> </a> </li> <li class=md-nav__item> <a href=../data/imbalance/ class=md-nav__link> <span class=md-ellipsis> Class Imbalance </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../preprocessing/ class=md-nav__link> <span class=md-ellipsis> 3. Preprocessing </span> </a> </li> <li class=md-nav__item> <a href=../ann/ class=md-nav__link> <span class=md-ellipsis> 4. Neural Networks </span> </a> </li> <li class=md-nav__item> <a href=../perceptron/ class=md-nav__link> <span class=md-ellipsis> 5. Perceptron </span> </a> </li> <li class=md-nav__item> <a href=../mlp/ class=md-nav__link> <span class=md-ellipsis> 6. Multi-Layer Perceptron </span> </a> </li> <li class=md-nav__item> <a href=../optimization/ class=md-nav__link> <span class=md-ellipsis> 7. Optimization </span> </a> </li> <li class=md-nav__item> <a href=../regularization/ class=md-nav__link> <span class=md-ellipsis> 8. Regularization </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2_2_9> <label class=md-nav__link for=__nav_2_2_9 id=__nav_2_2_9_label tabindex=0> <span class=md-ellipsis> 9. Metrics and Evaluation </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=3 aria-labelledby=__nav_2_2_9_label aria-expanded=false> <label class=md-nav__title for=__nav_2_2_9> <span class="md-nav__icon md-icon"></span> 9. Metrics and Evaluation </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../metrics/classification/ class=md-nav__link> <span class=md-ellipsis> 9.1. Classification </span> </a> </li> <li class=md-nav__item> <a href=../metrics/regression/ class=md-nav__link> <span class=md-ellipsis> 9.2. Regression </span> </a> </li> <li class=md-nav__item> <a href=../metrics/generative/ class=md-nav__link> <span class=md-ellipsis> 9.3. Generative </span> </a> </li> <li class=md-nav__item> <a href=../metrics/llm/ class=md-nav__link> <span class=md-ellipsis> 9.4. LLM </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../deep-learning/ class=md-nav__link> <span class=md-ellipsis> 10. Deep Learning </span> </a> </li> <li class=md-nav__item> <a href=../convolutional-neural-networks/ class=md-nav__link> <span class=md-ellipsis> 11. Convolutional </span> </a> </li> <li class=md-nav__item> <a href=../attention/ class=md-nav__link> <span class=md-ellipsis> 12. Attention Mechanisms </span> </a> </li> <li class=md-nav__item> <a href=../transformers/ class=md-nav__link> <span class=md-ellipsis> 13. Transformers </span> </a> </li> <li class=md-nav__item> <a href=../transfer-learning/ class=md-nav__link> <span class=md-ellipsis> 14. Transfer Learning </span> </a> </li> <li class=md-nav__item> <a href=../llms/ class=md-nav__link> <span class=md-ellipsis> 15. LLMs </span> </a> </li> <li class=md-nav__item> <a href=../generative-models/ class=md-nav__link> <span class=md-ellipsis> 16. Generative Models </span> </a> </li> <li class=md-nav__item> <a href=../variational-autoencoders/ class=md-nav__link> <span class=md-ellipsis> 17. VAE </span> </a> </li> <li class=md-nav__item> <a href=../generative-adversarial-networks/ class=md-nav__link> <span class=md-ellipsis> 18. GAN </span> </a> </li> <li class=md-nav__item> <a href=../clip/ class=md-nav__link> <span class=md-ellipsis> 19. CLIP </span> </a> </li> <li class=md-nav__item> <a href=../stable-diffusion/ class=md-nav__link> <span class=md-ellipsis> 20. Stable Diffusion </span> </a> </li> <li class=md-nav__item> <a href=../flow-matching/ class=md-nav__link> <span class=md-ellipsis> 21. Flow-Matching </span> </a> </li> <li class=md-nav__item> <a href=../diffusion-transformers/ class=md-nav__link> <span class=md-ellipsis> 22. Diffusion Transformers </span> </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> <span class=md-ellipsis> 23. Autoregressive Generation </span> <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> 23. Autoregressive Generation </span> </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#autoregressive-image-generation class=md-nav__link> <span class=md-ellipsis> Autoregressive Image Generation </span> </a> </li> <li class=md-nav__item> <a href=#the-problem-how-to-tokenize-an-image class=md-nav__link> <span class=md-ellipsis> The Problem: How to Tokenize an Image? </span> </a> </li> <li class=md-nav__item> <a href=#autoregressive-token-generation class=md-nav__link> <span class=md-ellipsis> Autoregressive Token Generation </span> </a> </li> <li class=md-nav__item> <a href=#maskgit-parallel-generation-via-masking class=md-nav__link> <span class=md-ellipsis> MaskGIT: Parallel Generation via Masking </span> </a> </li> <li class=md-nav__item> <a href=#any-to-any-gemini-gpt-4o-and-chameleon class=md-nav__link> <span class=md-ellipsis> Any-to-Any: Gemini, GPT-4o, and Chameleon </span> </a> <nav class=md-nav aria-label="Any-to-Any: Gemini, GPT-4o, and Chameleon"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#how-each-model-implements-this class=md-nav__link> <span class=md-ellipsis> How Each Model Implements This </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#ar-vs-diffusion-when-to-use-each class=md-nav__link> <span class=md-ellipsis> AR vs. Diffusion: When to Use Each? </span> </a> </li> <li class=md-nav__item> <a href=#implementation-vq-gan-autoregressive-transformer class=md-nav__link> <span class=md-ellipsis> Implementation: VQ-GAN + Autoregressive Transformer </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2_3> <label class=md-nav__link for=__nav_2_3 id=__nav_2_3_label tabindex=0> <span class=md-ellipsis> Exercises </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_2_3_label aria-expanded=false> <label class=md-nav__title for=__nav_2_3> <span class="md-nav__icon md-icon"></span> Exercises </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../exercises/data/ class=md-nav__link> <span class=md-ellipsis> 1. Data </span> </a> </li> <li class=md-nav__item> <a href=../../exercises/perceptron/ class=md-nav__link> <span class=md-ellipsis> 2. Perceptron </span> </a> </li> <li class=md-nav__item> <a href=../../exercises/mlp/ class=md-nav__link> <span class=md-ellipsis> 3. MLP </span> </a> </li> <li class=md-nav__item> <a href=../../exercises/transformers/ class=md-nav__link> <span class=md-ellipsis> 4. Transformers &amp; Attention </span> </a> </li> <li class=md-nav__item> <a href=../../exercises/vae/ class=md-nav__link> <span class=md-ellipsis> 5. VAE </span> </a> </li> <li class=md-nav__item> <a href=../../exercises/llm/ class=md-nav__link> <span class=md-ellipsis> 6. LLM Fine-Tuning </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2_4> <label class=md-nav__link for=__nav_2_4 id=__nav_2_4_label tabindex=0> <span class=md-ellipsis> Projects </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_2_4_label aria-expanded=false> <label class=md-nav__title for=__nav_2_4> <span class="md-nav__icon md-icon"></span> Projects </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../projects/classification/ class=md-nav__link> <span class=md-ellipsis> 1. Classification </span> </a> </li> <li class=md-nav__item> <a href=../../projects/regression/ class=md-nav__link> <span class=md-ellipsis> 2. Regression </span> </a> </li> <li class=md-nav__item> <a href=../../projects/generative/ class=md-nav__link> <span class=md-ellipsis> 3. Generative </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3> <label class=md-nav__link for=__nav_3 id=__nav_3_label tabindex=0> <span class=md-ellipsis> 2025.2 </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> 2025.2 </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../2025.2/ class=md-nav__link> <span class=md-ellipsis> Overview </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_2> <label class=md-nav__link for=__nav_3_2 id=__nav_3_2_label tabindex=0> <span class=md-ellipsis> Classes </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_2_label aria-expanded=false> <label class=md-nav__title for=__nav_3_2> <span class="md-nav__icon md-icon"></span> Classes </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../2025.2/classes/concepts/ class=md-nav__link> <span class=md-ellipsis> 1. Concepts </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/data/ class=md-nav__link> <span class=md-ellipsis> 2. Data </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/preprocessing/ class=md-nav__link> <span class=md-ellipsis> 3. Preprocessing </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/ann/ class=md-nav__link> <span class=md-ellipsis> 4. Neural Networks </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/perceptron/ class=md-nav__link> <span class=md-ellipsis> 5. Perceptron </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/mlp/ class=md-nav__link> <span class=md-ellipsis> 6. Multi-Layer Perceptron </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/optimization/ class=md-nav__link> <span class=md-ellipsis> 7. Optimization </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/regularization/ class=md-nav__link> <span class=md-ellipsis> 8. Regularization </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_2_9> <label class=md-nav__link for=__nav_3_2_9 id=__nav_3_2_9_label tabindex=0> <span class=md-ellipsis> 9. Metrics and Evaluation </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=3 aria-labelledby=__nav_3_2_9_label aria-expanded=false> <label class=md-nav__title for=__nav_3_2_9> <span class="md-nav__icon md-icon"></span> 9. Metrics and Evaluation </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../2025.2/classes/metrics/classification/ class=md-nav__link> <span class=md-ellipsis> 9.1. Classification </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/metrics/regression/ class=md-nav__link> <span class=md-ellipsis> 9.2. Regression </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/metrics/generative/ class=md-nav__link> <span class=md-ellipsis> 9.3. Generative </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/deep-learning/ class=md-nav__link> <span class=md-ellipsis> 10. Deep Learning </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/convolutional-neural-networks/ class=md-nav__link> <span class=md-ellipsis> 11. Convolutional </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/generative-models/ class=md-nav__link> <span class=md-ellipsis> 12. Generative Models </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/generative-adversarial-networks/ class=md-nav__link> <span class=md-ellipsis> 13. GAN </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/variational-autoencoders/ class=md-nav__link> <span class=md-ellipsis> 14. VAE </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/clip/ class=md-nav__link> <span class=md-ellipsis> 15. CLIP </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/stable-diffusion/ class=md-nav__link> <span class=md-ellipsis> 16. Stable Diffusion </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/classes/flow-matching/ class=md-nav__link> <span class=md-ellipsis> 17. Flow-Matching </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_3> <label class=md-nav__link for=__nav_3_3 id=__nav_3_3_label tabindex=0> <span class=md-ellipsis> Exercises </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3_3> <span class="md-nav__icon md-icon"></span> Exercises </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../2025.2/exercises/data/ class=md-nav__link> <span class=md-ellipsis> 1. Data </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/exercises/perceptron/ class=md-nav__link> <span class=md-ellipsis> 2. Perceptron </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/exercises/mlp/ class=md-nav__link> <span class=md-ellipsis> 3. MLP </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/exercises/vae/ class=md-nav__link> <span class=md-ellipsis> 4. VAE </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_4> <label class=md-nav__link for=__nav_3_4 id=__nav_3_4_label tabindex=0> <span class=md-ellipsis> Projects </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_4_label aria-expanded=false> <label class=md-nav__title for=__nav_3_4> <span class="md-nav__icon md-icon"></span> Projects </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../2025.2/projects/classification/ class=md-nav__link> <span class=md-ellipsis> 1. Classification </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/projects/regression/ class=md-nav__link> <span class=md-ellipsis> 2. Regression </span> </a> </li> <li class=md-nav__item> <a href=../../../2025.2/projects/generative/ class=md-nav__link> <span class=md-ellipsis> 3. Generative </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4> <label class=md-nav__link for=__nav_4 id=__nav_4_label tabindex=0> <span class=md-ellipsis> Definitions </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_4_label aria-expanded=false> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> Definitions </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../definitions/latent_space_vs_embedding/ class=md-nav__link> <span class=md-ellipsis> Latent Space vs. Embedding </span> </a> </li> <li class=md-nav__item> <a href=../../../definitions/stable_difussion_vs_flow-matching/ class=md-nav__link> <span class=md-ellipsis> Stable Diffusion vs. Flow-Matching </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../../references/ class=md-nav__link> <span class=md-ellipsis> References </span> </a> </li> <li class=md-nav__item> <a href=../../../terms-and-conditions/ class=md-nav__link> <span class=md-ellipsis> Terms and Conditions </span> </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#autoregressive-image-generation class=md-nav__link> <span class=md-ellipsis> Autoregressive Image Generation </span> </a> </li> <li class=md-nav__item> <a href=#the-problem-how-to-tokenize-an-image class=md-nav__link> <span class=md-ellipsis> The Problem: How to Tokenize an Image? </span> </a> </li> <li class=md-nav__item> <a href=#autoregressive-token-generation class=md-nav__link> <span class=md-ellipsis> Autoregressive Token Generation </span> </a> </li> <li class=md-nav__item> <a href=#maskgit-parallel-generation-via-masking class=md-nav__link> <span class=md-ellipsis> MaskGIT: Parallel Generation via Masking </span> </a> </li> <li class=md-nav__item> <a href=#any-to-any-gemini-gpt-4o-and-chameleon class=md-nav__link> <span class=md-ellipsis> Any-to-Any: Gemini, GPT-4o, and Chameleon </span> </a> <nav class=md-nav aria-label="Any-to-Any: Gemini, GPT-4o, and Chameleon"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#how-each-model-implements-this class=md-nav__link> <span class=md-ellipsis> How Each Model Implements This </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#ar-vs-diffusion-when-to-use-each class=md-nav__link> <span class=md-ellipsis> AR vs. Diffusion: When to Use Each? </span> </a> </li> <li class=md-nav__item> <a href=#implementation-vq-gan-autoregressive-transformer class=md-nav__link> <span class=md-ellipsis> Implementation: VQ-GAN + Autoregressive Transformer </span> </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <nav class=md-path aria-label=Navigation> <ol class=md-path__list> <li class=md-path__item> <a href=../../.. class=md-path__link> <span class=md-ellipsis> ANN-DL </span> </a> </li> <li class=md-path__item> <a href=../../ class=md-path__link> <span class=md-ellipsis> 2026.2 </span> </a> </li> <li class=md-path__item> <a href=../concepts/ class=md-path__link> <span class=md-ellipsis> Classes </span> </a> </li> </ol> </nav> <article class="md-content__inner md-typeset"> <h1>23. Autoregressive Generation</h1> <h2 id=autoregressive-image-generation>Autoregressive Image Generation</h2> <p>Diffusion models have dominated image generation since 2020 — but there is a radically different approach that has gained traction: <strong>treating images as sequences of discrete tokens and generating them the same way language models generate text</strong>.</p> <p>This is the approach behind native image generation in <strong>Gemini</strong>, <strong>GPT-4o</strong>, and models like <strong>Chameleon</strong> (Meta) and <strong>LlamaGen</strong>.</p> <hr> <h2 id=the-problem-how-to-tokenize-an-image>The Problem: How to Tokenize an Image?</h2> <p>Text is naturally discrete (words, subwords). Images are continuous — pixels in <span class=arithmatex>\([0,255]^3\)</span>. To use autoregressive generation, we need a <strong>visual vocabulary</strong>.</p> <p>The solution: <strong>VQ-GAN</strong> (Vector Quantization GAN)<sup id=fnref:1><a class=footnote-ref href=#fn:1>1</a></sup> learns a <em>codebook</em> of <span class=arithmatex>\(K\)</span> vectors. The encoder maps any image patch to the nearest vector in the codebook — converting the image into a grid of integer indices.</p> <div id=vqvae-viz style="background:#0d1117;border-radius:12px;padding:1.5rem;margin:2rem 0;overflow:hidden;"> <canvas id=vqvae-canvas style=width:100%;display:block;border-radius:8px;></canvas> <div style=display:flex;justify-content:center;gap:.8rem;margin-top:1rem;flex-wrap:wrap;> <button onclick=vqStep(-1) style="padding:5px 18px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:5px;cursor:pointer;">← Previous</button> <span id=vq-label style=color:#8b949e;font-family:monospace;line-height:2.2;font-size:.85rem;></span> <button onclick=vqStep(1) style="padding:5px 18px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:5px;cursor:pointer;">Next →</button> </div> <div id=vq-desc style="color:#c9d1d9;font-size:.85rem;text-align:center;margin-top:.6rem;min-height:2.5rem;padding:0 1rem;'"></div> </div> <script>
+(function(){
+  const canvas = document.getElementById('vqvae-canvas');
+  const ctx = canvas.getContext('2d');
+  let vqS=0;
+
+  const vqSteps=[
+    {label:'1. Original Image', desc:'256×256px input image. Each pixel has a continuous RGB value.'},
+    {label:'2. CNN Encoder', desc:'CNN contracts the image to a 32×32×256 latent representation. Each position captures an 8×8 pixel patch.'},
+    {label:'3. Quantization: codebook matching', desc:'Each 256-dim latent vector is mapped to the nearest vector in the codebook (K=8192 entries). The index replaces the vector.'},
+    {label:'4. Discrete token map', desc:'Result: 32×32 grid of integer indices in [0, 8191]. 1024 tokens represent the entire image.'},
+    {label:'5. CNN Decoder', desc:'The decoder reconstructs the image from codebook vectors. Trained with reconstruction loss + GAN discriminator.'},
+  ];
+
+  window.vqStep=function(d){ vqS=Math.max(0,Math.min(vqSteps.length-1,vqS+d)); drawVQ(); };
+
+  function rng(seed){ let x=Math.sin(seed*31.7)*43758.5; return x-Math.floor(x); }
+
+  function drawVQ(){
+    const W=canvas.parentElement.offsetWidth-48;
+    const H=220; canvas.width=W; canvas.height=H; canvas.style.height=H+'px';
+    ctx.fillStyle='#161b22'; ctx.fillRect(0,0,W,H);
+
+    const s=vqSteps[vqS];
+    document.getElementById('vq-label').textContent=`Step ${vqS+1}/${vqSteps.length}: ${s.label}`;
+    document.getElementById('vq-desc').textContent=s.desc;
+
+    const boxH=160, boxY=(H-boxH)/2;
+    const components=[
+      {label:'Image\n256×256', w:80},
+      {label:'Encoder\nCNN', w:60},
+      {label:'Latent\n32×32×256', w:80},
+      {label:'Codebook\nK=8192', w:80},
+      {label:'Tokens\n32×32', w:80},
+      {label:'Decoder\nCNN', w:60},
+      {label:'Reconstructed\nImage', w:80},
+    ];
+    const totalW=components.reduce((s,c)=>s+c.w+24,0)-24;
+    let x=(W-totalW)/2;
+
+    const colors=['#484f58','#58a6ff','#3fb950','#bc8cff','#f0883e','#58a6ff','#484f58'];
+
+    components.forEach((comp,i)=>{
+      const isActive = i<=vqS+1 && vqS>0 ? true : i===0;
+      const col=colors[i];
+      const bH=Math.min(boxH, comp.w*1.4);
+      const by=boxY+(boxH-bH)/2;
+      const alpha= (i===0||i<=vqS) ? 1 : 0.25;
+
+      ctx.globalAlpha=alpha;
+      ctx.fillStyle=col+'22';
+      ctx.beginPath(); ctx.roundRect(x,by,comp.w,bH,6); ctx.fill();
+      ctx.strokeStyle=col; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.roundRect(x,by,comp.w,bH,6); ctx.stroke();
+
+      // Inner visual
+      if(i===0||i===6){ // image
+        const gs=8, gx=x+6, gy=by+6, gsz=(comp.w-12)/gs;
+        for(let r=0;r<gs;r++) for(let c=0;c<gs;c++){
+          const v=rng(r*8+c+(i===6?100:0));
+          ctx.fillStyle=`hsl(${v*360|0},40%,${30+v*30|0}%)`;
+          ctx.fillRect(gx+c*gsz,gy+r*gsz,gsz-1,gsz-1);
+        }
+      } else if(i===2){ // latent
+        const gs=6, gx=x+8, gy=by+8, gsz=(comp.w-16)/gs;
+        for(let r=0;r<gs;r++) for(let c=0;c<gs;c++){
+          ctx.fillStyle=`hsl(${140+rng(r*6+c)*40|0},60%,${25+rng(r*6+c+50)*25|0}%)`;
+          ctx.fillRect(gx+c*gsz,gy+r*gsz,gsz-1,gsz-1);
+        }
+      } else if(i===3){ // codebook
+        for(let j=0;j<12;j++){
+          const vy=by+10+j*12, vx=x+10;
+          const v=rng(j*7);
+          ctx.fillStyle=`hsl(${270+v*60|0},60%,${30+v*20|0}%)`;
+          ctx.fillRect(vx,vy,comp.w-20,9);
+          ctx.fillStyle='#ffffff33'; ctx.font='7px monospace'; ctx.textAlign='left'; ctx.textBaseline='middle';
+          ctx.fillText((j*700+341)+'',vx+2,vy+4);
+        }
+      } else if(i===4){ // token map
+        const gs=8, gx=x+4, gy=by+4, gsz=(comp.w-8)/gs;
+        for(let r=0;r<gs;r++) for(let c=0;c<gs;c++){
+          const idx=Math.floor(rng(r*8+c)*8192);
+          const hue=(idx/8192)*360;
+          ctx.fillStyle=`hsl(${hue|0},70%,35%)`;
+          ctx.fillRect(gx+c*gsz,gy+r*gsz,gsz-1,gsz-1);
+        }
+      }
+
+      // Label below
+      ctx.globalAlpha=alpha;
+      ctx.fillStyle=col; ctx.font='9px Inter,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='top';
+      comp.label.split('\n').forEach((l,li)=>ctx.fillText(l,x+comp.w/2,by+bH+4+li*11));
+
+      // Arrow to next
+      if(i<components.length-1){
+        const nextX=x+comp.w+24;
+        const alphaArr=i<vqS?1:0.2;
+        ctx.globalAlpha=alphaArr;
+        ctx.strokeStyle='#484f58'; ctx.lineWidth=1.5;
+        ctx.beginPath(); ctx.moveTo(x+comp.w+2,boxY+boxH/2); ctx.lineTo(nextX-2,boxY+boxH/2); ctx.stroke();
+        ctx.fillStyle='#484f58';
+        ctx.beginPath(); ctx.moveTo(nextX-2,boxY+boxH/2); ctx.lineTo(nextX-8,boxY+boxH/2-4); ctx.lineTo(nextX-8,boxY+boxH/2+4); ctx.fill();
+      }
+      ctx.globalAlpha=1;
+      x+=comp.w+24;
+    });
+  }
+
+  drawVQ(); window.addEventListener('resize',drawVQ);
+})();
+</script> <hr> <h2 id=autoregressive-token-generation>Autoregressive Token Generation</h2> <p>With a trained codebook, we can represent any image as a sequence of <span class=arithmatex>\(N\)</span> integer indices. We then generate this sequence <strong>exactly like an LLM generates text</strong>:</p> <div class=arithmatex>\[ p(t_1, t_2, \ldots, t_N) = \prod_{i=1}^{N} p(t_i \mid t_1, \ldots, t_{i-1}, \text{prompt}) \]</div> <p>Each token is generated one at a time, conditioned on all previous ones and the text prompt.</p> <div id=ar-viz style="background:#0d1117;border-radius:12px;padding:1.5rem;margin:2rem 0;"> <canvas id=ar-canvas style=width:100%;display:block;border-radius:8px;></canvas> <div style=display:flex;gap:.8rem;justify-content:center;margin-top:1rem;flex-wrap:wrap;> <button id=ar-btn onclick=arToggle() style="padding:6px 22px;background:#3fb950;color:#0d1117;border:none;border-radius:5px;cursor:pointer;font-weight:bold;">▶ Generate</button> <button onclick=arReset() style="padding:6px 16px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:5px;cursor:pointer;">↻ Reset</button> <label style=color:#8b949e;font-size:.85rem;line-height:2.2;>Order: </label> <select id=ar-order onchange=arReset() style="background:#161b22;color:#c9d1d9;border:1px solid #30363d;border-radius:4px;padding:3px 8px;"> <option value=raster>Raster (←→)</option> <option value=masked>Masked (random)</option> </select> </div> <div id=ar-stats style="color:#8b949e;font-size:.8rem;text-align:center;margin-top:.6rem;'"></div> </div> <script>
+(function(){
+  const canvas=document.getElementById('ar-canvas');
+  const ctx=canvas.getContext('2d');
+  let animId=null, running=false, generated=new Set(), totalTokens=0;
+  let order=[];
+
+  function rng(s){let x=Math.sin(s*31.7)*43758.5;return x-Math.floor(x);}
+  const G=16; // grid size
+
+  function buildOrder(){
+    const ord=document.getElementById('ar-order').value;
+    order=[];
+    if(ord==='raster'){
+      for(let r=0;r<G;r++) for(let c=0;c<G;c++) order.push([r,c]);
+    } else {
+      for(let r=0;r<G;r++) for(let c=0;c<G;c++) order.push([r,c]);
+      order.sort(()=>Math.random()-0.5);
+    }
+  }
+
+  function draw(){
+    const W=canvas.parentElement.offsetWidth-48;
+    const H=Math.min(300,W*0.5);
+    canvas.width=W; canvas.height=H; canvas.style.height=H+'px';
+    ctx.fillStyle='#161b22'; ctx.fillRect(0,0,W,H);
+    totalTokens=G*G;
+
+    // Grid
+    const gridSz=Math.min(H-20,W*0.45-10);
+    const cell=gridSz/G;
+    const gx=20, gy=(H-gridSz)/2;
+
+    // Draw generated tokens
+    for(let r=0;r<G;r++) for(let c=0;c<G;c++){
+      const key=r*G+c;
+      if(generated.has(key)){
+        const hue=rng(r*G+c+42)*360;
+        ctx.fillStyle=`hsl(${hue|0},55%,32%)`;
+      } else {
+        ctx.fillStyle='#21262d';
+      }
+      ctx.fillRect(gx+c*cell+0.5,gy+r*cell+0.5,cell-1,cell-1);
+    }
+
+    // Highlight current generating position
+    if(generated.size<order.length && running){
+      const [r,c]=order[generated.size];
+      ctx.fillStyle='#f0883e88';
+      ctx.fillRect(gx+c*cell,gy+r*cell,cell,cell);
+      ctx.strokeStyle='#f0883e'; ctx.lineWidth=1.5;
+      ctx.strokeRect(gx+c*cell,gy+r*cell,cell,cell);
+    }
+
+    // Border
+    ctx.strokeStyle='#30363d'; ctx.lineWidth=1;
+    ctx.strokeRect(gx,gy,gridSz,gridSz);
+    ctx.fillStyle='#484f58'; ctx.font='9px Inter,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(`${G}×${G} = ${G*G} tokens`,gx+gridSz/2,gy+gridSz+14);
+
+    // Right panel: probability bars
+    const pw=Math.min(200,W-gx-gridSz-60);
+    if(pw>80){
+      const px=gx+gridSz+30, py=(H-120)/2;
+      ctx.fillStyle='#8b949e'; ctx.font='9px Inter,sans-serif'; ctx.textAlign='left';
+      ctx.fillText('p(next token|context)',px,py-8);
+
+      const topK=5;
+      for(let i=0;i<topK;i++){
+        const seed=generated.size*7+i;
+        const prob=[0.42,0.23,0.15,0.11,0.09][i]*(0.85+rng(seed)*0.3);
+        const idx=Math.floor(rng(seed*3)*8192);
+        const bw=Math.round((prob/0.5)*pw);
+        const by=py+i*22;
+        ctx.fillStyle='#21262d';
+        ctx.beginPath(); ctx.roundRect(px,by,pw,16,3); ctx.fill();
+        ctx.fillStyle=i===0?'#3fb950':'#58a6ff88';
+        ctx.beginPath(); ctx.roundRect(px,by,Math.min(bw,pw),16,3); ctx.fill();
+        ctx.fillStyle='#c9d1d9'; ctx.font='8px monospace'; ctx.textAlign='left';
+        ctx.fillText(`tok_${idx}: ${(prob*100).toFixed(1)}%`,px+4,by+11);
+      }
+    }
+
+    // Stats
+    document.getElementById('ar-stats').textContent=
+      `Generated: ${generated.size}/${G*G} tokens  (${((generated.size/(G*G))*100).toFixed(0)}%)`;
+  }
+
+  window.arToggle=function(){
+    running=!running;
+    document.getElementById('ar-btn').textContent=running?'⏸ Pause':'▶ Generate';
+    document.getElementById('ar-btn').style.background=running?'#d29922':'#3fb950';
+    if(running) animate();
+    else cancelAnimationFrame(animId);
+  };
+
+  window.arReset=function(){
+    running=false; cancelAnimationFrame(animId);
+    document.getElementById('ar-btn').textContent='▶ Generate';
+    document.getElementById('ar-btn').style.background='#3fb950';
+    generated=new Set(); buildOrder(); draw();
+  };
+
+  function animate(){
+    if(generated.size<order.length&&running){
+      const [r,c]=order[generated.size];
+      generated.add(r*G+c);
+      draw();
+      const delay=generated.size<10?80:generated.size<50?30:12;
+      animId=setTimeout(animate,delay);
+    } else {
+      running=false;
+      document.getElementById('ar-btn').textContent='▶ Generate';
+      document.getElementById('ar-btn').style.background='#3fb950';
+      draw();
+    }
+  }
+
+  buildOrder(); draw();
+  window.addEventListener('resize',draw);
+})();
+</script> <hr> <h2 id=maskgit-parallel-generation-via-masking>MaskGIT: Parallel Generation via Masking</h2> <p>Purely autoregressive generation is <strong>slow</strong>: 1024 tokens = 1024 model passes. <strong>MaskGIT</strong><sup id=fnref:2><a class=footnote-ref href=#fn:2>2</a></sup> accelerates this with iterative parallel generation:</p> <ol> <li>Start with <strong>all tokens masked</strong> <code>[MASK]</code></li> <li>At each iteration, predict <strong>all tokens simultaneously</strong> (bidirectional!)</li> <li>"Reveal" only the tokens with highest confidence</li> <li>Repeat with fewer masked tokens</li> </ol> <p>In just <strong>8–12 iterations</strong>, it generates 1024 tokens — versus 1024 iterations for pure AR.</p> <div id=mask-viz style="background:#0d1117;border-radius:12px;padding:1.5rem;margin:2rem 0;"> <canvas id=mask-canvas style=width:100%;display:block;border-radius:8px;></canvas> <div style=display:flex;gap:.8rem;justify-content:center;margin-top:1rem;flex-wrap:wrap;> <button onclick=maskStep(-1) style="padding:5px 18px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:5px;cursor:pointer;">← Previous</button> <span id=mask-label style=color:#f0883e;font-family:monospace;font-size:.85rem;line-height:2;></span> <button onclick=maskStep(1) style="padding:5px 18px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:5px;cursor:pointer;">Next →</button> </div> </div> <script>
+(function(){
+  const canvas=document.getElementById('mask-canvas');
+  const ctx=canvas.getContext('2d');
+  let maskS=0;
+  const G=10, K=8;
+  function rng(s){let x=Math.sin(s*31.7)*43758.5;return x-Math.floor(x);}
+
+  // Pre-generate reveal schedule (MaskGIT cosine schedule)
+  const totalToks=G*G;
+  const schedule=[1,0.82,0.63,0.46,0.31,0.19,0.09,0.02,0];
+  const tokenColors=Array.from({length:totalToks},(_,i)=>`hsl(${(rng(i*7)*320)|0},55%,38%)`);
+
+  window.maskStep=function(d){maskS=Math.max(0,Math.min(K-1,maskS+d));drawMask();};
+
+  function drawMask(){
+    const W=canvas.parentElement.offsetWidth-48;
+    const H=200; canvas.width=W; canvas.height=H; canvas.style.height=H+'px';
+    ctx.fillStyle='#161b22'; ctx.fillRect(0,0,W,H);
+
+    const frac=schedule[maskS];
+    const revealed=Math.round(totalToks*(1-frac));
+    document.getElementById('mask-label').textContent=
+      `Iteration ${maskS+1}/${K}: ${revealed}/${totalToks} tokens revealed (${((1-frac)*100).toFixed(0)}%)`;
+
+    // Multiple grid snapshots side by side
+    const steps=Math.min(K,Math.floor((W-20)/60));
+    const gSz=Math.min(50,(W-20)/steps-8);
+    const cell=gSz/G;
+    const startX=(W-(steps*(gSz+8)))/2;
+
+    for(let s=0;s<steps;s++){
+      const f=schedule[s];
+      const rev=Math.round(totalToks*(1-f));
+      const gx=startX+s*(gSz+8), gy=(H-gSz)/2;
+      const isActive=s===maskS;
+
+      // Highlight active
+      if(isActive){
+        ctx.fillStyle='#f0883e22';
+        ctx.beginPath(); ctx.roundRect(gx-3,gy-3,gSz+6,gSz+6,5); ctx.fill();
+        ctx.strokeStyle='#f0883e'; ctx.lineWidth=1.5;
+        ctx.beginPath(); ctx.roundRect(gx-3,gy-3,gSz+6,gSz+6,5); ctx.stroke();
+      }
+
+      for(let r=0;r<G;r++) for(let c=0;c<G;c++){
+        const idx=r*G+c;
+        const isRev=idx<rev;
+        ctx.fillStyle=isRev?tokenColors[idx]:'#1c2128';
+        ctx.fillRect(gx+c*cell+0.3,gy+r*cell+0.3,cell-0.6,cell-0.6);
+        if(!isRev&&cell>5){
+          ctx.fillStyle='#30363d';
+          ctx.fillRect(gx+c*cell+0.3,gy+r*cell+0.3,cell-0.6,cell-0.6);
+        }
+      }
+
+      ctx.fillStyle=isActive?'#f0883e':'#484f58';
+      ctx.font=`${isActive?'bold ':''}8px monospace`;
+      ctx.textAlign='center'; ctx.textBaseline='top';
+      ctx.fillText(`t=${s+1}`,gx+gSz/2,gy+gSz+4);
+      ctx.fillText(`${rev}tok`,gx+gSz/2,gy+gSz+14);
+    }
+  }
+
+  drawMask(); window.addEventListener('resize',drawMask);
+})();
+</script> <hr> <h2 id=any-to-any-gemini-gpt-4o-and-chameleon>Any-to-Any: Gemini, GPT-4o, and Chameleon</h2> <p>The final step is removing the distinction between text and image tokens. <strong>Any-to-any</strong> models treat everything as a token sequence:</p> <div class="language-text highlight"><pre><span></span><code><span id=__span-0-1><a href=#__codelineno-0-1 id=__codelineno-0-1 name=__codelineno-0-1></a>[TEXT: "a photo of"] [IMG_TOK_3742] [IMG_TOK_891] ... [IMG_TOK_5531] [TEXT: "cat"]
+</span></code></pre></div> <p>The standard Transformer model processes this mixed sequence naturally.</p> <div style="background:#161b22;border-radius:8px;padding:1.2rem;margin:1.5rem 0;overflow-x:auto;"> <canvas id=anyto-canvas style=width:100%;display:block;></canvas> </div> <script>
+(function(){
+  const canvas=document.getElementById('anyto-canvas');
+  const ctx=canvas.getContext('2d');
+
+  function draw(){
+    const W=canvas.parentElement.offsetWidth-32;
+    const H=120; canvas.width=W; canvas.height=H; canvas.style.height=H+'px';
+    ctx.fillStyle='#161b22'; ctx.fillRect(0,0,W,H);
+
+    const tokens=[
+      {label:'Describe',type:'text'},
+      {label:'the image:',type:'text'},
+      {label:'🟦🟦\n🟧🟦',type:'img'},
+      {label:'img_4821',type:'img'},
+      {label:'img_0331',type:'img'},
+      {label:'img_7102',type:'img'},
+      {label:'→ Answer:',type:'text'},
+      {label:'"blue sky\nand sunset"',type:'text'},
+    ];
+
+    let x=10;
+    tokens.forEach((t,i)=>{
+      const isImg=t.type==='img';
+      const col=isImg?'#3fb950':'#58a6ff';
+      const lines=t.label.split('\n');
+      const tw=Math.max(60, lines.reduce((m,l)=>Math.max(m,l.length*7),0)+16);
+      const tH=isImg?56:40;
+      const ty=(H-tH)/2;
+
+      ctx.fillStyle=col+'22';
+      ctx.beginPath(); ctx.roundRect(x,ty,tw,tH,6); ctx.fill();
+      ctx.strokeStyle=col; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.roundRect(x,ty,tw,tH,6); ctx.stroke();
+
+      ctx.fillStyle=col; ctx.font=`bold ${Math.min(10,tw/8)}px monospace`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      lines.forEach((l,li)=>ctx.fillText(l,x+tw/2,ty+tH/2+(li-(lines.length-1)/2)*13));
+
+      ctx.fillStyle=col+'99'; ctx.font='7px Inter,sans-serif';
+      ctx.fillText(isImg?'img_tok':'txt_tok',x+tw/2,ty+tH+10);
+
+      if(i<tokens.length-1){
+        ctx.strokeStyle='#30363d'; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(x+tw+2,H/2); ctx.lineTo(x+tw+8,H/2); ctx.stroke();
+      }
+      x+=tw+10;
+      if(x>W-20) return;
+    });
+
+    ctx.fillStyle='#58a6ff'; ctx.font='9px Inter,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('● Text',10,H-8);
+    ctx.fillStyle='#3fb950'; ctx.fillText('● Image (VQ tokens)',60,H-8);
+  }
+
+  draw(); window.addEventListener('resize',draw);
+})();
+</script> <h3 id=how-each-model-implements-this>How Each Model Implements This</h3> <table> <thead> <tr> <th>Model</th> <th>Visual tokenizer</th> <th>Generation</th> <th>Training</th> </tr> </thead> <tbody> <tr> <td><strong>Chameleon</strong> (Meta)</td> <td>VQ-VAE (8192 codes)</td> <td>Pure autoregressive</td> <td>Text + image together from the start</td> </tr> <tr> <td><strong>Gemini 2.0</strong> (Google)</td> <td>Proprietary tokenizer</td> <td>AR + diffusion decoder</td> <td>Native multimodal</td> </tr> <tr> <td><strong>GPT-4o</strong> (OpenAI)</td> <td>Discrete visual tokens</td> <td>AR + diffusion decoder</td> <td>Native multimodal</td> </tr> <tr> <td><strong>LlamaGen</strong></td> <td>VQGAN (16384 codes)</td> <td>AR with LLaMA</td> <td>Initializes from pre-trained LLaMA</td> </tr> </tbody> </table> <hr> <h2 id=ar-vs-diffusion-when-to-use-each>AR vs. Diffusion: When to Use Each?</h2> <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;"> <div style="background:#0d1117;border-left:3px solid #3fb950;padding:1rem;border-radius:8px;"> <strong style=color:#3fb950;>Autoregressive Generation</strong> <ul style="color:#c9d1d9;font-size:.85rem;margin:.5rem 0;padding-left:1.2rem;"> <li>Unifies text and image in the same architecture</li> <li>Best for multimodal any-to-any</li> <li>Leverages the entire LLM infrastructure</li> <li>Scales well with more data</li> <li><strong style=color:#ff7b72;>Slow</strong>: 1 token at a time</li> </ul> </div> <div style="background:#0d1117;border-left:3px solid #58a6ff;padding:1rem;border-radius:8px;"> <strong style=color:#58a6ff;>Diffusion (DDPM / Flow Matching)</strong> <ul style="color:#c9d1d9;font-size:.85rem;margin:.5rem 0;padding-left:1.2rem;"> <li>Best standalone image quality</li> <li>Coherent global generation</li> <li>More control (guidance, cfg scale)</li> <li>Faster per image than AR</li> <li><strong style=color:#ff7b72;>Does not natively unify with text</strong></li> </ul> </div> </div> <p>The current trend: <strong>hybrids</strong> — an autoregressive LLM backbone for understanding and reasoning, with a diffusion decoder to render the final image at high quality. This is exactly what GPT-4o does.</p> <hr> <h2 id=implementation-vq-gan-autoregressive-transformer>Implementation: VQ-GAN + Autoregressive Transformer</h2> <div class="language-python highlight"><pre><span></span><code><span id=__span-1-1><a href=#__codelineno-1-1 id=__codelineno-1-1 name=__codelineno-1-1></a><span class=kn>import</span><span class=w> </span><span class=nn>torch</span>
+</span><span id=__span-1-2><a href=#__codelineno-1-2 id=__codelineno-1-2 name=__codelineno-1-2></a><span class=kn>import</span><span class=w> </span><span class=nn>torch.nn</span><span class=w> </span><span class=k>as</span><span class=w> </span><span class=nn>nn</span>
+</span><span id=__span-1-3><a href=#__codelineno-1-3 id=__codelineno-1-3 name=__codelineno-1-3></a>
+</span><span id=__span-1-4><a href=#__codelineno-1-4 id=__codelineno-1-4 name=__codelineno-1-4></a><span class=c1># 1. Vector quantizer</span>
+</span><span id=__span-1-5><a href=#__codelineno-1-5 id=__codelineno-1-5 name=__codelineno-1-5></a><span class=k>class</span><span class=w> </span><span class=nc>VectorQuantizer</span><span class=p>(</span><span class=n>nn</span><span class=o>.</span><span class=n>Module</span><span class=p>):</span>
+</span><span id=__span-1-6><a href=#__codelineno-1-6 id=__codelineno-1-6 name=__codelineno-1-6></a>    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>n_codes</span><span class=p>,</span> <span class=n>d_code</span><span class=p>):</span>
+</span><span id=__span-1-7><a href=#__codelineno-1-7 id=__codelineno-1-7 name=__codelineno-1-7></a>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>()</span>
+</span><span id=__span-1-8><a href=#__codelineno-1-8 id=__codelineno-1-8 name=__codelineno-1-8></a>        <span class=bp>self</span><span class=o>.</span><span class=n>codebook</span> <span class=o>=</span> <span class=n>nn</span><span class=o>.</span><span class=n>Embedding</span><span class=p>(</span><span class=n>n_codes</span><span class=p>,</span> <span class=n>d_code</span><span class=p>)</span>
+</span><span id=__span-1-9><a href=#__codelineno-1-9 id=__codelineno-1-9 name=__codelineno-1-9></a>
+</span><span id=__span-1-10><a href=#__codelineno-1-10 id=__codelineno-1-10 name=__codelineno-1-10></a>    <span class=k>def</span><span class=w> </span><span class=nf>forward</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>z</span><span class=p>):</span>
+</span><span id=__span-1-11><a href=#__codelineno-1-11 id=__codelineno-1-11 name=__codelineno-1-11></a>        <span class=c1># z: (B, H, W, d_code) — encoder latents</span>
+</span><span id=__span-1-12><a href=#__codelineno-1-12 id=__codelineno-1-12 name=__codelineno-1-12></a>        <span class=n>flat</span> <span class=o>=</span> <span class=n>z</span><span class=o>.</span><span class=n>view</span><span class=p>(</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=n>z</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=o>-</span><span class=mi>1</span><span class=p>])</span>
+</span><span id=__span-1-13><a href=#__codelineno-1-13 id=__codelineno-1-13 name=__codelineno-1-13></a>        <span class=c1># Distances to codebook</span>
+</span><span id=__span-1-14><a href=#__codelineno-1-14 id=__codelineno-1-14 name=__codelineno-1-14></a>        <span class=n>dists</span> <span class=o>=</span> <span class=n>torch</span><span class=o>.</span><span class=n>cdist</span><span class=p>(</span><span class=n>flat</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>codebook</span><span class=o>.</span><span class=n>weight</span><span class=p>)</span>
+</span><span id=__span-1-15><a href=#__codelineno-1-15 id=__codelineno-1-15 name=__codelineno-1-15></a>        <span class=n>indices</span> <span class=o>=</span> <span class=n>dists</span><span class=o>.</span><span class=n>argmin</span><span class=p>(</span><span class=n>dim</span><span class=o>=-</span><span class=mi>1</span><span class=p>)</span>            <span class=c1># index of nearest code</span>
+</span><span id=__span-1-16><a href=#__codelineno-1-16 id=__codelineno-1-16 name=__codelineno-1-16></a>        <span class=n>quantized</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>codebook</span><span class=p>(</span><span class=n>indices</span><span class=p>)</span><span class=o>.</span><span class=n>view_as</span><span class=p>(</span><span class=n>z</span><span class=p>)</span>
+</span><span id=__span-1-17><a href=#__codelineno-1-17 id=__codelineno-1-17 name=__codelineno-1-17></a>        <span class=c1># Straight-through estimator for backprop</span>
+</span><span id=__span-1-18><a href=#__codelineno-1-18 id=__codelineno-1-18 name=__codelineno-1-18></a>        <span class=n>quantized_st</span> <span class=o>=</span> <span class=n>z</span> <span class=o>+</span> <span class=p>(</span><span class=n>quantized</span> <span class=o>-</span> <span class=n>z</span><span class=p>)</span><span class=o>.</span><span class=n>detach</span><span class=p>()</span>
+</span><span id=__span-1-19><a href=#__codelineno-1-19 id=__codelineno-1-19 name=__codelineno-1-19></a>        <span class=k>return</span> <span class=n>quantized_st</span><span class=p>,</span> <span class=n>indices</span><span class=o>.</span><span class=n>view</span><span class=p>(</span><span class=n>z</span><span class=o>.</span><span class=n>shape</span><span class=p>[:</span><span class=mi>3</span><span class=p>])</span>
+</span><span id=__span-1-20><a href=#__codelineno-1-20 id=__codelineno-1-20 name=__codelineno-1-20></a>
+</span><span id=__span-1-21><a href=#__codelineno-1-21 id=__codelineno-1-21 name=__codelineno-1-21></a><span class=c1># 2. Autoregressive generation with GPT-like model</span>
+</span><span id=__span-1-22><a href=#__codelineno-1-22 id=__codelineno-1-22 name=__codelineno-1-22></a><span class=k>class</span><span class=w> </span><span class=nc>ImageGPT</span><span class=p>(</span><span class=n>nn</span><span class=o>.</span><span class=n>Module</span><span class=p>):</span>
+</span><span id=__span-1-23><a href=#__codelineno-1-23 id=__codelineno-1-23 name=__codelineno-1-23></a>    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>n_codes</span><span class=p>,</span> <span class=n>seq_len</span><span class=p>,</span> <span class=n>d_model</span><span class=p>,</span> <span class=n>n_heads</span><span class=p>,</span> <span class=n>n_layers</span><span class=p>):</span>
+</span><span id=__span-1-24><a href=#__codelineno-1-24 id=__codelineno-1-24 name=__codelineno-1-24></a>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>()</span>
+</span><span id=__span-1-25><a href=#__codelineno-1-25 id=__codelineno-1-25 name=__codelineno-1-25></a>        <span class=bp>self</span><span class=o>.</span><span class=n>tok_emb</span> <span class=o>=</span> <span class=n>nn</span><span class=o>.</span><span class=n>Embedding</span><span class=p>(</span><span class=n>n_codes</span> <span class=o>+</span> <span class=mi>1</span><span class=p>,</span> <span class=n>d_model</span><span class=p>)</span>  <span class=c1># +1 for BOS token</span>
+</span><span id=__span-1-26><a href=#__codelineno-1-26 id=__codelineno-1-26 name=__codelineno-1-26></a>        <span class=bp>self</span><span class=o>.</span><span class=n>pos_emb</span> <span class=o>=</span> <span class=n>nn</span><span class=o>.</span><span class=n>Embedding</span><span class=p>(</span><span class=n>seq_len</span> <span class=o>+</span> <span class=mi>1</span><span class=p>,</span> <span class=n>d_model</span><span class=p>)</span>
+</span><span id=__span-1-27><a href=#__codelineno-1-27 id=__codelineno-1-27 name=__codelineno-1-27></a>        <span class=n>encoder_layer</span> <span class=o>=</span> <span class=n>nn</span><span class=o>.</span><span class=n>TransformerEncoderLayer</span><span class=p>(</span><span class=n>d_model</span><span class=p>,</span> <span class=n>n_heads</span><span class=p>,</span> <span class=n>d_model</span><span class=o>*</span><span class=mi>4</span><span class=p>,</span> <span class=n>batch_first</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+</span><span id=__span-1-28><a href=#__codelineno-1-28 id=__codelineno-1-28 name=__codelineno-1-28></a>        <span class=bp>self</span><span class=o>.</span><span class=n>transformer</span> <span class=o>=</span> <span class=n>nn</span><span class=o>.</span><span class=n>TransformerEncoder</span><span class=p>(</span><span class=n>encoder_layer</span><span class=p>,</span> <span class=n>n_layers</span><span class=p>)</span>
+</span><span id=__span-1-29><a href=#__codelineno-1-29 id=__codelineno-1-29 name=__codelineno-1-29></a>        <span class=bp>self</span><span class=o>.</span><span class=n>head</span> <span class=o>=</span> <span class=n>nn</span><span class=o>.</span><span class=n>Linear</span><span class=p>(</span><span class=n>d_model</span><span class=p>,</span> <span class=n>n_codes</span><span class=p>)</span>
+</span><span id=__span-1-30><a href=#__codelineno-1-30 id=__codelineno-1-30 name=__codelineno-1-30></a>
+</span><span id=__span-1-31><a href=#__codelineno-1-31 id=__codelineno-1-31 name=__codelineno-1-31></a>    <span class=k>def</span><span class=w> </span><span class=nf>forward</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>tokens</span><span class=p>):</span>
+</span><span id=__span-1-32><a href=#__codelineno-1-32 id=__codelineno-1-32 name=__codelineno-1-32></a>        <span class=n>B</span><span class=p>,</span> <span class=n>T</span> <span class=o>=</span> <span class=n>tokens</span><span class=o>.</span><span class=n>shape</span>
+</span><span id=__span-1-33><a href=#__codelineno-1-33 id=__codelineno-1-33 name=__codelineno-1-33></a>        <span class=n>pos</span> <span class=o>=</span> <span class=n>torch</span><span class=o>.</span><span class=n>arange</span><span class=p>(</span><span class=n>T</span><span class=p>,</span> <span class=n>device</span><span class=o>=</span><span class=n>tokens</span><span class=o>.</span><span class=n>device</span><span class=p>)</span><span class=o>.</span><span class=n>unsqueeze</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+</span><span id=__span-1-34><a href=#__codelineno-1-34 id=__codelineno-1-34 name=__codelineno-1-34></a>        <span class=n>x</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>tok_emb</span><span class=p>(</span><span class=n>tokens</span><span class=p>)</span> <span class=o>+</span> <span class=bp>self</span><span class=o>.</span><span class=n>pos_emb</span><span class=p>(</span><span class=n>pos</span><span class=p>)</span>
+</span><span id=__span-1-35><a href=#__codelineno-1-35 id=__codelineno-1-35 name=__codelineno-1-35></a>        <span class=c1># Causal mask</span>
+</span><span id=__span-1-36><a href=#__codelineno-1-36 id=__codelineno-1-36 name=__codelineno-1-36></a>        <span class=n>mask</span> <span class=o>=</span> <span class=n>torch</span><span class=o>.</span><span class=n>triu</span><span class=p>(</span><span class=n>torch</span><span class=o>.</span><span class=n>ones</span><span class=p>(</span><span class=n>T</span><span class=p>,</span> <span class=n>T</span><span class=p>,</span> <span class=n>device</span><span class=o>=</span><span class=n>tokens</span><span class=o>.</span><span class=n>device</span><span class=p>),</span> <span class=n>diagonal</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>bool</span><span class=p>()</span>
+</span><span id=__span-1-37><a href=#__codelineno-1-37 id=__codelineno-1-37 name=__codelineno-1-37></a>        <span class=n>x</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>transformer</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>mask</span><span class=o>=</span><span class=n>mask</span><span class=p>)</span>
+</span><span id=__span-1-38><a href=#__codelineno-1-38 id=__codelineno-1-38 name=__codelineno-1-38></a>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>head</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>  <span class=c1># logits over n_codes</span>
+</span><span id=__span-1-39><a href=#__codelineno-1-39 id=__codelineno-1-39 name=__codelineno-1-39></a>
+</span><span id=__span-1-40><a href=#__codelineno-1-40 id=__codelineno-1-40 name=__codelineno-1-40></a>    <span class=nd>@torch</span><span class=o>.</span><span class=n>no_grad</span><span class=p>()</span>
+</span><span id=__span-1-41><a href=#__codelineno-1-41 id=__codelineno-1-41 name=__codelineno-1-41></a>    <span class=k>def</span><span class=w> </span><span class=nf>generate</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>prompt_tokens</span><span class=p>,</span> <span class=n>n_new</span><span class=p>,</span> <span class=n>temperature</span><span class=o>=</span><span class=mf>1.0</span><span class=p>,</span> <span class=n>top_k</span><span class=o>=</span><span class=mi>2048</span><span class=p>):</span>
+</span><span id=__span-1-42><a href=#__codelineno-1-42 id=__codelineno-1-42 name=__codelineno-1-42></a>        <span class=n>tokens</span> <span class=o>=</span> <span class=n>prompt_tokens</span><span class=o>.</span><span class=n>clone</span><span class=p>()</span>
+</span><span id=__span-1-43><a href=#__codelineno-1-43 id=__codelineno-1-43 name=__codelineno-1-43></a>        <span class=k>for</span> <span class=n>_</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>n_new</span><span class=p>):</span>
+</span><span id=__span-1-44><a href=#__codelineno-1-44 id=__codelineno-1-44 name=__codelineno-1-44></a>            <span class=n>logits</span> <span class=o>=</span> <span class=bp>self</span><span class=p>(</span><span class=n>tokens</span><span class=p>)[:,</span> <span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=p>:]</span> <span class=o>/</span> <span class=n>temperature</span>
+</span><span id=__span-1-45><a href=#__codelineno-1-45 id=__codelineno-1-45 name=__codelineno-1-45></a>            <span class=k>if</span> <span class=n>top_k</span><span class=p>:</span> <span class=n>logits</span><span class=p>[</span><span class=n>logits</span> <span class=o>&lt;</span> <span class=n>logits</span><span class=o>.</span><span class=n>topk</span><span class=p>(</span><span class=n>top_k</span><span class=p>)[</span><span class=mi>0</span><span class=p>][:,</span><span class=o>-</span><span class=mi>1</span><span class=p>:]]</span> <span class=o>=</span> <span class=o>-</span><span class=nb>float</span><span class=p>(</span><span class=s1>'inf'</span><span class=p>)</span>
+</span><span id=__span-1-46><a href=#__codelineno-1-46 id=__codelineno-1-46 name=__codelineno-1-46></a>            <span class=n>probs</span> <span class=o>=</span> <span class=n>logits</span><span class=o>.</span><span class=n>softmax</span><span class=p>(</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span>
+</span><span id=__span-1-47><a href=#__codelineno-1-47 id=__codelineno-1-47 name=__codelineno-1-47></a>            <span class=n>next_tok</span> <span class=o>=</span> <span class=n>torch</span><span class=o>.</span><span class=n>multinomial</span><span class=p>(</span><span class=n>probs</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+</span><span id=__span-1-48><a href=#__codelineno-1-48 id=__codelineno-1-48 name=__codelineno-1-48></a>            <span class=n>tokens</span> <span class=o>=</span> <span class=n>torch</span><span class=o>.</span><span class=n>cat</span><span class=p>([</span><span class=n>tokens</span><span class=p>,</span> <span class=n>next_tok</span><span class=p>],</span> <span class=n>dim</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span>
+</span><span id=__span-1-49><a href=#__codelineno-1-49 id=__codelineno-1-49 name=__codelineno-1-49></a>        <span class=k>return</span> <span class=n>tokens</span>
+</span></code></pre></div> <hr> <hr> <div id=quiz-ar-gen></div> <script>
+buildQuiz('ar-gen', 'Autoregressive Image Generation', [
+  {
+    q: 'What does VQ-GAN (Vector Quantized GAN) do?',
+    opts: [
+      'Generates high-resolution images adversarially without a quantization step',
+      'Learns to compress images into discrete tokens via a codebook of K vectors, enabling images to be treated as sequences of indices',
+      'Applies weight quantization to reduce model size',
+      'Uses gradient quantization to speed up GAN training'
+    ],
+    ans: 1,
+    exp: 'VQ-GAN: Encoder → feature map → quantization (each feature mapped to the nearest codebook vector) → integer index. Decoder reconstructs from quantized vectors. A 256×256 image → 16×16 = 256 integer tokens.'
+  },
+  {
+    q: 'How does autoregressive image generation work after VQ-GAN?',
+    opts: [
+      'All tokens are generated simultaneously in parallel',
+      'A Transformer generates codebook indices one by one, the same way GPT generates text',
+      'The VQ-GAN discriminator generates tokens in decreasing order of importance',
+      'A beam search algorithm selects the most likely token sequence'
+    ],
+    ans: 1,
+    exp: 'With a trained codebook, token sequences represent images. A GPT-like Transformer learns p(t_i | t_1,...,t_{i-1}) — the next token given previous ones. Generation: sample token by token and decode with the VQ-GAN decoder.'
+  },
+  {
+    q: 'How does MaskGIT accelerate generation compared to pure autoregressive?',
+    opts: [
+      'By using a smaller model in parallel',
+      'By generating all masked tokens in parallel iteratively, revealing the most confident ones each step',
+      'By skipping less important tokens based on attention',
+      'By using a smaller codebook with fewer tokens per image'
+    ],
+    ans: 1,
+    exp: 'Pure AR: N steps for N tokens. MaskGIT: starts with all tokens masked, predicts ALL simultaneously, reveals top-k most confident ones, repeats ~8-12 times. N=1024 tokens in 8-12 passes vs 1024 passes in pure AR.'
+  },
+  {
+    q: 'What characterizes "any-to-any" models like Gemini and Chameleon?',
+    opts: [
+      'Can generate any file format from any text input',
+      'Process text and image as a single mixed token sequence through the same Transformer, without modality-specific architectures',
+      'Use multiple specialized models and combine outputs by voting',
+      'Run on any hardware without special acceleration'
+    ],
+    ans: 1,
+    exp: 'Any-to-any: text and image tokens coexist in the same sequence and pass through the same Transformer. [text][img_tok][text][img_tok] — the model learns to attend to any pattern. Gemini 2.0 Flash can interleave generated text and images natively.'
+  },
+  {
+    q: 'What is the main disadvantage of pure autoregressive generation compared to diffusion for images?',
+    opts: [
+      'Lower visual quality than diffusion images in all cases',
+      'Slow generation: N tokens = N sequential forward passes, while diffusion updates all pixels in parallel per step',
+      'Does not support text conditioning',
+      'Requires training a separate adversarial discriminator'
+    ],
+    ans: 1,
+    exp: 'Pure AR: for 16×16 = 256 tokens, requires 256 passes. Diffusion: at each ODE step, all pixels/latents are updated in parallel (one U-Net/DiT forward pass). For large N, AR is much slower — hence MaskGIT and hybrid approaches.'
+  }
+]);
+</script> <div class=footnote> <hr> <ol> <li id=fn:1> <p>Esser, P. et al. (2021). <a href=https://arxiv.org/abs/2012.09841 target=_blank>Taming Transformers for High-Resolution Image Synthesis (VQ-GAN)</a>.&nbsp;<a class=footnote-backref href=#fnref:1 title="Jump back to footnote 1 in the text">↩</a></p> </li> <li id=fn:2> <p>Chang, H. et al. (2022). <a href=https://arxiv.org/abs/2202.04200 target=_blank>MaskGIT: Masked Generative Image Transformer</a>.&nbsp;<a class=footnote-backref href=#fnref:2 title="Jump back to footnote 2 in the text">↩</a></p> </li> <li id=fn:3> <p>Yu, L. et al. (2023). <a href=https://arxiv.org/abs/2406.06525 target=_blank>LlamaGen: Autoregressive Image Generation without Vector Quantization</a>.&nbsp;<a class=footnote-backref href=#fnref:3 title="Jump back to footnote 3 in the text">↩</a></p> </li> <li id=fn:4> <p>Team, C. et al. (2024). <a href=https://arxiv.org/abs/2405.09818 target=_blank>Chameleon: Mixed-Modal Early-Fusion Foundation Models</a>.&nbsp;<a class=footnote-backref href=#fnref:4 title="Jump back to footnote 4 in the text">↩</a></p> </li> <li id=fn:5> <p>Li, J. et al. (2024). <a href=https://arxiv.org/abs/2406.11838 target=_blank>MAR: Autoregressive Image Generation without Vector Quantization</a>.&nbsp;<a class=footnote-backref href=#fnref:5 title="Jump back to footnote 5 in the text">↩</a></p> </li> </ol> </div> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.top", "navigation.path", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script> <script src=../../../assets/javascripts/bundle.79ae519e.min.js></script> <script src=../../../assets/_markdown_exec_pyodide.js></script> <script src=../../../assets/javascripts/mathjax.js></script> <script src=../../../assets/javascripts/quiz.js></script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script> <script src=../../../assets/javascripts/badge.js async></script> <script src=../../../termynal.js></script> <script id=init-glightbox>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
