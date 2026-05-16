@@ -6,73 +6,44 @@ The type of each feature in your dataset fundamentally shapes which preprocessin
 
 ## Primary Feature Types
 
-<div id="types-viz" style="background:#0d1117;border-radius:12px;padding:1.5rem;margin:2rem 0;">
-<canvas id="types-canvas" style="width:100%;display:block;"></canvas>
-</div>
+```mermaid
+graph TD
+    D[Data] --> S[Structured]
+    D --> U[Unstructured]
 
-<script>
-(function(){
-  const canvas = document.getElementById('types-canvas');
-  const ctx = canvas.getContext('2d');
+    S --> N[Numerical]
+    S --> C[Categorical]
 
-  const tree = [
-    { id: 'data', label: 'Data', x: 0.5, y: 0.05, color: '#484f58', children: ['structured', 'unstructured'] },
-    { id: 'structured', label: 'Structured', x: 0.25, y: 0.22, color: '#58a6ff', children: ['numerical', 'categorical'] },
-    { id: 'unstructured', label: 'Unstructured', x: 0.75, y: 0.22, color: '#f0883e', children: ['text', 'image', 'audio', 'graph'] },
-    { id: 'numerical', label: 'Numerical', x: 0.1, y: 0.42, color: '#3fb950', children: ['continuous', 'discrete'] },
-    { id: 'categorical', label: 'Categorical', x: 0.38, y: 0.42, color: '#d29922', children: ['nominal', 'ordinal', 'binary'] },
-    { id: 'continuous', label: 'Continuous\ne.g. height, temp', x: 0.03, y: 0.65, color: '#3fb950', children: [] },
-    { id: 'discrete', label: 'Discrete\ne.g. count, age', x: 0.17, y: 0.65, color: '#3fb950', children: [] },
-    { id: 'nominal', label: 'Nominal\ne.g. color, city', x: 0.28, y: 0.65, color: '#d29922', children: [] },
-    { id: 'ordinal', label: 'Ordinal\ne.g. low/med/high', x: 0.41, y: 0.65, color: '#d29922', children: [] },
-    { id: 'binary', label: 'Binary\ne.g. yes/no', x: 0.53, y: 0.65, color: '#d29922', children: [] },
-    { id: 'text', label: 'Text\ne.g. reviews', x: 0.63, y: 0.42, color: '#f0883e', children: [] },
-    { id: 'image', label: 'Image\ne.g. photos', x: 0.73, y: 0.42, color: '#f0883e', children: [] },
-    { id: 'audio', label: 'Audio\ne.g. speech', x: 0.83, y: 0.42, color: '#f0883e', children: [] },
-    { id: 'graph', label: 'Graph\ne.g. social net.', x: 0.93, y: 0.42, color: '#f0883e', children: [] },
-  ];
+    N --> N1["Continuous<br/><small>e.g. height, temperature, price</small>"]
+    N --> N2["Discrete<br/><small>e.g. count, age in years</small>"]
 
-  function draw() {
-    const W = canvas.parentElement.offsetWidth - 48, H = 280;
-    canvas.width = W; canvas.height = H; canvas.style.height = H + 'px';
-    ctx.fillStyle = '#0d1117'; ctx.fillRect(0,0,W,H);
+    C --> C1["Nominal<br/><small>e.g. color, city, country</small>"]
+    C --> C2["Ordinal<br/><small>e.g. small / medium / large</small>"]
+    C --> C3["Binary<br/><small>e.g. yes / no, true / false</small>"]
 
-    const nodeMap = {};
-    tree.forEach(n => { nodeMap[n.id] = n; });
+    U --> U1["Text<br/><small>e.g. reviews, documents</small>"]
+    U --> U2["Image<br/><small>e.g. photos, scans</small>"]
+    U --> U3["Audio<br/><small>e.g. speech, music</small>"]
+    U --> U4["Graph<br/><small>e.g. social networks</small>"]
 
-    // Draw edges
-    tree.forEach(n => {
-      const x1 = n.x * W, y1 = n.y * H;
-      n.children.forEach(cid => {
-        const c = nodeMap[cid];
-        if (!c) return;
-        const x2 = c.x * W, y2 = c.y * H;
-        ctx.strokeStyle = c.color + '66'; ctx.lineWidth = 1.5;
-        ctx.beginPath(); ctx.moveTo(x1, y1 + 14); ctx.bezierCurveTo(x1, (y1+y2)/2, x2, (y1+y2)/2, x2, y2 - 14); ctx.stroke();
-      });
-    });
+    classDef root    fill:#e2e8f0,stroke:#718096,color:#2d3748
+    classDef struct  fill:#ebf4ff,stroke:#4299e1,color:#2b6cb0
+    classDef unstruct fill:#fef5e7,stroke:#ed8936,color:#7b341e
+    classDef num     fill:#f0fff4,stroke:#48bb78,color:#276749
+    classDef cat     fill:#fffff0,stroke:#d69e2e,color:#744210
+    classDef numLeaf fill:#f0fff4,stroke:#9ae6b4,color:#276749
+    classDef catLeaf fill:#fffff0,stroke:#faf089,color:#744210
+    classDef uLeaf   fill:#fef5e7,stroke:#fbd38d,color:#7b341e
 
-    // Draw nodes
-    tree.forEach(n => {
-      const x = n.x * W, y = n.y * H;
-      const lines = n.label.split('\n');
-      const fw = Math.max(80, lines.reduce((m,l)=>Math.max(m,l.length*6.5),0)+16);
-      const fh = lines.length > 1 ? 36 : 24;
-      ctx.fillStyle = n.color + '22';
-      ctx.beginPath(); ctx.roundRect(x - fw/2, y - fh/2, fw, fh, 6); ctx.fill();
-      ctx.strokeStyle = n.color; ctx.lineWidth = 1.5;
-      ctx.beginPath(); ctx.roundRect(x - fw/2, y - fh/2, fw, fh, 6); ctx.stroke();
-      ctx.fillStyle = n.color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      lines.forEach((line, li) => {
-        ctx.font = (li === 0 ? 'bold ' : '') + '9px Inter,sans-serif';
-        ctx.fillText(line, x, y + (li - (lines.length-1)/2) * 11);
-      });
-    });
-  }
-
-  draw(); window.addEventListener('resize', draw);
-})();
-</script>
+    class D root
+    class S struct
+    class U unstruct
+    class N num
+    class C cat
+    class N1,N2 numLeaf
+    class C1,C2,C3 catLeaf
+    class U1,U2,U3,U4 uLeaf
+```
 
 ---
 

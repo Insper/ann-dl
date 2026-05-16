@@ -1,4 +1,5 @@
 markdown-grid-tables
+mkdocs-static-i18n
 markdown-exec
 mkdocs-badges
 mkdocs-encryptcontent-plugin

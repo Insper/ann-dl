@@ -43,8 +43,6 @@ theme:
     - content.code.select
     - content.code.annotate
     - content.tooltips
-    - navigation.instant
-    - navigation.instant.progress
     - navigation.top
     - navigation.path
     - navigation.tracking
@@ -106,6 +104,17 @@ markdown_extensions:
 
 
 plugins:
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: pt
+          name: Português
+          build: true
+      fallback_to_default: true
   - glightbox
   # - git-revision-date-localized:
   #     enable_creation_date: true
