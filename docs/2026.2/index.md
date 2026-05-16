@@ -38,7 +38,7 @@ $$
 <div style="background:linear-gradient(160deg,#1a365d,#2c5282);border-radius:14px;padding:1.2rem 1.2rem 1.2rem 0.8rem;color:#fff;">
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Module 1</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Foundations</div>
-  <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
+  <ul style="list-style:none;padding:0;margin:0;font-size:.8rem;line-height:1.85;">
     <li style="margin-left: 0px;">Concepts &amp; AI</li>
     <li style="margin-left: 0px;">Data</li>
     <li style="margin-left: 0px;">Preprocessing</li>
@@ -54,7 +54,7 @@ $$
 <div style="background:linear-gradient(160deg,#44337a,#6b46c1);border-radius:14px;padding:1.2rem 1.2rem 1.2rem 0.8rem;color:#fff;">
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Module 2</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Deep Architectures</div>
-  <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
+  <ul style="list-style:none;padding:0;margin:0;font-size:.8rem;line-height:1.85;">
     <li style="margin-left: 0px;">DL Layers</li>
     <li style="margin-left: 0px;">CNNs</li>
     <li style="margin-left: 0px;">Attention <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 7px;font-size:.68rem;font-weight:700;letter-spacing:.5px;vertical-align:middle;">NEW</span></li>
@@ -67,7 +67,7 @@ $$
 <div style="background:linear-gradient(160deg,#1a4731,#276749);border-radius:14px;padding:1.2rem 1.2rem 1.2rem 0.8rem;color:#fff;">
   <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:.25rem;">Module 3</div>
   <div style="font-size:1rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:.6rem;margin-bottom:.8rem;">Generative Models</div>
-  <ul style="list-style:none;padding:0;margin:0;font-size:.6rem;line-height:1.85;">
+  <ul style="list-style:none;padding:0;margin:0;font-size:.8rem;line-height:1.85;">
     <li style="margin-left: 0px;">Overview</li>
     <li style="margin-left: 0px;">VAE</li>
     <li style="margin-left: 0px;">GAN</li>
