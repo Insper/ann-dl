@@ -6,7 +6,7 @@ CLIP (Contrastive Language-Image Pretraining) é um modelo de aprendizado de má
 
 ## Componentes Principais
 
-- **Codificador de Imagem**: Tipicamente um Vision Transformer (ViT) ou uma ResNet modificada que processa imagens em embeddings de dimensão fixa (ex: 512 ou 768 dimensões).
+- **Codificador de Imagem**: Tipicamente um [Vision Transformer (ViT)](../vision-transformers/index.md) ou uma ResNet modificada que processa imagens em embeddings de dimensão fixa (ex: 512 ou 768 dimensões).
 - **Codificador de Texto**: Um modelo baseado em Transformer (como uma variante modificada de GPT ou BERT) que codifica legendas de texto em embeddings da mesma dimensionalidade.
 - **Objetivo de Treinamento**: Perda contrastiva (especificamente, uma versão simétrica da perda InfoNCE). Para um batch de N pares imagem-texto, computa uma matriz de similaridade entre todos os embeddings de imagem e texto, tratando a diagonal (pares correspondentes) como positivos e as outras entradas como negativos. O objetivo é maximizar a similaridade para positivos e minimizar para negativos.
 - **Inferência**: Para classificar uma imagem, codifique-a e compare seu embedding (via similaridade cosseno) com embeddings de texto de prompts como =="uma foto de um [classe]"==. A maior similaridade vence.

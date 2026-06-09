@@ -187,7 +187,7 @@ A U-Net clássica usa convoluções com skip connections hierárquicas — boa p
 
 ## Passo 1 — Patchify: Imagens como Sequências de Tokens
 
-Assim como o ViT divide imagens em patches, o DiT opera no **espaço latente** (após o encoder VAE). Um latente de forma $H \times W \times C$ é dividido em patches de tamanho $p \times p$:
+Assim como o [ViT](../vision-transformers/index.md) divide imagens em patches, o DiT opera no **espaço latente** (após o encoder VAE). Um latente de forma $H \times W \times C$ é dividido em patches de tamanho $p \times p$:
 
 $$
 \text{Número de tokens: } N = \frac{H}{p} \times \frac{W}{p}

@@ -204,7 +204,7 @@ The classic U-Net uses convolutions with hierarchical skip connections — good 
 
 ## Step 1 — Patchify: Images as Token Sequences
 
-Just like ViT divides images into patches, DiT operates in the **latent space** (after the VAE encoder). A latent of shape $H \times W \times C$ is divided into patches of size $p \times p$:
+Just like [ViT](../vision-transformers/index.md) divides images into patches, DiT operates in the **latent space** (after the VAE encoder). A latent of shape $H \times W \times C$ is divided into patches of size $p \times p$:
 
 $$
 \text{Number of tokens: } N = \frac{H}{p} \times \frac{W}{p}

@@ -194,15 +194,7 @@ pos3 [ 0    0    0    0   ]     (vê tudo)
 
 ## Vision Transformer (ViT)
 
-Em 2020, Dosovitskiy et al.[^3] aplicaram Transformers a imagens dividindo-as em **patches** de $16 \times 16$ pixels, linearizando cada patch como um token:
-
-$$
-\text{Entrada} \in \mathbb{R}^{H \times W \times C} \xrightarrow{\text{patches}} \mathbb{R}^{N \times (P^2 C)} \xrightarrow{\text{linear}} \mathbb{R}^{N \times d}
-$$
-
-onde $N = HW/P^2$ é o número de patches. Um token especial `[CLS]` é adicionado ao início e sua saída final é usada para classificação.
-
-O ViT superou CNNs no ImageNet com escala de dados suficiente — mostrando que vieses indutivos convolucionais (localidade, equivariância à translação) não são necessários quando dados suficientes estão disponíveis.
+O encoder não se limita a texto. Em 2020, Dosovitskiy et al.[^3] aplicaram essa mesma arquitetura a imagens dividindo-as em **patches** de $16 \times 16$ pixels e tratando cada patch como um token — superando CNNs no ImageNet com escala de dados suficiente. A próxima aula, [Vision Transformers](../vision-transformers/index.md), é dedicada a essa ideia.
 
 ---
 
