@@ -239,7 +239,7 @@ $$
 
 ## O encoder e a cabeça de classificação
 
-A sequência $z_0$ passa por $L$ blocos **encoder** Transformer idênticos — os mesmos blocos MHSA + Add&Norm + FFN da aula de [Transformers](../transformers/index.md) (o ViT usa a variante pre-norm e GELU):
+A sequência $z_0$ passa por $L$ blocos **encoder** Transformer idênticos[^4] — os mesmos blocos MHSA + Add&Norm + FFN da aula de [Transformers](../transformers/index.md) (o ViT usa a variante pre-norm e GELU):
 
 $$
 z'_\ell = \text{MHSA}(\text{LN}(z_{\ell-1})) + z_{\ell-1}, \qquad
@@ -270,6 +270,8 @@ Como lhe faltam os *priors* convolucionais, o ViT só brilha em **escala**. O ar
 
 Essa é exatamente a receita de **pré-treinar e depois ajustar (finetune)** da aula de [Transfer Learning](../transfer-learning/index.md): pré-treinar o encoder em um dataset enorme e depois ajustar a cabeça MLP barata (ou o modelo inteiro com taxa de aprendizado baixa) na sua tarefa. É também por isso que o CLIP pôde treinar um encoder de imagem ViT em 400M pares imagem-texto — nessa escala, o viés indutivo fraco vira vantagem.
 
+Duas linhas de pesquisa amenizam essa fome de dados. Receitas cuidadosas de **augmentation e regularização** permitem treinar ViTs de forma competitiva só com o ImageNet-1k, sem um dataset privado gigante[^5]. E o **pré-treinamento auto-supervisionado** aprende features fortes do ViT sem nenhum rótulo — reconstruindo patches mascarados (**MAE**[^6]) ou por auto-destilação (**DINO**[^7], cujos mapas de atenção segmentam objetos de graça).
+
 ---
 
 ## CNN vs. ViT em um relance
@@ -283,7 +285,7 @@ Essa é exatamente a receita de **pré-treinar e depois ajustar (finetune)** da 
 | Custo computacional | $O(N)$ em pixels | $O(N^2)$ em patches |
 | Escala com dados | Satura mais cedo | Continua melhorando |
 
-**Híbridos e sucessores.** Várias variantes reintroduzem *algum* viés espacial para obter o melhor dos dois mundos: o **DeiT** (treinamento eficiente em dados com destilação, sem precisar do JFT) e o **Swin Transformer** (atenção em janelas com estrutura hierárquica, tipo pirâmide, que devolve a localidade e torna o ViT prático para detecção e segmentação).
+**Híbridos e sucessores.** Várias variantes reintroduzem *algum* viés espacial para obter o melhor dos dois mundos: o **DeiT**[^2] (treinamento eficiente em dados com destilação, sem precisar do JFT) e o **Swin Transformer**[^3] (atenção em janelas com estrutura hierárquica, tipo pirâmide, que devolve a localidade e torna o ViT prático para detecção e segmentação). Por outro lado, o **ConvNeXt**[^8] modernizou uma CNN pura para igualar os ViTs de igual para igual — evidência de que a receita de treinamento e a escala importam tanto quanto a escolha entre convolução e atenção em si.
 
 ---
 
@@ -343,6 +345,11 @@ Essa é exatamente a receita de **pré-treinar e depois ajustar (finetune)** da 
 [^1]: Dosovitskiy, A. et al. (2021). [An Image is Worth 16×16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929){:target="_blank"}. ICLR.
 [^2]: Touvron, H. et al. (2021). [Training data-efficient image transformers & distillation through attention (DeiT)](https://arxiv.org/abs/2012.12877){:target="_blank"}. ICML.
 [^3]: Liu, Z. et al. (2021). [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030){:target="_blank"}. ICCV.
+[^4]: Vaswani, A. et al. (2017). [Attention Is All You Need](https://arxiv.org/abs/1706.03762){:target="_blank"}. NeurIPS. *(O bloco encoder que o ViT reutiliza.)*
+[^5]: Steiner, A. et al. (2021). [How to train your ViT? Data, Augmentation, and Regularization in Vision Transformers](https://arxiv.org/abs/2106.10270){:target="_blank"}. TMLR.
+[^6]: He, K. et al. (2022). [Masked Autoencoders Are Scalable Vision Learners (MAE)](https://arxiv.org/abs/2111.06377){:target="_blank"}. CVPR.
+[^7]: Caron, M. et al. (2021). [Emerging Properties in Self-Supervised Vision Transformers (DINO)](https://arxiv.org/abs/2104.14294){:target="_blank"}. ICCV.
+[^8]: Liu, Z. et al. (2022). [A ConvNet for the 2020s (ConvNeXt)](https://arxiv.org/abs/2201.03545){:target="_blank"}. CVPR.
 
 
 ---

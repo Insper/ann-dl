@@ -241,7 +241,7 @@ $$
 
 ## The encoder and the classification head
 
-The sequence $z_0$ goes through $L$ identical Transformer **encoder** blocks — the same MHSA + Add&Norm + FFN blocks from the [Transformers](../transformers/index.md) class (ViT uses the pre-norm variant and GELU):
+The sequence $z_0$ goes through $L$ identical Transformer **encoder** blocks[^4] — the same MHSA + Add&Norm + FFN blocks from the [Transformers](../transformers/index.md) class (ViT uses the pre-norm variant and GELU):
 
 $$
 z'_\ell = \text{MHSA}(\text{LN}(z_{\ell-1})) + z_{\ell-1}, \qquad
@@ -272,6 +272,8 @@ Because it lacks the convolutional priors, ViT only shines at **scale**. The ori
 
 This is precisely the **pretrain-then-finetune** recipe of the [Transfer Learning](../transfer-learning/index.md) class: pretrain the encoder on a huge dataset, then fine-tune the cheap MLP head (or the whole model with a low learning rate) on your task. It is also why CLIP could train a ViT image encoder on 400M image-text pairs — at that scale, the weak inductive bias becomes an advantage.
 
+Two lines of work soften this data hunger. Careful **augmentation and regularization** recipes let ViTs train competitively on ImageNet-1k alone, without a giant private dataset[^5]. And **self-supervised pretraining** learns strong ViT features without any labels — by reconstructing masked patches (**MAE**[^6]) or by self-distillation (**DINO**[^7], whose attention maps segment objects for free).
+
 ---
 
 ## CNN vs. ViT at a glance
@@ -285,7 +287,7 @@ This is precisely the **pretrain-then-finetune** recipe of the [Transfer Learnin
 | Compute | $O(N)$ in pixels | $O(N^2)$ in patches |
 | Scales with data | Saturates earlier | Keeps improving |
 
-**Hybrids and successors.** Several variants reintroduce *some* spatial bias to get the best of both worlds: **DeiT** (data-efficient training with distillation, no JFT needed), and **Swin Transformer** (windowed attention with a hierarchical, pyramid-like structure that brings back locality and makes ViT practical for detection and segmentation).
+**Hybrids and successors.** Several variants reintroduce *some* spatial bias to get the best of both worlds: **DeiT**[^2] (data-efficient training with distillation, no JFT needed), and **Swin Transformer**[^3] (windowed attention with a hierarchical, pyramid-like structure that brings back locality and makes ViT practical for detection and segmentation). Conversely, **ConvNeXt**[^8] modernized a pure CNN to match ViTs head-to-head — evidence that the training recipe and scale matter as much as the convolution-vs-attention choice itself.
 
 ---
 
@@ -345,6 +347,11 @@ This is precisely the **pretrain-then-finetune** recipe of the [Transfer Learnin
 [^1]: Dosovitskiy, A. et al. (2021). [An Image is Worth 16×16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929){:target="_blank"}. ICLR.
 [^2]: Touvron, H. et al. (2021). [Training data-efficient image transformers & distillation through attention (DeiT)](https://arxiv.org/abs/2012.12877){:target="_blank"}. ICML.
 [^3]: Liu, Z. et al. (2021). [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030){:target="_blank"}. ICCV.
+[^4]: Vaswani, A. et al. (2017). [Attention Is All You Need](https://arxiv.org/abs/1706.03762){:target="_blank"}. NeurIPS. *(The encoder block ViT reuses.)*
+[^5]: Steiner, A. et al. (2021). [How to train your ViT? Data, Augmentation, and Regularization in Vision Transformers](https://arxiv.org/abs/2106.10270){:target="_blank"}. TMLR.
+[^6]: He, K. et al. (2022). [Masked Autoencoders Are Scalable Vision Learners (MAE)](https://arxiv.org/abs/2111.06377){:target="_blank"}. CVPR.
+[^7]: Caron, M. et al. (2021). [Emerging Properties in Self-Supervised Vision Transformers (DINO)](https://arxiv.org/abs/2104.14294){:target="_blank"}. ICCV.
+[^8]: Liu, Z. et al. (2022). [A ConvNet for the 2020s (ConvNeXt)](https://arxiv.org/abs/2201.03545){:target="_blank"}. CVPR.
 
 
 ---
