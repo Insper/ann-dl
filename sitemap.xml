@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://insper.github.io/ann-dl/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/references/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/references/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/references/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/ann/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/ann/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/ann/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/clip/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/clip/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/clip/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/clip/code/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/clip/code/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/clip/code/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/concepts/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/concepts/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/convolutional-neural-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/convolutional-neural-networks/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/convolutional-neural-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/data/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/deep-learning/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/deep-learning/convolutional/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/convolutional/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/convolutional/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/deep-learning/dense/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/dense/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/dense/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/deep-learning/dropout/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/dropout/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/dropout/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/deep-learning/lstm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/lstm/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/lstm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/diffusion-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/diffusion-models/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/diffusion-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/flow-matching/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/flow-matching/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/flow-matching/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/generative-adversarial-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/generative-adversarial-networks/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/generative-adversarial-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/generative-adversarial-networks/gan_example_cifar_10/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/generative-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/generative-models/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/generative-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/metrics/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/metrics/classification/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/metrics/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/metrics/generative/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/metrics/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/metrics/regression/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/optimization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/optimization/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/optimization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/optimization/comparison/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/optimization/comparison/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/optimization/comparison/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/preprocessing/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/preprocessing/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/preprocessing/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/preprocessing/normalization-vs-standardization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/preprocessing/normalization-vs-standardization/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/preprocessing/normalization-vs-standardization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/regularization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/regularization/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/regularization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/stable-diffusion/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/stable-diffusion/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/stable-diffusion/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/relation-log-variance-std/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/vae-numerical-simulation/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/exercises/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/data/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/exercises/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/exercises/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/exercises/perceptron/answer/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/perceptron/answer/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/perceptron/answer/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/exercises/vae/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/vae/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/vae/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/projects/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/projects/classification/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/projects/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/projects/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/projects/generative/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/projects/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2025.2/projects/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/projects/regression/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/projects/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/ann/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/ann/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/ann/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/ann/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/ann/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/ann/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/attention/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/attention/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/attention/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/attention/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/attention/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/attention/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/autoregressive-generation/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/autoregressive-generation/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/autoregressive-generation/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/autoregressive-generation/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/autoregressive-generation/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/autoregressive-generation/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/clip/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/clip/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/clip/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/clip/code/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/clip/code/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/clip/code/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/clip/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/clip/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/clip/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/concepts/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/concepts/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/concepts/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/concepts/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/concepts/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/convolutional-neural-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/convolutional-neural-networks/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/convolutional-neural-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/convolutional-neural-networks/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/convolutional-neural-networks/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/convolutional-neural-networks/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/distributions/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/distributions/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/distributions/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/imbalance/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/imbalance/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/imbalance/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/leakage/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/leakage/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/leakage/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/quality/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/quality/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/quality/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/splitting/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/splitting/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/splitting/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/data/types/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/types/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/types/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/deep-learning/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/deep-learning/convolutional/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/convolutional/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/convolutional/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/deep-learning/dense/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/dense/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/dense/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/deep-learning/dropout/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/dropout/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/dropout/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/deep-learning/lstm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/lstm/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/lstm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/deep-learning/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/diffusion-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/diffusion-models/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/diffusion-transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/diffusion-transformers/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/diffusion-transformers/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/diffusion-transformers/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-transformers/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/flow-matching/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/flow-matching/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/flow-matching/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/flow-matching/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/flow-matching/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/flow-matching/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/gan_example_cifar_10/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/generative-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-models/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/generative-models/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-models/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-models/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/llms/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/llms/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/llms/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/llms/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/llms/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/llms/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/classification/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/classification/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/classification/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/classification/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/generative/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/generative/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/generative/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/generative/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/llm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/llm/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/llm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/llm/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/llm/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/llm/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/regression/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/metrics/regression/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/regression/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/regression/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/mlp/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/mlp/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/mlp/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/optimization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/optimization/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/optimization/comparison/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/optimization/comparison/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/comparison/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/optimization/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/optimization/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/perceptron/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/perceptron/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/perceptron/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/preprocessing/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/preprocessing/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/preprocessing/normalization-vs-standardization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/preprocessing/normalization-vs-standardization/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/normalization-vs-standardization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/preprocessing/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/preprocessing/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/regularization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/regularization/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/regularization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/regularization/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/regularization/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/regularization/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/stable-diffusion/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/stable-diffusion/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/stable-diffusion/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/stable-diffusion/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/stable-diffusion/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/stable-diffusion/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/transfer-learning/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transfer-learning/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transfer-learning/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/transfer-learning/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transfer-learning/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transfer-learning/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transformers/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/transformers/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transformers/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transformers/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/relation-log-variance-std/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/vae-numerical-simulation/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/vision-transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/vision-transformers/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/vision-transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/classes/vision-transformers/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/vision-transformers/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/vision-transformers/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/exercises/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/data/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/exercises/llm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/llm/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/llm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/exercises/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/exercises/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/exercises/perceptron/answer/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/perceptron/answer/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/perceptron/answer/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/exercises/transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/transformers/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/exercises/vae/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/vae/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/vae/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/projects/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/projects/classification/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/projects/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/projects/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/projects/generative/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/projects/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/2026.2/projects/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/projects/regression/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/projects/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/definitions/latent_space_vs_embedding/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/definitions/latent_space_vs_embedding/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/definitions/latent_space_vs_embedding/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/definitions/stable_difussion_vs_flow-matching/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/definitions/stable_difussion_vs_flow-matching/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/definitions/stable_difussion_vs_flow-matching/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/terms-and-conditions/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/terms-and-conditions/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/terms-and-conditions/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/references/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/references/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/ann/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/ann/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/ann/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/clip/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/clip/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/clip/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/clip/code/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/clip/code/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/clip/code/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/concepts/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/concepts/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/convolutional-neural-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/convolutional-neural-networks/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/convolutional-neural-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/convolutional/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/convolutional/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/convolutional/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/dense/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/dense/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/dense/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/dropout/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/dropout/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/dropout/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/lstm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/deep-learning/lstm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/deep-learning/lstm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/diffusion-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/diffusion-models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/diffusion-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/flow-matching/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/flow-matching/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/flow-matching/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/generative-adversarial-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/generative-adversarial-networks/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/generative-adversarial-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/generative-adversarial-networks/gan_example_cifar_10/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/generative-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/generative-models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/generative-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/classification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/metrics/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/generative/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/metrics/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/metrics/regression/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/metrics/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/optimization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/optimization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/optimization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/optimization/comparison/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/optimization/comparison/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/optimization/comparison/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/preprocessing/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/preprocessing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/preprocessing/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/preprocessing/normalization-vs-standardization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/preprocessing/normalization-vs-standardization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/preprocessing/normalization-vs-standardization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/regularization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/regularization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/regularization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/stable-diffusion/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/stable-diffusion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/stable-diffusion/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/relation-log-variance-std/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/vae-numerical-simulation/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/exercises/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/exercises/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/exercises/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/exercises/perceptron/answer/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/perceptron/answer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/perceptron/answer/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/exercises/vae/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/exercises/vae/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/exercises/vae/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/projects/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/projects/classification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/projects/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/projects/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/projects/generative/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/projects/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2025.2/projects/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2025.2/projects/regression/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2025.2/projects/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/ann/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/ann/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/ann/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/ann/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/ann/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/ann/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/attention/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/attention/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/attention/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/attention/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/attention/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/attention/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/autoregressive-generation/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/autoregressive-generation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/autoregressive-generation/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/autoregressive-generation/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/autoregressive-generation/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/autoregressive-generation/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/clip/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/clip/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/clip/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/clip/code/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/clip/code/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/clip/code/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/clip/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/clip/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/clip/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/concepts/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/concepts/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/concepts/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/concepts/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/concepts/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/convolutional-neural-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/convolutional-neural-networks/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/convolutional-neural-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/convolutional-neural-networks/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/convolutional-neural-networks/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/convolutional-neural-networks/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/distributions/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/distributions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/distributions/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/imbalance/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/imbalance/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/imbalance/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/leakage/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/leakage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/leakage/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/quality/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/quality/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/quality/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/splitting/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/splitting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/splitting/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/data/types/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/data/types/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/data/types/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/convolutional/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/convolutional/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/convolutional/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/dense/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/dense/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/dense/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/dropout/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/dropout/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/dropout/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/lstm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/lstm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/lstm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/deep-learning/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/deep-learning/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/diffusion-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-transformers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/diffusion-transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-transformers/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/diffusion-transformers/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/diffusion-transformers/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/flow-matching/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/flow-matching/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/flow-matching/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/flow-matching/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/flow-matching/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/flow-matching/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/gan_example_cifar_10/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/gan_example_cifar_10/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-adversarial-networks/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-adversarial-networks/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/generative-models/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-models/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/generative-models/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/generative-models/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/generative-models/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/llms/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/llms/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/llms/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/llms/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/llms/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/llms/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/classification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/classification/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/classification/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/classification/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/generative/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/generative/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/generative/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/generative/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/llm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/llm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/llm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/llm/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/llm/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/llm/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/regression/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/regression/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/metrics/regression/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/metrics/regression/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/mlp/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/mlp/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/mlp/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/optimization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/comparison/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/comparison/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/optimization/comparison/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/optimization/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/optimization/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/perceptron/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/perceptron/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/perceptron/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/preprocessing/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/normalization-vs-standardization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/normalization-vs-standardization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/preprocessing/normalization-vs-standardization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/preprocessing/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/preprocessing/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/regularization/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/regularization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/regularization/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/regularization/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/regularization/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/regularization/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/stable-diffusion/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/stable-diffusion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/stable-diffusion/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/stable-diffusion/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/stable-diffusion/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/stable-diffusion/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/transfer-learning/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transfer-learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transfer-learning/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/transfer-learning/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transfer-learning/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transfer-learning/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transformers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/transformers/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/transformers/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/transformers/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/relation-log-variance-std/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/relation-log-variance-std/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/vae-numerical-simulation/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/vae-numerical-simulation/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/variational-autoencoders/vae_numerical_architecture_4-8-2-8-4/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/vision-transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/vision-transformers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/vision-transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/classes/vision-transformers/quiz/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/classes/vision-transformers/quiz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/classes/vision-transformers/quiz/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/exercises/data/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/data/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/exercises/llm/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/llm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/llm/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/exercises/mlp/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/mlp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/mlp/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/exercises/perceptron/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/perceptron/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/perceptron/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/exercises/perceptron/answer/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/perceptron/answer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/perceptron/answer/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/exercises/transformers/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/transformers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/transformers/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/exercises/vae/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/exercises/vae/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/exercises/vae/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/projects/classification/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/projects/classification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/projects/classification/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/projects/generative/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/projects/generative/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/projects/generative/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/2026.2/projects/regression/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/2026.2/projects/regression/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/2026.2/projects/regression/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/definitions/latent_space_vs_embedding/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/definitions/latent_space_vs_embedding/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/definitions/latent_space_vs_embedding/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/definitions/stable_difussion_vs_flow-matching/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/definitions/stable_difussion_vs_flow-matching/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/definitions/stable_difussion_vs_flow-matching/"/>
+    </url>
+    <url>
+        <loc>https://insper.github.io/ann-dl/pt/terms-and-conditions/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://insper.github.io/ann-dl/pt/terms-and-conditions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://insper.github.io/ann-dl/terms-and-conditions/"/>
+    </url>
+</urlset>
